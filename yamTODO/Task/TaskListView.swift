@@ -21,6 +21,7 @@ struct TaskListView: View {
       ForEach(self.userData.tasks) { task in
         TaskItemView(task: task, isEditing: self.$isEditing)
       }
+
     }
     .navigationBarTitle(Text("TODO 👀"))
     .navigationBarItems(trailing: Button(action: { self.isEditing.toggle() }) {
@@ -33,7 +34,8 @@ struct TaskListView: View {
         Text("Done").bold()
       }
     })
-      
+
+
     .toolbar {
       ToolbarItemGroup(placement: .navigationBarLeading) {
         NavigationLink {
@@ -44,9 +46,29 @@ struct TaskListView: View {
             .frame(width: 30, height: 30)
         }
       }
-      
+
     }
     }
+    
+//    .yamNavigationBar {
+//      Text("TODO 👀")
+//    } leftView: {
+//      NavigationLink {
+//        CalenderView(month: .now)
+//      } label: {
+//        Image("calender")
+//          .resizable()
+//          .frame(width: 30, height: 30)
+//      }
+//    } rightView: {
+//      NavigationLink {
+//        CalenderView(month: .now)
+//      } label: {
+//        Image("edit")
+//          .resizable()
+//          .frame(width: 40, height: 40)
+//      }
+//    }
   }
 
   private func createTask() {

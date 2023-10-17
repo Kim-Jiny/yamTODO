@@ -11,7 +11,10 @@ struct ContentView: View {
     var body: some View {
       NavigationView {
         VStack {
-          LoginView()
+          
+          //MARK: - For Test
+          TaskListView().environmentObject(UserData())
+//          LoginView()
         }
         .padding()
       }

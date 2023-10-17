@@ -36,6 +36,9 @@
 		36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C97F2ADE1A3F00F7A140 /* UserDefaultValue.swift */; };
 		36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9812ADE1A6F00F7A140 /* UserData.swift */; };
 		36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9852ADE26C000F7A140 /* Extension+Color.swift */; };
+		36B7C98E2ADE69A400F7A140 /* YamNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C98D2ADE69A400F7A140 /* YamNavigation.swift */; };
+		36B7C9912ADE6B4900F7A140 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9902ADE6B4900F7A140 /* Extension+View.swift */; };
+		36B7C9942ADE6FAD00F7A140 /* Extension+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9932ADE6FAD00F7A140 /* Extension+UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		36B7C97F2ADE1A3F00F7A140 /* UserDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValue.swift; sourceTree = "<group>"; };
 		36B7C9812ADE1A6F00F7A140 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		36B7C9852ADE26C000F7A140 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		36B7C98D2ADE69A400F7A140 /* YamNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamNavigation.swift; sourceTree = "<group>"; };
+		36B7C9902ADE6B4900F7A140 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		36B7C9932ADE6FAD00F7A140 /* Extension+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UINavigationController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 		36B7C97C2ADE1A2200F7A140 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				36B7C9892ADE64BC00F7A140 /* View */,
 				36B7C9832ADE26A900F7A140 /* Extensions */,
 				36B7C97E2ADE1A2E00F7A140 /* UserDefaults */,
 			);
@@ -218,6 +225,8 @@
 		36B7C9832ADE26A900F7A140 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				36B7C9922ADE6F8700F7A140 /* Navigation */,
+				36B7C98F2ADE6B3A00F7A140 /* Views */,
 				36B7C9842ADE26B000F7A140 /* Colors */,
 			);
 			path = Extensions;
@@ -229,6 +238,38 @@
 				36B7C9852ADE26C000F7A140 /* Extension+Color.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		36B7C9892ADE64BC00F7A140 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C98C2ADE697F00F7A140 /* YamNavigation */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36B7C98C2ADE697F00F7A140 /* YamNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C98D2ADE69A400F7A140 /* YamNavigation.swift */,
+			);
+			path = YamNavigation;
+			sourceTree = "<group>";
+		};
+		36B7C98F2ADE6B3A00F7A140 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9902ADE6B4900F7A140 /* Extension+View.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		36B7C9922ADE6F8700F7A140 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9932ADE6FAD00F7A140 /* Extension+UINavigationController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B7C98E2ADE69A400F7A140 /* YamNavigation.swift in Sources */,
+				36B7C9912ADE6B4900F7A140 /* Extension+View.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,
 				36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */,
 				36B7C9752ADE18B800F7A140 /* CalenderView.swift in Sources */,
@@ -386,6 +429,7 @@
 				36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,
 				36B7C9542ADCFD4200F7A140 /* CalenderView2.swift in Sources */,
+				36B7C9942ADE6FAD00F7A140 /* Extension+UINavigationController.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
 				36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */,
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,

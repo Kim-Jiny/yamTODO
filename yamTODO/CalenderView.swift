@@ -23,7 +23,15 @@ struct CalenderView: View {
   var body: some View {
     VStack {
       headerView
+//        .yamNavigationBar {
+//          Text("@@")
+//        } leftView: {
+//          Image(systemName: "arrow.backward")
+//        } rightView: {
+//          Text("@@")
+//        }
       calendarGridView
+      Spacer()
     }
     .gesture(
       DragGesture()
@@ -43,6 +51,7 @@ struct CalenderView: View {
     .animation(.easeOut, value: offset)
     .padding(.leading, 30)
     .padding(.trailing, 30)
+
   }
   
   // MARK: - 헤더 뷰
@@ -319,12 +328,5 @@ extension Date {
   
   var formattedCalendarDayDate: String {
     return Date.calendarDayDateFormatter.string(from: self)
-  }
-}
-
-// MARK: - 프리뷰
-struct CalenderView_Previews: PreviewProvider {
-  static var previews: some View {
-    CalenderView(month: .now)
   }
 }
