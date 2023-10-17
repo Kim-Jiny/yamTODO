@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDvp6AJwVyhtAxA3sNFNVybfok-sOJJcNc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>466550245625</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.swift.vs.swiftUI.yamTODO</string>
+	<key>PROJECT_ID</key>
+	<string>yamtodo-1f1dc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yamtodo-1f1dc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:466550245625:ios:5251bfcf1a463eace3fa28</string>
+</dict>
+</plist>
