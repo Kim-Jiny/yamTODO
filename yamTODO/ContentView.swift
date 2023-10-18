@@ -10,9 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
       NavigationView {
-        VStack {
-          LoginView()
-        }
+        TaskListView().environmentObject(UserData())
+//        VStack {
+//          
+//          //MARK: - For Test
+//          TaskListView().environmentObject(UserData())
+////          LoginView()
+//        }
         .padding()
       }
     }

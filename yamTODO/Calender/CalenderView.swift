@@ -166,7 +166,7 @@ private struct CellView: View {
     if clicked {
       return Color.black
     } else if isToday {
-      return Color.gray
+      return Color.yamLightGreen
     } else {
       return Color.white
     }
@@ -322,9 +322,9 @@ extension Date {
   }
 }
 
-// MARK: - 프리뷰
-struct CalenderView_Previews: PreviewProvider {
-  static var previews: some View {
-    CalenderView(month: .now)
-  }
-}
+//// MARK: - 프리뷰
+//struct CalenderView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    CalenderView(month: .now)
+//  }
+//}
