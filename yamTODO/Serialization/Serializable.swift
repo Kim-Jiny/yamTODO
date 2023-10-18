@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol Serializable {
+    static func decode(_ data: Data) throws -> Self
+}

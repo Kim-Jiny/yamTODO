@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum Request {
+    case get
+    case post
+}

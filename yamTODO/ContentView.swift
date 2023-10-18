@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-      NavigationView {
-        TaskListView().environmentObject(UserData())
+      TaskMainView()
+//      NavigationView {
+//        TaskListView().environmentObject(UserData())
 //        VStack {
-//          
+//
 //          //MARK: - For Test
 //          TaskListView().environmentObject(UserData())
 ////          LoginView()
 //        }
-        .padding()
-      }
+//        .padding()
+//          .navigationBarHidden(true)
+//      }
     }
 }
 

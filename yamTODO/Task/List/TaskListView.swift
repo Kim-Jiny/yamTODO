@@ -28,7 +28,7 @@ struct TaskListView: View {
   }
 
   private func createTask() {
-    let newTask = Task(id: UUID().uuidString, title: self.draftTitle, isDone: false)
+    let newTask = Task(id: UUID().uuidString, title: self.draftTitle, isDone: false, date: Date(), optionType: 0)
     self.userData.tasks.insert(newTask, at: 0)
     self.draftTitle = ""
   }
