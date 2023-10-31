@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CalenderView: View {
+struct CalendarView: View {
   @State private var month: Date = Date()
   @State var offset: CGSize = CGSize()
   @State private var clickedCurrentMonthDates: Date?
@@ -207,7 +207,7 @@ private struct CellView: View {
 }
 
 // MARK: - CalendarView Static 프로퍼티
-private extension CalenderView {
+private extension CalendarView {
   var today: Date {
     let now = Date()
     let components = Calendar.current.dateComponents([.year, .month, .day], from: now)
@@ -224,7 +224,7 @@ private extension CalenderView {
 }
 
 // MARK: - 내부 로직 메서드
-private extension CalenderView {
+private extension CalendarView {
   /// 특정 해당 날짜
   func getDate(for index: Int) -> Date {
     let calendar = Calendar.current

@@ -9,8 +9,8 @@ import Combine
 import SwiftUI
 
 private let defaultTasks: [Task] = [
-  Task(id: UUID().uuidString, title: "Read SwiftUI Documentation 📚", isDone: false, date: Date(), optionType: 0),
-  Task(id: UUID().uuidString, title: "Watch WWDC19 Keynote 🎉", isDone: true, date: Date(), optionType: 1001),
+  Task(title: "Read SwiftUI Documentation 📚"),
+  Task(title: "Watch WWDC19 Keynote 🎉")
 ]
 
 final class UserData: ObservableObject {

@@ -10,7 +10,7 @@ import SwiftUI
 struct TaskListView: View {
   @EnvironmentObject var userData: UserData
   @State var draftTitle: String = ""
-  @Binding var isEditing: Bool
+  @Binding var isShowEditPopup: Bool
   @State private var showCalender = false
 
   var body: some View {
@@ -19,7 +19,7 @@ struct TaskListView: View {
         Section(header: Text(Date(), formatter: Self.calendarHeaderDateFormatter)) {
           TextField("Create a New Task...", text: $draftTitle, onCommit: self.createTask)
           ForEach(self.userData.tasks) { task in
-            TaskItemView(task: task, isEditing: self.$isEditing)
+            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup)
           }
         }
         .padding(.bottom, 0)
@@ -28,7 +28,7 @@ struct TaskListView: View {
   }
 
   private func createTask() {
-    let newTask = Task(id: UUID().uuidString, title: self.draftTitle, isDone: false, date: Date(), optionType: 0)
+    let newTask = Task(title: self.draftTitle)
     self.userData.tasks.insert(newTask, at: 0)
     self.draftTitle = ""
   }

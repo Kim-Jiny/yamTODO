@@ -8,38 +8,41 @@
 import SwiftUI
 
 struct TaskMainView: View {
-  @State var isEditing: Bool = false
+  @State var isShowEditPopup: Bool = false
   
   var body: some View {
     NavigationView {
-      TaskListView(isEditing: $isEditing).environmentObject(UserData())
-//      Spacer()
-      .navigationBarTitle(Text("TODO 👀"))
-      .navigationBarItems(trailing: Button(action: { self.isEditing.toggle() }) {
-        if !self.isEditing {
-//        Text("Edit")
-          Image("edit")
-            .resizable()
-            .frame(width: 40, height: 40)
-        } else {
-          Text("Done").bold()
-        }
-      })
-      .navigationBarTitleDisplayMode(.inline)
-      
-      .toolbar {
-        ToolbarItemGroup(placement: .navigationBarLeading) {
-          NavigationLink {
-            CalenderView(month: .now)
-          } label: {
-            Image("calender")
+//      Text("TODO 👀")
+//        .navigationTitle("Title")
+//        .foregroundColor(.yamBlue)
+      ZStack {
+        TaskListView(isShowEditPopup: $isShowEditPopup).environmentObject(UserData())
+          .navigationBarTitle(Text("TODO 👀"))
+          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
+            Image("edit")
               .resizable()
-              .frame(width: 30, height: 30)
+              .frame(width: 40, height: 40)
+          })
+//          .sheet(isPresented: $isShowEditPopup, content: {
+//            EditPopupView(isPresented: $isShowEditPopup)
+//          })
+          .navigationBarTitleDisplayMode(.inline)
+          .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+              NavigationLink {
+                CalendarView(month: .now)
+                  .padding(50)
+              } label: {
+                Image("calender")
+                  .resizable()
+                  .frame(width: 30, height: 30)
+              }
+            }
           }
+        if isShowEditPopup {
+          EditPopupView(isPresented: $isShowEditPopup)
         }
       }
-      
-//      TaskListView(isEditing: $isEditing).environmentObject(UserData())
     }
   }
 }
