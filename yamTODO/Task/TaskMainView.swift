@@ -31,7 +31,6 @@ struct TaskMainView: View {
             ToolbarItemGroup(placement: .navigationBarLeading) {
               NavigationLink {
                 CalendarView(month: .now)
-                  .padding(50)
               } label: {
                 Image("calender")
                   .resizable()
@@ -42,6 +41,9 @@ struct TaskMainView: View {
         if isShowEditPopup {
           EditPopupView(isPresented: $isShowEditPopup)
         }
+      }
+      .onTapGesture {
+          self.isShowEditPopup = false
       }
     }
   }
