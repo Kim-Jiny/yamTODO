@@ -11,11 +11,17 @@ import SwiftUI
 struct Task: Equatable, Hashable, Codable, Identifiable {
   let id: String
   var title: String
+  var desc: String
   var isDone: Bool
+  var date: Date
+  var optionType: [Int]
 
-  init(id: String, title: String, isDone: Bool) {
-    self.id = id // = UUID().uuidString
+  init(title: String) {
+    self.id = UUID().uuidString
     self.title = title
-    self.isDone = isDone
+    self.desc = ""
+    self.isDone = false
+    self.date = Date()
+    self.optionType = []
   }
 }

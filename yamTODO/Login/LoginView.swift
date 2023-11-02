@@ -30,7 +30,8 @@ struct LoginView: View {
         })
         .fullScreenCover(isPresented: self.$showTaskList) {
 //          CalenderView(month: .now)
-          TaskListView().environmentObject(UserData())
+//          TaskListView().environmentObject(UserData())
+          TaskMainView()
         }
       google
     }

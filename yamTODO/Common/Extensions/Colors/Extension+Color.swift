@@ -23,5 +23,14 @@ extension Color {
 }
 
 extension Color {
-    static let yamLightGreen = Color(hex: "#eeffee")
+  static let yamLightGreen = Color(hex: "#eeffee")
+  static let yamSky = Color(hex: "#97b8c9")
+  static let yamBlue = Color(hex: "#3ca0c7")
+  static let lightGray = Color(hex: "#e6e9eb")
+}
+
+extension UIColor {
+  static let yamLightGreen = Color(hex: "#eeffee")
+  static let yamSky = Color(hex: "#97b8c9")
+  static let yamBlue = Color(hex: "#3ca0c7")
 }

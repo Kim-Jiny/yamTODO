@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
 		36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */; };
@@ -15,7 +16,7 @@
 		36B7C9452ADCFCF800F7A140 /* yamTODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */; };
 		36B7C9472ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */; };
 		36B7C9542ADCFD4200F7A140 /* CalenderView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */; };
-		36B7C9572ADD19C200F7A140 /* TODOTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9562ADD19C200F7A140 /* TODOTask.swift */; };
+		36B7C9572ADD19C200F7A140 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9562ADD19C200F7A140 /* TaskModel.swift */; };
 		36B7C9592ADD206400F7A140 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */; };
 		36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */; };
 		36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95D2ADD214900F7A140 /* FirebaseAnalyticsSwift */; };
@@ -29,13 +30,29 @@
 		36B7C96E2ADD214900F7A140 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C96D2ADD214900F7A140 /* FirebaseStorage */; };
 		36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C96F2ADD233300F7A140 /* AppDelegate.swift */; };
 		36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9722ADD25EC00F7A140 /* LoginView.swift */; };
-		36B7C9752ADE18B800F7A140 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9742ADE18B800F7A140 /* CalenderView.swift */; };
+		36B7C9752ADE18B800F7A140 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9742ADE18B800F7A140 /* CalendarView.swift */; };
 		36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9762ADE19C700F7A140 /* TaskListView.swift */; };
 		36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9782ADE19EC00F7A140 /* TaskItemView.swift */; };
 		36B7C97B2ADE1A0700F7A140 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C97A2ADE1A0700F7A140 /* TaskEditView.swift */; };
 		36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C97F2ADE1A3F00F7A140 /* UserDefaultValue.swift */; };
 		36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9812ADE1A6F00F7A140 /* UserData.swift */; };
 		36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9852ADE26C000F7A140 /* Extension+Color.swift */; };
+		36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9972ADF51DD00F7A140 /* TaskMainView.swift */; };
+		36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C99B2ADF63FB00F7A140 /* TaskHeader.swift */; };
+		36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */; };
+		36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9A62ADFB05700F7A140 /* APIError.swift */; };
+		36B7C9A92ADFB07300F7A140 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9A82ADFB07300F7A140 /* Request.swift */; };
+		36B7C9AB2ADFB0AE00F7A140 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */; };
+		36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9AD2ADFB35200F7A140 /* Serializable.swift */; };
+		36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */; };
+		36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36EDCF3E2AEF6607004F2483 /* Alamofire */; };
+		36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF402AEF6A0F004F2483 /* NetworkMonitor.swift */; };
+		36EDCF442AEF880E004F2483 /* LoginIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF432AEF880E004F2483 /* LoginIntent.swift */; };
+		36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF452AEF8889004F2483 /* EditPopupView.swift */; };
+		36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF492AEF9583004F2483 /* Repeats.swift */; };
+		36EDCF4D2AF08585004F2483 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF4C2AF08585004F2483 /* MainTabView.swift */; };
+		36EDCF502AF087C6004F2483 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF4F2AF087C6004F2483 /* MyPageView.swift */; };
+		36EDCF532AF089AA004F2483 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF522AF089AA004F2483 /* Symbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		36B7C9262ADCFCF700F7A140 /* yamTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOApp.swift; sourceTree = "<group>"; };
 		36B7C92B2ADCFCF700F7A140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,17 +85,32 @@
 		36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOUITests.swift; sourceTree = "<group>"; };
 		36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView2.swift; sourceTree = "<group>"; };
-		36B7C9562ADD19C200F7A140 /* TODOTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOTask.swift; sourceTree = "<group>"; };
+		36B7C9562ADD19C200F7A140 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36B7C96F2ADD233300F7A140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B7C9722ADD25EC00F7A140 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		36B7C9742ADE18B800F7A140 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		36B7C9742ADE18B800F7A140 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		36B7C9762ADE19C700F7A140 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		36B7C9782ADE19EC00F7A140 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
 		36B7C97A2ADE1A0700F7A140 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		36B7C97F2ADE1A3F00F7A140 /* UserDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValue.swift; sourceTree = "<group>"; };
 		36B7C9812ADE1A6F00F7A140 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		36B7C9852ADE26C000F7A140 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		36B7C9972ADF51DD00F7A140 /* TaskMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMainView.swift; sourceTree = "<group>"; };
+		36B7C99B2ADF63FB00F7A140 /* TaskHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeader.swift; sourceTree = "<group>"; };
+		36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVIContainer.swift; sourceTree = "<group>"; };
+		36B7C9A62ADFB05700F7A140 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		36B7C9A82ADFB07300F7A140 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		36B7C9AD2ADFB35200F7A140 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		36EDCF402AEF6A0F004F2483 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		36EDCF432AEF880E004F2483 /* LoginIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntent.swift; sourceTree = "<group>"; };
+		36EDCF452AEF8889004F2483 /* EditPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopupView.swift; sourceTree = "<group>"; };
+		36EDCF492AEF9583004F2483 /* Repeats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeats.swift; sourceTree = "<group>"; };
+		36EDCF4C2AF08585004F2483 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		36EDCF4F2AF087C6004F2483 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		36EDCF522AF089AA004F2483 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +123,7 @@
 				36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */,
 				36B7C96E2ADD214900F7A140 /* FirebaseStorage in Frameworks */,
 				36B7C9602ADD214900F7A140 /* FirebaseAppCheck in Frameworks */,
+				36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */,
 				36B7C96A2ADD214900F7A140 /* FirebaseFunctions in Frameworks */,
 				36B7C9642ADD214900F7A140 /* FirebaseCrashlytics in Frameworks */,
 				36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */,
@@ -138,15 +172,18 @@
 		36B7C9282ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXGroup;
 			children = (
+				36B7C9AF2ADFC25F00F7A140 /* Calender */,
+				36B7C9AC2ADFB33A00F7A140 /* Serialization */,
+				36B7C9A52ADFB04000F7A140 /* Networking */,
+				36B7C99D2ADF676500F7A140 /* Utilies */,
 				36B7C97C2ADE1A2200F7A140 /* Common */,
 				36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */,
 				36B7C96F2ADD233300F7A140 /* AppDelegate.swift */,
 				36B7C9712ADD25D800F7A140 /* Login */,
+				36EDCF4B2AF0856D004F2483 /* Main */,
 				36B7C9552ADD01FC00F7A140 /* Task */,
 				36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */,
 				36B7C92B2ADCFCF700F7A140 /* ContentView.swift */,
-				36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */,
-				36B7C9742ADE18B800F7A140 /* CalenderView.swift */,
 				36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */,
 				36B7C92F2ADCFCF800F7A140 /* Preview Content */,
 			);
@@ -181,10 +218,10 @@
 		36B7C9552ADD01FC00F7A140 /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C9562ADD19C200F7A140 /* TODOTask.swift */,
-				36B7C9762ADE19C700F7A140 /* TaskListView.swift */,
-				36B7C9782ADE19EC00F7A140 /* TaskItemView.swift */,
-				36B7C97A2ADE1A0700F7A140 /* TaskEditView.swift */,
+				36EDCF472AEF894B004F2483 /* Models */,
+				36B7C9972ADF51DD00F7A140 /* TaskMainView.swift */,
+				36EDCF422AEF87ED004F2483 /* Edit */,
+				36B7C9992ADF63CB00F7A140 /* List */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -192,7 +229,10 @@
 		36B7C9712ADD25D800F7A140 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				36EDCF3A2AEB9E60004F2483 /* Models */,
 				36B7C9722ADD25EC00F7A140 /* LoginView.swift */,
+				36EDCF402AEF6A0F004F2483 /* NetworkMonitor.swift */,
+				36EDCF432AEF880E004F2483 /* LoginIntent.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -200,6 +240,7 @@
 		36B7C97C2ADE1A2200F7A140 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				36EDCF512AF0899A004F2483 /* CustomView */,
 				36B7C9832ADE26A900F7A140 /* Extensions */,
 				36B7C97E2ADE1A2E00F7A140 /* UserDefaults */,
 			);
@@ -231,6 +272,119 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		36B7C9992ADF63CB00F7A140 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C99A2ADF63D300F7A140 /* Header */,
+				36B7C9762ADE19C700F7A140 /* TaskListView.swift */,
+				36B7C9782ADE19EC00F7A140 /* TaskItemView.swift */,
+				36B7C97A2ADE1A0700F7A140 /* TaskEditView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		36B7C99A2ADF63D300F7A140 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C99B2ADF63FB00F7A140 /* TaskHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		36B7C99D2ADF676500F7A140 /* Utilies */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */,
+			);
+			path = Utilies;
+			sourceTree = "<group>";
+		};
+		36B7C9A52ADFB04000F7A140 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9A62ADFB05700F7A140 /* APIError.swift */,
+				36B7C9A82ADFB07300F7A140 /* Request.swift */,
+				36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		36B7C9AC2ADFB33A00F7A140 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9AD2ADFB35200F7A140 /* Serializable.swift */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		36B7C9AF2ADFC25F00F7A140 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */,
+				36B7C9742ADE18B800F7A140 /* CalendarView.swift */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
+		36EDCF3A2AEB9E60004F2483 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36EDCF422AEF87ED004F2483 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				36EDCF482AEF9566004F2483 /* Models */,
+				36EDCF452AEF8889004F2483 /* EditPopupView.swift */,
+				3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		36EDCF472AEF894B004F2483 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9562ADD19C200F7A140 /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36EDCF482AEF9566004F2483 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36EDCF492AEF9583004F2483 /* Repeats.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36EDCF4B2AF0856D004F2483 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				36EDCF4E2AF087AF004F2483 /* MyPage */,
+				36EDCF4C2AF08585004F2483 /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		36EDCF4E2AF087AF004F2483 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				36EDCF4F2AF087C6004F2483 /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		36EDCF512AF0899A004F2483 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				36EDCF522AF089AA004F2483 /* Symbol.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +412,7 @@
 				36B7C9692ADD214900F7A140 /* FirebaseFunctions */,
 				36B7C96B2ADD214900F7A140 /* FirebaseMessaging */,
 				36B7C96D2ADD214900F7A140 /* FirebaseStorage */,
+				36EDCF3E2AEF6607004F2483 /* Alamofire */,
 			);
 			productName = yamTODO;
 			productReference = 36B7C9262ADCFCF700F7A140 /* yamTODO.app */;
@@ -333,6 +488,7 @@
 			mainGroup = 36B7C91D2ADCFCF700F7A140;
 			packageReferences = (
 				36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 36B7C9272ADCFCF700F7A140 /* Products */;
 			projectDirPath = "";
@@ -377,16 +533,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,
+				36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */,
+				36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */,
+				36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */,
 				36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */,
-				36B7C9752ADE18B800F7A140 /* CalenderView.swift in Sources */,
+				36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */,
+				36B7C9752ADE18B800F7A140 /* CalendarView.swift in Sources */,
+				36EDCF4D2AF08585004F2483 /* MainTabView.swift in Sources */,
 				36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */,
+				36B7C9AB2ADFB0AE00F7A140 /* APIClient.swift in Sources */,
 				36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */,
-				36B7C9572ADD19C200F7A140 /* TODOTask.swift in Sources */,
+				36B7C9A92ADFB07300F7A140 /* Request.swift in Sources */,
+				36B7C9572ADD19C200F7A140 /* TaskModel.swift in Sources */,
+				36EDCF532AF089AA004F2483 /* Symbol.swift in Sources */,
+				36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */,
 				36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,
 				36B7C9542ADCFD4200F7A140 /* CalenderView2.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
+				36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */,
+				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
+				36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */,
+				36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */,
+				36EDCF442AEF880E004F2483 /* LoginIntent.swift in Sources */,
+				36EDCF502AF087C6004F2483 /* MyPageView.swift in Sources */,
 				36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */,
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,
 				36B7C97B2ADE1A0700F7A140 /* TaskEditView.swift in Sources */,
@@ -724,6 +896,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -776,6 +956,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		36EDCF3E2AEF6607004F2483 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
