@@ -11,8 +11,10 @@ import SwiftUI
 struct EditPopupView: View {
   @EnvironmentObject var userData: UserData
   @Binding var isPresented: Bool
-//  @State private var selectedOption : [Int] = []
+  @State private var isKeyboardVisible = false
+  
   @State private var taskTitle = ""
+  @State private var taskDesc = ""
   
 //  @EnvironmentObject private var selectedDays: DayOfWeekManager
   @StateObject var dayOfWeekManager = DayOfWeekManager()
@@ -27,11 +29,15 @@ struct EditPopupView: View {
                 .frame(width: 22, height: 20)
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.yamBlue)
-              TextField("Enter task details...", text: $taskTitle)
+              TextField("Enter task", text: $taskTitle)
                 .padding()
                 .textFieldStyle(PlainTextFieldStyle())
-              
             }
+            TextField("Enter task Detail ..", text: $taskDesc)
+              .textFieldStyle(RoundedBorderTextFieldStyle())
+              .padding()
+              .frame(height: 100)
+              .lineLimit(0)
             .frame(height: 30)
             HStack(spacing: 0) {
               Image(systemName: "repeat")
@@ -72,7 +78,24 @@ struct EditPopupView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .background(Color.black.opacity(0.3))
         .onTapGesture {
-          self.isPresented = false
+          if self.isKeyboardVisible {
+            // 키보드가 열려있으면 닫아주기
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+          }else {
+            // 키보드가 닫혀있으면 창을 닫아주기 
+            self.isPresented = false
+          }
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                self.isKeyboardVisible = true
+            }
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notification in
+                self.isKeyboardVisible = false
+            }
+        }
+        .onDisappear {
+            NotificationCenter.default.removeObserver(self)
         }
       }
   }

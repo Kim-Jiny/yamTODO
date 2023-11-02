@@ -15,6 +15,7 @@ struct Task: Equatable, Hashable, Codable, Identifiable {
   var isDone: Bool
   var date: Date
   var optionType: [Int]
+  var rootId: String
 
   init(title: String) {
     self.id = UUID().uuidString
@@ -23,5 +24,6 @@ struct Task: Equatable, Hashable, Codable, Identifiable {
     self.isDone = false
     self.date = Date()
     self.optionType = []
+    self.rootId = ""
   }
 }

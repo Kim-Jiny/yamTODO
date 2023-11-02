@@ -17,7 +17,7 @@ struct TaskListView: View {
     VStack {
       List {
         Section(header: Text(Date(), formatter: Self.calendarHeaderDateFormatter)) {
-          TextField("Create a New Task...", text: $draftTitle, onCommit: self.createTask)
+//          TextField("Create a New Task...", text: $draftTitle, onCommit: self.createTask)
           ForEach(self.userData.tasks) { task in
             TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup)
           }
@@ -27,11 +27,11 @@ struct TaskListView: View {
     }
   }
 
-  private func createTask() {
-    let newTask = Task(title: self.draftTitle)
-    self.userData.tasks.insert(newTask, at: 0)
-    self.draftTitle = ""
-  }
+//  private func createTask() {
+//    let newTask = Task(title: self.draftTitle)
+//    self.userData.tasks.insert(newTask, at: 0)
+//    self.draftTitle = ""
+//  }
 }
 
 private extension TaskListView {
