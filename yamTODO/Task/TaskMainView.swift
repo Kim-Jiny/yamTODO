@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskMainView: View {
   @State var isShowEditPopup: Bool = false
+  var userData = userDataObject()
   
   var body: some View {
     NavigationView {
@@ -16,7 +17,7 @@ struct TaskMainView: View {
 //        .navigationTitle("Title")
 //        .foregroundColor(.yamBlue)
       ZStack {
-        TaskListView(isShowEditPopup: $isShowEditPopup).environmentObject(UserData())
+        TaskListView(isShowEditPopup: $isShowEditPopup).environmentObject(userData.userData)
           .navigationBarTitle(Text("TODO 👀"))
           .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
             Image("edit")
@@ -39,11 +40,8 @@ struct TaskMainView: View {
             }
           }
         if isShowEditPopup {
-          EditPopupView(isPresented: $isShowEditPopup)
+          EditPopupView(isPresented: $isShowEditPopup).environmentObject(userData.userData)
         }
-      }
-      .onTapGesture {
-          self.isShowEditPopup = false
       }
     }
   }

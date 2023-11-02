@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct EditPopupView: View {
+  @EnvironmentObject var userData: UserData
   @Binding var isPresented: Bool
-  @State private var selectedOption = 0
-  @State private var textInput = ""
+//  @State private var selectedOption : [Int] = []
+  @State private var taskTitle = ""
   
 //  @EnvironmentObject private var selectedDays: DayOfWeekManager
   @StateObject var dayOfWeekManager = DayOfWeekManager()
@@ -26,7 +27,7 @@ struct EditPopupView: View {
                 .frame(width: 22, height: 20)
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.yamBlue)
-              TextField("Enter task details...", text: $textInput)
+              TextField("Enter task details...", text: $taskTitle)
                 .padding()
                 .textFieldStyle(PlainTextFieldStyle())
               
@@ -40,12 +41,12 @@ struct EditPopupView: View {
                 .foregroundColor(.yamBlue)
               RepeatView(selectedDays: $dayOfWeekManager.selectedDays)
             }
-//            VStack(spacing: 0) {
-//                Divider()
-//                    .frame(width: geometry.size.width, height: 1, alignment: .top)
                 HStack {
                     Button(action: {
-                        self.isPresented = false
+                      if !taskTitle.isEmpty {
+                        createTask()
+//                        self.isPresented = false
+                      }
                     }, label: {
                         Text("Save")
                         .frame(minWidth: 0, maxWidth: .infinity)
@@ -55,26 +56,33 @@ struct EditPopupView: View {
                     })
                 }
                 .frame(height: 50)
-//            }
-//            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 51)
           }
           .padding(.top, 20)
           .padding()
           .background(Color.white)
           .cornerRadius(10)
           .frame(width: geometry.size.width - 70)
-//          .onTapGesture {
-//            //
-//          }
+          .onTapGesture {
+            
+          }
           NewTaskView()
             .offset(y: -150)
+          
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .background(Color.black.opacity(0.3))
         .onTapGesture {
-//          self.isPresented = false
+          self.isPresented = false
         }
       }
+  }
+  
+  private func createTask() {
+    var newTask = Task(title: self.taskTitle)
+    newTask.optionType = dayOfWeekManager.selectedDayIndices
+    self.userData.tasks.insert(newTask, at: 0)
+    self.taskTitle = ""
+    self.isPresented = false
   }
 }
 
