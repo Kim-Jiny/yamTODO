@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		36B7C9262ADCFCF700F7A140 /* yamTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOApp.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				36EDCF522AF089AA004F2483 /* Symbol.swift */,
+				301C90372AF69326008BEB80 /* DetailTextView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
 				36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */,
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
+				301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */,
 				36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */,
 				36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */,
 				36EDCF442AEF880E004F2483 /* LoginIntent.swift in Sources */,

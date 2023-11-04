@@ -15,6 +15,7 @@ struct EditPopupView: View {
   
   @State private var taskTitle = ""
   @State private var taskDesc = ""
+    @State private var taskDescHeight: CGFloat = 50
   
 //  @EnvironmentObject private var selectedDays: DayOfWeekManager
   @StateObject var dayOfWeekManager = DayOfWeekManager()
@@ -33,12 +34,22 @@ struct EditPopupView: View {
                 .padding()
                 .textFieldStyle(PlainTextFieldStyle())
             }
-            TextField("Enter task Detail ..", text: $taskDesc)
-              .textFieldStyle(RoundedBorderTextFieldStyle())
-              .padding()
+//            TextField("Enter task Detail ..", text: $taskDesc)
+//              .textFieldStyle(RoundedBorderTextFieldStyle())
+              DetailTextView(
+                      text: $taskDesc,
+                      height: $taskDescHeight,
+                      maxHeight: 200,
+                      textFont: .boldSystemFont(ofSize: 14),
+                      cornerRadius: 8,
+                      borderWidth: 2,
+                      borderColor: UIColor.yamBlue.cgColor,
+                      placeholder: "Enter task Detail .."
+                    )
+//              .padding()
+              .lineLimit(10)
+              .cornerRadius(8)
               .frame(height: 100)
-              .lineLimit(0)
-            .frame(height: 30)
             HStack(spacing: 0) {
               Image(systemName: "repeat")
                 .resizable()
@@ -51,7 +62,6 @@ struct EditPopupView: View {
                     Button(action: {
                       if !taskTitle.isEmpty {
                         createTask()
-//                        self.isPresented = false
                       }
                     }, label: {
                         Text("Save")
