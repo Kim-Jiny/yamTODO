@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
+		3678A7932AF8807100D7745F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3678A7922AF8807100D7745F /* Realm */; };
+		3678A7952AF8807100D7745F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3678A7942AF8807100D7745F /* RealmSwift */; };
+		3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */; };
+		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
 		36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */; };
@@ -76,6 +80,8 @@
 /* Begin PBXFileReference section */
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
+		3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateModel.swift; sourceTree = "<group>"; };
+		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		36B7C9262ADCFCF700F7A140 /* yamTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOApp.swift; sourceTree = "<group>"; };
 		36B7C92B2ADCFCF700F7A140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,9 +129,11 @@
 				36B7C96C2ADD214900F7A140 /* FirebaseMessaging in Frameworks */,
 				36B7C9662ADD214900F7A140 /* FirebaseDatabase in Frameworks */,
 				36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */,
+				3678A7952AF8807100D7745F /* RealmSwift in Frameworks */,
 				36B7C96E2ADD214900F7A140 /* FirebaseStorage in Frameworks */,
 				36B7C9602ADD214900F7A140 /* FirebaseAppCheck in Frameworks */,
 				36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */,
+				3678A7932AF8807100D7745F /* Realm in Frameworks */,
 				36B7C96A2ADD214900F7A140 /* FirebaseFunctions in Frameworks */,
 				36B7C9642ADD214900F7A140 /* FirebaseCrashlytics in Frameworks */,
 				36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */,
@@ -297,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */,
+				369350852AFB05120040AF26 /* RealmManager.swift */,
 			);
 			path = Utilies;
 			sourceTree = "<group>";
@@ -350,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				36B7C9562ADD19C200F7A140 /* TaskModel.swift */,
+				3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +426,8 @@
 				36B7C96B2ADD214900F7A140 /* FirebaseMessaging */,
 				36B7C96D2ADD214900F7A140 /* FirebaseStorage */,
 				36EDCF3E2AEF6607004F2483 /* Alamofire */,
+				3678A7922AF8807100D7745F /* Realm */,
+				3678A7942AF8807100D7745F /* RealmSwift */,
 			);
 			productName = yamTODO;
 			productReference = 36B7C9262ADCFCF700F7A140 /* yamTODO.app */;
@@ -492,6 +504,7 @@
 			packageReferences = (
 				36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3678A7912AF8807100D7745F /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 36B7C9272ADCFCF700F7A140 /* Products */;
 			projectDirPath = "";
@@ -538,6 +551,7 @@
 			files = (
 				3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,
+				369350862AFB05120040AF26 /* RealmManager.swift in Sources */,
 				36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */,
 				36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */,
 				36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */,
@@ -554,6 +568,7 @@
 				36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */,
 				36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,
+				3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */,
 				36B7C9542ADCFD4200F7A140 /* CalenderView2.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
 				36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */,
@@ -892,6 +907,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3678A7912AF8807100D7745F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.44.0;
+			};
+		};
 		36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -911,6 +934,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3678A7922AF8807100D7745F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3678A7912AF8807100D7745F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		3678A7942AF8807100D7745F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3678A7912AF8807100D7745F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
