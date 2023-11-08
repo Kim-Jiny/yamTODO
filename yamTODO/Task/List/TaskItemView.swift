@@ -12,24 +12,15 @@ struct TaskItemView: View {
 
   let task: Task
   @Binding var isShowEditPopup: Bool
+  @Binding var isShowDetailPopup: Bool
 
   var body: some View {
     return HStack {
-//      if self.isEditing {
-//        Image(systemName: "minus.circle")
-//          .foregroundColor(.red)
-//          .onTapGesture(count: 1) {
-//            self.delete()
-//          }
-//        NavigationLink(destination: TaskEditView(task: task).environmentObject(self.userData)) {
-//          Text(task.title)
-//        }
-//      } else {
-        Button(action: {
-          self.toggleDone()
-        }) {
-          Text(self.task.title)
+        Text(self.task.title)
+        .onTapGesture {
+          self.toggleDetail()
         }
+      
         Spacer()
         if task.isDone {
           Image(systemName: "checkmark").foregroundColor(.yamBlue)
@@ -42,7 +33,6 @@ struct TaskItemView: View {
               self.toggleDone()
             }
         }
-//      }
     }
   }
 
@@ -50,6 +40,11 @@ struct TaskItemView: View {
     guard !self.isShowEditPopup else { return }
     guard let index = self.userData.tasks.firstIndex(where: { $0.id == self.task.id }) else { return }
     self.userData.tasks[index].isDone.toggle()
+  }
+  
+  private func toggleDetail() {
+    guard !self.isShowDetailPopup else { return }
+    self.isShowDetailPopup.toggle()
   }
 
   private func delete() {

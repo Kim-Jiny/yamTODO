@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct EditPopupView: View {
+struct DetailPopupView: View {
   @EnvironmentObject var userData: UserData
+  @EnvironmentObject var taskData: TaskData
   @Binding var isPresented: Bool
   @State private var isKeyboardVisible = false
   
@@ -24,16 +25,14 @@ struct EditPopupView: View {
     GeometryReader { geometry in
         ZStack {
           VStack {
-            HStack(spacing: 0) {
-              Image(systemName: "pencil.line")
-                .resizable()
-                .frame(width: 22, height: 20)
-                .aspectRatio(contentMode: .fill)
-                .foregroundColor(.yamBlue)
-              TextField("Enter task", text: $taskTitle)
-                .padding()
-                .textFieldStyle(PlainTextFieldStyle())
-            }
+            TextField("공백으로 남기면 Task가 삭제됩니다.", text: $taskTitle)
+              .padding()
+              .textFieldStyle(PlainTextFieldStyle())
+//            HStack(spacing: 0) {
+//              TextField("공백으로 남기면 Task가 삭제됩니다.", text: $taskTitle)
+//                .padding()
+//                .textFieldStyle(PlainTextFieldStyle())
+//            }
               DetailTextView(
                       text: $taskDesc,
                       height: $taskDescHeight,
@@ -44,32 +43,23 @@ struct EditPopupView: View {
                       borderColor: UIColor.yamBlue.cgColor,
                       placeholder: "Enter task Detail .."
                     )
-//              .padding()
               .lineLimit(10)
               .cornerRadius(8)
               .frame(height: 100)
-            HStack(spacing: 0) {
-              Image(systemName: "repeat")
-                .resizable()
-                .frame(width: 22, height: 20)
-                .aspectRatio(contentMode: .fill)
-                .foregroundColor(.yamBlue)
-              RepeatView(selectedDays: $dayOfWeekManager.selectedDays)
+            HStack {
+                Button(action: {
+                  if !taskTitle.isEmpty {
+                    saveTask()
+                  }
+                }, label: {
+                    Text("Save")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .foregroundColor(.yamBlue)
+                    .fontWeight(.bold)
+                    .padding()
+                })
             }
-                HStack {
-                    Button(action: {
-                      if !taskTitle.isEmpty {
-                        createTask()
-                      }
-                    }, label: {
-                        Text("Save")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .foregroundColor(.yamBlue)
-                        .fontWeight(.bold)
-                        .padding()
-                    })
-                }
-                .frame(height: 50)
+            .frame(height: 50)
           }
           .padding(.top, 20)
           .padding()
@@ -79,8 +69,6 @@ struct EditPopupView: View {
           .onTapGesture {
             
           }
-          NewTaskView()
-            .offset(y: -150)
           
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -108,7 +96,7 @@ struct EditPopupView: View {
       }
   }
   
-  private func createTask() {
+  private func saveTask() {
     var newTask = Task(title: self.taskTitle)
     newTask.optionType = dayOfWeekManager.selectedDayIndices
     self.userData.tasks.insert(newTask, at: 0)
@@ -117,55 +105,3 @@ struct EditPopupView: View {
   }
 }
 
-struct NewTaskView: View {
-  
-  var body: some View {
-//    ZStack {
-      Text("New Task")
-        .font(.title2)
-        .fontWeight(.bold)
-        .foregroundColor(.yamBlue)
-        .multilineTextAlignment(.leading)
-        .frame(width: 200, height: 50)
-        .background(.white)
-        .cornerRadius(25)
-//    }
-//    .background(.white)
-  }
-}
-
-struct RepeatView: View {
-  
-  let daysOfWeek = DayOfWeek.allCases
-  @Binding var selectedDays: Set<DayOfWeek>
-  
-  init(selectedDays: Binding<Set<DayOfWeek>>) {
-    _selectedDays = selectedDays
-  }
-  
-  var body: some View {
-    HStack(spacing: 10) {
-      ForEach(daysOfWeek, id: \.self) { day in
-        Button(action: {
-          if selectedDays.contains(day) {
-            selectedDays.remove(day)
-          } else {
-            selectedDays.insert(day)
-          }
-        }, label: {
-          Text(day.displayName)
-            .frame(width: 20, height: 20)
-            .padding(2)
-            .overlay(
-              RoundedRectangle(cornerRadius: 15)
-                .stroke(selectedDays.contains(day) ? Color.yamBlue : Color.clear, lineWidth: 2)
-            )
-        })
-        .buttonStyle(PlainButtonStyle())
-        .foregroundColor(.primary)
-        .font(.caption)
-      }
-    }
-    .padding()
-  }
-}

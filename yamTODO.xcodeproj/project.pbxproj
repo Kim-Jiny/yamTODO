@@ -13,6 +13,7 @@
 		3678A7952AF8807100D7745F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3678A7942AF8807100D7745F /* RealmSwift */; };
 		3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */; };
 		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
+		369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350872AFB170E0040AF26 /* DetailPopupView.swift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
 		36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateModel.swift; sourceTree = "<group>"; };
 		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		369350872AFB170E0040AF26 /* DetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupView.swift; sourceTree = "<group>"; };
 		36B7C9262ADCFCF700F7A140 /* yamTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOApp.swift; sourceTree = "<group>"; };
 		36B7C92B2ADCFCF700F7A140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				36EDCF482AEF9566004F2483 /* Models */,
 				36EDCF452AEF8889004F2483 /* EditPopupView.swift */,
+				369350872AFB170E0040AF26 /* DetailPopupView.swift */,
 				3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */,
 			);
 			path = Edit;
@@ -573,6 +576,7 @@
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
 				36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */,
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
+				369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */,
 				301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */,
 				36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */,
 				36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */,

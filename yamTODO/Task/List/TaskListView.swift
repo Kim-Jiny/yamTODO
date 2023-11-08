@@ -11,27 +11,30 @@ struct TaskListView: View {
   @EnvironmentObject var userData: UserData
   @State var draftTitle: String = ""
   @Binding var isShowEditPopup: Bool
+  @Binding var isShowDetailPopup: Bool
   @State private var showCalender = false
 
   var body: some View {
     VStack {
       List {
         Section(header: Text(Date(), formatter: Self.calendarHeaderDateFormatter)) {
-//          TextField("Create a New Task...", text: $draftTitle, onCommit: self.createTask)
+          VStack {
+            Button {
+              self.isShowEditPopup = true
+            } label: {
+              Image(systemName: "plus.app")
+                .foregroundColor(.yamBlue)
+            }
+          }
+          .frame(maxWidth: .infinity)
           ForEach(self.userData.tasks) { task in
-            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup)
+            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup)
           }
         }
         .padding(.bottom, 0)
       }
     }
   }
-
-//  private func createTask() {
-//    let newTask = Task(title: self.draftTitle)
-//    self.userData.tasks.insert(newTask, at: 0)
-//    self.draftTitle = ""
-//  }
 }
 
 private extension TaskListView {

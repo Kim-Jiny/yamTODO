@@ -10,6 +10,7 @@ import RealmSwift
 class RealmManager {
   static let shared = RealmManager()
   
+  // 날짜를 키값으로 테스크 가져오기
   func getTasksByDateObject(forKey key: String) -> TasksByDateObject? {
     do {
       let realm = try Realm()
@@ -19,11 +20,12 @@ class RealmManager {
       return nil
     }
   }
-
+  // 해당 날짜에 테스크가 있는지 확인.
   func isKeyAlreadyExists(key: String) -> Bool {
       return getTasksByDateObject(forKey: key) != nil
   }
   
+  // 해당 날짜에 테스크가 있는경우 append 없는경우 생성하도록해서 Task 추가.
   func writeTasksByDateObject(forKey key: String, tasks: [TaskObject]) {
     do {
       let realm = try Realm() // Realm 객체 생성
@@ -43,11 +45,12 @@ class RealmManager {
         print("Error: \(error)")
     }
   }
-  
-  func writeOptionTask(tasks: [TaskObject]) {
-    
+  // 옵션은 각자 월,화,수,목,금,토,일 의 반복 키값에 넣음.
+  func writeOptionTask(optionId: String, tasks: [TaskObject]) {
+    self.writeTasksByDateObject(forKey: optionId, tasks: tasks)
   }
   
+  // 테스크를 삭제.
   func deleteTaskObjectFromDate(dateKeyId: String, TaskId: String) {
     do {
       let realm = try Realm() // Realm 객체 생성
@@ -65,4 +68,27 @@ class RealmManager {
       print("Error: \(error)")
     }
   }
+  // 테스크를 업데이트
+  func updateTaskObject(taskId: String, newTitle: String, newDescription: String, newIsDone: Bool) {
+      do {
+          let realm = try Realm() // Realm 객체 생성
+          defer {
+            realm.invalidate() // Realm 인스턴스 해제
+          }
+          guard let taskObject = realm.object(ofType: TaskObject.self, forPrimaryKey: taskId) else {
+              print("TaskObject not found")
+              return
+          }
+          try realm.write {
+              // 해당 taskObject의 속성 업데이트
+              taskObject.title = newTitle
+              taskObject.desc = newDescription
+              taskObject.isDone = newIsDone
+              //... (다른 속성 업데이트)
+          }
+      } catch {
+          print("Error: \(error)")
+      }
+  }
+
 }
