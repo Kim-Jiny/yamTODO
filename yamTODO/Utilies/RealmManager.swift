@@ -20,6 +20,16 @@ class RealmManager {
       return nil
     }
   }
+  // 테스크 id 가 유니크한지 가져오기
+  func getTaskObject(forKey key: String) -> TaskObject? {
+    do {
+      let realm = try Realm()
+      return realm.object(ofType: TaskObject.self, forPrimaryKey: key)
+    }catch {
+      print("Error: \(error)")
+      return nil
+    }
+  }
   // 해당 날짜에 테스크가 있는지 확인.
   func isKeyAlreadyExists(key: String) -> Bool {
       return getTasksByDateObject(forKey: key) != nil
@@ -32,7 +42,11 @@ class RealmManager {
       if let existingObject = getTasksByDateObject(forKey: key) {
         try realm.write {
           for task in tasks {
-            existingObject.tasks.append(task)
+            if let duplication = getTaskObject(forKey: task.id) {
+              // 중복일때 업데이트 해줘야할까? 고민됨.
+            }else {
+              existingObject.tasks.append(task)
+            }
           }
         }
       }else {
