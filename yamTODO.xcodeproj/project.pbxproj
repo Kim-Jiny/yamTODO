@@ -14,6 +14,7 @@
 		3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */; };
 		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
 		369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350872AFB170E0040AF26 /* DetailPopupView.swift */; };
+		36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A909E42AFCB88F00848754 /* Extension+Date.swift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
 		36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateModel.swift; sourceTree = "<group>"; };
 		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		369350872AFB170E0040AF26 /* DetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupView.swift; sourceTree = "<group>"; };
+		36A909E42AFCB88F00848754 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		36B7C9262ADCFCF700F7A140 /* yamTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOApp.swift; sourceTree = "<group>"; };
 		36B7C92B2ADCFCF700F7A140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36A909E32AFCB87E00848754 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				36A909E42AFCB88F00848754 /* Extension+Date.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		36B7C91D2ADCFCF700F7A140 = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +281,7 @@
 		36B7C9832ADE26A900F7A140 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				36A909E32AFCB87E00848754 /* Date */,
 				36B7C9842ADE26B000F7A140 /* Colors */,
 			);
 			path = Extensions;
@@ -557,6 +568,7 @@
 				369350862AFB05120040AF26 /* RealmManager.swift in Sources */,
 				36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */,
 				36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */,
+				36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */,
 				36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */,
 				36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */,
 				36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */,
