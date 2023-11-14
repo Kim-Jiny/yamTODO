@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct DetailPopupView: View {
-  @EnvironmentObject var userData: UserData
-  @EnvironmentObject var taskData: TaskData
+  @EnvironmentObject var taskList: TaskList
+  @Binding var selectedTask: SelectedTask?
   @Binding var isPresented: Bool
   @State private var isKeyboardVisible = false
   
@@ -97,9 +97,9 @@ struct DetailPopupView: View {
   }
   
   private func saveTask() {
-    var newTask = Task(title: self.taskTitle)
-    newTask.optionType = dayOfWeekManager.selectedDayIndices
-    self.userData.tasks.insert(newTask, at: 0)
+//    var newTask = Task(title: self.taskTitle)
+//    newTask.optionType = dayOfWeekManager.selectedDayIndices
+//    self.taskList.tasksObject.insert(newTask, at: 0)
     self.taskTitle = ""
     self.isPresented = false
   }

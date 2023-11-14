@@ -61,3 +61,7 @@ class TaskObject: Object {
         self.isRemove = false
     }
 }
+
+extension TaskObject: Identifiable {
+  
+}

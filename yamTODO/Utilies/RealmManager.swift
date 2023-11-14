@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+
 class RealmManager {
   static let shared = RealmManager()
   
@@ -20,7 +21,7 @@ class RealmManager {
       return nil
     }
   }
-  // 테스크 id 가 유니크한지 가져오기
+  // 테스크 가져오기
   func getTaskObject(forKey key: String) -> TaskObject? {
     do {
       let realm = try Realm()
@@ -41,7 +42,7 @@ class RealmManager {
       let realm = try Realm() // Realm 객체 생성
       if let existingObject = getTasksByDateObject(forKey: key) {
         try realm.write {
-          for task in tasks {
+          tasks.forEach { task in
             if let duplication = getTaskObject(forKey: task.id) {
               // 중복일때 업데이트 해줘야할까? 고민됨.
             }else {
@@ -83,7 +84,7 @@ class RealmManager {
     }
   }
   // 테스크를 업데이트
-  func updateTaskObject(taskId: String, newTitle: String, newDescription: String, newIsDone: Bool) {
+  func updateTaskObject(taskId: String, newTask: TaskObject) {
       do {
           let realm = try Realm() // Realm 객체 생성
           defer {
@@ -95,14 +96,42 @@ class RealmManager {
           }
           try realm.write {
               // 해당 taskObject의 속성 업데이트
-              taskObject.title = newTitle
-              taskObject.desc = newDescription
-              taskObject.isDone = newIsDone
+              taskObject.title = newTask.title
+              taskObject.desc = newTask.desc
+              taskObject.isDone = newTask.isDone
               //... (다른 속성 업데이트)
           }
       } catch {
           print("Error: \(error)")
       }
   }
+    
+//    func updateTaskIsDone(taskId: String) {
+//        do {
+//            let realm = try Realm() // Realm 객체 생성
+//            defer {
+//              realm.invalidate() // Realm 인스턴스 해제
+//            }
+//            guard let taskObject = realm.object(ofType: TaskObject.self, forPrimaryKey: taskId) else {
+//                print("TaskObject not found")
+//                return
+//            }
+//            try realm.write {
+//                taskObject.isDone = !taskObject.isDone
+//            }
+//        } catch {
+//            print("Error: \(error)")
+//        }
+//    }
+    
+    func updateTaskIsDone(task: TaskObject) {
+        do {
+            try task.realm?.write {
+                task.isDone = !task.isDone
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+    }
 
 }

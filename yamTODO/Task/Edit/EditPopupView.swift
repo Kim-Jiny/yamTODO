@@ -5,11 +5,12 @@
 //  Created by Jiny on 2023/10/30.
 //
 
-
+import Foundation
 import SwiftUI
+import RealmSwift
 
 struct EditPopupView: View {
-  @EnvironmentObject var userData: UserData
+  @EnvironmentObject var taskList: TaskList
   @Binding var isPresented: Bool
   @State private var isKeyboardVisible = false
   
@@ -108,10 +109,14 @@ struct EditPopupView: View {
       }
   }
   
+}
+
+extension EditPopupView {
   private func createTask() {
-    var newTask = Task(title: self.taskTitle)
-    newTask.optionType = dayOfWeekManager.selectedDayIndices
-    self.userData.tasks.insert(newTask, at: 0)
+    var newTask = TaskObject(title: self.taskTitle)
+    newTask.desc = self.taskDesc
+    RealmManager.shared.writeTasksByDateObject(forKey: taskList.date, tasks: [newTask])
+    taskList.tasksObject.insert(newTask, at: 0)
     self.taskTitle = ""
     self.isPresented = false
   }

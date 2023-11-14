@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct TaskListView: View {
-  @EnvironmentObject var userData: UserData
+  @EnvironmentObject var taskList: TaskList
   @State var draftTitle: String = ""
   @Binding var isShowEditPopup: Bool
   @Binding var isShowDetailPopup: Bool
+  @Binding var selectedTask: SelectedTask?
   @State private var showCalender = false
 
   var body: some View {
@@ -27,8 +28,8 @@ struct TaskListView: View {
             }
           }
           .frame(maxWidth: .infinity)
-          ForEach(self.userData.tasks) { task in
-            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup)
+          ForEach(self.taskList.tasksObject) { task in
+            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
           }
         }
         .padding(.bottom, 0)
