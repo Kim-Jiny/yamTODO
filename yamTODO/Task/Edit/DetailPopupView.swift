@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct DetailPopupView: View {
-  @EnvironmentObject var taskList: TaskList
-  @Binding var selectedTask: SelectedTask?
-  @Binding var isPresented: Bool
-  @State private var isKeyboardVisible = false
-  
-  @State private var taskTitle = ""
-  @State private var taskDesc = ""
+    @EnvironmentObject var taskList: TaskList
+    @Binding var selectedTask: SelectedTask?
+    @Binding var isPresented: Bool
+    @State private var isKeyboardVisible = false
+
+    @State private var taskTitle = ""
+    @State private var taskDesc = "dd"
     @State private var taskDescHeight: CGFloat = 50
   
 //  @EnvironmentObject private var selectedDays: DayOfWeekManager
-  @StateObject var dayOfWeekManager = DayOfWeekManager()
+    @StateObject var dayOfWeekManager = DayOfWeekManager()
   
   var body: some View {
     GeometryReader { geometry in
@@ -28,11 +28,6 @@ struct DetailPopupView: View {
             TextField("공백으로 남기면 Task가 삭제됩니다.", text: $taskTitle)
               .padding()
               .textFieldStyle(PlainTextFieldStyle())
-//            HStack(spacing: 0) {
-//              TextField("공백으로 남기면 Task가 삭제됩니다.", text: $taskTitle)
-//                .padding()
-//                .textFieldStyle(PlainTextFieldStyle())
-//            }
               DetailTextView(
                       text: $taskDesc,
                       height: $taskDescHeight,
@@ -83,6 +78,7 @@ struct DetailPopupView: View {
           }
         }
         .onAppear {
+            setupTask()
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
                 self.isKeyboardVisible = true
             }
@@ -94,14 +90,21 @@ struct DetailPopupView: View {
             NotificationCenter.default.removeObserver(self)
         }
       }
+      
   }
   
   private func saveTask() {
-//    var newTask = Task(title: self.taskTitle)
-//    newTask.optionType = dayOfWeekManager.selectedDayIndices
-//    self.taskList.tasksObject.insert(newTask, at: 0)
-    self.taskTitle = ""
-    self.isPresented = false
+      guard let selectedTask = selectedTask else { return }
+      selectedTask.updateText(self.taskTitle, self.taskDesc)
+      // 닫기
+      self.isPresented = false
   }
+    
+    private func setupTask() {
+        self.taskTitle = selectedTask?.selectedTask.title ?? ""
+        self.taskDesc = selectedTask?.selectedTask.desc ?? ""
+        
+        print("object decs \(selectedTask?.selectedTask)")
+    }
 }
 

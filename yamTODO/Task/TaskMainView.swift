@@ -14,9 +14,6 @@ struct TaskMainView: View {
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
     @State var selectedTask: SelectedTask?
-//  var userData = userDataObject()
-//  var tasksObject = RealmManager.shared.getTasksByDateObject(forKey: "20231110")?.tasks
-  
   var body: some View {
     NavigationView {
       ZStack {

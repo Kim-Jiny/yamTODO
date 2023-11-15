@@ -37,4 +37,8 @@ class TaskList: ObservableObject {
         RealmManager.shared.updateTaskIsDone(task: self.tasksObject[index])
         objectWillChange.send(self)
     }
+    
+//    func updateText(_ task: TaskObject) {
+//        
+//    }
 }

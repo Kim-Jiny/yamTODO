@@ -84,45 +84,21 @@ class RealmManager {
     }
   }
   // 테스크를 업데이트
-  func updateTaskObject(taskId: String, newTask: TaskObject) {
+    func updateTaskObject(task: TaskObject, taskTitle: String, taskDesc: String) {
       do {
-          let realm = try Realm() // Realm 객체 생성
-          defer {
-            realm.invalidate() // Realm 인스턴스 해제
-          }
-          guard let taskObject = realm.object(ofType: TaskObject.self, forPrimaryKey: taskId) else {
+          guard let taskObject = task.realm?.object(ofType: TaskObject.self, forPrimaryKey: task.id) else {
               print("TaskObject not found")
               return
           }
-          try realm.write {
+          try task.realm?.write {
               // 해당 taskObject의 속성 업데이트
-              taskObject.title = newTask.title
-              taskObject.desc = newTask.desc
-              taskObject.isDone = newTask.isDone
-              //... (다른 속성 업데이트)
+              taskObject.title = taskTitle
+              taskObject.desc = taskDesc
           }
       } catch {
           print("Error: \(error)")
       }
   }
-    
-//    func updateTaskIsDone(taskId: String) {
-//        do {
-//            let realm = try Realm() // Realm 객체 생성
-//            defer {
-//              realm.invalidate() // Realm 인스턴스 해제
-//            }
-//            guard let taskObject = realm.object(ofType: TaskObject.self, forPrimaryKey: taskId) else {
-//                print("TaskObject not found")
-//                return
-//            }
-//            try realm.write {
-//                taskObject.isDone = !taskObject.isDone
-//            }
-//        } catch {
-//            print("Error: \(error)")
-//        }
-//    }
     
     func updateTaskIsDone(task: TaskObject) {
         do {

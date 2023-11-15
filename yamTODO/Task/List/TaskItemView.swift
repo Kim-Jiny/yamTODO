@@ -18,10 +18,9 @@ struct TaskItemView: View {
   var body: some View {
     return HStack {
         Text(self.task.title)
-        .onTapGesture {
-          self.toggleDetail()
-        }
-      
+            .onTapGesture {
+              self.toggleDetail()
+            }
         Spacer()
         if task.isDone {
           Image(systemName: "checkmark").foregroundColor(.yamBlue)

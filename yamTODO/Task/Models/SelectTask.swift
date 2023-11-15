@@ -7,11 +7,19 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class SelectedTask: ObservableObject {
+    let objectWillChange = PassthroughSubject<SelectedTask, Never>()
     @Published var selectedTask: TaskObject
   
-  init(selectedTask: TaskObject) {
-    self.selectedTask = selectedTask
-  }
+    init(selectedTask: TaskObject) {
+        self.selectedTask = selectedTask
+    }
+    
+    
+    func updateText(_ title: String,_ desc: String) {
+        RealmManager.shared.updateTaskObject(task: selectedTask, taskTitle: title, taskDesc: desc)
+        objectWillChange.send(self)
+    }
 }
