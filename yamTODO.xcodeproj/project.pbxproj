@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
+		3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */; };
+		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
+		369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350872AFB170E0040AF26 /* DetailPopupView.swift */; };
+		36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A909E42AFCB88F00848754 /* Extension+Date.swift */; };
+		36A909E82AFDC4E700848754 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 36A909E72AFDC4E700848754 /* RealmSwift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
 		36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */; };
@@ -15,7 +21,6 @@
 		36B7C93B2ADCFCF800F7A140 /* yamTODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C93A2ADCFCF800F7A140 /* yamTODOTests.swift */; };
 		36B7C9452ADCFCF800F7A140 /* yamTODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */; };
 		36B7C9472ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */; };
-		36B7C9542ADCFD4200F7A140 /* CalenderView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */; };
 		36B7C9572ADD19C200F7A140 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9562ADD19C200F7A140 /* TaskModel.swift */; };
 		36B7C9592ADD206400F7A140 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */; };
 		36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */; };
@@ -39,11 +44,11 @@
 		36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9852ADE26C000F7A140 /* Extension+Color.swift */; };
 		36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9972ADF51DD00F7A140 /* TaskMainView.swift */; };
 		36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C99B2ADF63FB00F7A140 /* TaskHeader.swift */; };
-		36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */; };
 		36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9A62ADFB05700F7A140 /* APIError.swift */; };
 		36B7C9A92ADFB07300F7A140 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9A82ADFB07300F7A140 /* Request.swift */; };
 		36B7C9AB2ADFB0AE00F7A140 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */; };
 		36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9AD2ADFB35200F7A140 /* Serializable.swift */; };
+		36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CFD9732B02EEDE0037E03D /* SelectTask.swift */; };
 		36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */; };
 		36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36EDCF3E2AEF6607004F2483 /* Alamofire */; };
 		36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF402AEF6A0F004F2483 /* NetworkMonitor.swift */; };
@@ -73,7 +78,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
+		3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateModel.swift; sourceTree = "<group>"; };
+		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		369350872AFB170E0040AF26 /* DetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupView.swift; sourceTree = "<group>"; };
+		36A909E42AFCB88F00848754 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		36B7C9262ADCFCF700F7A140 /* yamTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yamTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOApp.swift; sourceTree = "<group>"; };
 		36B7C92B2ADCFCF700F7A140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +94,6 @@
 		36B7C9402ADCFCF800F7A140 /* yamTODOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yamTODOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOUITests.swift; sourceTree = "<group>"; };
 		36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView2.swift; sourceTree = "<group>"; };
 		36B7C9562ADD19C200F7A140 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36B7C96F2ADD233300F7A140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,11 +107,11 @@
 		36B7C9852ADE26C000F7A140 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		36B7C9972ADF51DD00F7A140 /* TaskMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMainView.swift; sourceTree = "<group>"; };
 		36B7C99B2ADF63FB00F7A140 /* TaskHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeader.swift; sourceTree = "<group>"; };
-		36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVIContainer.swift; sourceTree = "<group>"; };
 		36B7C9A62ADFB05700F7A140 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		36B7C9A82ADFB07300F7A140 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		36B7C9AD2ADFB35200F7A140 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		36CFD9732B02EEDE0037E03D /* SelectTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTask.swift; sourceTree = "<group>"; };
 		36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		36EDCF402AEF6A0F004F2483 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		36EDCF432AEF880E004F2483 /* LoginIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntent.swift; sourceTree = "<group>"; };
@@ -118,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A909E82AFDC4E700848754 /* RealmSwift in Frameworks */,
 				36B7C96C2ADD214900F7A140 /* FirebaseMessaging in Frameworks */,
 				36B7C9662ADD214900F7A140 /* FirebaseDatabase in Frameworks */,
 				36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */,
@@ -149,6 +159,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36A909E32AFCB87E00848754 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				36A909E42AFCB88F00848754 /* Extension+Date.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		36B7C91D2ADCFCF700F7A140 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +277,7 @@
 		36B7C9832ADE26A900F7A140 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				36A909E32AFCB87E00848754 /* Date */,
 				36B7C9842ADE26B000F7A140 /* Colors */,
 			);
 			path = Extensions;
@@ -294,7 +313,7 @@
 		36B7C99D2ADF676500F7A140 /* Utilies */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C99E2ADF678C00F7A140 /* MVIContainer.swift */,
+				369350852AFB05120040AF26 /* RealmManager.swift */,
 			);
 			path = Utilies;
 			sourceTree = "<group>";
@@ -320,7 +339,6 @@
 		36B7C9AF2ADFC25F00F7A140 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C9532ADCFD4200F7A140 /* CalenderView2.swift */,
 				36B7C9742ADE18B800F7A140 /* CalendarView.swift */,
 			);
 			path = Calender;
@@ -339,6 +357,7 @@
 			children = (
 				36EDCF482AEF9566004F2483 /* Models */,
 				36EDCF452AEF8889004F2483 /* EditPopupView.swift */,
+				369350872AFB170E0040AF26 /* DetailPopupView.swift */,
 				3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */,
 			);
 			path = Edit;
@@ -348,6 +367,8 @@
 			isa = PBXGroup;
 			children = (
 				36B7C9562ADD19C200F7A140 /* TaskModel.swift */,
+				3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */,
+				36CFD9732B02EEDE0037E03D /* SelectTask.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				36EDCF522AF089AA004F2483 /* Symbol.swift */,
+				301C90372AF69326008BEB80 /* DetailTextView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -413,6 +435,7 @@
 				36B7C96B2ADD214900F7A140 /* FirebaseMessaging */,
 				36B7C96D2ADD214900F7A140 /* FirebaseStorage */,
 				36EDCF3E2AEF6607004F2483 /* Alamofire */,
+				36A909E72AFDC4E700848754 /* RealmSwift */,
 			);
 			productName = yamTODO;
 			productReference = 36B7C9262ADCFCF700F7A140 /* yamTODO.app */;
@@ -489,6 +512,7 @@
 			packageReferences = (
 				36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 36B7C9272ADCFCF700F7A140 /* Products */;
 			projectDirPath = "";
@@ -535,8 +559,10 @@
 			files = (
 				3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,
+				369350862AFB05120040AF26 /* RealmManager.swift in Sources */,
 				36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */,
 				36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */,
+				36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */,
 				36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */,
 				36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */,
 				36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */,
@@ -551,10 +577,11 @@
 				36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */,
 				36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,
-				36B7C9542ADCFD4200F7A140 /* CalenderView2.swift in Sources */,
+				3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
-				36B7C99F2ADF678C00F7A140 /* MVIContainer.swift in Sources */,
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
+				369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */,
+				301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */,
 				36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */,
 				36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */,
 				36EDCF442AEF880E004F2483 /* LoginIntent.swift in Sources */,
@@ -562,6 +589,7 @@
 				36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */,
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,
 				36B7C97B2ADE1A0700F7A140 /* TaskEditView.swift in Sources */,
+				36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +916,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.44.0;
+			};
+		};
 		36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -907,6 +943,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		36A909E72AFDC4E700848754 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

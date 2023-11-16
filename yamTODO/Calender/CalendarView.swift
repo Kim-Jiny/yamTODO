@@ -91,7 +91,7 @@ struct CalendarView: View {
       )
       .disabled(!canMoveToPreviousMonth())
       
-      Text(month, formatter: Self.calendarHeaderDateFormatter)
+        Text(month, formatter: Date.calendarDateFormatter)
         .font(.title.bold())
       
       Button(
@@ -123,7 +123,7 @@ struct CalendarView: View {
             let date = getDate(for: index)
             let day = Calendar.current.component(.day, from: date)
             let clicked = clickedCurrentMonthDates == date
-            let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
+              let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
             
             CellView(day: day, clicked: clicked, isToday: isToday)
           } else if let prevMonthDate = Calendar.current.date(
@@ -208,18 +208,7 @@ private struct CellView: View {
 
 // MARK: - CalendarView Static 프로퍼티
 private extension CalendarView {
-  var today: Date {
-    let now = Date()
-    let components = Calendar.current.dateComponents([.year, .month, .day], from: now)
-    return Calendar.current.date(from: components)!
-  }
-  
-  static let calendarHeaderDateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "YYYY.MM"
-    return formatter
-  }()
-  
+    
   static let weekdaySymbols: [String] = Calendar.current.shortWeekdaySymbols
 }
 
@@ -306,19 +295,6 @@ private extension CalendarView {
       return newMonth
     }
     return month
-  }
-}
-
-// MARK: - Date 익스텐션
-extension Date {
-  static let calendarDayDateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "MMMM yyyy dd"
-    return formatter
-  }()
-  
-  var formattedCalendarDayDate: String {
-    return Date.calendarDayDateFormatter.string(from: self)
   }
 }
 

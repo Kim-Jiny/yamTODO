@@ -8,28 +8,19 @@
 import SwiftUI
 
 struct TaskItemView: View {
-  @EnvironmentObject var userData: UserData
+  @EnvironmentObject var taskList: TaskList
 
-  let task: Task
+  let task: TaskObject
   @Binding var isShowEditPopup: Bool
+  @Binding var isShowDetailPopup: Bool
+  @Binding var selectedTask: SelectedTask?
 
   var body: some View {
     return HStack {
-//      if self.isEditing {
-//        Image(systemName: "minus.circle")
-//          .foregroundColor(.red)
-//          .onTapGesture(count: 1) {
-//            self.delete()
-//          }
-//        NavigationLink(destination: TaskEditView(task: task).environmentObject(self.userData)) {
-//          Text(task.title)
-//        }
-//      } else {
-        Button(action: {
-          self.toggleDone()
-        }) {
-          Text(self.task.title)
-        }
+        Text(self.task.title)
+            .onTapGesture {
+              self.toggleDetail()
+            }
         Spacer()
         if task.isDone {
           Image(systemName: "checkmark").foregroundColor(.yamBlue)
@@ -42,19 +33,24 @@ struct TaskItemView: View {
               self.toggleDone()
             }
         }
-//      }
     }
   }
 
   private func toggleDone() {
-    guard !self.isShowEditPopup else { return }
-    guard let index = self.userData.tasks.firstIndex(where: { $0.id == self.task.id }) else { return }
-    self.userData.tasks[index].isDone.toggle()
+      guard !self.isShowEditPopup else { return }
+      self.taskList.updateIsDone(self.task.id)
+  }
+  
+  private func toggleDetail() {
+    guard !self.isShowDetailPopup else { return }
+    guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
+    self.selectedTask = SelectedTask(selectedTask: task)
+    self.isShowDetailPopup.toggle()
   }
 
   private func delete() {
-    self.userData.tasks.removeAll(where: { $0.id == self.task.id })
-    if self.userData.tasks.isEmpty {
+    self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })
+    if self.taskList.tasksObject.isEmpty {
       self.isShowEditPopup = false
     }
   }

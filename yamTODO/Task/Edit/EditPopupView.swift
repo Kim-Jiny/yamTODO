@@ -5,14 +5,18 @@
 //  Created by Jiny on 2023/10/30.
 //
 
-
+import Foundation
 import SwiftUI
+import RealmSwift
 
 struct EditPopupView: View {
-  @EnvironmentObject var userData: UserData
+  @EnvironmentObject var taskList: TaskList
   @Binding var isPresented: Bool
-//  @State private var selectedOption : [Int] = []
+  @State private var isKeyboardVisible = false
+  
   @State private var taskTitle = ""
+  @State private var taskDesc = ""
+    @State private var taskDescHeight: CGFloat = 50
   
 //  @EnvironmentObject private var selectedDays: DayOfWeekManager
   @StateObject var dayOfWeekManager = DayOfWeekManager()
@@ -27,12 +31,24 @@ struct EditPopupView: View {
                 .frame(width: 22, height: 20)
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.yamBlue)
-              TextField("Enter task details...", text: $taskTitle)
+              TextField("Enter task", text: $taskTitle)
                 .padding()
                 .textFieldStyle(PlainTextFieldStyle())
-              
             }
-            .frame(height: 30)
+              DetailTextView(
+                      text: $taskDesc,
+                      height: $taskDescHeight,
+                      maxHeight: 200,
+                      textFont: .boldSystemFont(ofSize: 14),
+                      cornerRadius: 8,
+                      borderWidth: 2,
+                      borderColor: UIColor.yamBlue.cgColor,
+                      placeholder: "Enter task Detail .."
+                    )
+//              .padding()
+              .lineLimit(10)
+              .cornerRadius(8)
+              .frame(height: 100)
             HStack(spacing: 0) {
               Image(systemName: "repeat")
                 .resizable()
@@ -45,7 +61,6 @@ struct EditPopupView: View {
                     Button(action: {
                       if !taskTitle.isEmpty {
                         createTask()
-//                        self.isPresented = false
                       }
                     }, label: {
                         Text("Save")
@@ -72,15 +87,36 @@ struct EditPopupView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .background(Color.black.opacity(0.3))
         .onTapGesture {
-          self.isPresented = false
+          if self.isKeyboardVisible {
+            // 키보드가 열려있으면 닫아주기
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+          }else {
+            // 키보드가 닫혀있으면 창을 닫아주기 
+            self.isPresented = false
+          }
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                self.isKeyboardVisible = true
+            }
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notification in
+                self.isKeyboardVisible = false
+            }
+        }
+        .onDisappear {
+            NotificationCenter.default.removeObserver(self)
         }
       }
   }
   
+}
+
+extension EditPopupView {
   private func createTask() {
-    var newTask = Task(title: self.taskTitle)
-    newTask.optionType = dayOfWeekManager.selectedDayIndices
-    self.userData.tasks.insert(newTask, at: 0)
+    var newTask = TaskObject(title: self.taskTitle)
+    newTask.desc = self.taskDesc
+    RealmManager.shared.writeTasksByDateObject(forKey: taskList.date, tasks: [newTask])
+    taskList.tasksObject.insert(newTask, at: 0)
     self.taskTitle = ""
     self.isPresented = false
   }

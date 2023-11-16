@@ -5,28 +5,26 @@
 //  Created by Jiny on 2023/10/18.
 //
 
+import Combine
 import SwiftUI
 
+
 struct TaskMainView: View {
-  @State var isShowEditPopup: Bool = false
-  var userData = userDataObject()
-  
+    @StateObject var taskList = TaskList(key: Date().dateKey)
+    @State var isShowEditPopup: Bool = false
+    @State var isShowDetailPopup: Bool = false
+    @State var selectedTask: SelectedTask?
   var body: some View {
     NavigationView {
-//      Text("TODO 👀")
-//        .navigationTitle("Title")
-//        .foregroundColor(.yamBlue)
       ZStack {
-        TaskListView(isShowEditPopup: $isShowEditPopup).environmentObject(userData.userData)
+        TaskListView(isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+          .environmentObject(taskList)
           .navigationBarTitle(Text("TODO 👀"))
           .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
             Image("edit")
               .resizable()
               .frame(width: 40, height: 40)
           })
-//          .sheet(isPresented: $isShowEditPopup, content: {
-//            EditPopupView(isPresented: $isShowEditPopup)
-//          })
           .navigationBarTitleDisplayMode(.inline)
           .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -40,7 +38,13 @@ struct TaskMainView: View {
             }
           }
         if isShowEditPopup {
-          EditPopupView(isPresented: $isShowEditPopup).environmentObject(userData.userData)
+          EditPopupView(isPresented: $isShowEditPopup).environmentObject(taskList)
+        }
+        if isShowDetailPopup {
+          if let selectedTask = selectedTask {
+            DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
+              .environmentObject(taskList)
+          }
         }
       }
     }

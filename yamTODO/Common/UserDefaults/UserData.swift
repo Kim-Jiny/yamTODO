@@ -9,7 +9,8 @@ import Combine
 import SwiftUI
 
 private let defaultTasks: [Task] = [
-  Task(title: "새로운 Task 만들기 📌")
+//  Task(title: "나만의 Calendar 채워넣기 📎"),
+//  Task(title: "새로운 Task 만들기 📌")
 ]
 
 final class UserData: ObservableObject {
