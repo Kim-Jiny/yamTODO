@@ -59,6 +59,7 @@
 		36EDCF502AF087C6004F2483 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF4F2AF087C6004F2483 /* MyPageView.swift */; };
 		36EDCF532AF089AA004F2483 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF522AF089AA004F2483 /* Symbol.swift */; };
 		36FBAA7C2B05A4A200FC78AB /* CalendarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */; };
+		36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		36EDCF4F2AF087C6004F2483 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		36EDCF522AF089AA004F2483 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMainView.swift; sourceTree = "<group>"; };
+		36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +395,7 @@
 		36EDCF4E2AF087AF004F2483 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				36FBAA7D2B05EFFC00FC78AB /* SettingPage */,
 				36EDCF4F2AF087C6004F2483 /* MyPageView.swift */,
 			);
 			path = MyPage;
@@ -416,6 +419,14 @@
 				36B7C9552ADD01FC00F7A140 /* Task */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		36FBAA7D2B05EFFC00FC78AB /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */,
+			);
+			path = SettingPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +612,7 @@
 				36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */,
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,
 				36B7C97B2ADE1A0700F7A140 /* TaskEditView.swift in Sources */,
+				36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */,
 				36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
