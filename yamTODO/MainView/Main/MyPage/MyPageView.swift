@@ -77,10 +77,10 @@ private extension MyPage {
   
   var orderInfoSection: some View {
     Section(header: Text("반복 설정").fontWeight(.medium)) {
-      NavigationLink(destination: CalendarView(month: .now)) {
-        Text("옵션 수정")
-      }
-      .frame(height: 44)
+//      NavigationLink(destination: CalendarView(month: .now)) {
+//        Text("옵션 수정")
+//      }
+//      .frame(height: 44)
     }
   }
   
