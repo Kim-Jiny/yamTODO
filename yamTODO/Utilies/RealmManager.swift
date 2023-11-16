@@ -83,6 +83,15 @@ class RealmManager {
       print("Error: \(error)")
     }
   }
+    
+    func addTask(forKey key: String, new task: TaskObject) {
+        if task.optionType.count > 0 {
+            
+        }else {
+            self.writeTasksByDateObject(forKey: key, tasks: task)
+        }
+    }
+    
   // 테스크를 업데이트
     func updateTaskObject(task: TaskObject, taskTitle: String, taskDesc: String) {
       do {
@@ -100,6 +109,7 @@ class RealmManager {
       }
   }
     
+    // 테스크 Done 업데이트
     func updateTaskIsDone(task: TaskObject) {
         do {
             try task.realm?.write {
