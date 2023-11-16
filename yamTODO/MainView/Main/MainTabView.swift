@@ -43,7 +43,7 @@ private extension MainTabView {
   }
   
   var calendar: some View {
-    CalendarView(month: .now)
+      CalendarMainView()
       .tag(Tabs.calendar)
       .tabItem(image: "calendar", text: "캘린더")
   }

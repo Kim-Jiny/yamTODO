@@ -8,17 +8,9 @@
 import SwiftUI
 
 struct CalendarView: View {
-  @State private var month: Date = Date()
-  @State var offset: CGSize = CGSize()
-  @State private var clickedCurrentMonthDates: Date?
-  
-  init(
-    month: Date = Date(),
-    clickedCurrentMonthDates: Date? = nil
-  ) {
-    _month = State(initialValue: month)
-    _clickedCurrentMonthDates = State(initialValue: clickedCurrentMonthDates)
-  }
+    @Binding var selectedMonth: Date
+    @Binding var selectedDate: Date
+    @State var offset: CGSize = CGSize()
   
   var body: some View {
     VStack {
@@ -91,7 +83,7 @@ struct CalendarView: View {
       )
       .disabled(!canMoveToPreviousMonth())
       
-        Text(month, formatter: Date.calendarDateFormatter)
+        Text(selectedMonth, formatter: Date.calendarDateFormatter)
         .font(.title.bold())
       
       Button(
@@ -110,8 +102,8 @@ struct CalendarView: View {
   
   // MARK: - 날짜 그리드 뷰
   private var calendarGridView: some View {
-    let daysInMonth: Int = numberOfDays(in: month)
-    let firstWeekday: Int = firstWeekdayOfMonth(in: month) - 1
+    let daysInMonth: Int = numberOfDays(in: selectedMonth)
+    let firstWeekday: Int = firstWeekdayOfMonth(in: selectedMonth) - 1
     let lastDayOfMonthBefore = numberOfDays(in: previousMonth())
     let numberOfRows = Int(ceil(Double(daysInMonth + firstWeekday) / 7.0))
     let visibleDaysOfNextMonth = numberOfRows * 7 - (daysInMonth + firstWeekday)
@@ -122,7 +114,7 @@ struct CalendarView: View {
           if index > -1 && index < daysInMonth {
             let date = getDate(for: index)
             let day = Calendar.current.component(.day, from: date)
-            let clicked = clickedCurrentMonthDates == date
+            let clicked = selectedDate == date
               let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
             
             CellView(day: day, clicked: clicked, isToday: isToday)
@@ -139,7 +131,7 @@ struct CalendarView: View {
         .onTapGesture {
           if 0 <= index && index < daysInMonth {
             let date = getDate(for: index)
-            clickedCurrentMonthDates = date
+              selectedDate = date
           }
         }
       }
@@ -219,8 +211,8 @@ private extension CalendarView {
     let calendar = Calendar.current
     guard let firstDayOfMonth = calendar.date(
       from: DateComponents(
-        year: calendar.component(.year, from: month),
-        month: calendar.component(.month, from: month),
+        year: calendar.component(.year, from: selectedMonth),
+        month: calendar.component(.month, from: selectedMonth),
         day: 1
       )
     ) else {
@@ -253,7 +245,7 @@ private extension CalendarView {
   
   /// 이전 월 마지막 일자
   func previousMonth() -> Date {
-    let components = Calendar.current.dateComponents([.year, .month], from: month)
+    let components = Calendar.current.dateComponents([.year, .month], from: selectedMonth)
     let firstDayOfMonth = Calendar.current.date(from: components)!
     let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: firstDayOfMonth)!
     
@@ -262,7 +254,7 @@ private extension CalendarView {
   
   /// 월 변경
   func changeMonth(by value: Int) {
-    self.month = adjustedMonth(by: value)
+    self.selectedMonth = adjustedMonth(by: value)
   }
   
   /// 이전 월로 이동 가능한지 확인
@@ -291,10 +283,10 @@ private extension CalendarView {
   
   /// 변경하려는 월 반환
   func adjustedMonth(by value: Int) -> Date {
-    if let newMonth = Calendar.current.date(byAdding: .month, value: value, to: month) {
+    if let newMonth = Calendar.current.date(byAdding: .month, value: value, to: selectedMonth) {
       return newMonth
     }
-    return month
+    return selectedMonth
   }
 }
 

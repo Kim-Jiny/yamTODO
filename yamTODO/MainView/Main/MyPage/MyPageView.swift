@@ -77,10 +77,10 @@ private extension MyPage {
   
   var orderInfoSection: some View {
     Section(header: Text("주문 정보").fontWeight(.medium)) {
-      NavigationLink(destination: CalendarView(month: .now)) {
-        Text("주문 목록")
-      }
-      .frame(height: 44)
+//      NavigationLink(destination: CalendarView(month: .now)) {
+//        Text("주문 목록")
+//      }
+//      .frame(height: 44)
     }
   }
   

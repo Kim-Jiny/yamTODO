@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
-		3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */; };
+		3693507F2AF8B6500040AF26 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TaskList.swift */; };
 		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
 		369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350872AFB170E0040AF26 /* DetailPopupView.swift */; };
 		36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A909E42AFCB88F00848754 /* Extension+Date.swift */; };
@@ -58,6 +58,7 @@
 		36EDCF4D2AF08585004F2483 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF4C2AF08585004F2483 /* MainTabView.swift */; };
 		36EDCF502AF087C6004F2483 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF4F2AF087C6004F2483 /* MyPageView.swift */; };
 		36EDCF532AF089AA004F2483 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF522AF089AA004F2483 /* Symbol.swift */; };
+		36FBAA7C2B05A4A200FC78AB /* CalendarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +81,7 @@
 /* Begin PBXFileReference section */
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
-		3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateModel.swift; sourceTree = "<group>"; };
+		3693507E2AF8B6500040AF26 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		369350872AFB170E0040AF26 /* DetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupView.swift; sourceTree = "<group>"; };
 		36A909E42AFCB88F00848754 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		36EDCF4C2AF08585004F2483 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		36EDCF4F2AF087C6004F2483 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		36EDCF522AF089AA004F2483 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,16 +192,13 @@
 		36B7C9282ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXGroup;
 			children = (
-				36B7C9AF2ADFC25F00F7A140 /* Calender */,
+				36FBAA792B05A46700FC78AB /* MainView */,
 				36B7C9AC2ADFB33A00F7A140 /* Serialization */,
 				36B7C9A52ADFB04000F7A140 /* Networking */,
 				36B7C99D2ADF676500F7A140 /* Utilies */,
 				36B7C97C2ADE1A2200F7A140 /* Common */,
 				36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */,
 				36B7C96F2ADD233300F7A140 /* AppDelegate.swift */,
-				36B7C9712ADD25D800F7A140 /* Login */,
-				36EDCF4B2AF0856D004F2483 /* Main */,
-				36B7C9552ADD01FC00F7A140 /* Task */,
 				36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */,
 				36B7C92B2ADCFCF700F7A140 /* ContentView.swift */,
 				36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */,
@@ -236,10 +235,10 @@
 		36B7C9552ADD01FC00F7A140 /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				36EDCF472AEF894B004F2483 /* Models */,
 				36B7C9972ADF51DD00F7A140 /* TaskMainView.swift */,
+				36EDCF472AEF894B004F2483 /* TaskModels */,
 				36EDCF422AEF87ED004F2483 /* Edit */,
-				36B7C9992ADF63CB00F7A140 /* List */,
+				36B7C9992ADF63CB00F7A140 /* ListView */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -291,7 +290,7 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		36B7C9992ADF63CB00F7A140 /* List */ = {
+		36B7C9992ADF63CB00F7A140 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
 				36B7C99A2ADF63D300F7A140 /* Header */,
@@ -299,7 +298,7 @@
 				36B7C9782ADE19EC00F7A140 /* TaskItemView.swift */,
 				36B7C97A2ADE1A0700F7A140 /* TaskEditView.swift */,
 			);
-			path = List;
+			path = ListView;
 			sourceTree = "<group>";
 		};
 		36B7C99A2ADF63D300F7A140 /* Header */ = {
@@ -336,12 +335,13 @@
 			path = Serialization;
 			sourceTree = "<group>";
 		};
-		36B7C9AF2ADFC25F00F7A140 /* Calender */ = {
+		36B7C9AF2ADFC25F00F7A140 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */,
 				36B7C9742ADE18B800F7A140 /* CalendarView.swift */,
 			);
-			path = Calender;
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		36EDCF3A2AEB9E60004F2483 /* Models */ = {
@@ -363,14 +363,14 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
-		36EDCF472AEF894B004F2483 /* Models */ = {
+		36EDCF472AEF894B004F2483 /* TaskModels */ = {
 			isa = PBXGroup;
 			children = (
 				36B7C9562ADD19C200F7A140 /* TaskModel.swift */,
-				3693507E2AF8B6500040AF26 /* TasksByDateModel.swift */,
+				3693507E2AF8B6500040AF26 /* TaskList.swift */,
 				36CFD9732B02EEDE0037E03D /* SelectTask.swift */,
 			);
-			path = Models;
+			path = TaskModels;
 			sourceTree = "<group>";
 		};
 		36EDCF482AEF9566004F2483 /* Models */ = {
@@ -405,6 +405,17 @@
 				301C90372AF69326008BEB80 /* DetailTextView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		36FBAA792B05A46700FC78AB /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				36B7C9712ADD25D800F7A140 /* Login */,
+				36EDCF4B2AF0856D004F2483 /* Main */,
+				36B7C9AF2ADFC25F00F7A140 /* Calendar */,
+				36B7C9552ADD01FC00F7A140 /* Task */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,6 +579,7 @@
 				36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */,
 				36B7C9752ADE18B800F7A140 /* CalendarView.swift in Sources */,
 				36EDCF4D2AF08585004F2483 /* MainTabView.swift in Sources */,
+				36FBAA7C2B05A4A200FC78AB /* CalendarMainView.swift in Sources */,
 				36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */,
 				36B7C9AB2ADFB0AE00F7A140 /* APIClient.swift in Sources */,
 				36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */,
@@ -577,7 +589,7 @@
 				36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */,
 				36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,
-				3693507F2AF8B6500040AF26 /* TasksByDateModel.swift in Sources */,
+				3693507F2AF8B6500040AF26 /* TaskList.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
 				369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */,
