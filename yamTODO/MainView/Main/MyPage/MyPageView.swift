@@ -76,7 +76,7 @@ private extension MyPage {
   }
   
   var orderInfoSection: some View {
-    Section(header: Text("주문 정보").fontWeight(.medium)) {
+    Section(header: Text("반복 설정").fontWeight(.medium)) {
 //      NavigationLink(destination: CalendarView(month: .now)) {
 //        Text("주문 목록")
 //      }

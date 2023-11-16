@@ -47,10 +47,10 @@ struct CalendarMainView: View {
                 }
             }
         }
-//        .onAppear {
-//            // selectedDate가 변경될 때마다 taskList를 업데이트
-//            taskList.date = selectedCalendar.selectedDate.dateKey
-//        }
+        .onAppear {
+            // selectedDate가 변경될 때마다 taskList를 업데이트
+            taskList.date = selectedCalendar.selectedDate.dateKey
+        }
     }
 }
 

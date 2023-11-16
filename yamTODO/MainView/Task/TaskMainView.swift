@@ -14,6 +14,9 @@ struct TaskMainView: View {
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
     @State var selectedTask: SelectedTask?
+    
+    
+    @State private var viewAppearedCount = 0
   var body: some View {
     NavigationView {
       ZStack {
@@ -48,6 +51,12 @@ struct TaskMainView: View {
           }
         }
       }
+    }
+    .onAppear {
+        // 뷰가 나타날 때마다 호출됩니다.
+        viewAppearedCount += 1
+        print("View appeared \(viewAppearedCount) times")
+        taskList.date = Date().dateKey
     }
   }
 }

@@ -384,8 +384,8 @@
 		36EDCF4B2AF0856D004F2483 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				36EDCF4E2AF087AF004F2483 /* MyPage */,
 				36EDCF4C2AF08585004F2483 /* MainTabView.swift */,
+				36EDCF4E2AF087AF004F2483 /* MyPage */,
 			);
 			path = Main;
 			sourceTree = "<group>";
