@@ -19,6 +19,11 @@ extension Date {
         formatter.dateFormat = "YYYYMMdd"
         return formatter
     }()
+    static let keyMonthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYYMM"
+        return formatter
+    }()
     
     static let calendarDayDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -38,5 +43,9 @@ extension Date {
     
     var dateKey: String {
       return Date.keyDateFormatter.string(from: self)
+    }
+    
+    var monthKey: String {
+      return Date.keyMonthFormatter.string(from: self)
     }
 }

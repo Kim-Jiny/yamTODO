@@ -132,20 +132,34 @@ class RealmManager {
     private func writeTasksByDateObject(date: Date, tasks: [TaskObject]) {
         do {
             let realm = try Realm() // Realm 객체 생성
-            if let existingObject = getTasksByDateObject(date: date) {
-                try realm.write {
-                    tasks.forEach { task in
-                        if let duplication = getTaskObject(forKey: task.id) {
-                            //TODO: 중복일때 업데이트 해줘야할까?
-                        }else {
-                            existingObject.tasks.append(task)
+            // 이번달 달력 데이터 있으면
+            if let monthObject = getTasksByMonthObject(date: date) {
+                // 해당 날짜에 데이터 있으면
+                if let existingObject = getTasksByDateObject(date: date) {
+                    try realm.write {
+                        tasks.forEach { task in
+                            // 해당 데이터 있으면
+                            if let duplication = getTaskObject(forKey: task.id) {
+                                //TODO: 중복일때 업데이트 해줘야할까?
+                            }else {
+                                // 데이터 추가
+                                existingObject.tasks.append(task)
+                            }
                         }
                     }
+                    // 해당 날짜에 데이터가 없으면 근데 달력 데이터는 있으니까
+                }else {
+                    let dateObject = TasksByDateObject(key: date.dateKey, tasks: tasks)
+                    try realm.write {
+                        monthObject.days.append(dateObject)
+                    }
                 }
+                // 달력 데이터가 없으면 그냥 아무것도 없으니까 처음부터 만들면 됌
             }else {
                 let dateObject = TasksByDateObject(key: date.dateKey, tasks: tasks)
+                let monthObject = TasksByMonthObject(key: date.monthKey, tasks: [dateObject])
                 try realm.write {
-                    realm.add(dateObject)
+                    realm.add(monthObject)
                 }
             }
         } catch {
@@ -211,5 +225,36 @@ class RealmManager {
             print("Error: \(error)")
         }
     }
-
+    
+    // Calendar Month Data
+    // 해당달의 키값으로 테스크 가져오기
+    func getTasksByMonthObject(date: Date) -> TasksByMonthObject? {
+      do {
+        let realm = try Realm()
+          // 그날의 task를 꺼냄
+          let tasks = realm.object(ofType: TasksByMonthObject.self, forPrimaryKey: date.monthKey)
+          
+        return tasks
+      }catch {
+        print("Error: \(error)")
+        return nil
+      }
+    }
+    
+    func getMonthData(date: Date) -> TasksByMonthListModel {
+        do {
+          let realm = try Realm()
+            // 그달의 task를 꺼냄
+            let monthData = realm.object(ofType: TasksByMonthObject.self, forPrimaryKey: date.monthKey)
+            
+            //리턴모델로 만듬.
+            let dateArray = Array(monthData?.days ?? List<TasksByDateObject>())
+            let returnModel = TasksByMonthListModel(date: date, days: dateArray)
+            
+          return returnModel
+        }catch {
+          print("Error: \(error)")
+            return TasksByMonthListModel(date: date, days: [])
+        }
+    }
 }

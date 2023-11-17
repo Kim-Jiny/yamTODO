@@ -15,6 +15,7 @@ class SelectedCalendar: ObservableObject {
 }
 
 struct CalendarMainView: View {
+    @StateObject var monthDataList = TasksByMonthListModel(date: Date())
     @StateObject var taskList = TaskList(date: Date())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
@@ -25,9 +26,11 @@ struct CalendarMainView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    CalendarView(selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
+                    CalendarView(monthDataList: monthDataList, selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
+//                        .environmentObject(monthDataList)
 //                        .navigationBarTitle(Text("Calendar 📆"))
                         .navigationBarTitleDisplayMode(.inline)
+                        
                     
                     TaskListView(selectedCalendar: selectedCalendar, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
                         .environmentObject(taskList)
@@ -49,6 +52,8 @@ struct CalendarMainView: View {
         .onAppear {
             // selectedDate가 변경될 때마다 taskList를 업데이트
             taskList.date = selectedCalendar.selectedDate
+//            monthDataList.date = selectedCalendar.selectedMonth
+            print(selectedCalendar.selectedMonth.monthKey)
         }
     }
 }

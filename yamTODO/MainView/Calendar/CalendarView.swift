@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @Binding var monthDataList: TasksByMonthListModel
     @Binding var selectedMonth: Date
     @Binding var selectedDate: Date
     @State var offset: CGSize = CGSize()

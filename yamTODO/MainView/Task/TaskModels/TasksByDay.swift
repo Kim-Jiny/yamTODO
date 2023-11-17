@@ -35,7 +35,6 @@ class TaskList: ObservableObject {
     }
     
     func updateTasks() {
-        self.tasksObject = []
         self.tasksObject = RealmManager.shared.getTasksByDateList(date: date).tasks
     }
     
