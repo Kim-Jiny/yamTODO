@@ -13,7 +13,7 @@ class SelectedTask: ObservableObject {
     let objectWillChange = PassthroughSubject<SelectedTask, Never>()
     @Published var selectedTask: TaskObject?
   
-    init(selectedTask: TaskObject) {
+    init(selectedTask: TaskObject?) {
         self.selectedTask = selectedTask
     }
     

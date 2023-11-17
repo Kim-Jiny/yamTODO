@@ -13,7 +13,7 @@ struct TaskListView: View {
     @State var draftTitle: String = ""
     @Binding var isShowEditPopup: Bool
     @Binding var isShowDetailPopup: Bool
-    @Binding var selectedTask: SelectedTask?
+    @Binding var selectedTask: SelectedTask
 //    @State private var showCalender = false
 
     var body: some View {
@@ -43,7 +43,13 @@ struct TaskListView: View {
 //                print("@update \(taskList.tasksObject)")
 //                self.showCalender.toggle()
             }
+            
             .onReceive(selectedCalendar.$selectedDate) { _ in
+                taskList.date = selectedCalendar.selectedDate
+            }
+            
+            .onReceive(selectedTask.objectWillChange) { _ in
+                print("selected Task \n\n\(selectedTask.selectedTask)\n\n")
                 taskList.date = selectedCalendar.selectedDate
             }
         }

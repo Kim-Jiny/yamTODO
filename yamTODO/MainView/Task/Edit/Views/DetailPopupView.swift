@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DetailPopupView: View {
     @EnvironmentObject var taskList: TaskList
-    @Binding var selectedTask: SelectedTask?
+    @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
     
     @State private var isKeyboardVisible = false
@@ -114,25 +114,19 @@ struct DetailPopupView: View {
   }
   
     private func saveTask() {
-        guard let selectedTask = selectedTask else { return }
         selectedTask.updateText(self.taskTitle, self.taskDesc)
         // 닫기
         self.isPresented = false
     }
     
     private func setupTask() {
-        self.taskTitle = selectedTask?.selectedTask?.title ?? ""
-        self.taskDesc = selectedTask?.selectedTask?.desc ?? ""
+        self.taskTitle = selectedTask.selectedTask?.title ?? ""
+        self.taskDesc = selectedTask.selectedTask?.desc ?? ""
     }
     
     private func deleteTask() {
-        print("삭제가 선택되었습니다.")
-        guard let selectedTask = selectedTask?.selectedTask else { return }
-//        self.isPresented = false
-        self.selectedTask?.deleteSelectTask()
+        self.selectedTask.deleteSelectTask()
         self.isPresented = false
-//        self.selectedTask?.selectedTask = nil
-//        taskList.deleteTask(selectedTask.id)
     }
 }
 

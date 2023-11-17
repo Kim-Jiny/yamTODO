@@ -14,7 +14,7 @@ struct RepeatItemView: View {
   let task: TaskObject
   @Binding var isShowEditPopup: Bool
   @Binding var isShowDetailPopup: Bool
-  @Binding var selectedTask: SelectedTask?
+  @Binding var selectedTask: SelectedTask
 
   var body: some View {
     return HStack {

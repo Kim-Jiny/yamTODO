@@ -41,6 +41,7 @@ class RealmManager {
                 // TODO: DB에도 추가해야함.@ rootId에 Id 넣어서.
                 let newRepeatTask = TaskObject(title: repeatTask.title)
                 newRepeatTask.newTask(old: repeatTask)
+                newRepeatTask.date = date
                 self.writeTasksByDateObject(date: date, tasks: [newRepeatTask])
                 returnModel.tasks.append(newRepeatTask)
             }

@@ -19,7 +19,7 @@ struct CalendarMainView: View {
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
-    @State var selectedTask: SelectedTask?
+    @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
 
     var body: some View {
         NavigationView {
@@ -40,10 +40,8 @@ struct CalendarMainView: View {
                 }
 
                 if isShowDetailPopup {
-                    if let selectedTask = selectedTask {
-                        DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
-                            .environmentObject(taskList)
-                    }
+                    DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
+                        .environmentObject(taskList)
                 }
             }
         }

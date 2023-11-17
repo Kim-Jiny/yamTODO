@@ -12,7 +12,7 @@ struct RepeatSettingView: View {
     @StateObject var taskList = OptionTaskList()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
-    @State var selectedTask: SelectedTask?
+    @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
     @State var selectedDate = Date()
     var body: some View {
         NavigationView {

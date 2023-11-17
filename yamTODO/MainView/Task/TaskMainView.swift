@@ -13,7 +13,7 @@ struct TaskMainView: View {
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
-    @State var selectedTask: SelectedTask?
+    @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
     
     
     @State private var viewAppearedCount = 0
@@ -33,7 +33,7 @@ struct TaskMainView: View {
             EditPopupView(selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)
         }
         if isShowDetailPopup {
-            if selectedTask != nil {
+            if selectedTask.selectedTask != nil {
             DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
               .environmentObject(taskList)
             }
