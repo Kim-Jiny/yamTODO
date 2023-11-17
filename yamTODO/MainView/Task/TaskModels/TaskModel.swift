@@ -44,7 +44,7 @@ class TaskObject: Object {
     @Persisted var optionType: List<Int>
     @Persisted var rootId: String
     @Persisted var removedBy: Date?
-    @Persisted var createdBt: Date
+    @Persisted var createdBy: Date
     @Persisted var isRemove: Bool
 
     convenience init(title: String) {
@@ -57,8 +57,21 @@ class TaskObject: Object {
         self.optionType = List<Int>()
         self.rootId = ""
         self.removedBy = nil
-        self.createdBt = Date()
+        self.createdBy = Date()
         self.isRemove = false
+    }
+    
+    func newTask(old: TaskObject) {
+        self.id = UUID().uuidString
+        self.title = old.title
+        self.desc = old.desc
+        self.isDone = old.isDone
+        self.date = old.date
+        self.optionType = old.optionType
+        self.rootId = old.rootId
+        self.removedBy = old.removedBy
+        self.createdBy = old.createdBy
+        self.isRemove = old.isRemove
     }
 }
 

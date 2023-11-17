@@ -61,6 +61,7 @@
 		36FBAA7C2B05A4A200FC78AB /* CalendarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */; };
 		36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */; };
 		36FBAA872B06004000FC78AB /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA862B06004000FC78AB /* RepeatView.swift */; };
+		36FBAA8B2B0717E500FC78AB /* RepeatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMainView.swift; sourceTree = "<group>"; };
 		36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatSettingView.swift; sourceTree = "<group>"; };
 		36FBAA862B06004000FC78AB /* RepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
+		36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,7 +427,7 @@
 		36FBAA7D2B05EFFC00FC78AB /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
-				36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */,
+				36FBAA892B0717CD00FC78AB /* Repeat */,
 			);
 			path = SettingPage;
 			sourceTree = "<group>";
@@ -438,6 +440,15 @@
 				369350872AFB170E0040AF26 /* DetailPopupView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		36FBAA892B0717CD00FC78AB /* Repeat */ = {
+			isa = PBXGroup;
+			children = (
+				36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */,
+				36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */,
+			);
+			path = Repeat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -621,6 +632,7 @@
 				36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */,
 				36EDCF442AEF880E004F2483 /* LoginIntent.swift in Sources */,
 				36EDCF502AF087C6004F2483 /* MyPageView.swift in Sources */,
+				36FBAA8B2B0717E500FC78AB /* RepeatItemView.swift in Sources */,
 				36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */,
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,
 				36B7C97B2ADE1A0700F7A140 /* TaskEditView.swift in Sources */,

@@ -14,6 +14,7 @@ struct MyPage: View {
   @State private var nickname: String = ""
   private let pickerDataSource: [CGFloat] = [140, 150, 160]
   @State private var isNotice: Bool = false
+    @State var isShowRepeatView: Bool = false
   // MARK: Body
   
   var body: some View {
@@ -22,7 +23,7 @@ struct MyPage: View {
         userInfo
         
         Form {
-          orderInfoSection
+          repeatInfoSection
           appSettingSection
         }
       }
@@ -75,8 +76,19 @@ private extension MyPage {
       .autocapitalization(.none)
   }
   
-  var orderInfoSection: some View {
+  var repeatInfoSection: some View {
     Section(header: Text("반복 설정").fontWeight(.medium)) {
+        Button {
+            isShowRepeatView = true
+        } label: {
+            Text("반복 할 일 수정")
+        }.sheet(isPresented: $isShowRepeatView) {
+            RepeatSettingView()
+        }
+//        .fullScreenCover(isPresented: $isShowRepeatView) {
+//            RepeatSettingView()
+//        }
+        .frame(height: 44)
 //      NavigationLink(destination: CalendarView(month: .now)) {
 //        Text("옵션 수정")
 //      }

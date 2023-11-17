@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class RealmManager {
-  static let shared = RealmManager()
+    static let shared = RealmManager()
     fileprivate let optionKey = "TaskRepeat"
   
   // 날짜를 키값으로 테스크 가져오기
@@ -38,7 +38,11 @@ class RealmManager {
             if !repeateArray.contains(where: { $0 == repeatTask.id }) {
                 // repeateArray에 repeatTask.id가 없는 경우
                 // 그날의 task List에 반복 테스크를 넣어서 리턴시킴.
-                returnModel.tasks.append(repeatTask)
+                // TODO: DB에도 추가해야함.@ rootId에 Id 넣어서.
+                let newRepeatTask = TaskObject(title: repeatTask.title)
+                newRepeatTask.newTask(old: repeatTask)
+                self.writeTasksByDateObject(date: date, tasks: [newRepeatTask])
+                returnModel.tasks.append(newRepeatTask)
             }
         }
         
@@ -48,8 +52,16 @@ class RealmManager {
         return TasksListModel(key: date.dateKey, tasks: [])
     }
   }
+    // 반복 옵션List 가지고오기
+    func getOptionList(key: String) -> TasksListModel {
+        if let optionTask = getOptionObject(key: key) {
+            return TasksListModel(key: key, tasks: Array(optionTask.tasks))
+        }else {
+            return TasksListModel(key: key, tasks: [])
+        }
+    }
     // 날짜를 키값으로 테스크 가져오기
-    func getTasksByDateObject(date: Date) -> TasksByDateObject? {
+    private func getTasksByDateObject(date: Date) -> TasksByDateObject? {
       do {
         let realm = try Realm()
           // 그날의 task를 꺼냄
@@ -63,7 +75,7 @@ class RealmManager {
     }
 
     // 반복 옵션List 가지고오기
-    func getOptionObject(key: String) -> TasksByDateObject? {
+    private func getOptionObject(key: String) -> TasksByDateObject? {
       do {
         let realm = try Realm()
           let tasks = realm.object(ofType: TasksByDateObject.self, forPrimaryKey: key)
@@ -76,7 +88,7 @@ class RealmManager {
     }
     
   // 테스크 가져오기
-  func getTaskObject(forKey key: String) -> TaskObject? {
+  private func getTaskObject(forKey key: String) -> TaskObject? {
     do {
       let realm = try Realm()
       return realm.object(ofType: TaskObject.self, forPrimaryKey: key)
@@ -91,21 +103,22 @@ class RealmManager {
 //  }
   
   // 해당 날짜에 테스크가 있는경우 append 없는경우 생성하도록해서 Task 추가.
-    private func writeOptionObject(key: String, tasks: [TaskObject]) {
+    private func writeOptionObject(key: String, task: TaskObject) {
         do {
             let realm = try Realm() // Realm 객체 생성
             if let existingObject = getOptionObject(key: key){
                 try realm.write {
-                    tasks.forEach { task in
-                        if let duplication = getTaskObject(forKey: task.id) {
-                            //TODO: 중복일때 업데이트 해줘야할까?
-                        }else {
-                            existingObject.tasks.append(task)
-                        }
+                    if let duplication = getTaskObject(forKey: task.id) {
+                        //TODO: 중복일때 업데이트 해줘야할까?
+                    }else {
+                        task.rootId = task.id
+                        existingObject.tasks.append(task)
                     }
                 }
             }else {
-                let dateObject = TasksByDateObject(key: key, tasks: tasks)
+                let optionTask = task
+                optionTask.rootId = task.id
+                let dateObject = TasksByDateObject(key: key, tasks: [optionTask])
                 try realm.write {
                     realm.add(dateObject)
                 }
@@ -161,7 +174,7 @@ class RealmManager {
     func addTask(date: Date, new task: TaskObject) {
         // 반복 옵션이 있는경우 반복옵션 Table에 기록해야함.
         if task.optionType.count > 0 {
-            self.writeOptionObject(key: optionKey, tasks: [task])
+            self.writeOptionObject(key: optionKey, task: task)
         }else {
             self.writeTasksByDateObject(date: date, tasks: [task])
         }

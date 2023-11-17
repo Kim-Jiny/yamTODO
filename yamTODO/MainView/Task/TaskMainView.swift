@@ -45,7 +45,7 @@ struct TaskMainView: View {
           EditPopupView(isPresented: $isShowEditPopup).environmentObject(taskList)
         }
         if isShowDetailPopup {
-          if let selectedTask = selectedTask {
+            if selectedTask != nil {
             DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
               .environmentObject(taskList)
           }

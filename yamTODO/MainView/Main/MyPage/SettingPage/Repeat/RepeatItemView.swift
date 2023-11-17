@@ -1,14 +1,15 @@
 //
-//  TaskItemView.swift
+//  RepeatItemView.swift
 //  yamTODO
 //
-//  Created by Jiny on 2023/10/17.
+//  Created by Jiny on 11/17/23.
 //
 
+import Foundation
 import SwiftUI
 
-struct TaskItemView: View {
-  @EnvironmentObject var taskList: TaskList
+struct RepeatItemView: View {
+  @EnvironmentObject var taskList: OptionTaskList
 
   let task: TaskObject
   @Binding var isShowEditPopup: Bool
@@ -17,6 +18,7 @@ struct TaskItemView: View {
 
   var body: some View {
     return HStack {
+        //TODO 월화수목반복에대한 리스트 표시
         if task.rootId != "" {
             Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
         }
@@ -25,23 +27,7 @@ struct TaskItemView: View {
               self.toggleDetail()
             }
         Spacer()
-        if task.isDone {
-          Image(systemName: "checkmark").foregroundColor(.yamBlue)
-            .onTapGesture {
-              self.toggleDone()
-            }
-        }else {
-          Image(systemName: "checkmark").foregroundColor(.lightGray)
-            .onTapGesture {
-              self.toggleDone()
-            }
-        }
     }
-  }
-
-  private func toggleDone() {
-      guard !self.isShowEditPopup else { return }
-      self.taskList.updateIsDone(self.task.id)
   }
   
   private func toggleDetail() {

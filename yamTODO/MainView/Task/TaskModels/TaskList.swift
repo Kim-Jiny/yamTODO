@@ -47,6 +47,34 @@ class TaskList: ObservableObject {
     
 }
 
+class OptionTaskList: ObservableObject {
+    let objectWillChange = PassthroughSubject<OptionTaskList, Never>()
+    @Published var tasksObject: [TaskObject] = []
+    @Published var key: String {
+        didSet {
+            updateTasks()
+            objectWillChange.send(self)
+        }
+    }
+    
+    init() {
+        self.key = "TaskRepeat"
+        updateTasks()
+    }
+    
+    func updateTasks() {
+        self.tasksObject = []
+        self.tasksObject = RealmManager.shared.getOptionList(key: key).tasks
+    }
+    
+    func updateIsDone(_ taskId: String) {
+        guard let index = self.tasksObject.firstIndex(where: { $0.id == taskId }) else { return }
+        RealmManager.shared.updateTaskIsDone(task: self.tasksObject[index])
+        objectWillChange.send(self)
+    }
+    
+}
+
 
 class TasksListModel {
     var key: String

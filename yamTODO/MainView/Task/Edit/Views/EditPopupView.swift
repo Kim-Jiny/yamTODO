@@ -124,7 +124,8 @@ extension EditPopupView {
             newTask.optionType.append(val)
         }
         RealmManager.shared.addTask(date: taskList.date, new: newTask)
-        taskList.tasksObject.insert(newTask, at: 0)
+        taskList.updateTasks()
+//        taskList.tasksObject.insert(newTask, at: 0)
         self.taskTitle = ""
         self.isPresented = false
     }
