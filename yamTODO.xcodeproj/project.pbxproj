@@ -62,6 +62,7 @@
 		36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */; };
 		36FBAA872B06004000FC78AB /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA862B06004000FC78AB /* RepeatView.swift */; };
 		36FBAA8B2B0717E500FC78AB /* RepeatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */; };
+		36FBAA8D2B07527000FC78AB /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA8C2B07527000FC78AB /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatSettingView.swift; sourceTree = "<group>"; };
 		36FBAA862B06004000FC78AB /* RepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
 		36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatItemView.swift; sourceTree = "<group>"; };
+		36FBAA8C2B07527000FC78AB /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				369350852AFB05120040AF26 /* RealmManager.swift */,
+				36FBAA8C2B07527000FC78AB /* MailView.swift */,
 			);
 			path = Utilies;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				36B7C9822ADE1A6F00F7A140 /* UserData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,
 				3693507F2AF8B6500040AF26 /* TaskList.swift in Sources */,
+				36FBAA8D2B07527000FC78AB /* MailView.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
 				369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */,

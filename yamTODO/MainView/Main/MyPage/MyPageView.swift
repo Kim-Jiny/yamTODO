@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import UIKit
+import MessageUI
 
 struct MyPage: View {
+    @State private var isShowingMailView = false
+    @State private var showFailedMailAlert = false
+    @State private var result: Result<MFMailComposeResult, Error>?
     @State private var isShowNotice: Bool = false
     @State var isShowRepeatView: Bool = false
     @State private var isAppNotice: Bool = false
@@ -27,9 +32,6 @@ struct MyPage: View {
       }
       .navigationBarTitle("마이 페이지")
     }
-//    .sheet(isPresented: $isPickerPresented) {
-//      ImagePickerView(pickedImage: self.$pickedImage)
-//    }
   }
 }
 
@@ -81,23 +83,46 @@ private extension MyPage {
       Section(header: Text("소통하기").fontWeight(.medium)) {
           
           Button {
-              isShowRepeatView = true
+              if MFMailComposeViewController.canSendMail() {
+                  self.isShowingMailView.toggle()
+              } else {
+                  self.showFailedMailAlert = true
+              }
           } label: {
-              Text("문의하기")
-          }.sheet(isPresented: $isShowRepeatView) {
-              RepeatSettingView()
+              Text("개발자에게 이메일 보내기")
+          }
+          .sheet(isPresented: $isShowingMailView) {
+              MailComposeViewController(isShowing: self.$isShowingMailView)
+          }.alert(isPresented: $showFailedMailAlert) {
+              Alert(title: Text("이메일 전송 불가"), message: Text("이 기기에서 이메일을 보낼 수 없습니다."), dismissButton: .default(Text("확인")))
           }
           .frame(height: 44)
-          
-          Button {
-              isShowRepeatView = true
-          } label: {
-              Text("개발자에게 후원하기")
-          }.sheet(isPresented: $isShowRepeatView) {
-              RepeatSettingView()
-          }
-          .frame(height: 44)
+        
       }
     }
+    
 }
 
+extension ContentView {
+    class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
+        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+            controller.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
+}
+extension Result {
+    var isSuccess: Bool {
+        if case .success = self {
+            return true
+        }
+        return false
+    }
+
+    var isFailure: Bool {
+        return !isSuccess
+    }
+}

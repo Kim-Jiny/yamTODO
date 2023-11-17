@@ -38,7 +38,6 @@ class RealmManager {
             if !repeateArray.contains(where: { $0 == repeatTask.id }) {
                 // repeateArray에 repeatTask.id가 없는 경우
                 // 그날의 task List에 반복 테스크를 넣어서 리턴시킴.
-                // TODO: DB에도 추가해야함.@ rootId에 Id 넣어서.
                 let newRepeatTask = TaskObject(title: repeatTask.title)
                 newRepeatTask.newTask(old: repeatTask)
                 newRepeatTask.date = date
