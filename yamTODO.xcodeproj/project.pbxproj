@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65472B077E7A00DB3684 /* CalendarCellView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		3693507F2AF8B6500040AF26 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TaskList.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300E65472B077E7A00DB3684 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
@@ -169,6 +171,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300E65462B077E5D00DB3684 /* CalendarCell */ = {
+			isa = PBXGroup;
+			children = (
+				300E65472B077E7A00DB3684 /* CalendarCellView.swift */,
+			);
+			path = CalendarCell;
+			sourceTree = "<group>";
+		};
 		36A909E32AFCB87E00848754 /* Date */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +357,7 @@
 		36B7C9AF2ADFC25F00F7A140 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				300E65462B077E5D00DB3684 /* CalendarCell */,
 				36FBAA7B2B05A4A200FC78AB /* CalendarMainView.swift */,
 				36B7C9742ADE18B800F7A140 /* CalendarView.swift */,
 			);
@@ -641,6 +652,7 @@
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,
 				36B7C97B2ADE1A0700F7A140 /* TaskEditView.swift in Sources */,
 				36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */,
+				300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */,
 				36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,7 +812,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
-				DEVELOPMENT_TEAM = 799GLJ393L;
+				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -813,7 +825,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -829,7 +841,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
-				DEVELOPMENT_TEAM = 799GLJ393L;
+				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -842,7 +854,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

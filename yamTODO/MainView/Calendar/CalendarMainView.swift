@@ -26,12 +26,13 @@ struct CalendarMainView: View {
             ZStack {
                 VStack {
                     CalendarView(selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
-                        .navigationBarTitle(Text("Calendar 📆"))
+//                        .navigationBarTitle(Text("Calendar 📆"))
                         .navigationBarTitleDisplayMode(.inline)
                     
                     TaskListView(selectedCalendar: selectedCalendar, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
                         .environmentObject(taskList)
                 }
+                .padding(.top, 30)
                 
                 if isShowEditPopup {
                     // EditPopupView(isPresented: $isShowEditPopup).environmentObject(taskList)

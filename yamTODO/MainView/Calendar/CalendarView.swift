@@ -117,7 +117,7 @@ struct CalendarView: View {
             let clicked = selectedDate == date
               let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
             
-            CellView(day: day, clicked: clicked, isToday: isToday)
+              CalendarCellView(day: day, clicked: clicked, isToday: isToday)
           } else if let prevMonthDate = Calendar.current.date(
             byAdding: .day,
             value: index + lastDayOfMonthBefore,
@@ -125,7 +125,7 @@ struct CalendarView: View {
           ) {
             let day = Calendar.current.component(.day, from: prevMonthDate)
             
-            CellView(day: day, isCurrentMonthDay: false)
+              CalendarCellView(day: day, isCurrentMonthDay: false)
           }
         }
         .onTapGesture {
@@ -140,64 +140,6 @@ struct CalendarView: View {
   }
 }
 
-// MARK: - 일자 셀 뷰
-private struct CellView: View {
-  private var day: Int
-  private var clicked: Bool
-  private var isToday: Bool
-  private var isCurrentMonthDay: Bool
-  private var textColor: Color {
-    if clicked {
-      return Color.white
-    } else if isCurrentMonthDay {
-      return Color.black
-    } else {
-      return Color.gray
-    }
-  }
-  private var backgroundColor: Color {
-    if clicked {
-      return Color.black
-    } else if isToday {
-      return Color.yamLightGreen
-    } else {
-      return Color.white
-    }
-  }
-  
-  fileprivate init(
-    day: Int,
-    clicked: Bool = false,
-    isToday: Bool = false,
-    isCurrentMonthDay: Bool = true
-  ) {
-    self.day = day
-    self.clicked = clicked
-    self.isToday = isToday
-    self.isCurrentMonthDay = isCurrentMonthDay
-  }
-  
-  fileprivate var body: some View {
-    VStack {
-      Circle()
-        .fill(backgroundColor)
-        .overlay(Text(String(day)))
-        .foregroundColor(textColor)
-      
-      Spacer()
-      
-      if clicked {
-        RoundedRectangle(cornerRadius: 10)
-          .fill(.red)
-          .frame(width: 10, height: 10)
-      } else {
-        Spacer()
-          .frame(height: 10)
-      }
-    }
-    .frame(height: 50)
-  }
-}
 
 // MARK: - CalendarView Static 프로퍼티
 private extension CalendarView {
