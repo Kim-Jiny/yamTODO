@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 struct TaskMainView: View {
-    @StateObject var taskList = TaskList(key: Date().dateKey)
+    @StateObject var taskList = TaskList(date: Date())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
@@ -56,7 +56,7 @@ struct TaskMainView: View {
         // 뷰가 나타날 때마다 호출됩니다.
         viewAppearedCount += 1
         print("View appeared \(viewAppearedCount) times")
-        taskList.date = Date().dateKey
+        taskList.date = Date()
     }
   }
 }

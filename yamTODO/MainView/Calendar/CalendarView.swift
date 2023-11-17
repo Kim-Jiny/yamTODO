@@ -132,6 +132,7 @@ struct CalendarView: View {
           if 0 <= index && index < daysInMonth {
             let date = getDate(for: index)
               selectedDate = date
+              print(Calendar.current.component(.weekday, from: selectedDate))
           }
         }
       }
@@ -289,10 +290,3 @@ private extension CalendarView {
     return selectedMonth
   }
 }
-
-//// MARK: - 프리뷰
-//struct CalenderView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    CalenderView(month: .now)
-//  }
-//}

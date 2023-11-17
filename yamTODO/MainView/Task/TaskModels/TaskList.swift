@@ -23,24 +23,20 @@ class TasksByDateObject: Object {
 class TaskList: ObservableObject {
     let objectWillChange = PassthroughSubject<TaskList, Never>()
     @Published var tasksObject: [TaskObject] = []
-    @Published var date: String {
+    @Published var date: Date {
         didSet {
             updateTasks()
             objectWillChange.send(self)
         }
     }
-
-    init(key: String) {
-        self.date = key
-        updateTasks()
+    
+    init(date: Date) {
+        self.date = date
     }
     
     func updateTasks() {
         self.tasksObject = []
-        print(date)
-        if let tasksObject = RealmManager.shared.getTasksByDateObject(forKey: date)?.tasks {
-            self.tasksObject = Array(tasksObject)
-        }
+        self.tasksObject = RealmManager.shared.getTasksByDateList(date: date).tasks
     }
     
     func updateIsDone(_ taskId: String) {
@@ -49,7 +45,20 @@ class TaskList: ObservableObject {
         objectWillChange.send(self)
     }
     
-//    func updateText(_ task: TaskObject) {
-//        
-//    }
+}
+
+
+class TasksListModel {
+    var key: String
+    var tasks: [TaskObject]
+  
+   init(key: String, tasks: [TaskObject]) {
+        self.key = key
+        self.tasks = tasks
+    }
+    
+    func getTasksListModel(_ object: TasksByDateObject) {
+        self.key = object.key
+        self.tasks = Array(object.tasks)
+    }
 }

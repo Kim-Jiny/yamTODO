@@ -28,13 +28,13 @@ enum DayOfWeek: String, CaseIterable {
   
   var index: Int {
       switch self {
-          case .sunday: return 100
-          case .monday: return 101
-          case .tuesday: return 102
-          case .wednesday: return 103
-          case .thursday: return 104
-          case .friday: return 105
-          case .saturday: return 106
+          case .sunday: return 101
+          case .monday: return 102
+          case .tuesday: return 103
+          case .wednesday: return 104
+          case .thursday: return 105
+          case .friday: return 106
+          case .saturday: return 107
       }
   }
   

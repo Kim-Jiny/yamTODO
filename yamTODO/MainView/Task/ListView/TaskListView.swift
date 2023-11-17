@@ -41,7 +41,7 @@ struct TaskListView: View {
 //                self.showCalender.toggle()
             }
             .onReceive(selectedCalendar.$selectedDate) { _ in
-                taskList.date = selectedCalendar.selectedDate.dateKey
+                taskList.date = selectedCalendar.selectedDate
             }
         }
     }

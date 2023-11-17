@@ -118,25 +118,14 @@ struct EditPopupView: View {
 
 extension EditPopupView {
     private func createTask() {
-        var newTask = TaskObject(title: self.taskTitle)
+        let newTask = TaskObject(title: self.taskTitle)
         newTask.desc = self.taskDesc
-        RealmManager.shared.writeTasksByDateObject(forKey: taskList.date, tasks: [newTask])
+        Array(self.dayOfWeekManager.selectedDays.map({ $0.index })).forEach { val in
+            newTask.optionType.append(val)
+        }
+        RealmManager.shared.addTask(date: taskList.date, new: newTask)
         taskList.tasksObject.insert(newTask, at: 0)
         self.taskTitle = ""
         self.isPresented = false
     }
 }
-
-//struct NewTaskView: View {
-//    var body: some View {
-//        Text("New Task")
-//            .font(.title2)
-//            .fontWeight(.bold)
-//            .foregroundColor(.yamBlue)
-//            .multilineTextAlignment(.leading)
-//            .frame(width: 200, height: 50)
-//            .background(.white)
-//            .cornerRadius(25)
-//    }
-//}
-
