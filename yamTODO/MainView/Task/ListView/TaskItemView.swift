@@ -24,6 +24,8 @@ struct TaskItemView: View {
             .onTapGesture {
               self.toggleDetail()
             }
+            .strikethrough(self.task.isDone)
+            .foregroundColor(self.task.isDone ? .gray : .black)
         Spacer()
         if task.isDone {
           Image(systemName: "checkmark").foregroundColor(.yamBlue)
@@ -37,6 +39,7 @@ struct TaskItemView: View {
             }
         }
     }
+//    .background(self.task.isDone ? Color.lightGray : .white)
   }
 
   private func toggleDone() {
@@ -44,12 +47,12 @@ struct TaskItemView: View {
       self.taskList.updateIsDone(self.task.id)
   }
   
-  private func toggleDetail() {
-    guard !self.isShowDetailPopup else { return }
-    guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
-    self.selectedTask = SelectedTask(selectedTask: task)
-    self.isShowDetailPopup.toggle()
-  }
+    private func toggleDetail() {
+        guard !self.isShowDetailPopup else { return }
+        guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
+        self.selectedTask = SelectedTask(selectedTask: task)
+        self.isShowDetailPopup.toggle()
+    }
 
   private func delete() {
     self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })

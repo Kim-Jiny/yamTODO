@@ -11,7 +11,7 @@ import Combine
 
 class SelectedTask: ObservableObject {
     let objectWillChange = PassthroughSubject<SelectedTask, Never>()
-    @Published var selectedTask: TaskObject
+    @Published var selectedTask: TaskObject?
   
     init(selectedTask: TaskObject) {
         self.selectedTask = selectedTask
@@ -19,7 +19,15 @@ class SelectedTask: ObservableObject {
     
     
     func updateText(_ title: String,_ desc: String) {
+        guard let selectedTask = selectedTask else { return }
         RealmManager.shared.updateTaskObject(task: selectedTask, taskTitle: title, taskDesc: desc)
+        objectWillChange.send(self)
+    }
+    
+    func deleteSelectTask() {
+        guard let selectedTask = selectedTask else { return }
+        RealmManager.shared.deleteTaskObjectFromDate(task: selectedTask)
+//        self.selectedTask = nil
         objectWillChange.send(self)
     }
 }

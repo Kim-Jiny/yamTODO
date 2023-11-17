@@ -35,7 +35,7 @@ struct CalendarMainView: View {
                 
                 if isShowEditPopup {
                     // EditPopupView(isPresented: $isShowEditPopup).environmentObject(taskList)
-                    EditPopupView(isPresented: $isShowEditPopup)
+                    EditPopupView(selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup)
                         .environmentObject(taskList)
                 }
 

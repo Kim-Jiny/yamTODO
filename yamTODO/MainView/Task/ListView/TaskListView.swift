@@ -30,14 +30,17 @@ struct TaskListView: View {
                     }
                     .frame(maxWidth: .infinity)
                     ForEach(self.taskList.tasksObject) { task in
-                        TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                        // 지워지거나 수정되지 않은 옵션만 표시
+                        if !task.isRemove {
+                            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                        }
                     }
                 }
                 .padding(.bottom, 0)
             }
             .onReceive(taskList.objectWillChange) { _ in
                 // taskList 변경 시 업데이트
-                print("@update \(taskList.tasksObject)")
+//                print("@update \(taskList.tasksObject)")
 //                self.showCalender.toggle()
             }
             .onReceive(selectedCalendar.$selectedDate) { _ in

@@ -12,13 +12,14 @@ struct DetailPopupView: View {
     @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask?
     @Binding var isPresented: Bool
+    
     @State private var isKeyboardVisible = false
+    @State private var showDeleteAlert = false
 
     @State private var taskTitle = ""
     @State private var taskDesc = "dd"
     @State private var taskDescHeight: CGFloat = 50
-  
-//  @EnvironmentObject private var selectedDays: DayOfWeekManager
+
     @StateObject var dayOfWeekManager = DayOfWeekManager()
   
   var body: some View {
@@ -47,7 +48,7 @@ struct DetailPopupView: View {
                     saveTask()
                   }
                 }, label: {
-                    Text("Save")
+                    Text("수정하기")
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamBlue)
                     .fontWeight(.bold)
@@ -55,6 +56,25 @@ struct DetailPopupView: View {
                 })
             }
             .frame(height: 50)
+              HStack {
+                  Button("삭제하기") {
+                      showDeleteAlert.toggle()
+                  }
+                  .alert(isPresented: $showDeleteAlert) {
+                      Alert(
+                          title: Text(""),
+                          message: Text("정말 삭제하시겠습니까?"),
+                          primaryButton: .destructive(Text("삭제")) {
+                              // 삭제 버튼을 눌렀을 때 수행할 액션
+                              deleteTask()
+                          },
+                          secondaryButton: .cancel()
+                      )
+                  }
+                  .foregroundColor(.yamBlue)
+                  .fontWeight(.bold)
+              }
+              .frame(height: 50)
           }
           .padding(.top, 20)
           .padding()
@@ -93,18 +113,26 @@ struct DetailPopupView: View {
       
   }
   
-  private func saveTask() {
-      guard let selectedTask = selectedTask else { return }
-      selectedTask.updateText(self.taskTitle, self.taskDesc)
-      // 닫기
-      self.isPresented = false
-  }
+    private func saveTask() {
+        guard let selectedTask = selectedTask else { return }
+        selectedTask.updateText(self.taskTitle, self.taskDesc)
+        // 닫기
+        self.isPresented = false
+    }
     
     private func setupTask() {
-        self.taskTitle = selectedTask?.selectedTask.title ?? ""
-        self.taskDesc = selectedTask?.selectedTask.desc ?? ""
-        
-        print("object decs \(selectedTask?.selectedTask)")
+        self.taskTitle = selectedTask?.selectedTask?.title ?? ""
+        self.taskDesc = selectedTask?.selectedTask?.desc ?? ""
+    }
+    
+    private func deleteTask() {
+        print("삭제가 선택되었습니다.")
+        guard let selectedTask = selectedTask?.selectedTask else { return }
+//        self.isPresented = false
+        self.selectedTask?.deleteSelectTask()
+        self.isPresented = false
+//        self.selectedTask?.selectedTask = nil
+//        taskList.deleteTask(selectedTask.id)
     }
 }
 

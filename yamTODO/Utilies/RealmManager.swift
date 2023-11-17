@@ -153,23 +153,27 @@ class RealmManager {
         }
     }
   // 테스크를 삭제.
-  func deleteTaskObjectFromDate(date: Date, TaskId: String) {
-    do {
-      let realm = try Realm() // Realm 객체 생성
-      defer {
-        realm.invalidate() // Realm 인스턴스 해제
-      }
-        if let dateObject = getTasksByDateObject(date: date) {
-        if let index = dateObject.tasks.firstIndex(where: { $0.id == TaskId }) {
-          try realm.write {
-            dateObject.tasks.remove(at: index)
-          }
+    func deleteTaskObjectFromDate(task: TaskObject) {
+        do {
+            if let tasks = getTasksByDateObject(date: task.date), let index = tasks.tasks.firstIndex(of: task) {
+                // tasks 리스트에서 해당 TaskObject를 제거합니다.
+                // 만약에 rootId가 없으면 일반삭제 진행 - 반복 옵션이 아님
+                if task.rootId == "" {
+                    try! task.realm?.write {
+                        tasks.tasks.remove(at: index)
+                    }
+                }else {
+                // rootId가 있으면 반복옵션이므로 해당날짜만 삭제해야함. 따라서 removedBy를 업데이트합니다.
+                    try task.realm?.write {
+                        task.isRemove = true
+                        task.removedBy = Date()
+                    }
+                }
+            }
+        } catch {
+            print("Error: \(error)")
         }
-      }
-    } catch {
-      print("Error: \(error)")
     }
-  }
     
     func addTask(date: Date, new task: TaskObject) {
         // 반복 옵션이 있는경우 반복옵션 Table에 기록해야함.

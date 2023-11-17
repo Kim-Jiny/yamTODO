@@ -29,26 +29,14 @@ struct TaskMainView: View {
               .frame(width: 40, height: 40)
           })
           .navigationBarTitleDisplayMode(.inline)
-          //navigation 에서 캘린더 가는 기능 삭제
-//          .toolbar {
-//            ToolbarItemGroup(placement: .navigationBarLeading) {
-//              NavigationLink {
-//                CalendarView(month: .now)
-//              } label: {
-//                Image("calender")
-//                  .resizable()
-//                  .frame(width: 30, height: 30)
-//              }
-//            }
-//          }
         if isShowEditPopup {
-          EditPopupView(isPresented: $isShowEditPopup).environmentObject(taskList)
+            EditPopupView(selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)
         }
         if isShowDetailPopup {
             if selectedTask != nil {
             DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
               .environmentObject(taskList)
-          }
+            }
         }
       }
     }

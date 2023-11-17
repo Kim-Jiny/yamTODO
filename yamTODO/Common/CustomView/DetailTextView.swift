@@ -53,6 +53,7 @@ public struct DetailTextView: UIViewRepresentable {
     textView.textContainer.lineFragmentPadding = lineFragmentPadding
     textView.textContainerInset = textContainerInset
     textView.delegate = context.coordinator
+      textView.text = text
 //    textView.becomeFirstResponder()
     
     return textView

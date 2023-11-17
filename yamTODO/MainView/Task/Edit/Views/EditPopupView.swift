@@ -4,6 +4,7 @@ import RealmSwift
 
 struct EditPopupView: View {
     @EnvironmentObject var taskList: TaskList
+    @State var selectedDate: Date
     @Binding var isPresented: Bool
     @State private var isKeyboardVisible = false
     
@@ -120,6 +121,7 @@ extension EditPopupView {
     private func createTask() {
         let newTask = TaskObject(title: self.taskTitle)
         newTask.desc = self.taskDesc
+        newTask.date = self.selectedDate
         Array(self.dayOfWeekManager.selectedDays.map({ $0.index })).forEach { val in
             newTask.optionType.append(val)
         }

@@ -13,6 +13,7 @@ struct RepeatSettingView: View {
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
     @State var selectedTask: SelectedTask?
+    @State var selectedDate = Date()
     var body: some View {
         NavigationView {
             List {
@@ -24,7 +25,7 @@ struct RepeatSettingView: View {
             .navigationBarTitle("반복 설정")
             
             if isShowEditPopup {
-              EditPopupView(isPresented: $isShowEditPopup).environmentObject(taskList)
+                EditPopupView(selectedDate: selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)
             }
             if isShowDetailPopup {
                 if selectedTask != nil {
