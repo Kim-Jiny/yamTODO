@@ -13,7 +13,7 @@ public struct DetailTextView: UIViewRepresentable {
   @Binding var height: CGFloat
   var maxHeight: CGFloat
   var textFont: UIFont
-  var textColor: UIColor = .black
+  var textColor: UIColor = .yamBlack!
   var textLimit: Int = 500
   var cornerRadius: CGFloat? = nil
   var borderWidth: CGFloat? = nil

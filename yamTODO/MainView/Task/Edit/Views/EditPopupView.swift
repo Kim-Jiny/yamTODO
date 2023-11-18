@@ -23,7 +23,7 @@ struct EditPopupView: View {
                         .foregroundColor(.yamBlue)
                         .multilineTextAlignment(.leading)
                         .frame(width: 200, height: 40)
-                        .background(.white)
+//                        .background(.white)
 //                        .cornerRadius(25)
                     
                     HStack(spacing: 0) {
@@ -81,7 +81,7 @@ struct EditPopupView: View {
                 }
                 .padding(.top, 8)
                 .padding()
-                .background(Color.white)
+                .background(Color.yamWhite)
                 .cornerRadius(8)
                 .frame(width: geometry.size.width - 70)
                 .onTapGesture {
@@ -92,7 +92,7 @@ struct EditPopupView: View {
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .background(Color.black.opacity(0.3))
+            .background(Color.yamBlack.opacity(0.2))
             .onTapGesture {
                 if self.isKeyboardVisible {
                     // 키보드가 열려있으면 닫아주기

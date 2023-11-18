@@ -104,7 +104,7 @@ struct DetailPopupView: View {
           }
           .padding(.top, 8)
           .padding()
-          .background(Color.white)
+          .background(Color.yamWhite)
           .cornerRadius(10)
           .frame(width: UIScreen.main.bounds.size.width - 70)
           .onTapGesture {
@@ -113,7 +113,7 @@ struct DetailPopupView: View {
           
         }
         .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: .infinity, alignment: .center)
-        .background(Color.black.opacity(0.3))
+        .background(Color.yamBlack.opacity(0.2))
         .onTapGesture {
           if self.isKeyboardVisible {
             // 키보드가 열려있으면 닫아주기
