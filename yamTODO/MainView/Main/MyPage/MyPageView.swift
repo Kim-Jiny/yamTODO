@@ -41,7 +41,7 @@ private extension MyPage {
     var appInfoSection: some View {
       Section(header: Text("앱 정보").fontWeight(.medium)) {
           if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-              Text("현재 앱버전 v\(appVersion)")
+              Text("현재 앱 버전 v\(appVersion)")
                   .frame(height: 44)
           }
           Button {
@@ -60,13 +60,16 @@ private extension MyPage {
     }
   var taskInfoSection: some View {
     Section(header: Text("반복 설정").fontWeight(.medium)) {
-        Button {
-            isShowRepeatView = true
-        } label: {
+        NavigationLink(destination: RepeatSettingView()) {
             Text("반복 할 일 수정")
-        }.sheet(isPresented: $isShowRepeatView) {
-            RepeatSettingView()
         }
+//        Button {
+//            isShowRepeatView = true
+//        } label: {
+//            Text("반복 할 일 수정")
+//        }.sheet(isPresented: $isShowRepeatView) {
+//            RepeatSettingView()
+//        }
         .frame(height: 44)
     }
   }
@@ -80,7 +83,7 @@ private extension MyPage {
         }
     }
     var fordDeveloper: some View {
-      Section(header: Text("소통하기").fontWeight(.medium)) {
+      Section(header: Text("소통").fontWeight(.medium)) {
           
           Button {
               if MFMailComposeViewController.canSendMail() {

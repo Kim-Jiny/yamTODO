@@ -21,9 +21,6 @@ struct TaskItemView: View {
             Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
         }
         Text(self.task.title)
-            .onTapGesture {
-              self.toggleDetail()
-            }
             .strikethrough(self.task.isDone)
             .foregroundColor(self.task.isDone ? .yamBlue : .yamBlack)
 //            .fontWeight(self.task.isDone ? .medium : .bold)
@@ -39,6 +36,9 @@ struct TaskItemView: View {
               self.toggleDone()
             }
         }
+    }
+    .onTapGesture {
+      self.toggleDetail()
     }
 //    .background(self.task.isDone ? Color.lightGray : .white)
   }

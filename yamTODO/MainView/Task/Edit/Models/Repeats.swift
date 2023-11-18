@@ -38,8 +38,31 @@ enum DayOfWeek: String, CaseIterable {
       }
   }
   
-  static var allCases: [DayOfWeek] {
-          return [.sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday]
-      }
+    static var allCases: [DayOfWeek] {
+        return [.sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday]
+    }
 
+}
+
+extension Int {
+    func getRepeatType() -> DayOfWeek {
+        switch self {
+        case DayOfWeek.sunday.index:
+            return DayOfWeek.sunday
+        case DayOfWeek.monday.index:
+            return DayOfWeek.monday
+        case DayOfWeek.tuesday.index:
+            return DayOfWeek.tuesday
+        case DayOfWeek.wednesday.index:
+            return DayOfWeek.wednesday
+        case DayOfWeek.thursday.index:
+            return DayOfWeek.thursday
+        case DayOfWeek.friday.index:
+            return DayOfWeek.friday
+        case DayOfWeek.saturday.index:
+            return DayOfWeek.saturday
+        default:
+            return DayOfWeek.sunday
+        }
+    }
 }

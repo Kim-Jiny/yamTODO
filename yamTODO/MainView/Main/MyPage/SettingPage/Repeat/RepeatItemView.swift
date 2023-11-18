@@ -12,35 +12,45 @@ struct RepeatItemView: View {
   @EnvironmentObject var taskList: OptionTaskList
 
   let task: TaskObject
-  @Binding var isShowEditPopup: Bool
   @Binding var isShowDetailPopup: Bool
   @Binding var selectedTask: SelectedTask
 
   var body: some View {
-    return HStack {
-        //TODO 월화수목반복에대한 리스트 표시
-        if task.rootId != "" {
-            Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
-        }
-        Text(self.task.title)
-            .onTapGesture {
-              self.toggleDetail()
+    return VStack {
+        HStack {
+            ForEach(task.optionType.sorted(), id: \.self) { repeatType in
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color.yamDarkBlue)
+                        .frame(width: 20, height: 20)
+                    Text("\(repeatType.getRepeatType().displayName)")
+                        .foregroundColor(.yamWhite)
+                }
             }
-        Spacer()
+            Spacer()
+        }
+        HStack {
+            Text(self.task.title)
+            Spacer()
+        }
+        .onTapGesture {
+          self.toggleDetail()
+        }
     }
   }
   
   private func toggleDetail() {
+      print("is Show Detail Popup \(isShowDetailPopup)")
     guard !self.isShowDetailPopup else { return }
     guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
     self.selectedTask = SelectedTask(selectedTask: task)
-    self.isShowDetailPopup.toggle()
+    self.isShowDetailPopup = true
   }
 
   private func delete() {
     self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })
     if self.taskList.tasksObject.isEmpty {
-      self.isShowEditPopup = false
+      self.isShowDetailPopup = false
     }
   }
 }
