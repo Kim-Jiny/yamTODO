@@ -25,7 +25,7 @@ struct TaskItemView: View {
               self.toggleDetail()
             }
             .strikethrough(self.task.isDone)
-            .foregroundColor(self.task.isDone ? .yamBlue : .black)
+            .foregroundColor(self.task.isDone ? .yamBlue : .yamBlack)
 //            .fontWeight(self.task.isDone ? .medium : .bold)
         Spacer()
         if task.isDone {
@@ -34,7 +34,7 @@ struct TaskItemView: View {
               self.toggleDone()
             }
         }else {
-          Image(systemName: "checkmark").foregroundColor(.lightGray)
+          Image(systemName: "checkmark").foregroundColor(.yamLightGray)
             .onTapGesture {
               self.toggleDone()
             }

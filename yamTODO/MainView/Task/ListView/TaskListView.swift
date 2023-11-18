@@ -59,6 +59,7 @@ struct TaskListView: View {
                 print("selected Task \n\n\(selectedTask.selectedTask)\n\n")
                 taskList.date = selectedCalendar.selectedDate
             }
+
         }
     }
 }

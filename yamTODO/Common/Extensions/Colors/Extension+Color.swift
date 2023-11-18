@@ -41,15 +41,21 @@ extension UIColor {
 
 
 extension Color {
-  static let yamLightGreen = Color(hex: "#eeffee")
-  static let yamSky = Color(hex: "#d8ecf3")
-  static let yamBlue = Color(hex: "#3ca0c7")
-    static let yamDarkBlue = Color(hex: "#246077")
-  static let lightGray = Color(hex: "#e6e9eb")
+    static let yamLightGreen = Color("yamLightGreen")
+    static let yamSky = Color("yamSky")
+    static let yamBlue = Color("yamBlue")
+    static let yamDarkBlue = Color("yamDarkBlue")
+    static let yamLightGray = Color("yamGray")
+    static let yamWhite = Color("yamWhite")
+    static let yamBlack = Color("yamBlack")
 }
 
 extension UIColor {
-    static let yamLightGreen = UIColor(hex: "#eeffee")
-    static let yamSky = UIColor(hex: "#d8ecf3")
-    static let yamBlue = UIColor(hex: "#3ca0c7")
+    static let yamLightGreen = UIColor(named: "yamLightGreen")
+    static let yamSky = UIColor(named: "yamSky")
+    static let yamBlue = UIColor(named: "yamBlue")
+    static let yamDarkBlue = UIColor(named: "yamDarkBlue")
+    static let yamLightGray = UIColor(named: "yamGray")
+    static let yamWhite = UIColor(named: "yamWhite")
+    static let yamBlack = UIColor(named: "yamBlack")
 }

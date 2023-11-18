@@ -19,9 +19,9 @@ struct CalendarCellView: View {
     
     private var textColor: Color {
         if clicked {
-            return Color.white
+            return Color.yamWhite
         } else if isCurrentMonthDay {
-            return Color.black
+            return Color.yamBlack
         } else {
             return Color.gray
         }
@@ -29,11 +29,11 @@ struct CalendarCellView: View {
     
     private var backgroundColor: Color {
         if clicked {
-            return Color.black
+            return Color.yamBlack
         } else if isToday {
             return Color.yamLightGreen
         } else {
-            return Color.white
+            return Color.yamWhite
         }
     }
     
@@ -62,7 +62,7 @@ struct CalendarCellView: View {
             
             if clicked {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(.red)
+                    .fill(Color.yamDarkBlue)
                     .frame(width: 10, height: 10)
             } else {
                 Spacer()

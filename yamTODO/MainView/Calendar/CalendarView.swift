@@ -79,7 +79,7 @@ struct CalendarView: View {
         label: {
           Image(systemName: "chevron.left")
             .font(.title)
-            .foregroundColor(canMoveToPreviousMonth() ? .black : . gray)
+            .foregroundColor(canMoveToPreviousMonth() ? .yamBlack : . gray)
         }
       )
       .disabled(!canMoveToPreviousMonth())
@@ -94,7 +94,7 @@ struct CalendarView: View {
         label: {
           Image(systemName: "chevron.right")
             .font(.title)
-            .foregroundColor(canMoveToNextMonth() ? .black : .gray)
+            .foregroundColor(canMoveToNextMonth() ? .yamBlack : .gray)
         }
       )
       .disabled(!canMoveToNextMonth())
