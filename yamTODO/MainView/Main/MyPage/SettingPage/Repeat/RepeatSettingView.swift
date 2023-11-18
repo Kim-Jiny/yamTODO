@@ -26,7 +26,7 @@ struct RepeatSettingView: View {
             
             if isShowDetailPopup {
                 if selectedTask.selectedTask != nil {
-                DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
+                    RepeatDetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
                   .environmentObject(taskList)
               }
             }

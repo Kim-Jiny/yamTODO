@@ -40,7 +40,6 @@ struct RepeatItemView: View {
   }
   
   private func toggleDetail() {
-      print("is Show Detail Popup \(isShowDetailPopup)")
     guard !self.isShowDetailPopup else { return }
     guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
     self.selectedTask = SelectedTask(selectedTask: task)

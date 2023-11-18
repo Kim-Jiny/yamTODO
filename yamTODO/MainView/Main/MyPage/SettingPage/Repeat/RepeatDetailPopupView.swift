@@ -1,21 +1,20 @@
 //
-//  EditPopupView.swift
+//  RepeatDetailPopupView.swift
 //  yamTODO
 //
-//  Created by Jiny on 2023/10/30.
+//  Created by Jiny on 2023/11/18.
 //
 
 
 import SwiftUI
 
-struct DetailPopupView: View {
+struct RepeatDetailPopupView: View {
     @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
     
     @State private var isKeyboardVisible = false
     @State private var showDeleteAlert = false
-    @State private var showDelayAlert = false
 
     @State private var taskTitle = ""
     @State private var taskTitleHeight: CGFloat = 50
@@ -52,7 +51,33 @@ struct DetailPopupView: View {
               .lineLimit(10)
               .cornerRadius(8)
               .frame(height: taskDescHeight)
+              HStack(spacing: 0) {
+                  Image(systemName: "repeat")
+                      .resizable()
+                      .frame(width: 22, height: 20)
+                      .aspectRatio(contentMode: .fill)
+                      .foregroundColor(.yamBlue)
+                  RepeatView(selectedDays: $dayOfWeekManager.selectedDays )
+              }
             HStack {
+//                Spacer()
+//                Button("삭제") {
+//                    showDeleteAlert.toggle()
+//                }
+//                .alert(isPresented: $showDeleteAlert) {
+//                    Alert(
+//                        title: Text(""),
+//                        message: Text("정말 삭제하시겠습니까?"),
+//                        primaryButton: .destructive(Text("삭제")) {
+//                            // 삭제 버튼을 눌렀을 때 수행할 액션
+//                            deleteTask()
+//                        },
+//                        secondaryButton: .cancel()
+//                    )
+//                }
+//                .foregroundColor(.yamDarkBlue)
+//                .fontWeight(.bold)
+//                Spacer()
                 Button(action: {
                     showDeleteAlert.toggle()
                 }, label: {
@@ -72,12 +97,9 @@ struct DetailPopupView: View {
                         secondaryButton: .cancel()
                     )
                 }
-                Spacer()
                 Button(action: {
                   if !taskTitle.isEmpty {
-                      saveTask()
-                  }else {
-                      showDeleteAlert.toggle()
+                    saveTask()
                   }
                 }, label: {
                     Text("수정")
@@ -86,22 +108,6 @@ struct DetailPopupView: View {
                     .fontWeight(.bold)
                     .padding()
                 })
-                Spacer()
-                Button("하루 미루기") {
-                    showDelayAlert.toggle()
-                }
-                .alert(isPresented: $showDelayAlert) {
-                    Alert(
-                        title: Text(""),
-                        message: Text("이 일을 내일로 미루시겠습니까?"),
-                        primaryButton: .destructive(Text("확인")) {
-                            delayTask()
-                        },
-                        secondaryButton: .cancel()
-                    )
-                }
-                .foregroundColor(.yamBlue)
-                .fontWeight(.bold)
 //                Spacer()
             }
             .frame(height: 50)
@@ -152,14 +158,13 @@ struct DetailPopupView: View {
     private func setupTask() {
         self.taskTitle = selectedTask.selectedTask?.title ?? ""
         self.taskDesc = selectedTask.selectedTask?.desc ?? ""
+        selectedTask.selectedTask?.optionType.forEach({ repeatType in
+            self.dayOfWeekManager.toggleDay(repeatType.getRepeatType())
+        })
     }
     
     private func deleteTask() {
         self.selectedTask.deleteSelectTask()
-        self.isPresented = false
-    }
-    private func delayTask() {
-        self.selectedTask.delaySelectTask()
         self.isPresented = false
     }
 }

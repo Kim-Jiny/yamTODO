@@ -46,6 +46,7 @@ class TaskObject: Object {
     @Persisted var removedBy: Date?
     @Persisted var createdBy: Date
     @Persisted var isRemove: Bool
+    @Persisted var isDelay: Int
 
     convenience init(title: String) {
         self.init()
@@ -59,6 +60,7 @@ class TaskObject: Object {
         self.removedBy = nil
         self.createdBy = Date()
         self.isRemove = false
+        self.isDelay = 0
     }
     
     func newTask(old: TaskObject) {
@@ -72,6 +74,7 @@ class TaskObject: Object {
         self.removedBy = old.removedBy
         self.createdBy = old.createdBy
         self.isRemove = old.isRemove
+        self.isDelay = old.isDelay
     }
 }
 

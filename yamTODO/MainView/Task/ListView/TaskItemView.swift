@@ -17,8 +17,23 @@ struct TaskItemView: View {
 
   var body: some View {
     return HStack {
-        if task.rootId != "" {
-            Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
+//        if task.rootId != "" {
+//            Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
+//        }
+        if task.isDelay != 0 {
+            ZStack {
+                Circle()
+                    .foregroundColor(Color.yamDarkBlue)
+                    .frame(width: 20, height: 20)
+                Text("+\(task.isDelay)")
+                    .foregroundColor(.yamWhite)
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+            }
+        }else {
+            if task.rootId != "" {
+                Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
+            }
         }
         Text(self.task.title)
             .strikethrough(self.task.isDone)

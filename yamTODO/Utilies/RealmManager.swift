@@ -257,4 +257,35 @@ class RealmManager {
             return TasksByMonthListModel(date: date, days: [])
         }
     }
+    
+    // 테스크를 하루 미룸.
+      func delayTaskObjectFromDate(task: TaskObject) {
+          do {
+              if let tasks = getTasksByDateObject(date: task.date), let index = tasks.tasks.firstIndex(of: task) {
+                  // 새로운 태스크를 추가해줌.
+                  let newTask = TaskObject()
+                  newTask.newTask(old: task)
+                  newTask.optionType = List<Int>()
+                  if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: task.date) {
+                      newTask.date = tomorrow
+                      newTask.isDelay = task.isDelay + 1
+                  }
+                  addTask(date: newTask.date, new: newTask)
+                  // 만약에 rootId가 없으면 그냥삭제  - 반복 옵션이 아님
+                  if task.rootId == "" {
+                      try! task.realm?.write {
+                          tasks.tasks.remove(at: index)
+                      }
+                  }else {
+                  // rootId가 있으면 반복옵션이므로 해당날짜 removedBy업데이트
+                      try task.realm?.write {
+                          task.isRemove = true
+                          task.removedBy = Date()
+                      }
+                  }
+              }
+          } catch {
+              print("Error: \(error)")
+          }
+      }
 }

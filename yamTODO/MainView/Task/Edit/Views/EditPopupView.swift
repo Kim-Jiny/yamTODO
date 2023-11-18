@@ -87,6 +87,13 @@ struct EditPopupView: View {
                 .onTapGesture {
                     // 뷰 탭에 대한 추가 액션
                 }
+                
+//                Button(action: {
+//                    self.isPresented = false
+//                }, label: {
+//                    Image(systemName: "xmark.circle")
+//                })
+//                .offset(x: -16, y: 16)
 //                NewTaskView()
 //                    .offset(y: -150)
                 

@@ -10,6 +10,7 @@
 		300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65472B077E7A00DB3684 /* CalendarCellView.swift */; };
 		300E654A2B07A7EB00DB3684 /* TasksByMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65492B07A7EB00DB3684 /* TasksByMonth.swift */; };
 		300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65512B08C59800DB3684 /* TitleTextView.swift */; };
+		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		3693507F2AF8B6500040AF26 /* TasksByDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDay.swift */; };
@@ -89,6 +90,7 @@
 		300E65472B077E7A00DB3684 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		300E65492B07A7EB00DB3684 /* TasksByMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByMonth.swift; sourceTree = "<group>"; };
 		300E65512B08C59800DB3684 /* TitleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextView.swift; sourceTree = "<group>"; };
+		300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetailPopupView.swift; sourceTree = "<group>"; };
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TasksByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDay.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		36FBAA892B0717CD00FC78AB /* Repeat */ = {
 			isa = PBXGroup;
 			children = (
+				300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */,
 				36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */,
 				36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */,
 			);
@@ -621,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */,
 				300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */,
 				3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,

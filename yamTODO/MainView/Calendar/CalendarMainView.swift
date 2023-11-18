@@ -53,7 +53,7 @@ struct CalendarMainView: View {
             // selectedDate가 변경될 때마다 taskList를 업데이트
             taskList.date = selectedCalendar.selectedDate
 //            monthDataList.date = selectedCalendar.selectedMonth
-            print(selectedCalendar.selectedMonth.monthKey)
+            print(taskList.tasksObject)
         }
     }
 }

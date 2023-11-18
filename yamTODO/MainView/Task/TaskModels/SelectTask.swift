@@ -30,4 +30,11 @@ class SelectedTask: ObservableObject {
 //        self.selectedTask = nil
         objectWillChange.send(self)
     }
+    
+    func delaySelectTask() {
+        guard let selectedTask = selectedTask else { return }
+        RealmManager.shared.delayTaskObjectFromDate(task: selectedTask)
+//        self.selectedTask = nil
+        objectWillChange.send(self)
+    }
 }
