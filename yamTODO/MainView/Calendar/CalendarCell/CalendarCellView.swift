@@ -7,10 +7,11 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 // MARK: - 일자 셀 뷰
 struct CalendarCellView: View {
-    @Binding var monthDataList: TasksByMonthListModel
+    @ObservedObject var monthDataList: TasksByMonthListModel
     private var day: Int
     private var clicked: Bool
     private var isToday: Bool
@@ -37,11 +38,13 @@ struct CalendarCellView: View {
     }
     
     init(
+        monthDataList: TasksByMonthListModel,
         day: Int,
         clicked: Bool = false,
         isToday: Bool = false,
         isCurrentMonthDay: Bool = true
     ) {
+        self.monthDataList = monthDataList
         self.day = day
         self.clicked = clicked
         self.isToday = isToday

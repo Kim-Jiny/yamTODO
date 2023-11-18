@@ -17,7 +17,8 @@ struct DetailPopupView: View {
     @State private var showDeleteAlert = false
 
     @State private var taskTitle = ""
-    @State private var taskDesc = "dd"
+    @State private var taskTitleHeight: CGFloat = 50
+    @State private var taskDesc = ""
     @State private var taskDescHeight: CGFloat = 50
 
     @StateObject var dayOfWeekManager = DayOfWeekManager()
@@ -26,67 +27,92 @@ struct DetailPopupView: View {
     GeometryReader { geometry in
         ZStack {
           VStack {
-            TextField("공백으로 남기면 Task가 삭제됩니다.", text: $taskTitle)
-              .padding()
-              .textFieldStyle(PlainTextFieldStyle())
+              TitleTextView(
+                text: $taskTitle,
+                height: $taskTitleHeight,
+                maxHeight: 200,
+                textFont: .boldSystemFont(ofSize: 15),
+                cornerRadius: 0,
+                borderWidth: 0,
+                borderColor: UIColor.yamBlue!.cgColor,
+                placeholder: "공백으로 남기면 Task가 삭제됩니다."
+              )
+                .frame(maxHeight: taskTitleHeight)
               DetailTextView(
                       text: $taskDesc,
                       height: $taskDescHeight,
                       maxHeight: 200,
-                      textFont: .boldSystemFont(ofSize: 14),
+                      textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
-                      borderColor: UIColor.yamBlue.cgColor,
-                      placeholder: "Enter task Detail .."
+                      borderColor: UIColor.yamBlue!.cgColor,
+                      placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
                     )
               .lineLimit(10)
               .cornerRadius(8)
-              .frame(height: 100)
+              .frame(height: taskDescHeight)
             HStack {
+                Spacer()
+                Button("삭제") {
+                    showDeleteAlert.toggle()
+                }
+                .alert(isPresented: $showDeleteAlert) {
+                    Alert(
+                        title: Text(""),
+                        message: Text("정말 삭제하시겠습니까?"),
+                        primaryButton: .destructive(Text("삭제")) {
+                            // 삭제 버튼을 눌렀을 때 수행할 액션
+                            deleteTask()
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
+                .foregroundColor(.yamDarkBlue)
+                .fontWeight(.bold)
+                Spacer()
                 Button(action: {
                   if !taskTitle.isEmpty {
                     saveTask()
                   }
                 }, label: {
-                    Text("수정하기")
+                    Text("수정")
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamBlue)
                     .fontWeight(.bold)
                     .padding()
                 })
+                Spacer()
+                Button("하루 미루기") {
+                    showDeleteAlert.toggle()
+                }
+                .alert(isPresented: $showDeleteAlert) {
+                    Alert(
+                        title: Text(""),
+                        message: Text("정말 삭제하시겠습니까?"),
+                        primaryButton: .destructive(Text("삭제")) {
+                            // 삭제 버튼을 눌렀을 때 수행할 액션
+                            deleteTask()
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
+                .foregroundColor(.yamBlue)
+                .fontWeight(.bold)
+                Spacer()
             }
             .frame(height: 50)
-              HStack {
-                  Button("삭제하기") {
-                      showDeleteAlert.toggle()
-                  }
-                  .alert(isPresented: $showDeleteAlert) {
-                      Alert(
-                          title: Text(""),
-                          message: Text("정말 삭제하시겠습니까?"),
-                          primaryButton: .destructive(Text("삭제")) {
-                              // 삭제 버튼을 눌렀을 때 수행할 액션
-                              deleteTask()
-                          },
-                          secondaryButton: .cancel()
-                      )
-                  }
-                  .foregroundColor(.yamBlue)
-                  .fontWeight(.bold)
-              }
-              .frame(height: 50)
           }
-          .padding(.top, 20)
+          .padding(.top, 8)
           .padding()
           .background(Color.white)
           .cornerRadius(10)
-          .frame(width: geometry.size.width - 70)
+          .frame(width: UIScreen.main.bounds.size.width - 70)
           .onTapGesture {
             
           }
           
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: .infinity, alignment: .center)
         .background(Color.black.opacity(0.3))
         .onTapGesture {
           if self.isKeyboardVisible {

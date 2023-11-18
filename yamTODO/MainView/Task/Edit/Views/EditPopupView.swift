@@ -17,7 +17,7 @@ struct EditPopupView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    Text("New Task")
+                    Text("할 일 등록")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.yamBlue)
@@ -32,7 +32,7 @@ struct EditPopupView: View {
                             .frame(width: 22, height: 20)
                             .aspectRatio(contentMode: .fill)
                             .foregroundColor(.yamBlue)
-                        TextField("할 일", text: $taskTitle)
+                        TextField("할 일을 작성해주세요.", text: $taskTitle)
                             .padding()
                             .textFieldStyle(PlainTextFieldStyle())
                     }
@@ -41,11 +41,11 @@ struct EditPopupView: View {
                         text: $taskDesc,
                         height: $taskDescHeight,
                         maxHeight: 200,
-                        textFont: .boldSystemFont(ofSize: 14),
+                        textFont: .systemFont(ofSize: 13),
                         cornerRadius: 8,
                         borderWidth: 0,
-                        borderColor: UIColor.yamBlue.cgColor,
-                        placeholder: "설명"
+                        borderColor: UIColor.yamBlue!.cgColor,
+                        placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
                     )
                     .lineLimit(10)
                     .cornerRadius(8)

@@ -22,15 +22,34 @@ extension Color {
   }
 }
 
+extension UIColor {
+    convenience init?(hex: String) {
+        var formattedHex = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        formattedHex = formattedHex.replacingOccurrences(of: "#", with: "")
+
+        var rgb: UInt64 = 0
+
+        guard Scanner(string: formattedHex).scanHexInt64(&rgb) else { return nil }
+
+        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(rgb & 0x0000FF) / 255.0
+
+        self.init(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+}
+
+
 extension Color {
   static let yamLightGreen = Color(hex: "#eeffee")
-  static let yamSky = Color(hex: "#97b8c9")
+  static let yamSky = Color(hex: "#d8ecf3")
   static let yamBlue = Color(hex: "#3ca0c7")
+    static let yamDarkBlue = Color(hex: "#246077")
   static let lightGray = Color(hex: "#e6e9eb")
 }
 
 extension UIColor {
-  static let yamLightGreen = Color(hex: "#eeffee")
-  static let yamSky = Color(hex: "#97b8c9")
-  static let yamBlue = Color(hex: "#3ca0c7")
+    static let yamLightGreen = UIColor(hex: "#eeffee")
+    static let yamSky = UIColor(hex: "#d8ecf3")
+    static let yamBlue = UIColor(hex: "#3ca0c7")
 }

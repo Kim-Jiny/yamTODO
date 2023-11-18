@@ -15,7 +15,7 @@ class SelectedCalendar: ObservableObject {
 }
 
 struct CalendarMainView: View {
-    @StateObject var monthDataList = TasksByMonthListModel(date: Date())
+    @ObservedObject var monthDataList = TasksByMonthListModel(date: Date())
     @StateObject var taskList = TaskList(date: Date())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @Binding var monthDataList: TasksByMonthListModel
+    @ObservedObject var monthDataList: TasksByMonthListModel
     @Binding var selectedMonth: Date
     @Binding var selectedDate: Date
     @State var offset: CGSize = CGSize()
@@ -45,15 +45,15 @@ struct CalendarView: View {
         yearMonthView
         
         Spacer()
-        
-        Button(
-          action: { },
-          label: {
-            Image(systemName: "list.bullet")
-              .font(.title)
-              .foregroundColor(.black)
-          }
-        )
+        // 연도 선택버튼 임의삭제
+//        Button(
+//          action: { },
+//          label: {
+//            Image(systemName: "list.bullet")
+//              .font(.title)
+//              .foregroundColor(.black)
+//          }
+//        )
       }
       .padding(.horizontal, 10)
       .padding(.bottom, 5)
@@ -118,7 +118,7 @@ struct CalendarView: View {
             let clicked = selectedDate == date
               let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
             
-              CalendarCellView(day: day, clicked: clicked, isToday: isToday)
+              CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isCurrentMonthDay: true)
           } else if let prevMonthDate = Calendar.current.date(
             byAdding: .day,
             value: index + lastDayOfMonthBefore,
@@ -126,7 +126,7 @@ struct CalendarView: View {
           ) {
             let day = Calendar.current.component(.day, from: prevMonthDate)
             
-              CalendarCellView(day: day, isCurrentMonthDay: false)
+              CalendarCellView(monthDataList: monthDataList, day: day, isCurrentMonthDay: false)
           }
         }
         .onTapGesture {

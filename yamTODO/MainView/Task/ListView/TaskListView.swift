@@ -29,7 +29,14 @@ struct TaskListView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    ForEach(self.taskList.tasksObject) { task in
+                    
+                    ForEach(self.taskList.tasksObject.filter({ !$0.isDone })) { task in
+                        // 지워지거나 수정되지 않은 옵션만 표시
+                        if !task.isRemove {
+                            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                        }
+                    }
+                    ForEach(self.taskList.tasksObject.filter({ $0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
                             TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)

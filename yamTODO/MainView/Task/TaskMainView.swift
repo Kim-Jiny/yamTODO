@@ -23,11 +23,12 @@ struct TaskMainView: View {
           TaskListView(selectedCalendar: selectedCalendar, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
           .environmentObject(taskList)
           .navigationBarTitle(Text("TODO 👀"))
-          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
-            Image("edit")
-              .resizable()
-              .frame(width: 40, height: 40)
-          })
+          // 네비게이션뷰에 태스크 생성 페이지 버튼 삭제
+//          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
+//            Image("edit")
+//              .resizable()
+//              .frame(width: 40, height: 40)
+//          })
           .navigationBarTitleDisplayMode(.inline)
         if isShowEditPopup {
             EditPopupView(selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)

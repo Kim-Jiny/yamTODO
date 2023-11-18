@@ -25,7 +25,8 @@ struct TaskItemView: View {
               self.toggleDetail()
             }
             .strikethrough(self.task.isDone)
-            .foregroundColor(self.task.isDone ? .gray : .black)
+            .foregroundColor(self.task.isDone ? .yamBlue : .black)
+//            .fontWeight(self.task.isDone ? .medium : .bold)
         Spacer()
         if task.isDone {
           Image(systemName: "checkmark").foregroundColor(.yamBlue)

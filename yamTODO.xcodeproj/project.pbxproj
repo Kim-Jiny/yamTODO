@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65472B077E7A00DB3684 /* CalendarCellView.swift */; };
 		300E654A2B07A7EB00DB3684 /* TasksByMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65492B07A7EB00DB3684 /* TasksByMonth.swift */; };
+		300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65512B08C59800DB3684 /* TitleTextView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		3693507F2AF8B6500040AF26 /* TasksByDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDay.swift */; };
@@ -23,8 +24,8 @@
 		36B7C93B2ADCFCF800F7A140 /* yamTODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C93A2ADCFCF800F7A140 /* yamTODOTests.swift */; };
 		36B7C9452ADCFCF800F7A140 /* yamTODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */; };
 		36B7C9472ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */; };
-		36B7C9592ADD206400F7A140 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */; };
 		36B7C9572ADD19C200F7A140 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9562ADD19C200F7A140 /* Task.swift */; };
+		36B7C9592ADD206400F7A140 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */; };
 		36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */; };
 		36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95D2ADD214900F7A140 /* FirebaseAnalyticsSwift */; };
 		36B7C9602ADD214900F7A140 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95F2ADD214900F7A140 /* FirebaseAppCheck */; };
@@ -87,6 +88,7 @@
 /* Begin PBXFileReference section */
 		300E65472B077E7A00DB3684 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		300E65492B07A7EB00DB3684 /* TasksByMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByMonth.swift; sourceTree = "<group>"; };
+		300E65512B08C59800DB3684 /* TitleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextView.swift; sourceTree = "<group>"; };
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TasksByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDay.swift; sourceTree = "<group>"; };
@@ -103,8 +105,8 @@
 		36B7C9402ADCFCF800F7A140 /* yamTODOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yamTODOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOUITests.swift; sourceTree = "<group>"; };
 		36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamTODOUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36B7C9562ADD19C200F7A140 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36B7C96F2ADD233300F7A140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B7C9722ADD25EC00F7A140 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		36B7C9742ADE18B800F7A140 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 			children = (
 				36EDCF522AF089AA004F2483 /* Symbol.swift */,
 				301C90372AF69326008BEB80 /* DetailTextView.swift */,
+				300E65512B08C59800DB3684 /* TitleTextView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */,
 				3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,
 				369350862AFB05120040AF26 /* RealmManager.swift in Sources */,

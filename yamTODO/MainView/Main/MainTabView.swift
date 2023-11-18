@@ -26,7 +26,7 @@ struct MainTabView: View {
       }
       .accentColor(.primary)
     }
-    .accentColor(.yamSky)
+    .accentColor(.yamDarkBlue)
     .edgesIgnoringSafeArea(edges)
 //    .statusBar(hidden: selectedTab == .recipe)
   }

@@ -14,7 +14,7 @@ public struct DetailTextView: UIViewRepresentable {
   var maxHeight: CGFloat
   var textFont: UIFont
   var textColor: UIColor = .black
-  var textLimit: Int = 200
+  var textLimit: Int = 500
   var cornerRadius: CGFloat? = nil
   var borderWidth: CGFloat? = nil
   var borderColor: CGColor? = nil
@@ -39,10 +39,11 @@ public struct DetailTextView: UIViewRepresentable {
     if let borderColor = borderColor {
       textView.layer.borderColor = borderColor
     }
-    if let placeholder = placeholder {
+    if let placeholder = placeholder, text == "" {
       textView.text = placeholder
       textView.textColor = placeholderColor
     } else {
+        textView.text = text
       textView.textColor = textColor
     }
     
@@ -53,14 +54,20 @@ public struct DetailTextView: UIViewRepresentable {
     textView.textContainer.lineFragmentPadding = lineFragmentPadding
     textView.textContainerInset = textContainerInset
     textView.delegate = context.coordinator
-      textView.text = text
-//    textView.becomeFirstResponder()
+      textView.backgroundColor = UIColor.yamSky
     
     return textView
   }
   
   public func updateUIView(_ uiView: UITextView, context: Context) {
-    updateHeight(uiView)
+      if let placeholder = placeholder, text == "" {
+          uiView.text = placeholder
+          uiView.textColor = placeholderColor
+      } else {
+          uiView.text = text
+          uiView.textColor = textColor
+      }
+      updateHeight(uiView)
   }
   
   public func makeCoordinator() -> Coordinator {

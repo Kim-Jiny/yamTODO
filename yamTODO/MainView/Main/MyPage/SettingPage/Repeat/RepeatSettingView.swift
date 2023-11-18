@@ -28,7 +28,7 @@ struct RepeatSettingView: View {
                 EditPopupView(selectedDate: selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)
             }
             if isShowDetailPopup {
-                if selectedTask != nil {
+                if selectedTask.selectedTask != nil {
                 DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
                   .environmentObject(taskList)
               }
