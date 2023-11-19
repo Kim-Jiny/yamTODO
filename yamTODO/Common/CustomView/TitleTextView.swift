@@ -79,6 +79,8 @@ struct TitleTextView: UIViewRepresentable {
       DispatchQueue.main.async {
         if size.height <= maxHeight {
           height = size.height
+        }else if size.height > maxHeight {
+            height = maxHeight
         }
       }
     }

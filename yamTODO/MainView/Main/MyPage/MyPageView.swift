@@ -26,7 +26,7 @@ struct MyPage: View {
         Form {
             appInfoSection
             taskInfoSection
-            appSettingSection
+//            appSettingSection
             fordDeveloper
         }
       }
@@ -44,18 +44,20 @@ private extension MyPage {
               Text("현재 앱 버전 v\(appVersion)")
                   .frame(height: 44)
           }
-          Button {
-              isShowNotice = true
-          } label: {
-              Text("공지사항")
-          }.alert(Text(""), isPresented: $isShowNotice, presenting: $isShowNotice, actions: { _ in
-              Button("확인", role: .cancel) {
-                
-              }
-            }, message: { _ in
-              Text("개발중입니다 🤖")
-            })
-          .frame(height: 44)
+//          Button {
+//              scheduleNotification()
+////              isShowNotice = true
+//          } label: {
+//              Text("공지사항")
+//          }
+//          .alert(Text(""), isPresented: $isShowNotice, presenting: $isShowNotice, actions: { _ in
+//              Button("확인", role: .cancel) {
+//                
+//              }
+//            }, message: { _ in
+//              Text("개발중입니다 🤖")
+//            })
+//          .frame(height: 44)
       }
     }
   var taskInfoSection: some View {
@@ -74,14 +76,14 @@ private extension MyPage {
     }
   }
   
-    var appSettingSection: some View {
-        Section(header: Text("앱 설정").fontWeight(.medium)) {
-            Toggle("알림 설정", isOn: $isAppNotice)
-            .frame(height: 44)
-
-        //      productHeightPicker
-        }
-    }
+//    var appSettingSection: some View {
+//        Section(header: Text("앱 설정").fontWeight(.medium)) {
+//            Toggle("알림 설정", isOn: $isAppNotice)
+//            .frame(height: 44)
+//
+//        //      productHeightPicker
+//        }
+//    }
     var fordDeveloper: some View {
       Section(header: Text("소통").fontWeight(.medium)) {
           
@@ -104,6 +106,27 @@ private extension MyPage {
       }
     }
     
+    func scheduleNotification() {
+            let content = UNMutableNotificationContent()
+            content.title = "알림 제목"
+            content.body = "알림 본문"
+            content.sound = UNNotificationSound.default
+
+            // 알림이 표시되는 시간 설정 (예: 10초 후)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+
+            // 알림 요청 생성
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+            // 요청을 notification center에 추가
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error adding notification request: \(error.localizedDescription)")
+                } else {
+                    print("Notification request added successfully")
+                }
+            }
+        }
 }
 
 extension ContentView {
