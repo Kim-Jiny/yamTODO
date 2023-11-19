@@ -41,6 +41,7 @@ extension UIColor {
 
 
 extension Color {
+    // 다크모드 지원 컬러
     static let yamLightGreen = Color("yamLightGreen")
     static let yamSky = Color("yamSky")
     static let yamBlue = Color("yamBlue")
@@ -48,6 +49,9 @@ extension Color {
     static let yamLightGray = Color("yamGray")
     static let yamWhite = Color("yamWhite")
     static let yamBlack = Color("yamBlack")
+    
+    // 불변 컬러
+    static let realWhite = Color("realWhite")
 }
 
 extension UIColor {
@@ -58,4 +62,7 @@ extension UIColor {
     static let yamLightGray = UIColor(named: "yamGray")
     static let yamWhite = UIColor(named: "yamWhite")
     static let yamBlack = UIColor(named: "yamBlack")
+    
+    
+    static let realWhite = UIColor(named: "realWhite")
 }
