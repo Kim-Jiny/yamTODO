@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TaskMainView: View {
     @StateObject var taskList = TaskList(date: Date())
+    @StateObject var tomrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
@@ -20,8 +21,9 @@ struct TaskMainView: View {
   var body: some View {
     NavigationView {
       ZStack {
-          TaskListView(selectedCalendar: selectedCalendar, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+          TaskListView(selectedCalendar: selectedCalendar, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask, isMain: true)
           .environmentObject(taskList)
+          .environmentObject(tomrTaskList)
           .navigationBarTitle(Text("TODO 👀"))
           .navigationBarTitleDisplayMode(.inline)
           // 네비게이션뷰에 태스크 생성 페이지 버튼 삭제

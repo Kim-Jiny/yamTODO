@@ -23,6 +23,7 @@ class TasksByDateObject: Object {
 class TaskList: ObservableObject {
     let objectWillChange = PassthroughSubject<TaskList, Never>()
     @Published var tasksObject: [TaskObject] = []
+    @Published var tomarrowTasksObject: [TaskObject] = []
     @Published var date: Date {
         didSet {
             updateTasks()
