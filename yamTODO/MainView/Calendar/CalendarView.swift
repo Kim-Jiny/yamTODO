@@ -11,6 +11,7 @@ import Combine
 
 struct CalendarView: View {
     @ObservedObject var monthDataList: TasksByMonthListModel
+    @ObservedObject var taskList: TaskList
     @Binding var selectedMonth: Date
     @Binding var selectedDate: Date
     @State var offset: CGSize = CGSize()
@@ -38,6 +39,10 @@ struct CalendarView: View {
     .animation(.easeOut, value: offset)
     .padding(.leading, 30)
     .padding(.trailing, 30)
+    .onReceive(taskList.objectWillChange, perform: { _ in
+        print("@@ 달력 업데이트 필요")
+        monthDataList.date = monthDataList.date
+    })
   }
   
   // MARK: - 헤더 뷰

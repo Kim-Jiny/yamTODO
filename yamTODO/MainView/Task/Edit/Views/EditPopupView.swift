@@ -126,9 +126,8 @@ extension EditPopupView {
         Array(self.dayOfWeekManager.selectedDays.map({ $0.index })).forEach { val in
             newTask.optionType.append(val)
         }
-        RealmManager.shared.addTask(date: taskList.date, new: newTask)
-        taskList.updateTasks()
-//        taskList.tasksObject.insert(newTask, at: 0)
+        
+        taskList.createTask(new: newTask)
         self.taskTitle = ""
         self.isPresented = false
     }
