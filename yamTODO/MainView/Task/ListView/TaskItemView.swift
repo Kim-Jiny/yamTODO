@@ -26,7 +26,7 @@ struct TaskItemView: View {
                     .foregroundColor(Color.yamDarkBlue)
                     .frame(width: 20, height: 20)
                 Text("+\(task.isDelay)")
-                    .foregroundColor(.yamWhite)
+                    .foregroundColor(.realWhite)
                     .font(.system(size: 10))
                     .fontWeight(.bold)
             }

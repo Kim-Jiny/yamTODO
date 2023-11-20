@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import RealmSwift
+import Combine
 
 struct CalendarView: View {
     @ObservedObject var monthDataList: TasksByMonthListModel
@@ -117,8 +119,33 @@ struct CalendarView: View {
             let day = Calendar.current.component(.day, from: date)
             let clicked = selectedDate == date
               let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
+              let overToday = date.formattedCalendarDayDate > Date.today.formattedCalendarDayDate
+        
+              if let tasksByDate = monthDataList.days.first(where: { $0.key == date.dateKey }) {
+                  if tasksByDate.tasks.count > 0 {
+                      // 아직 완료되지 않은 작업이 있는 경우
+                      if let isNotFinish = tasksByDate.tasks.first(where: { !$0.isDone }) {
+                          // 완료작업이 아에 없는 경우 : red
+                          if let notFinish = tasksByDate.tasks.first(where: { $0.isDone }) {
+                              CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 2)
+//                              pointType = .yellow
+                          } else {
+                              CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 1)
+//                              pointType = .red
+                          }
+                      } else {
+                          // 모든 작업이 완료된 경우
+                          CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 3)
+//                          calendarPointType = CalendarPointType.green
+                      }
+                  } else {
+                      CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
+                  }
+              }else {
+                  CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
+              }
             
-              CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isCurrentMonthDay: true)
+             
           } else if let prevMonthDate = Calendar.current.date(
             byAdding: .day,
             value: index + lastDayOfMonthBefore,
