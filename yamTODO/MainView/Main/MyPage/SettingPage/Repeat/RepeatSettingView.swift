@@ -17,8 +17,11 @@ struct RepeatSettingView: View {
         ZStack {
             List {
                 ForEach(self.taskList.tasksObject) { task in
-                    RepeatItemView(task: task, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
-                        .environmentObject(taskList)
+                    // 지워지거나 수정되지 않은 옵션만 표시
+                    if !task.isRemove {
+                        RepeatItemView(task: task, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+                            .environmentObject(taskList)
+                    }
                 }
             }
             .navigationBarTitle("반복 할 일")

@@ -18,14 +18,54 @@ class RealmManager {
       let realm = try Realm()
         // 그날의 task를 꺼냄
         let tasks = realm.object(ofType: TasksByDateObject.self, forPrimaryKey: date.dateKey)
+        // 반복 옵션을 꺼냄
+        var repeatTasks = realm.object(ofType: TasksByDateObject.self, forPrimaryKey: optionKey)
         
+        
+        if let repeatTasks = repeatTasks, let tasks = tasks {
+            // 반봅옵션 id list
+            let repeatIdArr = Array(repeatTasks.tasks.map({ $0.id }))
+            // 기존의 테스크들중에 옵션키값이 존재하는 애들의 지워진 날짜 비교
+//            returnModel.tasks.filter { task in
+//                let isRepeat = task.optionType.count > 0
+//                repeatIdArr.contains(where: task.id)
+//            }
+            tasks.tasks.forEach { task in
+                // 테스트가 옵션에서 가지고온거면
+                if task.optionType.count > 0 {
+                    // 옵션리스트에도 id가 존재하면.
+                    repeatTasks.tasks.forEach {
+                        if $0.id == task.rootId {
+                            // 그런데 옵션리스트에서는 삭제되었고 삭제된 시간이 오늘 날짜 이전이면 해당 태스크를 삭제해줘야함.
+                            if let removedBy = $0.removedBy {
+                                let isOverEndDay = Calendar.current.startOfDay(for: removedBy) < Calendar.current.startOfDay(for: date)
+                                // 삭제
+                                if isOverEndDay {
+                                    deleteTaskObjectFromDate(task: task, force: true)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        let reTasks = realm.object(ofType: TasksByDateObject.self, forPrimaryKey: date.dateKey)
         //리턴모델로 만듬.
-        let tasksArray = Array(tasks?.tasks ?? List<TaskObject>())
+        let tasksArray = Array(reTasks?.tasks ?? List<TaskObject>())
         let returnModel = TasksListModel(key: date.dateKey, tasks: tasksArray)
-        // 반복 옵션들을 꺼내서 해당요일이 존재하는지 확인함.
-        let repeatTasks = realm.object(ofType: TasksByDateObject.self, forPrimaryKey: optionKey)
+        
+        // 반복 옵션들에 해당요일이 존재하는지 확인함.
         let dayRepeatTasks = repeatTasks?.tasks.filter({ optionTask in
-            optionTask.optionType.contains((Calendar.current.component(.weekday, from: date) + 100))
+            // 옵션이 해당날짜에 해당되는지 확인
+            let isContains = optionTask.optionType.contains((Calendar.current.component(.weekday, from: date) + 100))
+            // 오늘날짜가 생성날짜보다 이후 인지 확인
+            let isOverDay = Calendar.current.startOfDay(for: optionTask.createdBy) <= Calendar.current.startOfDay(for: date)
+            // 오늘날짜가 지워진 날짜보다 이전인지 확인
+            var isBecomeEndDay = true
+            if let removedBy = optionTask.removedBy {
+                let isBecomeEndDay = Calendar.current.startOfDay(for: removedBy) > Calendar.current.startOfDay(for: date)
+            }
+            return isContains && isOverDay && isBecomeEndDay
         })
         // 그날의 task에 RootId에 옵션과 중복되는 Task 가 있는지 확인하고 버림.
         let repeateArray = returnModel.tasks.filter({ task in
@@ -34,7 +74,9 @@ class RealmManager {
             task.rootId
         }
         
+        // 해당 날짜 반복 태스트 for
         dayRepeatTasks?.forEach { repeatTask in
+            // 포함되어있지 않으면 포함해줌.
             if !repeateArray.contains(where: { $0 == repeatTask.id }) {
                 // repeateArray에 repeatTask.id가 없는 경우
                 // 그날의 task List에 반복 테스크를 넣어서 리턴시킴.
@@ -45,7 +87,7 @@ class RealmManager {
                 returnModel.tasks.append(newRepeatTask)
             }
         }
-        
+    
       return returnModel
     }catch {
       print("Error: \(error)")
@@ -167,12 +209,12 @@ class RealmManager {
         }
     }
   // 테스크를 삭제.
-    func deleteTaskObjectFromDate(task: TaskObject) {
+    func deleteTaskObjectFromDate(task: TaskObject, force: Bool = false) {
         do {
             if let tasks = getTasksByDateObject(date: task.date), let index = tasks.tasks.firstIndex(of: task) {
                 // tasks 리스트에서 해당 TaskObject를 제거합니다.
                 // 만약에 rootId가 없으면 일반삭제 진행 - 반복 옵션이 아님
-                if task.rootId == "" {
+                if task.rootId == "" || force {
                     try! task.realm?.write {
                         tasks.tasks.remove(at: index)
                     }
@@ -195,6 +237,21 @@ class RealmManager {
             self.writeOptionObject(key: optionKey, task: task)
         }else {
             self.writeTasksByDateObject(date: date, tasks: [task])
+        }
+    }
+    
+    func deleteOptionTaskObject(task: TaskObject) {
+        do {
+            if let tasks = getOptionObject(key: optionKey) {
+                // tasks 리스트에서 해당 TaskObject를 삭제를 업데이트합니다.
+                // 바로 삭제를 하지않는 이유는 ~까지 옵션을 구현하기 위함.
+                try task.realm?.write {
+                    task.isRemove = true
+                    task.removedBy = Date()
+                }
+            }
+        } catch {
+            print("Error: \(error)")
         }
     }
     

@@ -60,36 +60,17 @@ struct RepeatDetailPopupView: View {
                   RepeatView(selectedDays: $dayOfWeekManager.selectedDays )
               }
             HStack {
-//                Spacer()
-//                Button("삭제") {
-//                    showDeleteAlert.toggle()
-//                }
-//                .alert(isPresented: $showDeleteAlert) {
-//                    Alert(
-//                        title: Text(""),
-//                        message: Text("정말 삭제하시겠습니까?"),
-//                        primaryButton: .destructive(Text("삭제")) {
-//                            // 삭제 버튼을 눌렀을 때 수행할 액션
-//                            deleteTask()
-//                        },
-//                        secondaryButton: .cancel()
-//                    )
-//                }
-//                .foregroundColor(.yamDarkBlue)
-//                .fontWeight(.bold)
-//                Spacer()
                 Button(action: {
                     showDeleteAlert.toggle()
                 }, label: {
                     Text("삭제")
-//                    .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamDarkBlue)
                     .fontWeight(.bold)
                     .padding()
                 }).alert(isPresented: $showDeleteAlert) {
                     Alert(
                         title: Text(""),
-                        message: Text("정말 삭제하시겠습니까?"),
+                        message: Text("삭제하시겠습니까? 과거에 이미 등록된 할 일은 캘린더에서 삭제해주세요. 삭제 시 오늘 이후의 반복 일정이 삭제됩니다."),
                         primaryButton: .destructive(Text("삭제")) {
                             // 삭제 버튼을 눌렀을 때 수행할 액션
                             deleteTask()
@@ -103,12 +84,10 @@ struct RepeatDetailPopupView: View {
                   }
                 }, label: {
                     Text("수정")
-//                    .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamBlue)
                     .fontWeight(.bold)
                     .padding()
                 })
-//                Spacer()
             }
             .frame(height: 50)
           }
@@ -164,7 +143,7 @@ struct RepeatDetailPopupView: View {
     }
     
     private func deleteTask() {
-        self.selectedTask.deleteSelectTask()
+        self.selectedTask.deleteSelectOptionTask()
         self.isPresented = false
     }
 }

@@ -32,7 +32,7 @@ struct EditPopupView: View {
                             .frame(width: 22, height: 20)
                             .aspectRatio(contentMode: .fill)
                             .foregroundColor(.yamBlue)
-                        TextField("할 일을 작성해주세요.", text: $taskTitle)
+                        TextField("할 일을 작성해 주세요.", text: $taskTitle)
                             .padding()
                             .textFieldStyle(PlainTextFieldStyle())
                     }
@@ -45,7 +45,7 @@ struct EditPopupView: View {
                         cornerRadius: 8,
                         borderWidth: 0,
                         borderColor: UIColor.yamBlue!.cgColor,
-                        placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
+                        placeholder: "할 일에 대한 자세한 설명을 입력할 수 있습니다."
                     )
                     .lineLimit(10)
                     .cornerRadius(8)
@@ -60,13 +60,18 @@ struct EditPopupView: View {
                         RepeatView(selectedDays: $dayOfWeekManager.selectedDays )
                     }
                     
+                    if dayOfWeekManager.selectedDays.count > 0 {
+                        Text("반복 할 일은 오늘 이후로만 등록됩니다.")
+                            .font(.system(size: 10))
+                    }
+                    
                     HStack {
                         Button(action: {
                             if !taskTitle.isEmpty {
                                 createTask()
                             }
                         }, label: {
-                            Text("Save")
+                            Text("저장")
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .foregroundColor(.yamBlue)
                                 .fontWeight(.bold)
@@ -85,18 +90,7 @@ struct EditPopupView: View {
                 .cornerRadius(8)
                 .frame(width: geometry.size.width - 70)
                 .onTapGesture {
-                    // 뷰 탭에 대한 추가 액션
                 }
-                
-//                Button(action: {
-//                    self.isPresented = false
-//                }, label: {
-//                    Image(systemName: "xmark.circle")
-//                })
-//                .offset(x: -16, y: 16)
-//                NewTaskView()
-//                    .offset(y: -150)
-                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .background(Color.yamBlack.opacity(0.2))
