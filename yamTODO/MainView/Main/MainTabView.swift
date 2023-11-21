@@ -39,13 +39,13 @@ private extension MainTabView {
   var home: some View {
     TaskMainView()
       .tag(Tabs.home)
-      .tabItem(image: "house", text: "홈")
+      .tabItem(image: "house", text: Text("Home"))
   }
   
   var calendar: some View {
       CalendarMainView()
       .tag(Tabs.calendar)
-      .tabItem(image: "calendar", text: "캘린더")
+      .tabItem(image: "calendar", text: Text("Calendar"))
   }
   
 //  var imageGallery: some View {
@@ -57,7 +57,7 @@ private extension MainTabView {
   var myPage: some View {
     MyPage()
       .tag(Tabs.myPage)
-      .tabItem(image: "person", text: "마이페이지")
+      .tabItem(image: "person", text: Text("Mypage"))
   }
   
   // MARK: Computed Values
@@ -75,11 +75,11 @@ private extension MainTabView {
 // MARK: - View Extension
 
 fileprivate extension View {
-  func tabItem(image: String, text: String) -> some View {
+  func tabItem(image: String, text: Text) -> some View {
     self.tabItem {
       Symbol(image, scale: .large)
         .font(Font.system(size: 17, weight: .light))
-      Text(text)
+      text
     }
   }
 }
