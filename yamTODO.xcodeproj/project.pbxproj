@@ -597,6 +597,7 @@
 				"zh-Hant",
 				"zh-Hans",
 				ja,
+				vi,
 			);
 			mainGroup = 36B7C91D2ADCFCF700F7A140;
 			packageReferences = (

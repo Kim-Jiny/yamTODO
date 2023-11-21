@@ -24,6 +24,12 @@
             "value" : "앱 설정"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thiết lập ứng dụng"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -50,6 +56,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "현재 앱 버전 v%@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phiên bản ứng dụng v%@"
           }
         },
         "zh-Hans" : {
@@ -80,6 +92,12 @@
             "value" : "삭제 하시겠습니까?"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn có chắc chắn muốn xóa không?"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -106,6 +124,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "삭제하시겠습니까? 삭제하면 오늘 이후로 반복되는 작업이 제거됩니다. 과거에 이미 등록된 할 일은 캘린더에서 삭제해주세요. "
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn có chắc chắn muốn xóa không? Xóa sẽ xóa các sự kiện lặp lại sau ngày hôm nay. Vui lòng xóa các tác vụ đã được lên lịch trong quá khứ khỏi lịch."
           }
         },
         "zh-Hans" : {
@@ -136,6 +160,12 @@
             "value" : "Cancel"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "& Bỏ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -162,6 +192,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "소통"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thông tin liên lạc"
           }
         },
         "zh-Hans" : {
@@ -192,6 +228,12 @@
             "value" : "삭제"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoá"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -218,6 +260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "등록"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sửa"
           }
         },
         "zh-Hans" : {
@@ -248,6 +296,12 @@
             "value" : "할 일 등록📝"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉnh sửa tác vụ 📝"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -274,6 +328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "타이틀을 입력하세요."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập tiêu đề mới..."
           }
         },
         "zh-Hans" : {
@@ -304,6 +364,12 @@
             "value" : "구글 로그인"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đăng nhập Google"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -330,6 +396,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "게스트"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "khách"
           }
         },
         "zh-Hans" : {
@@ -360,6 +432,12 @@
             "value" : "게스트로 앱을 사용하면 데이터가 로컬에 저장됩니다. 나중에 로그인할 수 있습니다"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu bạn sử dụng ứng dụng làm Khách, dữ liệu sẽ được lưu trữ cục bộ. Bạn có thể đăng nhập sau."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -386,6 +464,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "마이 페이지"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trang của tôi"
           }
         },
         "zh-Hans" : {
@@ -416,6 +500,12 @@
             "value" : "알림"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thông báo"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -442,6 +532,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Được rồi."
           }
         },
         "zh-Hans" : {
@@ -472,6 +568,12 @@
             "value" : "할 일 등록"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vui lòng tạo một nhiệm vụ."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -498,6 +600,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하루\\n미루기"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trì hoãn một ngày"
           }
         },
         "zh-Hans" : {
@@ -528,6 +636,12 @@
             "value" : "반복 할 일"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lịch trình lặp lại"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -554,6 +668,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "반복 할 일 은 오늘 이후로만 등록됩니다."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Các tác vụ lặp lại chỉ có thể được đăng ký từ hôm nay trở đi."
           }
         },
         "zh-Hans" : {
@@ -584,6 +704,12 @@
             "value" : "할 일 등록"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đăng ký một nhiệm vụ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -610,6 +736,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu"
           }
         },
         "zh-Hans" : {
@@ -640,6 +772,12 @@
             "value" : "개발자에게 피드백 보내기 (문의하기)"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gửi phản hồi cho nhà phát triển (Yêu cầu)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -668,6 +806,12 @@
             "value" : "반복 설정"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thiết lập lịch trình định kỳ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -691,6 +835,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TODO 👀"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TODO 👀"
@@ -724,6 +874,12 @@
             "value" : "메일을 보낼 수 없습니다."
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể gửi email"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -752,6 +908,12 @@
             "value" : "이 할 일을 하루 미루시겠습니까?"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn có muốn hoãn nhiệm vụ này sang ngày mai không?"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -778,6 +940,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 디바이스에서 이메일을 사용할 수 없습니다."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn không thể gửi email từ thiết bị này."
           }
         },
         "zh-Hans" : {
