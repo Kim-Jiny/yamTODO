@@ -36,7 +36,7 @@ struct DetailPopupView: View {
                 cornerRadius: 0,
                 borderWidth: 0,
                 borderColor: UIColor.yamBlue!.cgColor,
-                placeholder: "공백으로 남기면 Task가 삭제됩니다."
+                placeholder: "If left blank, the task will be deleted."
               )
                 .frame(maxHeight: taskTitleHeight)
               DetailTextView(
@@ -47,7 +47,7 @@ struct DetailPopupView: View {
                       cornerRadius: 8,
                       borderWidth: 2,
                       borderColor: UIColor.yamBlue!.cgColor,
-                      placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
+                      placeholder: "You can enter a detailed description for the task."
                     )
               .lineLimit(10)
               .cornerRadius(8)
@@ -56,7 +56,7 @@ struct DetailPopupView: View {
                 Button(action: {
                     showDeleteAlert.toggle()
                 }, label: {
-                    Text("삭제")
+                    Text("Delete")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamDarkBlue)
                     .fontWeight(.bold)
@@ -64,8 +64,8 @@ struct DetailPopupView: View {
                 }).alert(isPresented: $showDeleteAlert) {
                     Alert(
                         title: Text(""),
-                        message: Text("정말 삭제하시겠습니까?"),
-                        primaryButton: .destructive(Text("삭제")) {
+                        message: Text("Are you sure you want to delete?"),
+                        primaryButton: .destructive(Text("Delete")) {
                             // 삭제 버튼을 눌렀을 때 수행할 액션
                             deleteTask()
                         },
@@ -80,21 +80,21 @@ struct DetailPopupView: View {
                       showDeleteAlert.toggle()
                   }
                 }, label: {
-                    Text("수정")
+                    Text("Edit")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamBlue)
                     .fontWeight(.bold)
                     .padding()
                 })
                 Spacer()
-                Button("하루 미루기") {
+                Button("Postpone for a day") {
                     showDelayAlert.toggle()
                 }
                 .alert(isPresented: $showDelayAlert) {
                     Alert(
                         title: Text(""),
-                        message: Text("이 일을 내일로 미루시겠습니까?"),
-                        primaryButton: .destructive(Text("확인")) {
+                        message: Text("Would you like to postpone this task to tomorrow?"),
+                        primaryButton: .destructive(Text("OK")) {
                             delayTask()
                         },
                         secondaryButton: .cancel()

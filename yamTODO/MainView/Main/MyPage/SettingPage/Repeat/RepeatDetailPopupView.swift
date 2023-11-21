@@ -63,15 +63,15 @@ struct RepeatDetailPopupView: View {
                 Button(action: {
                     showDeleteAlert.toggle()
                 }, label: {
-                    Text("삭제")
+                    Text("Delete")
                     .foregroundColor(.yamDarkBlue)
                     .fontWeight(.bold)
                     .padding()
                 }).alert(isPresented: $showDeleteAlert) {
                     Alert(
                         title: Text(""),
-                        message: Text("삭제하시겠습니까? 과거에 이미 등록된 할 일은 캘린더에서 삭제해주세요. 삭제 시 오늘 이후의 반복 일정이 삭제됩니다."),
-                        primaryButton: .destructive(Text("삭제")) {
+                        message: Text("Are you sure you want to delete? Deleting will remove recurring events beyond today. Please remove tasks that have already been scheduled in the past from the calendar."),
+                        primaryButton: .destructive(Text("Delete")) {
                             // 삭제 버튼을 눌렀을 때 수행할 액션
                             deleteTask()
                         },
@@ -83,7 +83,7 @@ struct RepeatDetailPopupView: View {
                     saveTask()
                   }
                 }, label: {
-                    Text("수정")
+                    Text("Edit")
                     .foregroundColor(.yamBlue)
                     .fontWeight(.bold)
                     .padding()

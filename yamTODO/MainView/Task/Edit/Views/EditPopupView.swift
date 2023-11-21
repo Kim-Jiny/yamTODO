@@ -17,7 +17,7 @@ struct EditPopupView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    Text("할 일 등록")
+                    Text("Register a task")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.yamBlue)
@@ -32,7 +32,7 @@ struct EditPopupView: View {
                             .frame(width: 22, height: 20)
                             .aspectRatio(contentMode: .fill)
                             .foregroundColor(.yamBlue)
-                        TextField("할 일을 작성해 주세요.", text: $taskTitle)
+                        TextField("Please create a task.", text: $taskTitle)
                             .padding()
                             .textFieldStyle(PlainTextFieldStyle())
                     }
@@ -45,7 +45,7 @@ struct EditPopupView: View {
                         cornerRadius: 8,
                         borderWidth: 0,
                         borderColor: UIColor.yamBlue!.cgColor,
-                        placeholder: "할 일에 대한 자세한 설명을 입력할 수 있습니다."
+                        placeholder: "You can enter a detailed description for the task."
                     )
                     .lineLimit(10)
                     .cornerRadius(8)
@@ -61,7 +61,7 @@ struct EditPopupView: View {
                     }
                     
                     if dayOfWeekManager.selectedDays.count > 0 {
-                        Text("반복 할 일은 오늘 이후로만 등록됩니다.")
+                        Text("Recurring tasks can only be registered from today onwards.")
                             .font(.system(size: 10))
                     }
                     
@@ -71,7 +71,7 @@ struct EditPopupView: View {
                                 createTask()
                             }
                         }, label: {
-                            Text("저장")
+                            Text("Save")
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .foregroundColor(.yamBlue)
                                 .fontWeight(.bold)

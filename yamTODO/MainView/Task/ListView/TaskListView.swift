@@ -109,7 +109,7 @@ private extension TaskListView {
   
     static let calendarHeaderDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM월 dd일"
+        formatter.dateFormat = "MM, dd"
         return formatter
     }()
   

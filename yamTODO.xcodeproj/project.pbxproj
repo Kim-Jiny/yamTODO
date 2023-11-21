@@ -12,6 +12,7 @@
 		300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65512B08C59800DB3684 /* TitleTextView.swift */; };
 		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
+		364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		3693507F2AF8B6500040AF26 /* TasksByDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDay.swift */; };
 		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
@@ -92,6 +93,7 @@
 		300E65512B08C59800DB3684 /* TitleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextView.swift; sourceTree = "<group>"; };
 		300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetailPopupView.swift; sourceTree = "<group>"; };
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
+		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TasksByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDay.swift; sourceTree = "<group>"; };
 		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -185,6 +187,24 @@
 			path = CalendarCell;
 			sourceTree = "<group>";
 		};
+		364FC75C2B0C3B64009AF157 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				364FC75D2B0C3B9E009AF157 /* Localize */,
+				36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */,
+				36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		364FC75D2B0C3B9E009AF157 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				364FC7602B0C3C63009AF157 /* Localizable.xcstrings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
 		36A909E32AFCB87E00848754 /* Date */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,11 +241,9 @@
 				36B7C9A52ADFB04000F7A140 /* Networking */,
 				36B7C99D2ADF676500F7A140 /* Utilies */,
 				36B7C97C2ADE1A2200F7A140 /* Common */,
-				36B7C9582ADD206400F7A140 /* GoogleService-Info.plist */,
 				36B7C96F2ADD233300F7A140 /* AppDelegate.swift */,
 				36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */,
 				36B7C92B2ADCFCF700F7A140 /* ContentView.swift */,
-				36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */,
 				36B7C92F2ADCFCF800F7A140 /* Preview Content */,
 			);
 			path = yamTODO;
@@ -281,6 +299,7 @@
 		36B7C97C2ADE1A2200F7A140 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				364FC75C2B0C3B64009AF157 /* Resources */,
 				36EDCF512AF0899A004F2483 /* CustomView */,
 				36B7C9832ADE26A900F7A140 /* Extensions */,
 				36B7C97E2ADE1A2E00F7A140 /* UserDefaults */,
@@ -574,6 +593,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 36B7C91D2ADCFCF700F7A140;
 			packageReferences = (
@@ -599,6 +619,7 @@
 			files = (
 				36B7C9312ADCFCF800F7A140 /* Preview Assets.xcassets in Resources */,
 				36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */,
+				364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */,
 				36B7C9592ADD206400F7A140 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -824,7 +845,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
-				DEVELOPMENT_TEAM = HW9XJ9J5M2;
+				DEVELOPMENT_TEAM = 799GLJ393L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -838,7 +859,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -854,7 +875,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
-				DEVELOPMENT_TEAM = HW9XJ9J5M2;
+				DEVELOPMENT_TEAM = 799GLJ393L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -868,7 +889,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

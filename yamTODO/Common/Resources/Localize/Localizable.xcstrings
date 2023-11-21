@@ -1,0 +1,119 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "+%lld" : {
+
+    },
+    "App settings" : {
+
+    },
+    "App version v%@" : {
+
+    },
+    "Are you sure you want to delete?" : {
+
+    },
+    "Are you sure you want to delete? Deleting will remove recurring events beyond today. Please remove tasks that have already been scheduled in the past from the calendar." : {
+
+    },
+    "Communication" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Edit" : {
+
+    },
+    "Edit Task 📝" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일 등록📝"
+          }
+        }
+      }
+    },
+    "Enter New Title..." : {
+
+    },
+    "Google Login" : {
+
+    },
+    "Guest" : {
+
+    },
+    "If you use the app as a Guest, data will be stored locally. You can log in later." : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "게스트로 앱을 사용하면 데이터가 로컬에 저장됩니다. 나중에 로그인할 수 있습니다"
+          }
+        }
+      }
+    },
+    "My Page" : {
+
+    },
+    "OK" : {
+
+    },
+    "Please create a task." : {
+
+    },
+    "Postpone for a day" : {
+
+    },
+    "Rcurring schedule" : {
+
+    },
+    "Recurring schedule" : {
+
+    },
+    "Recurring tasks can only be registered from today onwards." : {
+
+    },
+    "Register a task" : {
+
+    },
+    "Save" : {
+
+    },
+    "Send feedback to the developer (Inquiry)" : {
+
+    },
+    "Setting up a recurring schedule" : {
+
+    },
+    "TODO 👀" : {
+
+    },
+    "Unable to send email" : {
+
+    },
+    "Would you like to postpone this task to tomorrow?" : {
+
+    },
+    "You cannot send emails from this device." : {
+
+    },
+    "경고" : {
+
+    },
+    "취소" : {
+
+    },
+    "확인" : {
+
+    }
+  },
+  "version" : "1.0"
+}

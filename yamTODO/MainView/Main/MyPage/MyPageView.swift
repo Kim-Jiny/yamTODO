@@ -30,7 +30,7 @@ struct MyPage: View {
             fordDeveloper
         }
       }
-      .navigationBarTitle("마이 페이지")
+      .navigationBarTitle("My Page")
     }
   }
 }
@@ -39,9 +39,9 @@ struct MyPage: View {
 private extension MyPage {
   // MARK: View
     var appInfoSection: some View {
-      Section(header: Text("앱 정보").fontWeight(.medium)) {
+      Section(header: Text("App settings").fontWeight(.medium)) {
           if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-              Text("현재 앱 버전 v\(appVersion)")
+              Text("App version v\(appVersion)")
                   .frame(height: 44)
           }
 //          Button {
@@ -61,9 +61,9 @@ private extension MyPage {
       }
     }
   var taskInfoSection: some View {
-    Section(header: Text("반복 설정").fontWeight(.medium)) {
+    Section(header: Text("Rcurring schedule").fontWeight(.medium)) {
         NavigationLink(destination: RepeatSettingView()) {
-            Text("반복 할 일 수정")
+            Text("Setting up a recurring schedule")
         }
 //        Button {
 //            isShowRepeatView = true
@@ -85,7 +85,7 @@ private extension MyPage {
 //        }
 //    }
     var fordDeveloper: some View {
-      Section(header: Text("소통").fontWeight(.medium)) {
+      Section(header: Text("Communication").fontWeight(.medium)) {
           
           Button {
               if MFMailComposeViewController.canSendMail() {
@@ -94,12 +94,12 @@ private extension MyPage {
                   self.showFailedMailAlert = true
               }
           } label: {
-              Text("개발자에게 이메일 보내기")
+              Text("Send feedback to the developer (Inquiry)")
           }
           .sheet(isPresented: $isShowingMailView) {
               MailComposeViewController(isShowing: self.$isShowingMailView)
           }.alert(isPresented: $showFailedMailAlert) {
-              Alert(title: Text("이메일 전송 불가"), message: Text("이 기기에서 이메일을 보낼 수 없습니다."), dismissButton: .default(Text("확인")))
+              Alert(title: Text("Unable to send email"), message: Text("You cannot send emails from this device."), dismissButton: .default(Text("OK")))
           }
           .frame(height: 44)
         

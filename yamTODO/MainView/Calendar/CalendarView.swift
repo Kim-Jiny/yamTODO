@@ -40,7 +40,6 @@ struct CalendarView: View {
     .padding(.leading, 30)
     .padding(.trailing, 30)
     .onReceive(taskList.objectWillChange, perform: { _ in
-        print("@@ 달력 업데이트 필요")
         monthDataList.date = monthDataList.date
     })
   }

@@ -16,13 +16,13 @@ enum DayOfWeek: String, CaseIterable {
   
   var displayName: String {
       switch self {
-          case .sunday: return "일"
-          case .monday: return "월"
-          case .tuesday: return "화"
-          case .wednesday: return "수"
-          case .thursday: return "목"
-          case .friday: return "금"
-          case .saturday: return "토"
+          case .sunday: return "Sun"
+          case .monday: return "Mon"
+          case .tuesday: return "Tue"
+          case .wednesday: return "Wed"
+          case .thursday: return "Thu"
+          case .friday: return "Fri"
+          case .saturday: return "Sat"
       }
   }
   

@@ -24,7 +24,7 @@ struct RepeatSettingView: View {
                     }
                 }
             }
-            .navigationBarTitle("반복 할 일")
+            .navigationBarTitle("Recurring schedule")
             .navigationBarTitleDisplayMode(.inline)
             
             if isShowDetailPopup {

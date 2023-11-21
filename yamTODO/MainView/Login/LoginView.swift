@@ -26,7 +26,7 @@ struct LoginView: View {
             
           }
         }, message: { _ in
-          Text("Guest로 입장시 데이터가 누락될 수 있습니다.")
+          Text("If you use the app as a Guest, data will be stored locally. You can log in later.")
         })
         .fullScreenCover(isPresented: self.$showTaskList) {
 //          CalenderView(month: .now)
