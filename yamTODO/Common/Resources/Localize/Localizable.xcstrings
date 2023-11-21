@@ -5,6 +5,7 @@
 
     },
     "%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -446,6 +447,9 @@
         }
       }
     },
+    "Fri" : {
+
+    },
     "Google Login" : {
       "localizations" : {
         "ja" : {
@@ -582,6 +586,9 @@
           }
         }
       }
+    },
+    "Mon" : {
+
     },
     "My Page" : {
       "localizations" : {
@@ -889,6 +896,9 @@
         }
       }
     },
+    "Sat" : {
+
+    },
     "Save" : {
       "localizations" : {
         "ja" : {
@@ -991,6 +1001,12 @@
         }
       }
     },
+    "Sun" : {
+
+    },
+    "Thu" : {
+
+    },
     "TODO 👀" : {
       "localizations" : {
         "ja" : {
@@ -1025,6 +1041,9 @@
         }
       }
     },
+    "Tue" : {
+
+    },
     "Unable to send email" : {
       "localizations" : {
         "ja" : {
@@ -1058,6 +1077,9 @@
           }
         }
       }
+    },
+    "Wed" : {
+
     },
     "Would you like to postpone this task to tomorrow?" : {
       "localizations" : {

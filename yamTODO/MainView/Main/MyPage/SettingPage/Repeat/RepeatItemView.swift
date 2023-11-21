@@ -21,10 +21,10 @@ struct RepeatItemView: View {
             ForEach(task.optionType.sorted(), id: \.self) { repeatType in
                 ZStack {
                     Circle()
-                        .foregroundColor(Color.yamDarkBlue)
-                        .frame(width: 20, height: 20)
-                    Text("\(repeatType.getRepeatType().displayName)")
-                        .foregroundColor(.yamWhite)
+                        .foregroundColor(Color.yamRealDarkPoint)
+                        .frame(width: 30, height: 30)
+                    repeatType.getRepeatType().displayText
+                        .foregroundColor(.realWhite)
                 }
             }
             Spacer()

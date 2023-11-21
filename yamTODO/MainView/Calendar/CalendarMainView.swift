@@ -31,7 +31,6 @@ struct CalendarMainView: View {
 //                        .environmentObject(monthDataList)
 //                        .navigationBarTitle(Text("Calendar 📆"))
                         .navigationBarTitleDisplayMode(.inline)
-                        
                     
                     TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
                         .environmentObject(taskList)
@@ -50,6 +49,8 @@ struct CalendarMainView: View {
                 }
             }
         }
+        
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             // selectedDate가 변경될 때마다 taskList를 업데이트
             taskList.date = selectedCalendar.selectedDate

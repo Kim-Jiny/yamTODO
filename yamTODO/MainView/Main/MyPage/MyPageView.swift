@@ -31,7 +31,9 @@ struct MyPage: View {
         }
       }
       .navigationBarTitle("My Page")
+        
     }
+    .navigationViewStyle(StackNavigationViewStyle())
   }
 }
 

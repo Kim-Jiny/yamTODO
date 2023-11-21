@@ -5,6 +5,8 @@
 //  Created by Jiny on 2023/10/30.
 //
 
+import SwiftUI
+
 enum DayOfWeek: String, CaseIterable {
   case sunday
   case monday
@@ -14,15 +16,15 @@ enum DayOfWeek: String, CaseIterable {
   case friday
   case saturday
   
-  var displayName: String {
+  var displayText: Text {
       switch self {
-          case .sunday: return "Sun"
-          case .monday: return "Mon"
-          case .tuesday: return "Tue"
-          case .wednesday: return "Wed"
-          case .thursday: return "Thu"
-          case .friday: return "Fri"
-          case .saturday: return "Sat"
+          case .sunday: return Text("Sun")
+          case .monday: return Text("Mon")
+          case .tuesday: return Text("Tue")
+          case .wednesday: return Text("Wed")
+          case .thursday: return Text("Thu")
+          case .friday: return Text("Fri")
+          case .saturday: return Text("Sat")
       }
   }
   

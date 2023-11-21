@@ -21,10 +21,11 @@ struct TaskMainView: View {
   var body: some View {
     NavigationView {
       ZStack {
-          TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask, isMain: true)
+          TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask/*, isMain: true*/)
               .environmentObject(taskList)
           .navigationBarTitle(Text("TODO 👀"))
           .navigationBarTitleDisplayMode(.inline)
+          
           // 네비게이션뷰에 태스크 생성 페이지 버튼 삭제
 //          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
 //            Image("edit")
@@ -43,6 +44,7 @@ struct TaskMainView: View {
         }
       }
     }
+    .navigationViewStyle(StackNavigationViewStyle())
     .onAppear {
         // 뷰가 나타날 때마다 호출됩니다.
         viewAppearedCount += 1

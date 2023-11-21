@@ -26,8 +26,8 @@ struct RepeatView: View {
                         selectedDays.insert(day)
                     }
                 }, label: {
-                    Text(day.displayName)
-                        .frame(width: 25, height: 25)
+                    day.displayText
+                        .frame(width: 30, height: 30)
                         .padding(2)
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)

@@ -23,7 +23,7 @@ struct TaskItemView: View {
         if task.isDelay != 0 {
             ZStack {
                 Circle()
-                    .foregroundColor(Color.yamDarkBlue)
+                    .foregroundColor(Color.yamRealDarkPoint)
                     .frame(width: 20, height: 20)
                 Text("+\(task.isDelay)")
                     .foregroundColor(.realWhite)

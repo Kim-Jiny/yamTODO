@@ -49,6 +49,7 @@ extension Color {
     static let yamLightGray = Color("yamGray")
     static let yamWhite = Color("yamWhite")
     static let yamBlack = Color("yamBlack")
+    static let yamRealDarkPoint = Color("yamRealDarkPoint")
     
     // 불변 컬러
     static let realWhite = Color("realWhite")
@@ -63,6 +64,6 @@ extension UIColor {
     static let yamWhite = UIColor(named: "yamWhite")
     static let yamBlack = UIColor(named: "yamBlack")
     
-    
+    static let yamRealDarkPoint = UIColor(named: "yamRealDarkPoint")
     static let realWhite = UIColor(named: "realWhite")
 }
