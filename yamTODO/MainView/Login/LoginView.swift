@@ -18,11 +18,11 @@ struct LoginView: View {
         .onTapGesture {
           self.showGuestAlert.toggle()
         }
-        .alert(Text("경고"), isPresented: $showGuestAlert, presenting: $showGuestAlert, actions: { _ in
-          Button("확인", role: .none) {
+        .alert(Text("Notice"), isPresented: $showGuestAlert, presenting: $showGuestAlert, actions: { _ in
+          Button("OK", role: .none) {
             self.showTaskList = true
           }
-          Button("취소", role: .cancel) {
+          Button("Cancel", role: .cancel) {
             
           }
         }, message: { _ in

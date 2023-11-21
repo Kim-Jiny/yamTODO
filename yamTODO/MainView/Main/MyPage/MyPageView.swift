@@ -61,7 +61,7 @@ private extension MyPage {
       }
     }
   var taskInfoSection: some View {
-    Section(header: Text("Rcurring schedule").fontWeight(.medium)) {
+    Section(header: Text("Recurring schedule").fontWeight(.medium)) {
         NavigationLink(destination: RepeatSettingView()) {
             Text("Setting up a recurring schedule")
         }
