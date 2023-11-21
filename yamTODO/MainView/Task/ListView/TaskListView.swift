@@ -10,7 +10,7 @@ import SwiftUI
 struct TaskListView: View {
     @ObservedObject var selectedCalendar: SelectedCalendar
     @EnvironmentObject var taskList: TaskList
-    @EnvironmentObject var tomarrowTaskList: TaskList
+    @Binding var tmrTaskList: TaskList
     @Binding var isShowEditPopup: Bool
     @Binding var isShowDetailPopup: Bool
     @Binding var selectedTask: SelectedTask
@@ -47,9 +47,9 @@ struct TaskListView: View {
                 }
                 .padding(.bottom, 0)
                 //내일
-                if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: selectedCalendar.selectedDate), self.isMain, tomarrowTaskList.date != taskList.date {
-
-                    Section(header: Text(tomorrow, formatter: Self.calendarHeaderDateFormatter)) {
+                if self.isMain {
+                    
+                    Section(header: Text(tmrTaskList.date, formatter: Self.calendarHeaderDateFormatter)) {
                         VStack {
                             Button {
                                 self.isShowEditPopup = true
@@ -60,13 +60,13 @@ struct TaskListView: View {
                         }
                         .frame(maxWidth: .infinity)
                         
-                        ForEach(self.tomarrowTaskList.tasksObject.filter({ !$0.isDone })) { task in
+                        ForEach(self.tmrTaskList.tasksObject.filter({ !$0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
                                 TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                             }
                         }
-                        ForEach(self.tomarrowTaskList.tasksObject.filter({ $0.isDone })) { task in
+                        ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
                                 TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
@@ -84,15 +84,15 @@ struct TaskListView: View {
             
             .onReceive(selectedCalendar.$selectedDate) { _ in
                 taskList.date = selectedCalendar.selectedDate
-                if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: selectedCalendar.selectedDate), self.isMain {
-                    tomarrowTaskList.date = tomorrow
+                if self.isMain {
+                    tmrTaskList.date = tmrTaskList.date
                 }
             }
             
             .onReceive(selectedTask.objectWillChange) { _ in
                 taskList.date = selectedCalendar.selectedDate
-                if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: selectedCalendar.selectedDate), self.isMain {
-                    tomarrowTaskList.date = tomorrow
+                if self.isMain {
+                    tmrTaskList.date = tmrTaskList.date
                 }
             }
 
@@ -109,7 +109,7 @@ private extension TaskListView {
   
     static let calendarHeaderDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM, dd"
+        formatter.dateFormat = "YYYY. MM. dd (EE)"
         return formatter
     }()
   

@@ -18,6 +18,7 @@ struct CalendarMainView: View {
     @ObservedObject var monthDataList = TasksByMonthListModel(date: Date())
     @StateObject var taskList = TaskList(date: Date())
     @StateObject var selectedCalendar = SelectedCalendar()
+    @State var tmrTaskList = TaskList(date: Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
     @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
@@ -32,7 +33,7 @@ struct CalendarMainView: View {
                         .navigationBarTitleDisplayMode(.inline)
                         
                     
-                    TaskListView(selectedCalendar: selectedCalendar, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+                    TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
                         .environmentObject(taskList)
                 }
                 .padding(.top, 30)
