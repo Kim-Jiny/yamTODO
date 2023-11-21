@@ -9,13 +9,19 @@ import Foundation
 import SwiftUI
 import Combine
 
+enum CalendarPointType {
+    case green, yellow, red, notType
+}
+
 // MARK: - 일자 셀 뷰
 struct CalendarCellView: View {
-    @ObservedObject var monthDataList: TasksByMonthListModel
+//    @ObservedObject var monthDataList: TasksByMonthListModel
     private var day: Int
     private var clicked: Bool
     private var isToday: Bool
+    private var isOverToday: Bool
     private var isCurrentMonthDay: Bool
+    private var pointType: Int
     
     private var textColor: Color {
         if clicked {
@@ -37,18 +43,41 @@ struct CalendarCellView: View {
         }
     }
     
+    private var pointColor: Color {
+        if isToday || isOverToday {
+            return Color.clear
+        } else {
+            switch pointType {
+            case 3:
+                return .green
+            case 2:
+                return .yellow
+            case 1:
+                return .red
+            case 0:
+                return .clear
+            default:
+                return .clear
+            }
+        }
+    }
+    
     init(
-        monthDataList: TasksByMonthListModel,
+//        monthDataList: TasksByMonthListModel,
         day: Int,
         clicked: Bool = false,
         isToday: Bool = false,
-        isCurrentMonthDay: Bool = true
+        isOverToday: Bool = false,
+        isCurrentMonthDay: Bool = true,
+        pointType: Int = 0
     ) {
-        self.monthDataList = monthDataList
+//        self.monthDataList = monthDataList
         self.day = day
         self.clicked = clicked
         self.isToday = isToday
+        self.isOverToday = isOverToday
         self.isCurrentMonthDay = isCurrentMonthDay
+        self.pointType = pointType
     }
     
     var body: some View {
@@ -57,18 +86,23 @@ struct CalendarCellView: View {
                 .fill(backgroundColor)
                 .overlay(Text(String(day)))
                 .foregroundColor(textColor)
-            
+                .overlay(
+                        Circle()
+                            .stroke(pointColor, lineWidth: 2) // 테두리 색상 및 두께 지정
+//                            .overlay(Text(String(day)))
+//                            .foregroundColor(textColor)
+                    )
             Spacer()
-            
-            if clicked {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.yamDarkBlue)
-                    .frame(width: 10, height: 10)
-            } else {
-                Spacer()
-                    .frame(height: 10)
-            }
+                .frame(height: 5)
+//            if clicked {
+//                RoundedRectangle(cornerRadius: 10)
+//                    .fill(Color.yamDarkBlue)
+//                    .frame(width: 10, height: 10)
+//            } else {
+//                Spacer()
+//                    .frame(height: 5)
+//            }
         }
-        .frame(height: 50)
+        .frame(height: 40)
     }
 }

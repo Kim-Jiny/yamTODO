@@ -30,13 +30,14 @@ struct TaskListView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    
+                    // 완료되지 않은 태스크 우선 표시
                     ForEach(self.taskList.tasksObject.filter({ !$0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
                             TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                         }
                     }
+                    // 이미 완료된 테스크 표시
                     ForEach(self.taskList.tasksObject.filter({ $0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
@@ -77,7 +78,7 @@ struct TaskListView: View {
             }
             .onReceive(taskList.objectWillChange) { _ in
                 // taskList 변경 시 업데이트
-//                print("@update \(taskList.tasksObject)")
+                print("@update \(taskList.tasksObject)")
 //                self.showCalender.toggle()
             }
             

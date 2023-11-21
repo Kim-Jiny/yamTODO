@@ -55,18 +55,19 @@ struct TitleTextView: UIViewRepresentable {
       textView.delegate = context.coordinator
         textView.backgroundColor = .yamWhite
   //    textView.becomeFirstResponder()
-      
+        if let placeholder = placeholder, text == "" {
+            textView.text = placeholder
+            textView.textColor = placeholderColor
+        } else {
+            textView.text = text
+            textView.textColor = textColor
+        }
       return textView
     }
     
     public func updateUIView(_ uiView: UITextView, context: Context) {
-        if let placeholder = placeholder, text == "" {
-            uiView.text = placeholder
-            uiView.textColor = placeholderColor
-        } else {
             uiView.text = text
             uiView.textColor = textColor
-        }
         updateHeight(uiView)
     }
     
@@ -115,9 +116,12 @@ struct TitleTextView: UIViewRepresentable {
       }
       
       public func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-          textView.text = parent.placeholder
-        }
+          if textView.text.isEmpty {
+              textView.text = parent.placeholder
+              textView.textColor = parent.placeholderColor
+          } else {
+            textView.textColor = parent.textColor
+          }
       }
     }
   }

@@ -54,19 +54,20 @@ public struct DetailTextView: UIViewRepresentable {
     textView.textContainer.lineFragmentPadding = lineFragmentPadding
     textView.textContainerInset = textContainerInset
     textView.delegate = context.coordinator
-      textView.backgroundColor = UIColor.yamSky
-    
+    textView.backgroundColor = UIColor.yamSky
+    if let placeholder = placeholder, text == "" {
+        textView.text = placeholder
+        textView.textColor = placeholderColor
+    } else {
+        textView.text = text
+        textView.textColor = textColor
+    }
     return textView
   }
   
   public func updateUIView(_ uiView: UITextView, context: Context) {
-      if let placeholder = placeholder, text == "" {
-          uiView.text = placeholder
-          uiView.textColor = placeholderColor
-      } else {
-          uiView.text = text
-          uiView.textColor = textColor
-      }
+      uiView.text = text
+      uiView.textColor = textColor
       updateHeight(uiView)
   }
   
@@ -93,19 +94,19 @@ public struct DetailTextView: UIViewRepresentable {
     }
     
     public func textViewDidChange(_ textView: UITextView) {
-      parent.text = textView.text
+        parent.text = textView.text
+        
+        if textView.text.isEmpty {
+          textView.textColor = parent.placeholderColor
+        } else {
+          textView.textColor = parent.textColor
+        }
+        
+        if textView.text.count > parent.textLimit {
+          textView.text.removeLast()
+        }
       
-      if textView.text.isEmpty {
-        textView.textColor = parent.placeholderColor
-      } else {
-        textView.textColor = parent.textColor
-      }
-      
-      if textView.text.count > parent.textLimit {
-        textView.text.removeLast()
-      }
-      
-      parent.updateHeight(textView)
+        parent.updateHeight(textView)
     }
     
     public func textViewDidBeginEditing(_ textView: UITextView) {
@@ -115,9 +116,12 @@ public struct DetailTextView: UIViewRepresentable {
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
-      if textView.text.isEmpty {
-        textView.text = parent.placeholder
-      }
+        if textView.text.isEmpty {
+            textView.text = parent.placeholder
+            textView.textColor = parent.placeholderColor
+        } else {
+          textView.textColor = parent.textColor
+        }
     }
   }
 }

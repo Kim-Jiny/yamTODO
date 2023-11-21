@@ -17,27 +17,27 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
       
-      Messaging.messaging().delegate = self
+//      Messaging.messaging().delegate = self
       
       // Register for remote notifications
-      if #available(iOS 10.0, *) {
-          UNUserNotificationCenter.current().delegate = self
-          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-          UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
-      } else {
-          let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-          application.registerUserNotificationSettings(settings)
-      }
-      
-      Messaging.messaging().token { token, error in
-        if let error = error {
-          print("Error fetching FCM registration token: \(error)")
-//            application.registerForRemoteNotifications()
-        } else if let token = token {
-          print("FCM registration token: \(token)")
-//          self.fcmRegTokenMessage.text  = "Remote FCM registration token: \(token)"
-        }
-      }
+//      if #available(iOS 10.0, *) {
+//          UNUserNotificationCenter.current().delegate = self
+//          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//          UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { _, _ in })
+//      } else {
+//          let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//          application.registerUserNotificationSettings(settings)
+//      }
+//      
+//      Messaging.messaging().token { token, error in
+//        if let error = error {
+//          print("Error fetching FCM registration token: \(error)")
+////            application.registerForRemoteNotifications()
+//        } else if let token = token {
+//          print("FCM registration token: \(token)")
+////          self.fcmRegTokenMessage.text  = "Remote FCM registration token: \(token)"
+//        }
+//      }
       
 //      application.registerForRemoteNotifications()
 

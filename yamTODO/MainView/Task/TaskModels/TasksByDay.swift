@@ -27,7 +27,6 @@ class TaskList: ObservableObject {
     @Published var date: Date {
         didSet {
             updateTasks()
-            objectWillChange.send(self)
         }
     }
     
@@ -37,6 +36,7 @@ class TaskList: ObservableObject {
     
     func updateTasks() {
         self.tasksObject = RealmManager.shared.getTasksByDateList(date: date).tasks
+        objectWillChange.send(self)
     }
     
     func updateIsDone(_ taskId: String) {
@@ -45,6 +45,10 @@ class TaskList: ObservableObject {
         objectWillChange.send(self)
     }
     
+    func createTask(new: TaskObject) {
+        RealmManager.shared.addTask(date: date, new: new)
+        updateTasks()
+    }
 }
 
 class OptionTaskList: ObservableObject {

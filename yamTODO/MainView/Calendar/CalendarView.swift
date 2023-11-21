@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import RealmSwift
+import Combine
 
 struct CalendarView: View {
     @ObservedObject var monthDataList: TasksByMonthListModel
+    @ObservedObject var taskList: TaskList
     @Binding var selectedMonth: Date
     @Binding var selectedDate: Date
     @State var offset: CGSize = CGSize()
@@ -36,6 +39,10 @@ struct CalendarView: View {
     .animation(.easeOut, value: offset)
     .padding(.leading, 30)
     .padding(.trailing, 30)
+    .onReceive(taskList.objectWillChange, perform: { _ in
+        print("@@ 달력 업데이트 필요")
+        monthDataList.date = monthDataList.date
+    })
   }
   
   // MARK: - 헤더 뷰
@@ -61,7 +68,9 @@ struct CalendarView: View {
       HStack {
         ForEach(Self.weekdaySymbols.indices, id: \.self) { symbol in
           Text(Self.weekdaySymbols[symbol].uppercased())
-            .foregroundColor(.gray)
+            .foregroundColor(.yamBlack)
+            .font(.system(size: 13))
+            .fontWeight(.bold)
             .frame(maxWidth: .infinity)
         }
       }
@@ -108,7 +117,7 @@ struct CalendarView: View {
     let lastDayOfMonthBefore = numberOfDays(in: previousMonth())
     let numberOfRows = Int(ceil(Double(daysInMonth + firstWeekday) / 7.0))
     let visibleDaysOfNextMonth = numberOfRows * 7 - (daysInMonth + firstWeekday)
-    
+      
     return LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
       ForEach(-firstWeekday ..< daysInMonth + visibleDaysOfNextMonth, id: \.self) { index in
         Group {
@@ -117,8 +126,38 @@ struct CalendarView: View {
             let day = Calendar.current.component(.day, from: date)
             let clicked = selectedDate == date
               let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
-            
-              CalendarCellView(monthDataList: monthDataList, day: day, clicked: clicked, isToday: isToday, isCurrentMonthDay: true)
+              let overToday = date > Date.today
+        
+              if let tasksByDate = monthDataList.days.first(where: { $0.key == date.dateKey }) {
+                  //지워진 태스크들을 제외하고
+                  let taskList = Array(tasksByDate.tasks).filter {
+                      !$0.isRemove
+                  }
+                  // 태스크들이 있는경우.
+                  if taskList.count > 0 {
+                      // 아직 완료되지 않은 작업이 있는 경우
+                      if let isNotFinish = taskList.first(where: { !$0.isDone }) {
+                          // 완료작업이 아에 없는 경우 : red
+                          if let notFinish = taskList.first(where: { $0.isDone }) {
+                              CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 2)
+//                              pointType = .yellow
+                          } else {
+                              CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 1)
+//                              pointType = .red
+                          }
+                      } else {
+                          // 모든 작업이 완료된 경우
+                          CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 3)
+                      }
+                      // Task가 없는 경우
+                  } else {
+                      CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
+                  }
+                  //MonthData가 없는경우
+              }else {
+                  CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
+              }
+            // 달력내에서 이번달이 아닌경우
           } else if let prevMonthDate = Calendar.current.date(
             byAdding: .day,
             value: index + lastDayOfMonthBefore,
@@ -126,7 +165,7 @@ struct CalendarView: View {
           ) {
             let day = Calendar.current.component(.day, from: prevMonthDate)
             
-              CalendarCellView(monthDataList: monthDataList, day: day, isCurrentMonthDay: false)
+              CalendarCellView(day: day, isCurrentMonthDay: false)
           }
         }
         .onTapGesture {
@@ -153,6 +192,7 @@ private extension CalendarView {
   /// 특정 해당 날짜
   func getDate(for index: Int) -> Date {
     let calendar = Calendar.current
+      
     guard let firstDayOfMonth = calendar.date(
       from: DateComponents(
         year: calendar.component(.year, from: selectedMonth),
@@ -198,7 +238,8 @@ private extension CalendarView {
   
   /// 월 변경
   func changeMonth(by value: Int) {
-    self.selectedMonth = adjustedMonth(by: value)
+      self.selectedMonth = adjustedMonth(by: value)
+      self.monthDataList.date = selectedMonth
   }
   
   /// 이전 월로 이동 가능한지 확인
