@@ -27,10 +27,12 @@ struct EditPopupView: View {
 //                        .cornerRadius(25)
                     
                     HStack(spacing: 0) {
+                        Spacer()
+                            .frame(width: 8)
                         Image(systemName: "pencil.line")
                             .resizable()
-                            .frame(width: 22, height: 20)
-                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 16, height: 15)
+//                            .aspectRatio(contentMode: .fill)
                             .foregroundColor(.yamBlue)
                         TextField("Please create a task.", text: $taskTitle)
                             .padding()
@@ -52,11 +54,11 @@ struct EditPopupView: View {
                     .frame(height: 100)
                     
                     HStack(spacing: 0) {
-                        Image(systemName: "repeat")
-                            .resizable()
-                            .frame(width: 22, height: 20)
-                            .aspectRatio(contentMode: .fill)
-                            .foregroundColor(.yamBlue)
+//                        Image(systemName: "repeat")
+//                            .resizable()
+//                            .frame(width: 15, height: 15)
+//                            .aspectRatio(contentMode: .fill)
+//                            .foregroundColor(.yamBlue)
                         RepeatView(selectedDays: $dayOfWeekManager.selectedDays )
                     }
                     

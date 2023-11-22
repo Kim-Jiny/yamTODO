@@ -20,7 +20,7 @@ struct DetailPopupView: View {
     @State private var taskTitle = ""
     @State private var taskTitleHeight: CGFloat = 50
     @State private var taskDesc = ""
-    @State private var taskDescHeight: CGFloat = 50
+    @State private var taskDescHeight: CGFloat = 90
 
     @StateObject var dayOfWeekManager = DayOfWeekManager()
   
@@ -59,7 +59,8 @@ struct DetailPopupView: View {
                     Text("Delete")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamDarkBlue)
-                    .fontWeight(.bold)
+                    .font(.system(size: 13))
+//                    .fontWeight(.bold)
                     .padding()
                 }).alert(isPresented: $showDeleteAlert) {
                     Alert(
@@ -83,7 +84,8 @@ struct DetailPopupView: View {
                     Text("Edit")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
                     .foregroundColor(.yamBlue)
-                    .fontWeight(.bold)
+                    .font(.system(size: 13))
+//                    .fontWeight(.bold)
                     .padding()
                 })
                 Spacer()
@@ -101,7 +103,8 @@ struct DetailPopupView: View {
                     )
                 }
                 .foregroundColor(.yamBlue)
-                .fontWeight(.bold)
+                .font(.system(size: 13))
+//                .fontWeight(.bold)
 //                Spacer()
             }
             .frame(height: 50)

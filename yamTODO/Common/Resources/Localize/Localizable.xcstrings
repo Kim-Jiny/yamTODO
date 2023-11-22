@@ -448,6 +448,7 @@
       }
     },
     "Fri" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -619,6 +620,7 @@
       }
     },
     "Mon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -959,6 +961,7 @@
       }
     },
     "Sat" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1095,6 +1098,7 @@
       }
     },
     "Sun" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1129,6 +1133,7 @@
       }
     },
     "Thu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1197,6 +1202,7 @@
       }
     },
     "Tue" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1265,6 +1271,7 @@
       }
     },
     "Wed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
