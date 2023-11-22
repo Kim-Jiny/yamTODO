@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DetailPopupView: View {
-    @EnvironmentObject var taskList: TaskList
+//    @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
     

@@ -135,9 +135,9 @@ struct CalendarView: View {
                   // 태스크들이 있는경우.
                   if taskList.count > 0 {
                       // 아직 완료되지 않은 작업이 있는 경우
-                      if let isNotFinish = taskList.first(where: { !$0.isDone }) {
+                      if let _ = taskList.first(where: { !$0.isDone }) {
                           // 완료작업이 아에 없는 경우 : red
-                          if let notFinish = taskList.first(where: { $0.isDone }) {
+                          if let _ = taskList.first(where: { $0.isDone }) {
                               CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 2)
 //                              pointType = .yellow
                           } else {

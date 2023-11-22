@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct TaskItemView: View {
-  @EnvironmentObject var taskList: TaskList
+  @ObservedObject var taskList: TaskList
 
   let task: TaskObject
-  @Binding var isShowEditPopup: Bool
   @Binding var isShowDetailPopup: Bool
   @Binding var selectedTask: SelectedTask
 
@@ -59,7 +58,6 @@ struct TaskItemView: View {
   }
 
   private func toggleDone() {
-      guard !self.isShowEditPopup else { return }
       self.taskList.updateIsDone(self.task.id)
   }
   
@@ -69,11 +67,4 @@ struct TaskItemView: View {
         self.selectedTask = SelectedTask(selectedTask: task)
         self.isShowDetailPopup.toggle()
     }
-
-  private func delete() {
-    self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })
-    if self.taskList.tasksObject.isEmpty {
-      self.isShowEditPopup = false
-    }
-  }
 }
