@@ -12,6 +12,8 @@
 		300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65512B08C59800DB3684 /* TitleTextView.swift */; };
 		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
+		304DC5C12B0E280700E01656 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 304DC5C02B0E280700E01656 /* GoogleMobileAds */; };
+		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
 		364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		3693507F2AF8B6500040AF26 /* TasksByDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDay.swift */; };
@@ -93,6 +95,8 @@
 		300E65512B08C59800DB3684 /* TitleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextView.swift; sourceTree = "<group>"; };
 		300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetailPopupView.swift; sourceTree = "<group>"; };
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
+		304DC5C42B0E2A4E00E01656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TasksByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDay.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				36B7C9662ADD214900F7A140 /* FirebaseDatabase in Frameworks */,
 				36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */,
 				36B7C96E2ADD214900F7A140 /* FirebaseStorage in Frameworks */,
+				304DC5C12B0E280700E01656 /* GoogleMobileAds in Frameworks */,
 				36B7C9602ADD214900F7A140 /* FirebaseAppCheck in Frameworks */,
 				36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */,
 				36B7C96A2ADD214900F7A140 /* FirebaseFunctions in Frameworks */,
@@ -185,6 +190,14 @@
 				300E65472B077E7A00DB3684 /* CalendarCellView.swift */,
 			);
 			path = CalendarCell;
+			sourceTree = "<group>";
+		};
+		304DC5C52B0E2C2B00E01656 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */,
+			);
+			path = Admob;
 			sourceTree = "<group>";
 		};
 		364FC75C2B0C3B64009AF157 /* Resources */ = {
@@ -236,6 +249,7 @@
 		36B7C9282ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXGroup;
 			children = (
+				304DC5C42B0E2A4E00E01656 /* Info.plist */,
 				36FBAA792B05A46700FC78AB /* MainView */,
 				36B7C9AC2ADFB33A00F7A140 /* Serialization */,
 				36B7C9A52ADFB04000F7A140 /* Networking */,
@@ -299,6 +313,7 @@
 		36B7C97C2ADE1A2200F7A140 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				304DC5C52B0E2C2B00E01656 /* Admob */,
 				364FC75C2B0C3B64009AF157 /* Resources */,
 				36EDCF512AF0899A004F2483 /* CustomView */,
 				36B7C9832ADE26A900F7A140 /* Extensions */,
@@ -522,6 +537,7 @@
 				36B7C96D2ADD214900F7A140 /* FirebaseStorage */,
 				36EDCF3E2AEF6607004F2483 /* Alamofire */,
 				36A909E72AFDC4E700848754 /* RealmSwift */,
+				304DC5C02B0E280700E01656 /* GoogleMobileAds */,
 			);
 			productName = yamTODO;
 			productReference = 36B7C9262ADCFCF700F7A140 /* yamTODO.app */;
@@ -604,6 +620,7 @@
 				36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				304DC5BF2B0E280700E01656 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 36B7C9272ADCFCF700F7A140 /* Products */;
 			projectDirPath = "";
@@ -659,6 +676,7 @@
 				36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */,
 				36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */,
 				36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */,
+				304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */,
 				36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */,
 				36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */,
 				36B7C9752ADE18B800F7A140 /* CalendarView.swift in Sources */,
@@ -852,6 +870,8 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = yamTODO/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "광고추적";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -882,6 +902,8 @@
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = yamTODO/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "광고추적";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1019,6 +1041,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		304DC5BF2B0E280700E01656 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.13.0;
+			};
+		};
 		36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1046,6 +1076,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		304DC5C02B0E280700E01656 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 304DC5BF2B0E280700E01656 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		36A909E72AFDC4E700848754 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */;

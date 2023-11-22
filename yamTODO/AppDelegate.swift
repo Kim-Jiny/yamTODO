@@ -10,13 +10,13 @@ import SwiftUI
 import FirebaseCore
 import FirebaseAuth
 import FirebaseMessaging
-
+import GoogleMobileAds
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
-      
+//      GADMobileAds.sharedInstance().start(completionHandler: nil)
 //      Messaging.messaging().delegate = self
       
       // Register for remote notifications

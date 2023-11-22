@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 import MessageUI
+import GoogleMobileAds
 
 struct MyPage: View {
     @State private var isShowingMailView = false
@@ -17,6 +18,10 @@ struct MyPage: View {
     @State var isShowRepeatView: Bool = false
     @State private var isAppNotice: Bool = false
   // MARK: Body
+    @ViewBuilder func admob() -> some View {
+            // admob
+        AdmobBannerView().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+        }
   
   var body: some View {
     NavigationView {
@@ -28,6 +33,7 @@ struct MyPage: View {
             taskInfoSection
 //            appSettingSection
             fordDeveloper
+            admob()
         }
       }
       .navigationBarTitle("My Page")

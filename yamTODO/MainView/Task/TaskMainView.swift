@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import GoogleMobileAds
 
 struct TaskMainView: View {
     @StateObject var taskList = TaskList(date: Date())
@@ -18,14 +19,23 @@ struct TaskMainView: View {
     
     
     @State private var viewAppearedCount = 0
+    
+    @ViewBuilder func admob() -> some View {
+            // admob
+        AdmobBannerView().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+        }
   var body: some View {
     NavigationView {
       ZStack {
-          TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask/*, isMain: true*/)
-              .environmentObject(taskList)
-          .navigationBarTitle(Text("TODO 👀"))
-          .navigationBarTitleDisplayMode(.inline)
-          
+          VStack {
+              TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask/*, isMain: true*/)
+                  .environmentObject(taskList)
+              .navigationBarTitle(Text("TODO 👀"))
+              .navigationBarTitleDisplayMode(.inline)
+              Spacer()
+              admob()
+          }
+              
           // 네비게이션뷰에 태스크 생성 페이지 버튼 삭제
 //          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
 //            Image("edit")
