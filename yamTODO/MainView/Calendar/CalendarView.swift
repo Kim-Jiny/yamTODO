@@ -20,6 +20,7 @@ struct CalendarView: View {
     VStack {
       headerView
       calendarGridView
+            .animation(nil)
     }
     .gesture(
       DragGesture()
