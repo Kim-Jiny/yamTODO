@@ -46,6 +46,11 @@ private extension MyPage {
               Text("App version v\(appVersion)")
                   .frame(height: 44)
           }
+          NavigationLink(destination: CustomSettingView()) {
+              Text("Setting App Color")
+                  .frame(height: 44)
+          }
+          
 //          Button {
 //              scheduleNotification()
 ////              isShowNotice = true

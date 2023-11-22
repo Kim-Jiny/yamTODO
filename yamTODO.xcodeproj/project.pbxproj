@@ -13,6 +13,7 @@
 		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
+		364FC7642B0D9A37009AF157 /* CustomSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7632B0D9A37009AF157 /* CustomSettingView.swift */; };
 		3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */; };
 		3693507F2AF8B6500040AF26 /* TasksByDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693507E2AF8B6500040AF26 /* TasksByDay.swift */; };
 		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
@@ -94,6 +95,7 @@
 		300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDetailPopupView.swift; sourceTree = "<group>"; };
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		364FC7632B0D9A37009AF157 /* CustomSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingView.swift; sourceTree = "<group>"; };
 		3678A7032AF2304F00D7745F /* DayOfWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekManager.swift; sourceTree = "<group>"; };
 		3693507E2AF8B6500040AF26 /* TasksByDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDay.swift; sourceTree = "<group>"; };
 		369350852AFB05120040AF26 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 				364FC7602B0C3C63009AF157 /* Localizable.xcstrings */,
 			);
 			path = Localize;
+			sourceTree = "<group>";
+		};
+		364FC7622B0D9A1D009AF157 /* CustomSetting */ = {
+			isa = PBXGroup;
+			children = (
+				364FC7632B0D9A37009AF157 /* CustomSettingView.swift */,
+			);
+			path = CustomSetting;
 			sourceTree = "<group>";
 		};
 		36A909E32AFCB87E00848754 /* Date */ = {
@@ -468,6 +478,7 @@
 		36FBAA7D2B05EFFC00FC78AB /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
+				364FC7622B0D9A1D009AF157 /* CustomSetting */,
 				36FBAA892B0717CD00FC78AB /* Repeat */,
 			);
 			path = SettingPage;
@@ -487,8 +498,8 @@
 			isa = PBXGroup;
 			children = (
 				300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */,
-				36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */,
 				36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */,
+				36FBAA7E2B05F01000FC78AB /* RepeatSettingView.swift */,
 			);
 			path = Repeat;
 			sourceTree = "<group>";
@@ -684,6 +695,7 @@
 				36EDCF462AEF8889004F2483 /* EditPopupView.swift in Sources */,
 				36EDCF442AEF880E004F2483 /* LoginIntent.swift in Sources */,
 				36EDCF502AF087C6004F2483 /* MyPageView.swift in Sources */,
+				364FC7642B0D9A37009AF157 /* CustomSettingView.swift in Sources */,
 				36FBAA8B2B0717E500FC78AB /* RepeatItemView.swift in Sources */,
 				36B7C9772ADE19C700F7A140 /* TaskListView.swift in Sources */,
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,

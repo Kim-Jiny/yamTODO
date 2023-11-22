@@ -311,6 +311,9 @@
         }
       }
     },
+    "Custom Color Setting" : {
+
+    },
     "Delete" : {
       "localizations" : {
         "ja" : {
@@ -1062,6 +1065,9 @@
           }
         }
       }
+    },
+    "Setting App Color" : {
+
     },
     "Setting up a recurring schedule" : {
       "localizations" : {
