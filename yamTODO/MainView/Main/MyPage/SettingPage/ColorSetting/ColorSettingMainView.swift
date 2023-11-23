@@ -13,6 +13,8 @@ struct ColorSettingMainView: View {
     
     @State var selectedColorIndex: Int? = nil
     @State var isShowSelectPopup: Bool = false
+    @State var isDeleteActionVisible: Bool = false
+    @State var offset: CGSize = CGSize()
     
     var body: some View {
         List {
@@ -30,6 +32,15 @@ struct ColorSettingMainView: View {
                     .onTapGesture {
                         selectedColorIndex = index
                     }
+                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                            Button {
+                                // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
+                                isDeleteActionVisible.toggle()
+                            } label: {
+                                Label("Delete", systemImage: "trash.circle")
+                            }
+                            .tint(.yamBlue)
+                        }
             }
         }
         .listStyle(DefaultListStyle())

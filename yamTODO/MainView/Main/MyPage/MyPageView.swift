@@ -54,10 +54,10 @@ private extension MyPage {
               Text("App version v\(appVersion)")
                   .frame(height: 44)
           }
-//          NavigationLink(destination: ColorSettingMainView()) {
-//              Text("Setting App Color")
-//                  .frame(height: 44)
-//          }
+          NavigationLink(destination: ColorSettingMainView()) {
+              Text("Setting App Color")
+                  .frame(height: 44)
+          }
           
 //          Button {
 //              scheduleNotification()

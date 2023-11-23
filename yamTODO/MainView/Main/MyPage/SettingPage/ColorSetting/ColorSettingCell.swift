@@ -33,6 +33,7 @@ struct ColorSettingCell: View {
                 .resizable()
                 .frame(width: 24, height: 24)
                 .foregroundColor(isChecked ? .yamBlue : .gray)
+                .padding(.trailing, 10)
 //                .onTapGesture {
 //                    isChecked.toggle()
 //                }

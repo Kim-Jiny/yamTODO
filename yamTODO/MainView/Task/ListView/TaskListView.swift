@@ -14,6 +14,7 @@ struct TaskListView: View {
     @Binding var isShowEditPopup: Bool
     @Binding var isShowTmrEditPopup: Bool
     @Binding var isShowDetailPopup: Bool
+    @State var isDeleteActionVisible: Bool = false
     @Binding var selectedTask: SelectedTask
     
     
@@ -36,6 +37,16 @@ struct TaskListView: View {
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
                             TaskItemView(taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    Button {
+                                        // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
+                                        selectedTask.selectedTask = task
+                                        isDeleteActionVisible.toggle()
+                                    } label: {
+                                        Label("Delete", systemImage: "trash.circle")
+                                    }
+                                    .tint(.yamBlue)
+                                }
                         }
                     }
                     // 이미 완료된 테스크 표시
@@ -43,6 +54,17 @@ struct TaskListView: View {
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
                             TaskItemView(taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    Button {
+                                        // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
+                                        selectedTask.selectedTask = task
+                                        isDeleteActionVisible.toggle()
+                                    } label: {
+                                        Label("Delete", systemImage: "trash.circle")
+                                    }
+                                    .tint(.yamBlue)
+                                }
+                            
                         }
                     }
                 }
@@ -63,16 +85,42 @@ struct TaskListView: View {
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
                                 TaskItemView(taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                        Button {
+                                            // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
+                                            selectedTask.selectedTask = task
+                                            isDeleteActionVisible.toggle()
+                                        } label: {
+                                            Label("Delete", systemImage: "trash.circle")
+                                        }
+                                        .tint(.yamBlue)
+                                    }
                             }
                         }
                         ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
                                 TaskItemView(taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                        Button {
+                                            // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
+                                            selectedTask.selectedTask = task
+                                            isDeleteActionVisible.toggle()
+                                        } label: {
+                                            Label("Delete", systemImage: "trash.circle")
+                                        }
+                                        .tint(.yamBlue)
+                                    }
                             }
                         }
                     }
                     .padding(.bottom, 0)
+                    .alert(isPresented: $isDeleteActionVisible) {
+                        Alert(title: Text(""), message: Text("Are you sure you want to delete?"), primaryButton: .destructive(Text("Delete")) {
+                            // "Delete" 버튼을 눌렀을 때의 동작
+                            self.selectedTask.deleteSelectTask()
+                        }, secondaryButton: .cancel())
+                    }
                 }
             }
             .listStyle(SidebarListStyle())
