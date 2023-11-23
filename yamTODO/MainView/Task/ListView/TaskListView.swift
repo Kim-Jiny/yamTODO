@@ -9,91 +9,83 @@ import SwiftUI
 
 struct TaskListView: View {
     @ObservedObject var selectedCalendar: SelectedCalendar
-    @EnvironmentObject var taskList: TaskList
+    @ObservedObject var taskList: TaskList
     @Binding var tmrTaskList: TaskList
     @Binding var isShowEditPopup: Bool
+    @Binding var isShowTmrEditPopup: Bool
     @Binding var isShowDetailPopup: Bool
     @Binding var selectedTask: SelectedTask
-    @State var isMain: Bool = false
+    
+    
+    @State var isShowTomorrow: Bool = false
 //    @State private var showCalender = false
 
     var body: some View {
         VStack {
             List {
-                Section(header: Text(selectedCalendar.selectedDate, formatter: Self.calendarHeaderDateFormatter)) {
-                    VStack {
-                        Button {
-                            self.isShowEditPopup = true
-                        } label: {
-                            Image(systemName: "plus.app")
-                                .foregroundColor(.yamBlue)
-                        }
+                Section(header: Text(selectedCalendar.selectedDate, formatter: Date.calendarHeaderDateFormatter)) {
+                    Button {
+                        self.isShowEditPopup = true
+                    } label: {
+                        Image(systemName: "plus.app")
+                            .foregroundColor(.yamBlue)
                     }
                     .frame(maxWidth: .infinity)
                     // 완료되지 않은 태스크 우선 표시
                     ForEach(self.taskList.tasksObject.filter({ !$0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
-                            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                            TaskItemView(taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                         }
                     }
                     // 이미 완료된 테스크 표시
                     ForEach(self.taskList.tasksObject.filter({ $0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
-                            TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                            TaskItemView(taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                         }
                     }
                 }
                 .padding(.bottom, 0)
-                //내일
-                if self.isMain {
+               // 내일
+                if self.isShowTomorrow {
                     
-                    Section(header: Text(tmrTaskList.date, formatter: Self.calendarHeaderDateFormatter)) {
-                        VStack {
+                    Section(header: Text(tmrTaskList.date, formatter: Date.calendarHeaderDateFormatter)) {
                             Button {
-                                self.isShowEditPopup = true
+                                self.isShowTmrEditPopup = true
                             } label: {
                                 Image(systemName: "plus.app")
                                     .foregroundColor(.yamBlue)
                             }
-                        }
                         .frame(maxWidth: .infinity)
                         
                         ForEach(self.tmrTaskList.tasksObject.filter({ !$0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
-                                TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                TaskItemView(taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                             }
                         }
                         ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
-                                TaskItemView(task: task, isShowEditPopup: self.$isShowEditPopup, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                TaskItemView(taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                             }
                         }
                     }
                     .padding(.bottom, 0)
                 }
             }
-            .onReceive(taskList.objectWillChange) { _ in
-                // taskList 변경 시 업데이트
-                print("@update \(taskList.tasksObject)")
-//                self.showCalender.toggle()
-            }
+            .listStyle(SidebarListStyle())
             
             .onReceive(selectedCalendar.$selectedDate) { _ in
+                // 해당 날짜를 선택했을때 리스트를 초기화시켜줌.
                 taskList.date = selectedCalendar.selectedDate
-                if self.isMain {
-                    tmrTaskList.date = tmrTaskList.date
-                }
             }
             
             .onReceive(selectedTask.objectWillChange) { _ in
+                // 해당 태스크에대한 변경이 일어날때 리스트를 초기화 시켜줌
                 taskList.date = selectedCalendar.selectedDate
-                if self.isMain {
-                    tmrTaskList.date = tmrTaskList.date
-                }
+                tmrTaskList.date = tmrTaskList.date
             }
 
         }
@@ -106,13 +98,7 @@ private extension TaskListView {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: now)
         return Calendar.current.date(from: components)!
     }
-  
-    static let calendarHeaderDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY. MM. dd (EE)"
-        return formatter
-    }()
-  
+    
     static let weekdaySymbols: [String] = Calendar.current.shortWeekdaySymbols
   
     func firstWeekdayOfMonth(in date: Date) -> Int {

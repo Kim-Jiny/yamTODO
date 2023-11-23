@@ -15,27 +15,26 @@ struct TaskMainView: View {
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
+    
+    @State var isShowTmrEditPopup: Bool = false
     @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
     
-    
     @State private var viewAppearedCount = 0
-    
+    // Admob 광고 배너
     @ViewBuilder func admob() -> some View {
-            // admob
         AdmobBannerView().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-        }
+    }
   var body: some View {
     NavigationView {
       ZStack {
           VStack {
-              TaskListView(selectedCalendar: selectedCalendar, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask/*, isMain: true*/)
-                  .environmentObject(taskList)
+              TaskListView(selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowTmrEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask, isShowTomorrow: true)
+                .frame(maxWidth: .infinity)
               .navigationBarTitle(Text("TODO 👀"))
               .navigationBarTitleDisplayMode(.inline)
               Spacer()
               admob()
           }
-              
           // 네비게이션뷰에 태스크 생성 페이지 버튼 삭제
 //          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
 //            Image("edit")
@@ -46,10 +45,13 @@ struct TaskMainView: View {
         if isShowEditPopup {
             EditPopupView(selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)
         }
+        if isShowTmrEditPopup {
+            EditPopupView(selectedDate: tmrTaskList.date, isPresented: $isShowTmrEditPopup).environmentObject(tmrTaskList)
+        }
         if isShowDetailPopup {
             if selectedTask.selectedTask != nil {
             DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
-              .environmentObject(taskList)
+//              .environmentObject(taskList)
             }
         }
       }
@@ -57,9 +59,8 @@ struct TaskMainView: View {
     .navigationViewStyle(StackNavigationViewStyle())
     .onAppear {
         // 뷰가 나타날 때마다 호출됩니다.
-        viewAppearedCount += 1
-        print("View appeared \(viewAppearedCount) times")
         taskList.date = Date()
+        tmrTaskList.date = tmrTaskList.date
     }
   }
 }

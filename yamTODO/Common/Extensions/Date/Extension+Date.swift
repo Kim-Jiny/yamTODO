@@ -31,6 +31,12 @@ extension Date {
         return formatter
     }()
     
+    static let calendarHeaderDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY. MM. dd (EE)"
+        return formatter
+    }()
+    
     var formattedCalendarDayDate: String {
       return Date.calendarDayDateFormatter.string(from: self)
     }

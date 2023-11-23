@@ -18,13 +18,13 @@ enum DayOfWeek: String, CaseIterable {
   
   var displayText: Text {
       switch self {
-          case .sunday: return Text("Sun")
-          case .monday: return Text("Mon")
-          case .tuesday: return Text("Tue")
-          case .wednesday: return Text("Wed")
-          case .thursday: return Text("Thu")
-          case .friday: return Text("Fri")
-          case .saturday: return Text("Sat")
+          case .sunday: return Text(Calendar.current.shortWeekdaySymbols[0])
+          case .monday: return Text(Calendar.current.shortWeekdaySymbols[1])
+          case .tuesday: return Text(Calendar.current.shortWeekdaySymbols[2])
+          case .wednesday: return Text(Calendar.current.shortWeekdaySymbols[3])
+          case .thursday: return Text(Calendar.current.shortWeekdaySymbols[4])
+          case .friday: return Text(Calendar.current.shortWeekdaySymbols[5])
+          case .saturday: return Text(Calendar.current.shortWeekdaySymbols[6])
       }
   }
   

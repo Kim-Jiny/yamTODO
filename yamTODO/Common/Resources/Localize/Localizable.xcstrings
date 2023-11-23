@@ -73,6 +73,9 @@
         }
       }
     },
+    "App Color Setting" : {
+
+    },
     "App settings" : {
       "localizations" : {
         "ja" : {
@@ -345,6 +348,9 @@
         }
       }
     },
+    "Delete Selected" : {
+
+    },
     "Edit" : {
       "localizations" : {
         "ja" : {
@@ -380,6 +386,7 @@
       }
     },
     "Edit Task 📝" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -414,6 +421,7 @@
       }
     },
     "Enter New Title..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -448,6 +456,7 @@
       }
     },
     "Fri" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -619,6 +628,7 @@
       }
     },
     "Mon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -959,6 +969,7 @@
       }
     },
     "Sat" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1025,6 +1036,9 @@
           }
         }
       }
+    },
+    "Select Color" : {
+
     },
     "Send feedback to the developer (Inquiry)" : {
       "localizations" : {
@@ -1095,6 +1109,7 @@
       }
     },
     "Sun" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1129,6 +1144,7 @@
       }
     },
     "Thu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1197,6 +1213,7 @@
       }
     },
     "Tue" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1265,6 +1282,7 @@
       }
     },
     "Wed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

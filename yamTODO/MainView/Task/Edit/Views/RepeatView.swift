@@ -18,6 +18,11 @@ struct RepeatView: View {
     
     var body: some View {
         HStack(spacing: 5) {
+            Image(systemName: "repeat")
+                .resizable()
+                .frame(width: 15, height: 15)
+//                .aspectRatio(contentMode: .fill)
+                .foregroundColor(.yamBlue)
             ForEach(daysOfWeek, id: \.self) { day in
                 Button(action: {
                     if selectedDays.contains(day) {
@@ -27,7 +32,7 @@ struct RepeatView: View {
                     }
                 }, label: {
                     day.displayText
-                        .frame(width: 30, height: 30)
+                        .frame(width: 27, height: 25)
                         .padding(2)
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)

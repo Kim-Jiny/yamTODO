@@ -66,9 +66,11 @@ public struct DetailTextView: UIViewRepresentable {
   }
   
   public func updateUIView(_ uiView: UITextView, context: Context) {
-      uiView.text = text
-      uiView.textColor = textColor
-      updateHeight(uiView)
+      if text != "" {
+          uiView.text = text
+          uiView.textColor = textColor
+          updateHeight(uiView)
+      }
   }
   
   public func makeCoordinator() -> Coordinator {

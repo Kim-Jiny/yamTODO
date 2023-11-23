@@ -11,6 +11,8 @@ import MessageUI
 import GoogleMobileAds
 
 struct MyPage: View {
+//    @StateObject var viewModel = ColorSettingViewModel()
+    
     @State private var isShowingMailView = false
     @State private var showFailedMailAlert = false
     @State private var result: Result<MFMailComposeResult, Error>?
@@ -21,7 +23,7 @@ struct MyPage: View {
     @ViewBuilder func admob() -> some View {
             // admob
         AdmobBannerView().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
-        }
+    }
   
   var body: some View {
     NavigationView {
@@ -32,8 +34,8 @@ struct MyPage: View {
             appInfoSection
             taskInfoSection
 //            appSettingSection
-            fordDeveloper
-            admob()
+            forDeveloper
+//            admob()
         }
       }
       .navigationBarTitle("My Page")
@@ -52,6 +54,11 @@ private extension MyPage {
               Text("App version v\(appVersion)")
                   .frame(height: 44)
           }
+//          NavigationLink(destination: ColorSettingMainView()) {
+//              Text("Setting App Color")
+//                  .frame(height: 44)
+//          }
+          
 //          Button {
 //              scheduleNotification()
 ////              isShowNotice = true
@@ -92,7 +99,7 @@ private extension MyPage {
 //        //      productHeightPicker
 //        }
 //    }
-    var fordDeveloper: some View {
+    var forDeveloper: some View {
       Section(header: Text("Communication").fontWeight(.medium)) {
           
           Button {

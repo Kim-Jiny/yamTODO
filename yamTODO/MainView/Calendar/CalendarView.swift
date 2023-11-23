@@ -20,6 +20,7 @@ struct CalendarView: View {
     VStack {
       headerView
       calendarGridView
+            .animation(nil)
     }
     .gesture(
       DragGesture()
@@ -36,6 +37,7 @@ struct CalendarView: View {
         }
       
     )
+      
     .animation(.easeOut, value: offset)
     .padding(.leading, 30)
     .padding(.trailing, 30)
@@ -135,9 +137,9 @@ struct CalendarView: View {
                   // 태스크들이 있는경우.
                   if taskList.count > 0 {
                       // 아직 완료되지 않은 작업이 있는 경우
-                      if let isNotFinish = taskList.first(where: { !$0.isDone }) {
+                      if let _ = taskList.first(where: { !$0.isDone }) {
                           // 완료작업이 아에 없는 경우 : red
-                          if let notFinish = taskList.first(where: { $0.isDone }) {
+                          if let _ = taskList.first(where: { $0.isDone }) {
                               CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 2)
 //                              pointType = .yellow
                           } else {
@@ -171,7 +173,6 @@ struct CalendarView: View {
           if 0 <= index && index < daysInMonth {
             let date = getDate(for: index)
               selectedDate = date
-              print(Calendar.current.component(.weekday, from: selectedDate))
           }
         }
       }
@@ -225,6 +226,21 @@ private extension CalendarView {
     
     return Calendar.current.component(.weekday, from: firstDayOfMonth)
   }
+    
+    /// 오늘 날짜의 처음 시작 시간
+    func getStartTime(in date: Date) -> Date {
+        // 현재 날짜의 연, 월, 일 구성 요소를 가져옵니다.
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        // 디바이스의 시간대 설정
+        let deviceTimeZone = TimeZone.autoupdatingCurrent
+        // 해당 연, 월, 일로 시작 시간을 설정합니다.
+        if var startDate = Calendar.current.date(from: components) {
+            startDate = Calendar.current.startOfDay(for: startDate) // 이것이 오늘 날짜의 시작 시간입니다.
+            return startDate.addingTimeInterval(TimeInterval(deviceTimeZone.secondsFromGMT(for: startDate)))
+        }
+        
+        return date
+    }
   
   /// 이전 월 마지막 일자
   func previousMonth() -> Date {
@@ -237,8 +253,19 @@ private extension CalendarView {
   
   /// 월 변경
   func changeMonth(by value: Int) {
-      self.selectedMonth = adjustedMonth(by: value)
-      self.monthDataList.date = selectedMonth
+      let selectedDate = adjustedMonth(by: value)
+      self.monthDataList.date = selectedDate
+      
+      // 이번달로 변경시 오늘 날짜로 선택해줌.
+      if isDateInCurrentMonth(dateToCheck: selectedDate) {
+          self.selectedDate = getStartTime(in: Date())
+      }else {
+          let calendar = Calendar.current
+          let components = calendar.dateComponents([.year, .month], from: selectedDate)
+          let startOfMonth = calendar.date(from: components)!
+          self.selectedDate = getStartTime(in: startOfMonth)
+      }
+      self.selectedMonth = selectedDate
   }
   
   /// 이전 월로 이동 가능한지 확인
@@ -272,4 +299,19 @@ private extension CalendarView {
     }
     return selectedMonth
   }
+    /// 해당 날짜가 포함된 달인지 확인
+    func isDateInCurrentMonth(dateToCheck: Date) -> Bool {
+        let calendar = Calendar.current
+        let currentDate = Date()
+
+        let startOfMonthComponents = calendar.dateComponents([.year, .month], from: currentDate)
+        guard let startOfMonth = calendar.date(from: startOfMonthComponents) else { return false }
+
+        if let lastDateOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth) {
+            let dateInterval = DateInterval(start: startOfMonth, end: lastDateOfMonth)
+            return dateInterval.contains(dateToCheck)
+        }
+
+        return false
+    }
 }

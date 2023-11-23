@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct TaskItemView: View {
-  @EnvironmentObject var taskList: TaskList
+  @ObservedObject var taskList: TaskList
 
   let task: TaskObject
-  @Binding var isShowEditPopup: Bool
   @Binding var isShowDetailPopup: Bool
   @Binding var selectedTask: SelectedTask
 
   var body: some View {
     return HStack {
-//        if task.rootId != "" {
-//            Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
-//        }
         if task.isDelay != 0 {
             ZStack {
                 Circle()
@@ -32,7 +28,15 @@ struct TaskItemView: View {
             }
         }else {
             if task.rootId != "" {
-                Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
+                HStack (spacing: 0) {
+                    // list 의 언더라인이 끊기는 문제를 해결하기위해
+                    Text("")
+                        .frame(maxWidth: 0)
+                    Image(systemName: "repeat.circle.fill")
+                        .resizable()
+                        .foregroundColor(.yamBlue)
+                        .frame(width: 20, height: 20)
+                }
             }
         }
         Text(self.task.title)
@@ -59,7 +63,6 @@ struct TaskItemView: View {
   }
 
   private func toggleDone() {
-      guard !self.isShowEditPopup else { return }
       self.taskList.updateIsDone(self.task.id)
   }
   
@@ -69,11 +72,4 @@ struct TaskItemView: View {
         self.selectedTask = SelectedTask(selectedTask: task)
         self.isShowDetailPopup.toggle()
     }
-
-  private func delete() {
-    self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })
-    if self.taskList.tasksObject.isEmpty {
-      self.isShowEditPopup = false
-    }
-  }
 }
