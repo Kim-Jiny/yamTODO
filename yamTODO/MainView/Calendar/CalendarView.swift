@@ -12,7 +12,7 @@ import Combine
 struct CalendarView: View {
     @ObservedObject var monthDataList: TasksByMonthListModel
     @ObservedObject var taskList: TaskList
-    @State var selectedMonth: Date
+    @Binding var selectedMonth: Date
     @Binding var selectedDate: Date
     @State var offset: CGSize = CGSize()
   

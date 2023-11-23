@@ -27,7 +27,7 @@ struct CalendarMainView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    CalendarView(monthDataList: monthDataList, taskList: taskList, selectedMonth: selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
+                    CalendarView(monthDataList: monthDataList, taskList: taskList, selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
                         .navigationBarTitleDisplayMode(.inline)
                     VStack {
                         TaskListView(selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
