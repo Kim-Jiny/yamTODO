@@ -36,7 +36,7 @@ struct DetailPopupView: View {
                 cornerRadius: 0,
                 borderWidth: 0,
                 borderColor: UIColor.yamBlue!.cgColor,
-                placeholder: "If left blank, the task will be deleted."
+                placeholder: String(localized: "If left blank, the task will be deleted.")
               )
                 .frame(maxHeight: taskTitleHeight)
               DetailTextView(
@@ -47,7 +47,7 @@ struct DetailPopupView: View {
                       cornerRadius: 8,
                       borderWidth: 2,
                       borderColor: UIColor.yamBlue!.cgColor,
-                      placeholder: "You can enter a detailed description for the task."
+                      placeholder: String(localized: "You can enter a detailed description for the task.")
                     )
               .lineLimit(10)
               .cornerRadius(8)

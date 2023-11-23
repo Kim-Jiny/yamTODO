@@ -47,7 +47,7 @@ struct EditPopupView: View {
                         cornerRadius: 8,
                         borderWidth: 0,
                         borderColor: UIColor.yamBlue!.cgColor,
-                        placeholder: "You can enter a detailed description for the task."
+                        placeholder: String(localized:"You can enter a detailed description for the task.")
                     )
                     .lineLimit(10)
                     .cornerRadius(8)
