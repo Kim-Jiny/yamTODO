@@ -18,8 +18,9 @@ struct AdmobBannerView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         let view = GADBannerView(adSize: GADAdSizeBanner)
         let viewController = UIViewController()
-        view.adUnitID = "ca-app-pub-3940256099942544/2934735716" // test Key
+        view.adUnitID = "ca-app-pub-2707874353926722/7553071866" // test Key
         // 내 키 ca-app-pub-2707874353926722/7553071866
+        // Test Key ca-app-pub-3940256099942544/2934735716
         view.rootViewController = viewController
         viewController.view.addSubview(view)
         viewController.view.frame = CGRect(origin: .zero, size: GADAdSizeBanner.size)
