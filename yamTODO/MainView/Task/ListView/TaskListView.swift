@@ -75,6 +75,7 @@ struct TaskListView: View {
                     .padding(.bottom, 0)
                 }
             }
+            .listStyle(SidebarListStyle())
             
             .onReceive(selectedCalendar.$selectedDate) { _ in
                 // 해당 날짜를 선택했을때 리스트를 초기화시켜줌.

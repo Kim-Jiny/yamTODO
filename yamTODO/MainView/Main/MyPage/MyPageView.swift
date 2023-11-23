@@ -10,6 +10,8 @@ import UIKit
 import MessageUI
 
 struct MyPage: View {
+//    @StateObject var viewModel = ColorSettingViewModel()
+    
     @State private var isShowingMailView = false
     @State private var showFailedMailAlert = false
     @State private var result: Result<MFMailComposeResult, Error>?
@@ -27,7 +29,7 @@ struct MyPage: View {
             appInfoSection
             taskInfoSection
 //            appSettingSection
-            fordDeveloper
+            forDeveloper
         }
       }
       .navigationBarTitle("My Page")
@@ -46,7 +48,7 @@ private extension MyPage {
               Text("App version v\(appVersion)")
                   .frame(height: 44)
           }
-          NavigationLink(destination: CustomSettingView()) {
+          NavigationLink(destination: ColorSettingMainView()) {
               Text("Setting App Color")
                   .frame(height: 44)
           }
@@ -91,7 +93,7 @@ private extension MyPage {
 //        //      productHeightPicker
 //        }
 //    }
-    var fordDeveloper: some View {
+    var forDeveloper: some View {
       Section(header: Text("Communication").fontWeight(.medium)) {
           
           Button {

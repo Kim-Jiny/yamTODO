@@ -16,9 +16,6 @@ struct TaskItemView: View {
 
   var body: some View {
     return HStack {
-//        if task.rootId != "" {
-//            Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
-//        }
         if task.isDelay != 0 {
             ZStack {
                 Circle()
@@ -31,7 +28,15 @@ struct TaskItemView: View {
             }
         }else {
             if task.rootId != "" {
-                Image(systemName: "repeat.circle.fill").foregroundColor(.yamBlue)
+                HStack (spacing: 0) {
+                    // list 의 언더라인이 끊기는 문제를 해결하기위해
+                    Text("")
+                        .frame(maxWidth: 0)
+                    Image(systemName: "repeat.circle.fill")
+                        .resizable()
+                        .foregroundColor(.yamBlue)
+                        .frame(width: 20, height: 20)
+                }
             }
         }
         Text(self.task.title)

@@ -73,6 +73,9 @@
         }
       }
     },
+    "App Color Setting" : {
+
+    },
     "App settings" : {
       "localizations" : {
         "ja" : {
@@ -311,9 +314,6 @@
         }
       }
     },
-    "Custom Color Setting" : {
-
-    },
     "Delete" : {
       "localizations" : {
         "ja" : {
@@ -347,6 +347,9 @@
           }
         }
       }
+    },
+    "Delete Selected" : {
+
     },
     "Edit" : {
       "localizations" : {
@@ -383,6 +386,7 @@
       }
     },
     "Edit Task 📝" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -417,6 +421,7 @@
       }
     },
     "Enter New Title..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1031,6 +1036,9 @@
           }
         }
       }
+    },
+    "Select Color" : {
+
     },
     "Send feedback to the developer (Inquiry)" : {
       "localizations" : {
