@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ColorModel: Identifiable, Equatable, Codable {
     var id = UUID().uuidString
-    let color: CodableColor
+    let mainColor: CodableColor
+    let darkColor: CodableColor
+    let lightColor: CodableColor
+    let todayColor: CodableColor
     let colorTitle: String
     var isSelected = false
 }

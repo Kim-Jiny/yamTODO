@@ -9,8 +9,7 @@ import Combine
 import SwiftUI
 
 private let defaultColors: [ColorModel] = [
-    ColorModel(id: "defaultColorModel", color: .init(.yamBlue), colorTitle: "Default", isSelected: false),
-    ColorModel(id: "defaultColorModel", color: .init(.yamDarkBlue), colorTitle: "Default", isSelected: false)
+    ColorModel(id: "defaultColorModel", mainColor: .init(.yamBlue), darkColor: .init(.yamDarkBlue), lightColor: .init(.yamSky), todayColor: .init(.yamLightGreen), colorTitle: "Default", isSelected: false)
 ]
 
 final class UserColorData: ObservableObject {
@@ -48,8 +47,8 @@ final class UserColorObject: ObservableObject {
     @Published var userColorData = UserColorData()
     @Published var id: String = ""
 
-    func addColor(_ color: Color) {
-        userColorData.colors.append(ColorModel(color: CodableColor(color), colorTitle: "123"))
+    func addColor(_ color: ColorModel) {
+        userColorData.colors.append(color)
     }
     
     func selectColor(id: String) {

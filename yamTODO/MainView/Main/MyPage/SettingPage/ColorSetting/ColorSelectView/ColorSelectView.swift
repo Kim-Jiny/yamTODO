@@ -9,41 +9,73 @@ import Foundation
 import SwiftUI
 
 struct ColorSelectView: View {
-//    @ObservedObject var viewModel: ColorSelectViewModel
     @EnvironmentObject var userColor: UserColorObject
-    @State private var selectedColor: Color = .red
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-
+    @State private var mainColor: Color = .yamBlue
+    @State private var lightColor: Color = .yamSky
+    @State private var darkColor: Color = .yamDarkBlue
+    @State private var todayColor: Color = .yamLightGreen
+    @State private var colorTitle: String = ""
+    
     var body: some View {
-        VStack {
-            HStack {
-                ColorPicker("Select Color", selection: $selectedColor, supportsOpacity: true)
-                    .onChange(of: selectedColor) { _ in
-                        userColor.addColor(selectedColor)
-                    }
-                    .padding()
-            }
-            ScrollView {
-                VStack {
-                    LazyVGrid(columns: columns, spacing: 5) {
-                        ForEach(userColor.userColorData.colors.indices, id: \.self) { index in
-                            let colorModel = userColor.userColorData.colors[index]
-                            ColorSelectCell(color: colorModel)
-                                .onTapGesture {
-                                    userColor.selectColor(id: colorModel.id)
-                                }
-                                .border(colorModel.isSelected ? Color.blue : Color.clear, width: 2)
+        NavigationView {
+            VStack {
+                ZStack {
+                    TextField("커스텀 색상의 이름을 작성해 주세요", text: $colorTitle)
+                        .padding()
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .background(Color.yamSky)
+                        .cornerRadius(40)
+                }
+                .frame(width: UIScreen.main.bounds.width - 70, height: 80)
+                .navigationTitle("컬러 설정 추가하기")
+                ScrollView {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            ColorSelectCell(color: mainColor)
+                            ColorPicker(String(localized:"Select MainColor"), selection: $mainColor, supportsOpacity: true)
+                                .padding()
+                        }
+                        HStack {
+                            Spacer()
+                            ColorSelectCell(color: lightColor)
+                            ColorPicker(String(localized:"Select lightColor"), selection: $lightColor, supportsOpacity: true)
+                                .padding()
+                        }
+                        HStack {
+                            Spacer()
+                            ColorSelectCell(color: darkColor)
+                            ColorPicker(String(localized:"Select darkColor"), selection: $darkColor, supportsOpacity: true)
+                                .padding()
+                        }
+                        HStack {
+                            Spacer()
+                            ColorSelectCell(color: todayColor)
+                            ColorPicker(String(localized:"Select todayColor"), selection: $todayColor, supportsOpacity: true)
+                                .padding()
                         }
                     }
-                    .padding()
                 }
-                .navigationBarTitle(Text("App Color Setting"))
+                Button {
+                    saveColor()
+                } label: {
+                    Text("Add")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.yamBlack)
+                        .padding()
+                        .frame(width: 200, height: 60)
+                        .background(Color.yamSky)
+                        .cornerRadius(40)
+                }
             }
         }
+    }
+}
+
+
+extension ColorSelectView {
+    private func saveColor() {
+        
     }
 }

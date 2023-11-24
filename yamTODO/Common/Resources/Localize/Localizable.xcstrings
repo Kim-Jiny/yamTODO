@@ -38,6 +38,9 @@
         }
       }
     },
+    "Add" : {
+
+    },
     "App Color Setting" : {
 
     },
@@ -858,7 +861,16 @@
         }
       }
     },
-    "Select Color" : {
+    "Select darkColor" : {
+
+    },
+    "Select lightColor" : {
+
+    },
+    "Select MainColor" : {
+
+    },
+    "Select todayColor" : {
 
     },
     "Send feedback to the developer (Inquiry)" : {
@@ -1103,6 +1115,12 @@
       }
     },
     "새 컬러 추가하기" : {
+
+    },
+    "커스텀 색상의 이름을 작성해 주세요" : {
+
+    },
+    "컬러 설정 추가하기" : {
 
     }
   },

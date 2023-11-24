@@ -18,7 +18,7 @@ struct ColorSettingCell: View {
                 // list 의 언더라인이 끊기는 문제를 해결하기위해
                 Text("")
                     .frame(maxWidth: 0)
-                ColorTriangleView(length: 40, firstColor: colorModel.color.toColor(), secondColor: .yamLightGreen)
+                ColorTriangleView(length: 40, firstColor: colorModel.mainColor.toColor(), secondColor: colorModel.lightColor.toColor())
                     .frame(width: 40, height: 40)
                     .cornerRadius(8)
                     .padding()

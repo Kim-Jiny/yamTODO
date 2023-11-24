@@ -22,13 +22,18 @@ struct ColorSettingMainView: View {
                 self.isShowColorAddedView = true
             } label: {
                 HStack {
+                        // list 의 언더라인이 끊기는 문제를 해결하기위해
+                    Text("")
+                        .frame(maxWidth: 0)
+                    Spacer()
                     Image(systemName: "plus.app")
                         .foregroundColor(.yamBlue)
                     Text("새 컬러 추가하기")
+                    Spacer()
                 }
             }
             .frame(height: 50)
-            .frame(maxWidth: .infinity)
+//            .frame(minWidth: .infinity)
             .sheet(isPresented: $isShowColorAddedView) {
                 ColorSelectView()
                     .environmentObject(userColor)

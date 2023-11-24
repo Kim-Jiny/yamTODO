@@ -16,7 +16,6 @@
 		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
 		364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
 		364FC7642B0D9A37009AF157 /* ColorSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7632B0D9A37009AF157 /* ColorSelectView.swift */; };
-		364FC7B92B0F048F009AF157 /* ColorSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7B82B0F048F009AF157 /* ColorSelectViewModel.swift */; };
 		364FC7BB2B0F04A9009AF157 /* ColorSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7BA2B0F04A9009AF157 /* ColorSelectCell.swift */; };
 		364FC7BD2B0F0976009AF157 /* ColorSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7BC2B0F0976009AF157 /* ColorSettingModel.swift */; };
 		364FC7BF2B0F1B8B009AF157 /* ColorSettingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7BE2B0F1B8B009AF157 /* ColorSettingMainView.swift */; };
@@ -105,7 +104,6 @@
 		304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		364FC7632B0D9A37009AF157 /* ColorSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectView.swift; sourceTree = "<group>"; };
-		364FC7B82B0F048F009AF157 /* ColorSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectViewModel.swift; sourceTree = "<group>"; };
 		364FC7BA2B0F04A9009AF157 /* ColorSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectCell.swift; sourceTree = "<group>"; };
 		364FC7BC2B0F0976009AF157 /* ColorSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingModel.swift; sourceTree = "<group>"; };
 		364FC7BE2B0F1B8B009AF157 /* ColorSettingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingMainView.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				364FC7632B0D9A37009AF157 /* ColorSelectView.swift */,
-				364FC7B82B0F048F009AF157 /* ColorSelectViewModel.swift */,
 				364FC7BA2B0F04A9009AF157 /* ColorSelectCell.swift */,
 			);
 			path = ColorSelectView;
@@ -713,7 +710,6 @@
 				36B7C99C2ADF63FB00F7A140 /* TaskHeader.swift in Sources */,
 				304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */,
 				36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */,
-				364FC7B92B0F048F009AF157 /* ColorSelectViewModel.swift in Sources */,
 				36B7C9A72ADFB05700F7A140 /* APIError.swift in Sources */,
 				36B7C9752ADE18B800F7A140 /* CalendarView.swift in Sources */,
 				36EDCF4D2AF08585004F2483 /* MainTabView.swift in Sources */,
@@ -907,7 +903,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
-				DEVELOPMENT_TEAM = HW9XJ9J5M2;
+				DEVELOPMENT_TEAM = 799GLJ393L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yamTODO/Info.plist;
@@ -924,7 +920,7 @@
 				);
 				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -940,7 +936,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
-				DEVELOPMENT_TEAM = HW9XJ9J5M2;
+				DEVELOPMENT_TEAM = 799GLJ393L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yamTODO/Info.plist;
@@ -957,7 +953,7 @@
 				);
 				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

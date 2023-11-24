@@ -9,13 +9,11 @@ import Foundation
 import SwiftUI
 
 struct ColorSelectCell: View {
-    var color: ColorModel
+    var color: Color
 
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .fill(color.color.toColor())
+            .fill(color)
             .frame(width: 50, height: 50)
     }
-    
-    
 }
