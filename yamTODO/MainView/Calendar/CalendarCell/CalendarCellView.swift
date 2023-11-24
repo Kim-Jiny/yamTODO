@@ -15,6 +15,7 @@ enum CalendarPointType {
 
 // MARK: - 일자 셀 뷰
 struct CalendarCellView: View {
+    @ObservedObject var userColor: UserColorObject
 //    @ObservedObject var monthDataList: TasksByMonthListModel
     private var day: Int
     private var clicked: Bool
@@ -37,7 +38,7 @@ struct CalendarCellView: View {
         if clicked {
             return Color.yamBlack
         } else if isToday {
-            return Color.yamLightGreen
+            return userColor.userColorData.selectedColor.todayColor.toColor()
         } else {
             return Color.yamWhite
         }
@@ -64,6 +65,7 @@ struct CalendarCellView: View {
     
     init(
 //        monthDataList: TasksByMonthListModel,
+        userColor: UserColorObject,
         day: Int,
         clicked: Bool = false,
         isToday: Bool = false,
@@ -72,6 +74,7 @@ struct CalendarCellView: View {
         pointType: Int = 0
     ) {
 //        self.monthDataList = monthDataList
+        self.userColor = userColor
         self.day = day
         self.clicked = clicked
         self.isToday = isToday

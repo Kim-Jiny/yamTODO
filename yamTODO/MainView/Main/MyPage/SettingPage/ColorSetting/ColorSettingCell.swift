@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ColorSettingCell: View {
+    @ObservedObject var userColor: UserColorObject
     let isChecked: Bool
     let colorModel: ColorModel
 
@@ -32,7 +33,7 @@ struct ColorSettingCell: View {
             Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                 .resizable()
                 .frame(width: 24, height: 24)
-                .foregroundColor(isChecked ? .yamBlue : .gray)
+                .foregroundColor(isChecked ? userColor.userColorData.selectedColor.mainColor.toColor() : .gray)
                 .padding(.trailing, 10)
 //                .onTapGesture {
 //                    isChecked.toggle()

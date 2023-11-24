@@ -35,7 +35,7 @@ struct RepeatDetailPopupView: View {
                 textFont: .boldSystemFont(ofSize: 15),
                 cornerRadius: 0,
                 borderWidth: 0,
-                borderColor: UIColor.yamBlue!.cgColor,
+                borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                 placeholder: "공백으로 남기면 Task가 삭제됩니다."
               )
                 .frame(maxHeight: taskTitleHeight)
@@ -47,7 +47,7 @@ struct RepeatDetailPopupView: View {
                       textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
-                      borderColor: UIColor.yamBlue!.cgColor,
+                      borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                       placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
                     )
               .lineLimit(10)
@@ -58,7 +58,7 @@ struct RepeatDetailPopupView: View {
                       .resizable()
                       .frame(width: 22, height: 20)
                       .aspectRatio(contentMode: .fill)
-                      .foregroundColor(.yamBlue)
+                      .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                   RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
               }
             HStack {
@@ -66,7 +66,7 @@ struct RepeatDetailPopupView: View {
                     showDeleteAlert.toggle()
                 }, label: {
                     Text("Delete")
-                    .foregroundColor(.yamDarkBlue)
+                    .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
                     .fontWeight(.bold)
                     .padding()
                 }).alert(isPresented: $showDeleteAlert) {
@@ -86,7 +86,7 @@ struct RepeatDetailPopupView: View {
                   }
                 }, label: {
                     Text("Edit")
-                    .foregroundColor(.yamBlue)
+                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                     .fontWeight(.bold)
                     .padding()
                 })

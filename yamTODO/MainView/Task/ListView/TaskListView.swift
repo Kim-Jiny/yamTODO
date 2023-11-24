@@ -63,7 +63,7 @@ struct TaskListView: View {
                                     } label: {
                                         Label("Delete", systemImage: "trash.circle")
                                     }
-                                    .tint(.yamBlue)
+                                    .tint(userColor.userColorData.selectedColor.mainColor.toColor())
                                 }
                             
                         }
@@ -78,7 +78,7 @@ struct TaskListView: View {
                                 self.isShowTmrEditPopup = true
                             } label: {
                                 Image(systemName: "plus.app")
-                                    .foregroundColor(.yamBlue)
+                                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                             }
                         .frame(maxWidth: .infinity)
                         
@@ -94,7 +94,7 @@ struct TaskListView: View {
                                         } label: {
                                             Label("Delete", systemImage: "trash.circle")
                                         }
-                                        .tint(.yamBlue)
+                                        .tint(userColor.userColorData.selectedColor.mainColor.toColor())
                                     }
                             }
                         }
@@ -110,7 +110,7 @@ struct TaskListView: View {
                                         } label: {
                                             Label("Delete", systemImage: "trash.circle")
                                         }
-                                        .tint(.yamBlue)
+                                        .tint(userColor.userColorData.selectedColor.mainColor.toColor())
                                     }
                             }
                         }

@@ -10,6 +10,7 @@ import RealmSwift
 import Combine
 
 struct CalendarView: View {
+    @ObservedObject var userColor: UserColorObject
     @ObservedObject var monthDataList: TasksByMonthListModel
     @ObservedObject var taskList: TaskList
     @Binding var selectedMonth: Date
@@ -140,23 +141,23 @@ struct CalendarView: View {
                       if let _ = taskList.first(where: { !$0.isDone }) {
                           // 완료작업이 아에 없는 경우 : red
                           if let _ = taskList.first(where: { $0.isDone }) {
-                              CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 2)
+                              CalendarCellView(userColor: userColor, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 2)
 //                              pointType = .yellow
                           } else {
-                              CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 1)
+                              CalendarCellView(userColor: userColor, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 1)
 //                              pointType = .red
                           }
                       } else {
                           // 모든 작업이 완료된 경우
-                          CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 3)
+                          CalendarCellView(userColor: userColor, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 3)
                       }
                       // Task가 없는 경우
                   } else {
-                      CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
+                      CalendarCellView(userColor: userColor, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
                   }
                   //MonthData가 없는경우
               }else {
-                  CalendarCellView(day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
+                  CalendarCellView(userColor: userColor, day: day, clicked: clicked, isToday: isToday, isOverToday: overToday, isCurrentMonthDay: true, pointType: 0)
               }
             // 달력내에서 이번달이 아닌경우
           } else if let prevMonthDate = Calendar.current.date(
@@ -166,7 +167,7 @@ struct CalendarView: View {
           ) {
             let day = Calendar.current.component(.day, from: prevMonthDate)
             
-              CalendarCellView(day: day, isCurrentMonthDay: false)
+              CalendarCellView(userColor: userColor, day: day, isCurrentMonthDay: false)
           }
         }
         .onTapGesture {

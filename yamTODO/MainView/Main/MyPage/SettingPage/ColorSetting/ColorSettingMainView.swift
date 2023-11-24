@@ -36,7 +36,7 @@ struct ColorSettingMainView: View {
                     .environmentObject(userColor)
             }
             ForEach(userColor.userColorData.colors) { colorM in
-                ColorSettingCell(isChecked: userColor.userColorData.selectedColor.id == colorM.id, colorModel: colorM)
+                ColorSettingCell(userColor: userColor, isChecked: userColor.userColorData.selectedColor.id == colorM.id, colorModel: colorM)
                     .frame(height: 50)
                     .onTapGesture {
                         userColor.selectColor(color: colorM)

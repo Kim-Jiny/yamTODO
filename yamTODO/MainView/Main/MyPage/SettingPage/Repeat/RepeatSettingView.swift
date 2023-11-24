@@ -20,7 +20,7 @@ struct RepeatSettingView: View {
                 ForEach(self.taskList.tasksObject) { task in
                     // 지워지거나 수정되지 않은 옵션만 표시
                     if !task.isRemove {
-                        RepeatItemView(task: task, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+                        RepeatItemView(userColor: userColor, task: task, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
                             .environmentObject(taskList)
                     }
                 }

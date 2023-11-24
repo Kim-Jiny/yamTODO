@@ -24,7 +24,7 @@ struct RepeatView: View {
                 .resizable()
                 .frame(width: 15, height: 15)
 //                .aspectRatio(contentMode: .fill)
-                .foregroundColor(.yamBlue)
+                .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
             ForEach(daysOfWeek, id: \.self) { day in
                 Button(action: {
                     if selectedDays.contains(day) {
@@ -38,7 +38,7 @@ struct RepeatView: View {
                         .padding(2)
                         .overlay(
                             RoundedRectangle(cornerRadius: 15)
-                                .stroke(selectedDays.contains(day) ? Color.yamBlue : Color.clear, lineWidth: 2)
+                                .stroke(selectedDays.contains(day) ? userColor.userColorData.selectedColor.mainColor.toColor() : Color.clear, lineWidth: 2)
                         )
                 })
                 .buttonStyle(PlainButtonStyle())

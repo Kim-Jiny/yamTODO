@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RepeatItemView: View {
+    @ObservedObject var userColor: UserColorObject
   @EnvironmentObject var taskList: OptionTaskList
 
   let task: TaskObject
@@ -21,7 +22,7 @@ struct RepeatItemView: View {
             ForEach(task.optionType.sorted(), id: \.self) { repeatType in
                 ZStack {
                     Circle()
-                        .foregroundColor(Color.yamRealDarkPoint)
+                        .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
                         .frame(width: 30, height: 30)
                     repeatType.getRepeatType().displayText
                         .foregroundColor(.realWhite)
