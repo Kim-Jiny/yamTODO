@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 struct ColorSelectView: View {
-    @ObservedObject var viewModel: ColorSelectViewModel
+//    @ObservedObject var viewModel: ColorSelectViewModel
+    @EnvironmentObject var userColor: UserColorObject
     @State private var selectedColor: Color = .red
     let columns = [
         GridItem(.flexible()),
@@ -21,26 +22,20 @@ struct ColorSelectView: View {
     var body: some View {
         VStack {
             HStack {
-                Button("Delete Selected") {
-                    viewModel.removeSelectedColor()
-                }
-                .disabled(viewModel.selectedColorIndex == nil)
-                .padding()
-                
                 ColorPicker("Select Color", selection: $selectedColor, supportsOpacity: true)
                     .onChange(of: selectedColor) { _ in
-                        viewModel.addColor(selectedColor)
+                        userColor.addColor(selectedColor)
                     }
                     .padding()
             }
             ScrollView {
                 VStack {
                     LazyVGrid(columns: columns, spacing: 5) {
-                        ForEach(viewModel.userColor.colors.indices, id: \.self) { index in
-                            let colorModel = viewModel.userColor.colors[index]
+                        ForEach(userColor.userColorData.colors.indices, id: \.self) { index in
+                            let colorModel = userColor.userColorData.colors[index]
                             ColorSelectCell(color: colorModel)
                                 .onTapGesture {
-                                    viewModel.selectColor(at: index)
+                                    userColor.selectColor(id: colorModel.id)
                                 }
                                 .border(colorModel.isSelected ? Color.blue : Color.clear, width: 2)
                         }

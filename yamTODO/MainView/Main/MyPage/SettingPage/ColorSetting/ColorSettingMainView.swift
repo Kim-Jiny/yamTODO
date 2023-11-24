@@ -9,41 +9,50 @@ import Foundation
 import SwiftUI
 
 struct ColorSettingMainView: View {
-    @StateObject var userColor = UserColorObject()
+    @ObservedObject var userColor = UserColorObject()
     
-    @State var selectedColorIndex: Int? = nil
-    @State var isShowSelectPopup: Bool = false
-    @State var isDeleteActionVisible: Bool = false
+    @State var selectedColor: ColorModel? = nil
+    @State var isShowColorAddedView: Bool = false
+    
     @State var offset: CGSize = CGSize()
     
     var body: some View {
         List {
             Button {
-                self.isShowSelectPopup = true
+                self.isShowColorAddedView = true
             } label: {
-                Image(systemName: "plus.app")
-                    .foregroundColor(.yamBlue)
+                HStack {
+                    Image(systemName: "plus.app")
+                        .foregroundColor(.yamBlue)
+                    Text("새 컬러 추가하기")
+                }
             }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
-            ForEach(userColor.userColorData.colors.indices, id: \.self) { index in
-                ColorSettingCell(isChecked: selectedColorIndex == index, colorModel: userColor.userColorData.colors[index])
+            .sheet(isPresented: $isShowColorAddedView) {
+                ColorSelectView()
+                    .environmentObject(userColor)
+            }
+            ForEach(userColor.userColorData.colors) { colorM in
+                ColorSettingCell(isChecked: selectedColor?.id == colorM.id, colorModel: colorM)
                     .frame(height: 50)
                     .onTapGesture {
-                        selectedColorIndex = index
+                        selectedColor = colorM
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                            Button {
-                                // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
-                                isDeleteActionVisible.toggle()
-                            } label: {
-                                Label("Delete", systemImage: "trash.circle")
-                            }
-                            .tint(.yamBlue)
+                        Button {
+                            userColor.removeColor(id: colorM.id)
+                        } label: {
+                            Label("Delete", systemImage: "trash.circle")
                         }
+                        .tint(.yamBlue)
+                    }
             }
         }
         .listStyle(DefaultListStyle())
         .navigationBarTitle(Text("App Color Setting"))
+        .onReceive(userColor.userColorData.objectWillChange) { data in
+            self.userColor.id = ""
+        }
     }
 }

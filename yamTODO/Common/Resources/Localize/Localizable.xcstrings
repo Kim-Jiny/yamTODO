@@ -313,9 +313,6 @@
         }
       }
     },
-    "Delete Selected" : {
-
-    },
     "Edit" : {
       "localizations" : {
         "ja" : {
@@ -1104,6 +1101,9 @@
           }
         }
       }
+    },
+    "새 컬러 추가하기" : {
+
     }
   },
   "version" : "1.0"
