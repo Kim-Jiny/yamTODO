@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSUserNotificationsUsageDescription</key>
-    <string>We would like to send you notifications for important updates.</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-2707874353926722~4619006514</string>
 	<key>GADIsAdManagerApp</key>
@@ -13,6 +11,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>We would like to send you notifications for important updates.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

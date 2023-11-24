@@ -25,8 +25,8 @@ struct ColorSettingMainView: View {
                         .frame(maxWidth: 0)
                     Spacer()
                     Image(systemName: "plus.app")
-                        .foregroundColor(.yamBlue)
-                    Text("새 컬러 추가하기")
+                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                    Text("Add a new color")
                     Spacer()
                 }
             }
@@ -48,7 +48,7 @@ struct ColorSettingMainView: View {
                             } label: {
                                 Label("Delete", systemImage: "trash.circle")
                             }
-                            .tint(.yamBlue)
+                            .tint(userColor.userColorData.selectedColor.mainColor.toColor())
                         }
                     }
             }

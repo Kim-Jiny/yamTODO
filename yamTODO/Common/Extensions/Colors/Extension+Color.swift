@@ -52,17 +52,18 @@ extension UIColor {
 
 extension Color {
     // 다크모드 지원 컬러
-    static let yamLightGreen = Color.myColor(lightMode: .YamColor.yamGreen, darkMode: .YamColor.yamDarkPurple)
-    static let yamSky = Color.myColor(lightMode: .YamColor.yamLightBlue, darkMode: .YamColor.yamDarkPurple)
-    static let yamBlue = Color.myColor(lightMode: .YamColor.yamBlue, darkMode: .YamColor.yamPurple)
-    static let yamDarkBlue = Color.myColor(lightMode: YamColor.yamDarkBlue, darkMode: YamColor.yamLightPurple)
-    static let yamLightGray = Color.myColor(lightMode: YamColor.gray, darkMode: YamColor.gray)
-    static let yamWhite = Color.myColor(lightMode: YamColor.white, darkMode: YamColor.black)
-    static let yamBlack = Color.myColor(lightMode: YamColor.black, darkMode: YamColor.white)
-    static let yamRealDarkPoint = Color.myColor(lightMode: YamColor.yamDarkBlue, darkMode: YamColor.yamDarkPurple)
+    static let yamLightGreen = YamColor.yamGreen
+    static let yamSky = YamColor.yamLightBlue
+    static let yamBlue = YamColor.yamBlue
+    static let yamDarkBlue = YamColor.yamDarkBlue
+    static let yamLightGray = YamColor.gray
+    static let yamWhite = YamColor.white
+    static let yamBlack = YamColor.black
+    static let yamRealDarkPoint = YamColor.yamDarkBlue
     
     // 불변 컬러
-    static let realWhite = Color.myColor(lightMode: YamColor.white, darkMode: YamColor.white)
+    static let realWhite = YamColor.white
+    static let realBlack = YamColor.black
     
     private struct YamColor {
         static let white = Color(hex: "#F7F7F7")

@@ -11,6 +11,8 @@ import GoogleMobileAds
 
 struct TaskMainView: View {
     @ObservedObject var userColor: UserColorObject
+    @Binding var selectedTab: Tabs
+    
     @StateObject var taskList = TaskList(date: Date())
     @State var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
     @StateObject var selectedCalendar = SelectedCalendar()
@@ -35,13 +37,6 @@ struct TaskMainView: View {
               Spacer()
               admob()
           }
-          // 네비게이션뷰에 태스크 생성 페이지 버튼 삭제
-//          .navigationBarItems(trailing: Button(action: { self.isShowEditPopup = true }) {
-//            Image("edit")
-//              .resizable()
-//              .frame(width: 40, height: 40)
-//          })
-          
         if isShowEditPopup {
             EditPopupView(userColor: userColor, selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup).environmentObject(taskList)
         }
@@ -61,6 +56,15 @@ struct TaskMainView: View {
         // 뷰가 나타날 때마다 호출됩니다.
         taskList.date = Date()
         tmrTaskList.date = tmrTaskList.date
+    }
+    .onChange(of: selectedTab) { newSelectedTab in
+        // selectedTab이 변경될 때마다 호출됩니다.
+        // isShowEditPopup을 false로 설정합니다.
+        if newSelectedTab != .home {
+            isShowEditPopup = false
+            isShowTmrEditPopup = false
+            isShowDetailPopup = false
+        }
     }
   }
 }

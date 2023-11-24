@@ -12,6 +12,7 @@ struct ColorSelectView: View {
     @Binding var isPresented: Bool
     
     @EnvironmentObject var userColor: UserColorObject
+    @Environment(\.colorScheme) var colorScheme
     @State private var mainColor: Color = .yamBlue
     @State private var lightColor: Color = .yamSky
     @State private var darkColor: Color = .yamDarkBlue
@@ -22,38 +23,48 @@ struct ColorSelectView: View {
         NavigationView {
             VStack {
                 ZStack {
-                    TextField("커스텀 색상의 이름을 작성해 주세요", text: $colorTitle)
+                    TextField("Please write the name of the custom color", text: $colorTitle)
                         .padding()
                         .textFieldStyle(PlainTextFieldStyle())
-                        .background(Color.yamSky)
+                        .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
                         .cornerRadius(40)
                 }
                 .frame(width: UIScreen.main.bounds.width - 70, height: 80)
-                .navigationTitle("컬러 설정 추가하기")
+                .navigationTitle("Add a new color")
                 ScrollView {
                     VStack {
                         HStack {
                             Spacer()
                             ColorSelectCell(color: mainColor)
-                            ColorPicker(String(localized:"Select MainColor"), selection: $mainColor, supportsOpacity: true)
+                            ColorPicker(String(localized:"Select the main color"), selection: $mainColor, supportsOpacity: true)
                                 .padding()
                         }
                         HStack {
                             Spacer()
                             ColorSelectCell(color: lightColor)
-                            ColorPicker(String(localized:"Select lightColor"), selection: $lightColor, supportsOpacity: true)
-                                .padding()
+//                            if UITraitCollection.current.userInterfaceStyle == .dark {
+//                                ColorPicker(String(localized:"Select the dark color"), selection: $lightColor, supportsOpacity: true)
+//                                    .padding()
+//                            }else {
+                                ColorPicker(String(localized:"Select the light color"), selection: $lightColor, supportsOpacity: true)
+                                    .padding()
+//                            }
                         }
                         HStack {
                             Spacer()
                             ColorSelectCell(color: darkColor)
-                            ColorPicker(String(localized:"Select darkColor"), selection: $darkColor, supportsOpacity: true)
-                                .padding()
+//                            if UITraitCollection.current.userInterfaceStyle == .dark {
+//                                ColorPicker(String(localized:"Select the light color"), selection: $darkColor, supportsOpacity: true)
+//                                    .padding()
+//                            }else {
+                                ColorPicker(String(localized:"Select the dark color"), selection: $darkColor, supportsOpacity: true)
+                                    .padding()
+//                            }
                         }
                         HStack {
                             Spacer()
                             ColorSelectCell(color: todayColor)
-                            ColorPicker(String(localized:"Select todayColor"), selection: $todayColor, supportsOpacity: true)
+                            ColorPicker(String(localized:"Select TodayColor"), selection: $todayColor, supportsOpacity: true)
                                 .padding()
                         }
                     }
@@ -64,10 +75,10 @@ struct ColorSelectView: View {
                     Text("Add")
                         .font(.system(size: 20))
                         .fontWeight(.bold)
-                        .foregroundStyle(Color.yamBlack)
+                        .foregroundStyle(colorScheme == .light ? Color.yamBlack : Color.yamWhite)
                         .padding()
                         .frame(width: 200, height: 60)
-                        .background(Color.yamSky)
+                        .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
                         .cornerRadius(40)
                 }
             }

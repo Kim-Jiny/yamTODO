@@ -11,6 +11,7 @@ import Combine
 
 struct CalendarView: View {
     @ObservedObject var userColor: UserColorObject
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var monthDataList: TasksByMonthListModel
     @ObservedObject var taskList: TaskList
     @Binding var selectedMonth: Date
@@ -70,7 +71,7 @@ struct CalendarView: View {
       HStack {
         ForEach(Self.weekdaySymbols.indices, id: \.self) { symbol in
           Text(Self.weekdaySymbols[symbol].uppercased())
-            .foregroundColor(.yamBlack)
+                .foregroundColor(colorScheme == .light ? .realBlack : .realWhite)
             .font(.system(size: 13))
             .fontWeight(.bold)
             .frame(maxWidth: .infinity)
@@ -90,7 +91,7 @@ struct CalendarView: View {
         label: {
           Image(systemName: "chevron.left")
             .font(.title)
-            .foregroundColor(canMoveToPreviousMonth() ? .yamBlack : . gray)
+            .foregroundColor(canMoveToPreviousMonth() ? colorScheme == .light ? .realBlack : .realWhite : . gray)
         }
       )
       .disabled(!canMoveToPreviousMonth())
@@ -105,7 +106,7 @@ struct CalendarView: View {
         label: {
           Image(systemName: "chevron.right")
             .font(.title)
-            .foregroundColor(canMoveToNextMonth() ? .yamBlack : .gray)
+            .foregroundColor(canMoveToNextMonth() ? colorScheme == .light ? .realBlack : .realWhite : .gray)
         }
       )
       .disabled(!canMoveToNextMonth())

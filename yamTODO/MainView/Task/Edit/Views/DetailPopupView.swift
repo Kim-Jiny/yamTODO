@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct DetailPopupView: View {
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var userColor: UserColorObject
-//    @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
     
@@ -44,11 +44,12 @@ struct DetailPopupView: View {
                 userColor: userColor,
                       text: $taskDesc,
                       height: $taskDescHeight,
+                borderColor: userColor.userColorData.selectedColor.mainColor.toColor(),
+                backgroundColor: colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor(),
                       maxHeight: 200,
-                      textFont: .systemFont(ofSize: 13),
+                textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
-                      borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                       placeholder: String(localized: "You can enter a detailed description for the task.")
                     )
               .lineLimit(10)
@@ -113,7 +114,7 @@ struct DetailPopupView: View {
           }
           .padding(.top, 8)
           .padding()
-          .background(Color.yamWhite)
+          .background(colorScheme == .light ? Color.realWhite : Color.realBlack)
           .cornerRadius(10)
           .frame(width: UIScreen.main.bounds.size.width - 70)
           .onTapGesture {

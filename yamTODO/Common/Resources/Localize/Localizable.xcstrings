@@ -41,6 +41,9 @@
     "Add" : {
 
     },
+    "Add a new color" : {
+
+    },
     "App Color Setting" : {
 
     },
@@ -691,6 +694,9 @@
         }
       }
     },
+    "Please write the name of the custom color" : {
+
+    },
     "Postpone for a day" : {
       "localizations" : {
         "ja" : {
@@ -861,16 +867,16 @@
         }
       }
     },
-    "Select darkColor" : {
+    "Select the dark color" : {
 
     },
-    "Select lightColor" : {
+    "Select the light color" : {
 
     },
-    "Select MainColor" : {
+    "Select the main color" : {
 
     },
-    "Select todayColor" : {
+    "Select TodayColor" : {
 
     },
     "Send feedback to the developer (Inquiry)" : {
@@ -1113,15 +1119,6 @@
           }
         }
       }
-    },
-    "새 컬러 추가하기" : {
-
-    },
-    "커스텀 색상의 이름을 작성해 주세요" : {
-
-    },
-    "컬러 설정 추가하기" : {
-
     }
   },
   "version" : "1.0"

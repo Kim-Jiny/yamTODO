@@ -22,7 +22,7 @@ struct RepeatItemView: View {
             ForEach(task.optionType.sorted(), id: \.self) { repeatType in
                 ZStack {
                     Circle()
-                        .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
+                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                         .frame(width: 30, height: 30)
                     repeatType.getRepeatType().displayText
                         .foregroundColor(.realWhite)

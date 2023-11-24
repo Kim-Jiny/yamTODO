@@ -4,6 +4,7 @@ import RealmSwift
 
 struct EditPopupView: View {
     @ObservedObject var userColor: UserColorObject
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var taskList: TaskList
     @State var selectedDate: Date
     @Binding var isPresented: Bool
@@ -44,11 +45,12 @@ struct EditPopupView: View {
                         userColor: userColor,
                         text: $taskDesc,
                         height: $taskDescHeight,
+                        borderColor: userColor.userColorData.selectedColor.mainColor.toColor(),
+                        backgroundColor: colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor(),
                         maxHeight: 200,
                         textFont: .systemFont(ofSize: 13),
                         cornerRadius: 8,
                         borderWidth: 0,
-                        borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                         placeholder: String(localized:"You can enter a detailed description for the task.")
                     )
                     .lineLimit(10)

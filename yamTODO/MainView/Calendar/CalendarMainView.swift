@@ -15,7 +15,10 @@ class SelectedCalendar: ObservableObject {
 }
 
 struct CalendarMainView: View {
+    //Binding
     @ObservedObject var userColor: UserColorObject
+    @Binding var selectedTab: Tabs
+    
     @ObservedObject var monthDataList = TasksByMonthListModel(date: Date())
     @StateObject var taskList = TaskList(date: Date())
     @State var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
@@ -54,6 +57,14 @@ struct CalendarMainView: View {
             // selectedDate가 변경될 때마다 taskList를 업데이트
             taskList.date = selectedCalendar.selectedDate
             print(taskList.tasksObject)
+        }
+        .onChange(of: selectedTab) { newSelectedTab in
+            // selectedTab이 변경될 때마다 호출됩니다.
+            // isShowEditPopup을 false로 설정합니다.
+            if newSelectedTab != .home {
+                isShowEditPopup = false
+                isShowDetailPopup = false
+            }
         }
     }
 }

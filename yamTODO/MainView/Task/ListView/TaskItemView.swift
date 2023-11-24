@@ -9,21 +9,21 @@ import SwiftUI
 
 struct TaskItemView: View {
     @ObservedObject var userColor: UserColorObject
-  @ObservedObject var taskList: TaskList
-
-  let task: TaskObject
-  @Binding var isShowDetailPopup: Bool
-  @Binding var selectedTask: SelectedTask
+    @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var taskList: TaskList
+    let task: TaskObject
+    @Binding var isShowDetailPopup: Bool
+    @Binding var selectedTask: SelectedTask
 
   var body: some View {
     return HStack {
         if task.isDelay != 0 {
             ZStack {
                 Circle()
-                    .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
+                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                     .frame(width: 20, height: 20)
                 Text("+\(task.isDelay)")
-                    .foregroundColor(.realWhite)
+                    .foregroundColor(.yamWhite)
                     .font(.system(size: 10))
                     .fontWeight(.bold)
             }
@@ -42,7 +42,7 @@ struct TaskItemView: View {
         }
         Text(self.task.title)
             .strikethrough(self.task.isDone)
-            .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : .yamBlack)
+            .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : colorScheme == .light ? .realBlack : .realWhite )
 //            .fontWeight(self.task.isDone ? .medium : .bold)
         Spacer()
         if task.isDone {

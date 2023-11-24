@@ -10,60 +10,62 @@ import SwiftUI
 
 public struct DetailTextView: UIViewRepresentable {
     @ObservedObject var userColor: UserColorObject
-  @Binding var text: String
-  @Binding var height: CGFloat
-  var maxHeight: CGFloat
-  var textFont: UIFont
-  var textColor: UIColor = .yamBlack!
-  var textLimit: Int = 500
-  var cornerRadius: CGFloat? = nil
-  var borderWidth: CGFloat? = nil
-  var borderColor: CGColor? = nil
-  var isScrollEnabled: Bool = true
-  var isEditable: Bool = true
-  var isUserInteractionEnabled: Bool = true
-  var lineFragmentPadding: CGFloat = 0
-  var textContainerInset: UIEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-  var placeholder: String? = nil
+    @Environment(\.colorScheme) var colorScheme
+    @Binding var text: String
+    @Binding var height: CGFloat
+    @State var borderColor: Color
+    @State var backgroundColor: Color
+    var maxHeight: CGFloat
+    var textFont: UIFont
+    var textColor: UIColor = UIColor.yamBlack!
+    var textLimit: Int = 500
+    var cornerRadius: CGFloat? = nil
+    var borderWidth: CGFloat? = nil
+//    var borderColor: CGColor? = nil
+    var isScrollEnabled: Bool = true
+    var isEditable: Bool = true
+    var isUserInteractionEnabled: Bool = true
+    var lineFragmentPadding: CGFloat = 0
+    var textContainerInset: UIEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
+    var placeholder: String? = nil
     var placeholderColor: UIColor = .placeholderText
   
-  public func makeUIView(context: Context) -> UITextView {
-    let textView = UITextView()
-    
-    if let cornerRadius = cornerRadius {
-      textView.layer.cornerRadius = cornerRadius
-      textView.layer.masksToBounds = true
-    }
-    if let borderWidth = borderWidth {
-      textView.layer.borderWidth = borderWidth
-    }
-    if let borderColor = borderColor {
-      textView.layer.borderColor = borderColor
-    }
-    if let placeholder = placeholder, text == "" {
-      textView.text = placeholder
-      textView.textColor = placeholderColor
-    } else {
-        textView.text = text
-      textView.textColor = textColor
-    }
-    
-    textView.font = textFont
-    textView.isScrollEnabled = isScrollEnabled
-    textView.isEditable = isEditable
-    textView.isUserInteractionEnabled = isUserInteractionEnabled
-    textView.textContainer.lineFragmentPadding = lineFragmentPadding
-    textView.textContainerInset = textContainerInset
-    textView.delegate = context.coordinator
-      textView.backgroundColor = UIColor(userColor.userColorData.selectedColor.lightColor.toColor())
-    if let placeholder = placeholder, text == "" {
-        textView.text = placeholder
-        textView.textColor = placeholderColor
-    } else {
-        textView.text = text
-        textView.textColor = textColor
-    }
-    return textView
+    public func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        
+        if let cornerRadius = cornerRadius {
+          textView.layer.cornerRadius = cornerRadius
+          textView.layer.masksToBounds = true
+        }
+        if let borderWidth = borderWidth {
+          textView.layer.borderWidth = borderWidth
+        }
+          textView.layer.borderColor = UIColor(borderColor).cgColor
+        if let placeholder = placeholder, text == "" {
+          textView.text = placeholder
+          textView.textColor = placeholderColor
+        } else {
+            textView.text = text
+          textView.textColor = textColor
+        }
+        
+        textView.font = textFont
+        textView.isScrollEnabled = isScrollEnabled
+        textView.isEditable = isEditable
+        textView.isUserInteractionEnabled = isUserInteractionEnabled
+        textView.textContainer.lineFragmentPadding = lineFragmentPadding
+        textView.textContainerInset = textContainerInset
+        textView.delegate = context.coordinator
+        textView.backgroundColor = UIColor(backgroundColor)
+        
+        if let placeholder = placeholder, text == "" {
+            textView.text = placeholder
+            textView.textColor = placeholderColor
+        } else {
+            textView.text = text
+            textView.textColor = textColor
+        }
+        return textView
   }
   
   public func updateUIView(_ uiView: UITextView, context: Context) {

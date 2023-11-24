@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RepeatDetailPopupView: View {
     @ObservedObject var userColor: UserColorObject
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
@@ -43,11 +44,12 @@ struct RepeatDetailPopupView: View {
                 userColor: userColor,
                       text: $taskDesc,
                       height: $taskDescHeight,
+                borderColor: userColor.userColorData.selectedColor.mainColor.toColor(),
+                backgroundColor: colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor(),
                       maxHeight: 200,
                       textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
-                      borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                       placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
                     )
               .lineLimit(10)
@@ -66,7 +68,7 @@ struct RepeatDetailPopupView: View {
                     showDeleteAlert.toggle()
                 }, label: {
                     Text("Delete")
-                    .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
+                        .foregroundColor(colorScheme == .light ? userColor.userColorData.selectedColor.darkColor.toColor() : userColor.userColorData.selectedColor.lightColor.toColor())
                     .fontWeight(.bold)
                     .padding()
                 }).alert(isPresented: $showDeleteAlert) {

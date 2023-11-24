@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ColorSettingCell: View {
     @ObservedObject var userColor: UserColorObject
+    @Environment(\.colorScheme) var colorScheme
     let isChecked: Bool
     let colorModel: ColorModel
 
@@ -26,7 +27,6 @@ struct ColorSettingCell: View {
             }
 
             Text(colorModel.colorTitle)
-                .foregroundColor(.yamBlack)
                 .padding(.trailing, 8)
             Spacer()
 
