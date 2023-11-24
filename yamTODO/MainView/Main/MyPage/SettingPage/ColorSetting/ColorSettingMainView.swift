@@ -40,12 +40,14 @@ struct ColorSettingMainView: View {
                         selectedColor = colorM
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                        Button {
-                            userColor.removeColor(id: colorM.id)
-                        } label: {
-                            Label("Delete", systemImage: "trash.circle")
+                        if colorM.id != "defaultColorModel" {
+                            Button {
+                                userColor.removeColor(id: colorM.id)
+                            } label: {
+                                Label("Delete", systemImage: "trash.circle")
+                            }
+                            .tint(.yamBlue)
                         }
-                        .tint(.yamBlue)
                     }
             }
         }
