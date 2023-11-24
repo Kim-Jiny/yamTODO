@@ -18,6 +18,12 @@
             "value" : "+%lld"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39,13 +45,124 @@
       }
     },
     "Add" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "추가"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acrescente"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "聯繫我們"
+          }
+        }
+      }
     },
     "Add a new color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しい色を追加する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새로운 색상 추가"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar uma nova cor"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm màu mới"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加新颜色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加新顏色"
+          }
+        }
+      }
     },
     "App Color Setting" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリケーションの色設定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 컬러 설정"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicação Coloração"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thiết lập màu ứng dụng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用颜色设置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "應用顏色設置"
+          }
+        }
+      }
     },
     "App settings" : {
       "localizations" : {
@@ -59,6 +176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "앱 설정"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colocação da aplicação"
           }
         },
         "vi" : {
@@ -95,6 +218,12 @@
             "value" : "현재 앱 버전 v%@"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version v%@"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -127,6 +256,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "삭제 하시겠습니까?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Está certo de que quer suprimir?"
           }
         },
         "vi" : {
@@ -163,6 +298,12 @@
             "value" : "삭제하시겠습니까? 삭제하면 오늘 이후로 반복되는 작업이 제거됩니다. 과거에 이미 등록된 할 일은 캘린더에서 삭제해주세요. "
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Está certo de que quer suprimir? Suprimir eliminará eventos recorrentes para além de hoje. Por favor remova tarefas que já foram programadas no passado do calendário."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -195,6 +336,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "캘린더"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar"
           }
         },
         "vi" : {
@@ -231,6 +378,12 @@
             "value" : "Cancel"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -263,6 +416,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "소통"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunicação"
           }
         },
         "vi" : {
@@ -299,6 +458,12 @@
             "value" : "삭제"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -331,6 +496,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "등록"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redacção"
           }
         },
         "vi" : {
@@ -367,6 +538,12 @@
             "value" : "구글 로그인"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google Login"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -399,6 +576,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "게스트"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guest"
           }
         },
         "vi" : {
@@ -436,6 +619,12 @@
             "value" : "홈"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -468,6 +657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "빈 값으로 두면 작업이 삭제됩니다."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se deixar em branco, a tarefa será suprimida."
           }
         },
         "vi" : {
@@ -504,6 +699,12 @@
             "value" : "게스트로 앱을 사용하면 데이터가 로컬에 저장됩니다. 나중에 로그인할 수 있습니다"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se utilizar a aplicação como convidado, os dados serão armazenados localmente. Podem ligar-se mais tarde."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -536,6 +737,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "마이 페이지"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Página da Internet"
           }
         },
         "vi" : {
@@ -572,6 +779,12 @@
             "value" : "마이페이지"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Página da Internet"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -604,6 +817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "알림"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso"
           }
         },
         "vi" : {
@@ -640,6 +859,12 @@
             "value" : "OK"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muito bem."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -674,6 +899,12 @@
             "value" : "할 일 등록"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por favor criem uma tarefa."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -695,7 +926,44 @@
       }
     },
     "Please write the name of the custom color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カスタムカラーの名前を記入してください"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "커스텀 색상 이름을 작성해 주세요."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por favor escreva o nome do corespedal"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vui lòng viết tên của màu tùy chỉnh"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请填写自定义颜色的名称"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請填寫自定義顏色的名稱"
+          }
+        }
+      }
     },
     "Postpone for a day" : {
       "localizations" : {
@@ -709,6 +977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하루 미루기"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atrasar por um dia"
           }
         },
         "vi" : {
@@ -745,6 +1019,12 @@
             "value" : "반복 할 일"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendário de repetição"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -777,6 +1057,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "반복 할 일 은 오늘 이후로만 등록됩니다."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A partir de hoje, as tarefas que se repetem só podem ser registadas."
           }
         },
         "vi" : {
@@ -813,6 +1099,12 @@
             "value" : "할 일 등록"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registo de uma tarefa"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -847,6 +1139,12 @@
             "value" : "저장"
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conservação"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -868,16 +1166,164 @@
       }
     },
     "Select the dark color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暗い色を選択します"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "어두운 색상 선택"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the dark color"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn màu tối"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择暗色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇暗色"
+          }
+        }
+      }
     },
     "Select the light color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライトの色を選択します"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "밝은 색상 선택"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar a cor da luz"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn màu sáng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选择浅色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇淺色"
+          }
+        }
+      }
     },
     "Select the main color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メインカラーを選択"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main 색상 선택"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar a cor principal"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn màu chính"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择主要颜色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇主要顏色"
+          }
+        }
+      }
     },
     "Select TodayColor" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日のカラーを選択"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today 색상 선택"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha de hojeColor"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn màu hôm nay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择今天颜色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇今天顏色"
+          }
+        }
+      }
     },
     "Send feedback to the developer (Inquiry)" : {
       "localizations" : {
@@ -891,6 +1337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개발자에게 피드백 보내기 (문의하기)"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envie feedback ao developer (Inquérito)"
           }
         },
         "vi" : {
@@ -914,7 +1366,44 @@
       }
     },
     "Setting App Color" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリケーションの色の設定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 컬러 설정"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparação do copo de aplicação"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thiết lập màu ứng dụng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置应用颜色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設置應用顏色"
+          }
+        }
+      }
     },
     "Setting up a recurring schedule" : {
       "localizations" : {
@@ -928,6 +1417,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "반복 설정"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparação de um calendário recorrente"
           }
         },
         "vi" : {
@@ -959,6 +1454,12 @@
           }
         },
         "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TODO 👀"
+          }
+        },
+        "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TODO 👀"
@@ -998,6 +1499,12 @@
             "value" : "메일을 보낼 수 없습니다."
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incapacidade de enviar e-mail"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1030,6 +1537,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 할 일을 하루 미루시겠습니까?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gostaria de adiar esta tarefa para amanhã?"
           }
         },
         "vi" : {
@@ -1066,6 +1579,12 @@
             "value" : "이 일에 대한 자세한 설명을 입력할 수 있습니다."
           }
         },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pode inscrever uma descrição pormenorizada da tarefa."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1098,6 +1617,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 디바이스에서 이메일을 사용할 수 없습니다."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não pode enviar emails deste dispositivo."
           }
         },
         "vi" : {
