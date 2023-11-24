@@ -15,6 +15,7 @@
 		304DC5C12B0E280700E01656 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 304DC5C02B0E280700E01656 /* GoogleMobileAds */; };
 		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
 		304DC5CD2B10CE1700E01656 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 304DC5CC2B10CE1600E01656 /* GoogleService-Info.plist */; };
+		304DC5CF2B10E05C00E01656 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */; };
 		364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
 		364FC7642B0D9A37009AF157 /* ColorSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7632B0D9A37009AF157 /* ColorSelectView.swift */; };
 		364FC7BB2B0F04A9009AF157 /* ColorSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7BA2B0F04A9009AF157 /* ColorSelectCell.swift */; };
@@ -103,6 +104,7 @@
 		304DC5C42B0E2A4E00E01656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		304DC5CC2B10CE1600E01656 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		364FC7632B0D9A37009AF157 /* ColorSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectView.swift; sourceTree = "<group>"; };
 		364FC7BA2B0F04A9009AF157 /* ColorSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				364FC7602B0C3C63009AF157 /* Localizable.xcstrings */,
+				304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */,
 			);
 			path = Localize;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B7C9312ADCFCF800F7A140 /* Preview Assets.xcassets in Resources */,
+				304DC5CF2B10E05C00E01656 /* InfoPlist.xcstrings in Resources */,
 				304DC5CD2B10CE1700E01656 /* GoogleService-Info.plist in Resources */,
 				36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */,
 				364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */,
@@ -902,13 +906,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yamTODO/Info.plist;
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "개인에게 최적화 된 광고를 제공하기 위해 사용자의 광고 활동 정보를 수집합니다.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Collect information about your advertising activities to provide personalized advertising.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -935,13 +939,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
 				DEVELOPMENT_TEAM = HW9XJ9J5M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yamTODO/Info.plist;
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "개인에게 최적화 된 광고를 제공하기 위해 사용자의 광고 활동 정보를 수집합니다.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Collect information about your advertising activities to provide personalized advertising.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
