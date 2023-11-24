@@ -23,7 +23,7 @@ struct MyPage: View {
   // MARK: Body
     @ViewBuilder func admob() -> some View {
             // admob
-        AdmobBannerView().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+        AdmobBannerView(adType: .subBN).frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
     }
   
   var body: some View {
@@ -36,6 +36,7 @@ struct MyPage: View {
             taskInfoSection
 //            appSettingSection
             forDeveloper
+            adSection
 //            admob()
         }
       }
@@ -59,21 +60,6 @@ private extension MyPage {
               Text("Setting App Color")
                   .frame(height: 44)
           }
-          
-//          Button {
-//              scheduleNotification()
-////              isShowNotice = true
-//          } label: {
-//              Text("공지사항")
-//          }
-//          .alert(Text(""), isPresented: $isShowNotice, presenting: $isShowNotice, actions: { _ in
-//              Button("확인", role: .cancel) {
-//                
-//              }
-//            }, message: { _ in
-//              Text("개발중입니다 🤖")
-//            })
-//          .frame(height: 44)
       }
     }
   var taskInfoSection: some View {
@@ -81,25 +67,17 @@ private extension MyPage {
         NavigationLink(destination: RepeatSettingView(userColor: userColor)) {
             Text("Setting up a recurring schedule")
         }
-//        Button {
-//            isShowRepeatView = true
-//        } label: {
-//            Text("반복 할 일 수정")
-//        }.sheet(isPresented: $isShowRepeatView) {
-//            RepeatSettingView()
-//        }
         .frame(height: 44)
     }
   }
   
-//    var appSettingSection: some View {
-//        Section(header: Text("앱 설정").fontWeight(.medium)) {
-//            Toggle("알림 설정", isOn: $isAppNotice)
-//            .frame(height: 44)
-//
-//        //      productHeightPicker
-//        }
-//    }
+    var adSection: some View {
+        Section(header: Text("광고").fontWeight(.medium)) {
+            admob()
+
+        //      productHeightPicker
+        }
+    }
     var forDeveloper: some View {
       Section(header: Text("Communication").fontWeight(.medium)) {
           

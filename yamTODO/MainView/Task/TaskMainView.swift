@@ -24,7 +24,7 @@ struct TaskMainView: View {
     
     // Admob 광고 배너
     @ViewBuilder func admob() -> some View {
-        AdmobBannerView().frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
+        AdmobBannerView(adType: .mainBN).frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height)
     }
   var body: some View {
     NavigationView {
