@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskItemView: View {
+    @ObservedObject var userColor: UserColorObject
   @ObservedObject var taskList: TaskList
 
   let task: TaskObject
@@ -19,7 +20,7 @@ struct TaskItemView: View {
         if task.isDelay != 0 {
             ZStack {
                 Circle()
-                    .foregroundColor(Color.yamRealDarkPoint)
+                    .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
                     .frame(width: 20, height: 20)
                 Text("+\(task.isDelay)")
                     .foregroundColor(.realWhite)
@@ -34,18 +35,18 @@ struct TaskItemView: View {
                         .frame(maxWidth: 0)
                     Image(systemName: "repeat.circle.fill")
                         .resizable()
-                        .foregroundColor(.yamBlue)
+                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                         .frame(width: 20, height: 20)
                 }
             }
         }
         Text(self.task.title)
             .strikethrough(self.task.isDone)
-            .foregroundColor(self.task.isDone ? .yamBlue : .yamBlack)
+            .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : .yamBlack)
 //            .fontWeight(self.task.isDone ? .medium : .bold)
         Spacer()
         if task.isDone {
-          Image(systemName: "checkmark").foregroundColor(.yamBlue)
+          Image(systemName: "checkmark").foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
             .onTapGesture {
               self.toggleDone()
             }

@@ -15,7 +15,6 @@ struct ColorModel: Identifiable, Equatable, Codable {
     let lightColor: CodableColor
     let todayColor: CodableColor
     let colorTitle: String
-    var isSelected = false
 }
 
 

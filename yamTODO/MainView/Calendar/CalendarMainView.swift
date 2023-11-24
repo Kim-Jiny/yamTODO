@@ -15,6 +15,7 @@ class SelectedCalendar: ObservableObject {
 }
 
 struct CalendarMainView: View {
+    @ObservedObject var userColor: UserColorObject
     @ObservedObject var monthDataList = TasksByMonthListModel(date: Date())
     @StateObject var taskList = TaskList(date: Date())
     @State var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
@@ -30,19 +31,19 @@ struct CalendarMainView: View {
                     CalendarView(monthDataList: monthDataList, taskList: taskList, selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
                         .navigationBarTitleDisplayMode(.inline)
                     VStack {
-                        TaskListView(selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+                        TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
                         .environmentObject(taskList)
                     }
                 }
                 .padding(.top, 30)
                 
                 if isShowEditPopup {
-                    EditPopupView(selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup)
+                    EditPopupView(userColor: userColor, selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup)
                         .environmentObject(taskList)
                 }
 
                 if isShowDetailPopup {
-                    DetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
+                    DetailPopupView(userColor: userColor, selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
                         .environmentObject(taskList)
                 }
             }

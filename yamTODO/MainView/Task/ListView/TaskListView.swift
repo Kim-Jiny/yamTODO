@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskListView: View {
+    @ObservedObject var userColor: UserColorObject
     @ObservedObject var selectedCalendar: SelectedCalendar
     @ObservedObject var taskList: TaskList
     @Binding var tmrTaskList: TaskList
@@ -29,14 +30,14 @@ struct TaskListView: View {
                         self.isShowEditPopup = true
                     } label: {
                         Image(systemName: "plus.app")
-                            .foregroundColor(.yamBlue)
+                            .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                     }
                     .frame(maxWidth: .infinity)
                     // 완료되지 않은 태스크 우선 표시
                     ForEach(self.taskList.tasksObject.filter({ !$0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
-                            TaskItemView(taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                            TaskItemView(userColor: userColor, taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                                 .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                     Button {
                                         // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
@@ -45,7 +46,7 @@ struct TaskListView: View {
                                     } label: {
                                         Label("Delete", systemImage: "trash.circle")
                                     }
-                                    .tint(.yamBlue)
+                                    .tint(userColor.userColorData.selectedColor.mainColor.toColor())
                                 }
                         }
                     }
@@ -53,7 +54,7 @@ struct TaskListView: View {
                     ForEach(self.taskList.tasksObject.filter({ $0.isDone })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
-                            TaskItemView(taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                            TaskItemView(userColor: userColor, taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                                 .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                     Button {
                                         // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
@@ -84,7 +85,7 @@ struct TaskListView: View {
                         ForEach(self.tmrTaskList.tasksObject.filter({ !$0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
-                                TaskItemView(taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                TaskItemView(userColor: userColor, taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                         Button {
                                             // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
@@ -100,7 +101,7 @@ struct TaskListView: View {
                         ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
-                                TaskItemView(taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+                                TaskItemView(userColor: userColor, taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
                                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                         Button {
                                             // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.

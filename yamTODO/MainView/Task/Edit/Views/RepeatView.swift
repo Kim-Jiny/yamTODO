@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct RepeatView: View {
+    @ObservedObject var userColor: UserColorObject
     let daysOfWeek = DayOfWeek.allCases
     @Binding var selectedDays: Set<DayOfWeek>
     
-    init(selectedDays: Binding<Set<DayOfWeek>>) {
+    init(userColor: UserColorObject, selectedDays: Binding<Set<DayOfWeek>>) {
+        self.userColor = userColor
         _selectedDays = selectedDays
     }
     

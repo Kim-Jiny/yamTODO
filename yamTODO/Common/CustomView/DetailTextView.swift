@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 public struct DetailTextView: UIViewRepresentable {
+    @ObservedObject var userColor: UserColorObject
   @Binding var text: String
   @Binding var height: CGFloat
   var maxHeight: CGFloat
@@ -54,7 +55,7 @@ public struct DetailTextView: UIViewRepresentable {
     textView.textContainer.lineFragmentPadding = lineFragmentPadding
     textView.textContainerInset = textContainerInset
     textView.delegate = context.coordinator
-    textView.backgroundColor = UIColor.yamSky
+      textView.backgroundColor = UIColor(userColor.userColorData.selectedColor.lightColor.toColor())
     if let placeholder = placeholder, text == "" {
         textView.text = placeholder
         textView.textColor = placeholderColor

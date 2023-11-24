@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct ColorSelectView: View {
+    @Binding var isPresented: Bool
+    
     @EnvironmentObject var userColor: UserColorObject
     @State private var mainColor: Color = .yamBlue
     @State private var lightColor: Color = .yamSky
@@ -76,6 +78,9 @@ struct ColorSelectView: View {
 
 extension ColorSelectView {
     private func saveColor() {
+        let colorM = ColorModel(mainColor: .init(mainColor), darkColor: .init(darkColor), lightColor: .init(lightColor), todayColor: .init(todayColor), colorTitle: colorTitle == "" ? "New\(userColor.userColorData.colors.count)" : colorTitle)
+        userColor.addColor(colorM)
         
+        isPresented = false
     }
 }

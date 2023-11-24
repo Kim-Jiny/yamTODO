@@ -3,6 +3,7 @@ import SwiftUI
 import RealmSwift
 
 struct EditPopupView: View {
+    @ObservedObject var userColor: UserColorObject
     @EnvironmentObject var taskList: TaskList
     @State var selectedDate: Date
     @Binding var isPresented: Bool
@@ -20,7 +21,7 @@ struct EditPopupView: View {
                     Text("Register a task")
                         .font(.title2)
                         .fontWeight(.bold)
-                        .foregroundColor(.yamBlue)
+                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                         .multilineTextAlignment(.leading)
                         .frame(width: 200, height: 40)
 //                        .background(.white)
@@ -33,20 +34,21 @@ struct EditPopupView: View {
                             .resizable()
                             .frame(width: 16, height: 15)
 //                            .aspectRatio(contentMode: .fill)
-                            .foregroundColor(.yamBlue)
+                            .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                         TextField("Please create a task.", text: $taskTitle)
                             .padding()
                             .textFieldStyle(PlainTextFieldStyle())
                     }
                     
                     DetailTextView(
+                        userColor: userColor,
                         text: $taskDesc,
                         height: $taskDescHeight,
                         maxHeight: 200,
                         textFont: .systemFont(ofSize: 13),
                         cornerRadius: 8,
                         borderWidth: 0,
-                        borderColor: UIColor.yamBlue!.cgColor,
+                        borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                         placeholder: String(localized:"You can enter a detailed description for the task.")
                     )
                     .lineLimit(10)
@@ -59,7 +61,7 @@ struct EditPopupView: View {
 //                            .frame(width: 15, height: 15)
 //                            .aspectRatio(contentMode: .fill)
 //                            .foregroundColor(.yamBlue)
-                        RepeatView(selectedDays: $dayOfWeekManager.selectedDays )
+                        RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
                     }
                     
                     if dayOfWeekManager.selectedDays.count > 0 {
@@ -75,12 +77,12 @@ struct EditPopupView: View {
                         }, label: {
                             Text("Save")
                                 .frame(minWidth: 0, maxWidth: .infinity)
-                                .foregroundColor(.yamBlue)
+                                .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                                 .fontWeight(.bold)
                                 .padding()
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.yamBlue, lineWidth: 2) // 테두리 추가
+                                        .stroke(userColor.userColorData.selectedColor.mainColor.toColor(), lineWidth: 2) // 테두리 추가
                                 )
                         })
                     }

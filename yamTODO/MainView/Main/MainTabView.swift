@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @ObservedObject var userColor = UserColorObject()
   private enum Tabs {
     case home, calendar, gallery, myPage
   }
@@ -26,7 +27,7 @@ struct MainTabView: View {
       }
       .accentColor(.primary)
     }
-    .accentColor(.yamDarkBlue)
+    .accentColor(userColor.userColorData.selectedColor.darkColor.toColor())
     .edgesIgnoringSafeArea(edges)
 //    .statusBar(hidden: selectedTab == .recipe)
   }
@@ -37,13 +38,13 @@ private extension MainTabView {
   // MARK: View
   
   var home: some View {
-    TaskMainView()
+    TaskMainView(userColor: userColor)
       .tag(Tabs.home)
       .tabItem(image: "house", text: Text("Home"))
   }
   
   var calendar: some View {
-      CalendarMainView()
+      CalendarMainView(userColor: userColor)
       .tag(Tabs.calendar)
       .tabItem(image: "calendar", text: Text("Calendar"))
   }
@@ -55,7 +56,7 @@ private extension MainTabView {
 //  }
   
   var myPage: some View {
-    MyPage()
+    MyPage(userColor: userColor)
       .tag(Tabs.myPage)
       .tabItem(image: "person", text: Text("Mypage"))
   }

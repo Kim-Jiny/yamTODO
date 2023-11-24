@@ -9,9 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ColorSettingMainView: View {
-    @ObservedObject var userColor = UserColorObject()
-    
-    @State var selectedColor: ColorModel? = nil
+    @ObservedObject var userColor: UserColorObject
     @State var isShowColorAddedView: Bool = false
     
     @State var offset: CGSize = CGSize()
@@ -33,16 +31,15 @@ struct ColorSettingMainView: View {
                 }
             }
             .frame(height: 50)
-//            .frame(minWidth: .infinity)
             .sheet(isPresented: $isShowColorAddedView) {
-                ColorSelectView()
+                ColorSelectView(isPresented: $isShowColorAddedView)
                     .environmentObject(userColor)
             }
             ForEach(userColor.userColorData.colors) { colorM in
-                ColorSettingCell(isChecked: selectedColor?.id == colorM.id, colorModel: colorM)
+                ColorSettingCell(isChecked: userColor.userColorData.selectedColor.id == colorM.id, colorModel: colorM)
                     .frame(height: 50)
                     .onTapGesture {
-                        selectedColor = colorM
+                        userColor.selectColor(color: colorM)
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                         if colorM.id != "defaultColorModel" {
@@ -59,6 +56,9 @@ struct ColorSettingMainView: View {
         .listStyle(DefaultListStyle())
         .navigationBarTitle(Text("App Color Setting"))
         .onReceive(userColor.userColorData.objectWillChange) { data in
+            self.userColor.id = ""
+        }
+        .onReceive(userColor.userColorData.selectedChange) { data in
             self.userColor.id = ""
         }
     }

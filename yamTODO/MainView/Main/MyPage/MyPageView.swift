@@ -11,6 +11,7 @@ import MessageUI
 import GoogleMobileAds
 
 struct MyPage: View {
+    @ObservedObject var userColor: UserColorObject
 //    @StateObject var viewModel = ColorSettingViewModel()
     
     @State private var isShowingMailView = false
@@ -54,7 +55,7 @@ private extension MyPage {
               Text("App version v\(appVersion)")
                   .frame(height: 44)
           }
-          NavigationLink(destination: ColorSettingMainView()) {
+          NavigationLink(destination: ColorSettingMainView(userColor: userColor)) {
               Text("Setting App Color")
                   .frame(height: 44)
           }
@@ -77,7 +78,7 @@ private extension MyPage {
     }
   var taskInfoSection: some View {
     Section(header: Text("Recurring schedule").fontWeight(.medium)) {
-        NavigationLink(destination: RepeatSettingView()) {
+        NavigationLink(destination: RepeatSettingView(userColor: userColor)) {
             Text("Setting up a recurring schedule")
         }
 //        Button {

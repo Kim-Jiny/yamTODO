@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct DetailPopupView: View {
+    @ObservedObject var userColor: UserColorObject
 //    @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
@@ -35,18 +36,19 @@ struct DetailPopupView: View {
                 textFont: .boldSystemFont(ofSize: 15),
                 cornerRadius: 0,
                 borderWidth: 0,
-                borderColor: UIColor.yamBlue!.cgColor,
+                borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                 placeholder: String(localized: "If left blank, the task will be deleted.")
               )
                 .frame(maxHeight: taskTitleHeight)
               DetailTextView(
+                userColor: userColor,
                       text: $taskDesc,
                       height: $taskDescHeight,
                       maxHeight: 200,
                       textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
-                      borderColor: UIColor.yamBlue!.cgColor,
+                      borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                       placeholder: String(localized: "You can enter a detailed description for the task.")
                     )
               .lineLimit(10)
@@ -58,7 +60,7 @@ struct DetailPopupView: View {
                 }, label: {
                     Text("Delete")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .foregroundColor(.yamDarkBlue)
+                    .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
                     .font(.system(size: 13))
 //                    .fontWeight(.bold)
                     .padding()
@@ -83,7 +85,7 @@ struct DetailPopupView: View {
                 }, label: {
                     Text("Edit")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .foregroundColor(.yamBlue)
+                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                     .font(.system(size: 13))
 //                    .fontWeight(.bold)
                     .padding()
@@ -102,7 +104,7 @@ struct DetailPopupView: View {
                         secondaryButton: .cancel()
                     )
                 }
-                .foregroundColor(.yamBlue)
+                .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                 .font(.system(size: 13))
 //                .fontWeight(.bold)
 //                Spacer()

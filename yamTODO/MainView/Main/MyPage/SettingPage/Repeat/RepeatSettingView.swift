@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RepeatSettingView: View {
+    @ObservedObject var userColor: UserColorObject
     @StateObject var taskList = OptionTaskList()
     @State var isShowDetailPopup: Bool = false
     @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
@@ -29,7 +30,7 @@ struct RepeatSettingView: View {
             
             if isShowDetailPopup {
                 if selectedTask.selectedTask != nil {
-                    RepeatDetailPopupView(selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
+                    RepeatDetailPopupView(userColor: userColor, selectedTask: $selectedTask, isPresented: $isShowDetailPopup)
                   .environmentObject(taskList)
               }
             }

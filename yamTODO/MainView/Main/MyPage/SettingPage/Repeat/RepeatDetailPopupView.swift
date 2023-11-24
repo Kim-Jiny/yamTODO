@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct RepeatDetailPopupView: View {
+    @ObservedObject var userColor: UserColorObject
     @EnvironmentObject var taskList: TaskList
     @Binding var selectedTask: SelectedTask
     @Binding var isPresented: Bool
@@ -39,6 +40,7 @@ struct RepeatDetailPopupView: View {
               )
                 .frame(maxHeight: taskTitleHeight)
               DetailTextView(
+                userColor: userColor,
                       text: $taskDesc,
                       height: $taskDescHeight,
                       maxHeight: 200,
@@ -57,7 +59,7 @@ struct RepeatDetailPopupView: View {
                       .frame(width: 22, height: 20)
                       .aspectRatio(contentMode: .fill)
                       .foregroundColor(.yamBlue)
-                  RepeatView(selectedDays: $dayOfWeekManager.selectedDays )
+                  RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
               }
             HStack {
                 Button(action: {
