@@ -61,7 +61,7 @@ struct DetailPopupView: View {
                 }, label: {
                     Text("Delete")
 //                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .foregroundColor(userColor.userColorData.selectedColor.darkColor.toColor())
+                    .foregroundColor(colorScheme == .light ? userColor.userColorData.selectedColor.darkColor.toColor() : userColor.userColorData.selectedColor.lightColor.toColor())
                     .font(.system(size: 13))
 //                    .fontWeight(.bold)
                     .padding()
@@ -123,7 +123,7 @@ struct DetailPopupView: View {
           
         }
         .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: .infinity, alignment: .center)
-        .background(Color.yamBlack.opacity(0.2))
+        .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.yamWhite.opacity(0.2))
         .onTapGesture {
           if self.isKeyboardVisible {
             // 키보드가 열려있으면 닫아주기

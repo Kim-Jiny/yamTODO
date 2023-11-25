@@ -55,14 +55,9 @@ struct RepeatDetailPopupView: View {
               .lineLimit(10)
               .cornerRadius(8)
               .frame(height: taskDescHeight)
-              HStack(spacing: 0) {
-                  Image(systemName: "repeat")
-                      .resizable()
-                      .frame(width: 22, height: 20)
-                      .aspectRatio(contentMode: .fill)
-                      .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+//              HStack(spacing: 0) {
                   RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
-              }
+//              }
             HStack {
                 Button(action: {
                     showDeleteAlert.toggle()
@@ -97,7 +92,7 @@ struct RepeatDetailPopupView: View {
           }
           .padding(.top, 8)
           .padding()
-          .background(Color.yamWhite)
+          .background(colorScheme == .light ? Color.yamWhite: Color.yamBlack)
           .cornerRadius(10)
           .frame(width: UIScreen.main.bounds.size.width - 70)
           .onTapGesture {

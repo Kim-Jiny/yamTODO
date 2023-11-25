@@ -92,14 +92,14 @@ struct EditPopupView: View {
                 }
                 .padding(.top, 8)
                 .padding()
-                .background(Color.yamWhite)
+                .background(colorScheme == .light ? Color.yamWhite: Color.yamBlack)
                 .cornerRadius(8)
                 .frame(width: geometry.size.width - 70)
                 .onTapGesture {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .background(Color.yamBlack.opacity(0.2))
+            .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.yamWhite.opacity(0.2))
             .onTapGesture {
                 if self.isKeyboardVisible {
                     // 키보드가 열려있으면 닫아주기
