@@ -24,7 +24,7 @@ struct EditPopupView: View {
                         .fontWeight(.bold)
                         .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                         .multilineTextAlignment(.leading)
-                        .frame(width: 200, height: 40)
+                        .frame(height: 40)
 //                        .background(.white)
 //                        .cornerRadius(25)
                     
