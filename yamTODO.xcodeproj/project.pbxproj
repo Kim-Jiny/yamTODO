@@ -649,6 +649,8 @@
 				ja,
 				vi,
 				"pt-PT",
+				fr,
+				de,
 			);
 			mainGroup = 36B7C91D2ADCFCF700F7A140;
 			packageReferences = (

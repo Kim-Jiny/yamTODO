@@ -6,6 +6,18 @@
     },
     "+%lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -46,6 +58,18 @@
     },
     "Add" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hinzufügen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -86,6 +110,18 @@
     },
     "Add a new color" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügen Sie eine neue Farbe hinzu."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une nouvelle couleur"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -126,6 +162,18 @@
     },
     "App Color Setting" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Color Setting"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglage de la couleur de l'application"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -166,6 +214,18 @@
     },
     "App settings" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App-Einstellungen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres de l'application"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -206,6 +266,18 @@
     },
     "App version v%@" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version v%@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version applicable v%@"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -246,6 +318,18 @@
     },
     "Are you sure you want to delete?" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie löschen möchten?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu es sûr de vouloir supprimer ?"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -286,6 +370,18 @@
     },
     "Are you sure you want to delete? Deleting will remove recurring events beyond today. Please remove tasks that have already been scheduled in the past from the calendar." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie löschen möchten? Die Streichung entfernt wiederkehrende Ereignisse über heute hinaus. Bitte entfernen Sie Aufgaben, die in der Vergangenheit bereits geplant waren."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu es sûr de vouloir supprimer ? La suppression supprimera les événements récurrents au-delà d'aujourd'hui. Veuillez supprimer les tâches déjà programmées du calendrier."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -326,6 +422,18 @@
     },
     "Calendar" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalender"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendrier"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -366,6 +474,18 @@
     },
     "Cancel" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulez."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -406,6 +526,18 @@
     },
     "Communication" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommunikation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communication"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -446,6 +578,18 @@
     },
     "Delete" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen (D)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -486,6 +630,18 @@
     },
     "Edit" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten (E)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -526,6 +682,18 @@
     },
     "Google Login" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Google Login"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login de Google"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -566,6 +734,18 @@
     },
     "Guest" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gäste"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invité"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -607,6 +787,18 @@
     "Home" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hauptsache:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À la maison."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -647,6 +839,18 @@
     },
     "If left blank, the task will be deleted." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn die Aufgabe leer bleibt, wird sie gelöscht."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'il est laissé en blanc, la tâche sera supprimée."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -687,6 +891,18 @@
     },
     "If you use the app as a Guest, data will be stored locally. You can log in later." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Sie die Anwendung als Gast verwenden, werden Daten lokal gespeichert. Sie können sich später anmelden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous utilisez l'application en tant qu'invité, les données seront stockées localement. Vous pourrez vous connecter plus tard."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -727,6 +943,18 @@
     },
     "My Page" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine Seite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ma page"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -767,6 +995,18 @@
     },
     "Mypage" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine Seite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ma page"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -807,6 +1047,18 @@
     },
     "Notice" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mitteilung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avis"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -847,6 +1099,18 @@
     },
     "OK" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D'accord."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -887,6 +1151,18 @@
     },
     "Please create a task." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte erstellen Sie eine Aufgabe."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'il vous plaît, créez une tâche."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -927,6 +1203,18 @@
     },
     "Please write the name of the custom color" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte schreiben Sie den Namen der benutzerdefinierten Farbe."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veuillez écrire le nom de la couleur personnalisée."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -967,6 +1255,18 @@
     },
     "Postpone for a day" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verschieben für einen Tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reporter pour un jour"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1007,6 +1307,18 @@
     },
     "Recurring schedule" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederkehrende Zeitpläne"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendrier récurrent"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1047,6 +1359,18 @@
     },
     "Recurring tasks can only be registered from today onwards." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederkehrende Aufgaben können ab heute nur registriert werden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les tâches récurrentes ne peuvent être enregistrées qu'à partir d'aujourd'hui."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1087,6 +1411,18 @@
     },
     "Register a task" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrieren Sie eine Aufgabe"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer une tâche"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1127,6 +1463,18 @@
     },
     "Save" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern (S)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauver"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1167,6 +1515,18 @@
     },
     "Select the dark color" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie die dunkle Farbe aus."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez la couleur foncée."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1207,6 +1567,18 @@
     },
     "Select the light color" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie die helle Farbe aus."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez la couleur de la lumière."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1247,6 +1619,18 @@
     },
     "Select the main color" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie die Hauptfarbe aus."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez la couleur principale."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1287,6 +1671,18 @@
     },
     "Select TodayColor" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie heute Farbe"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez la couleur d'aujourd'hui"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1327,6 +1723,18 @@
     },
     "Send feedback to the developer (Inquiry)" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senden Sie Feedback an den Entwickler (Erfrage)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer la rétroaction au développeur (enquête)"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1367,6 +1775,18 @@
     },
     "Setting App Color" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Einstellung der Applikationsfarbe"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglage de la couleur de l'application"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1407,6 +1827,18 @@
     },
     "Setting up a recurring schedule" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einrichtung eines wiederkehrenden Zeitplans"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Établissement d'un calendrier récurrent"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1447,6 +1879,18 @@
     },
     "TODO 👀" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TODO 👀"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TODO 👀"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1487,6 +1931,18 @@
     },
     "Unable to send email" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-Mail-Adresse nicht zu versenden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d'envoyer un courriel"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1527,6 +1983,18 @@
     },
     "Would you like to postpone this task to tomorrow?" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchten Sie diese Aufgabe auf morgen verschieben?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voulez-vous reporter cette tâche à demain ?"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1567,6 +2035,18 @@
     },
     "You can enter a detailed description for the task." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie können eine detaillierte Beschreibung der Aufgabe eingeben."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez entrer une description détaillée de la tâche."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1607,6 +2087,18 @@
     },
     "You cannot send emails from this device." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie können keine E-Mails von diesem Gerät senden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous ne pouvez pas envoyer de courriels depuis cet appareil."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1647,10 +2139,22 @@
     },
     "광고" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Werbung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Advertising"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicité"
           }
         },
         "ja" : {
