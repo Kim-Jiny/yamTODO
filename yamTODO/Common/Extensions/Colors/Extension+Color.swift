@@ -67,7 +67,7 @@ extension Color {
     
     private struct YamColor {
         static let white = Color(hex: "#F7F7F7")
-        static let black = Color(hex: "#061013")
+        static let black = Color(hex: "#181818")
         static let gray = Color(hex: "#EDEBF1")
         
         static let yamPurple = Color(hex: "#9487AF")
