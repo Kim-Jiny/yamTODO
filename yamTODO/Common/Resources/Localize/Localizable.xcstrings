@@ -265,6 +265,7 @@
       }
     },
     "App version v%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -315,6 +316,12 @@
           }
         }
       }
+    },
+    "App version v%@ 최신 버전 입니다." : {
+
+    },
+    "App version v%@ 최신 버전이 아닙니다." : {
+
     },
     "Are you sure you want to delete?" : {
       "localizations" : {
@@ -1876,6 +1883,12 @@
           }
         }
       }
+    },
+    "Store version Loading..." : {
+
+    },
+    "Store version v%@" : {
+
     },
     "TODO 👀" : {
       "localizations" : {
