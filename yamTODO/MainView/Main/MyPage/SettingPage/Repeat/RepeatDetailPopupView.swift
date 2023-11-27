@@ -50,7 +50,7 @@ struct RepeatDetailPopupView: View {
                       textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
-                      placeholder: "할 일에 대한 세부 설명을 입력할 수 있습니다."
+                      placeholder: String(localized:"You can enter a detailed description for the task.")
                     )
               .lineLimit(10)
               .cornerRadius(8)
