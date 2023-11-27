@@ -127,7 +127,7 @@ struct TaskListView: View {
             .listStyle(SidebarListStyle())
             
             .onReceive(selectedCalendar.$selectedDate) { _ in
-                // 해당 날짜를 선택했을때 리스트를 초기화시켜줌.
+                // 해당 날짜를 선택했을때 리스트를 초기화시켜줌. - 캘린더뷰에서
                 taskList.date = selectedCalendar.selectedDate
             }
             
@@ -135,6 +135,14 @@ struct TaskListView: View {
                 // 해당 태스크에대한 변경이 일어날때 리스트를 초기화 시켜줌
                 taskList.date = selectedCalendar.selectedDate
                 tmrTaskList.date = tmrTaskList.date
+            }
+            
+            .onReceive(taskList.objectWillChange) { _ in
+                // 오늘 날짜 또는 내일 날짜에 데이터를 추가했을때 추가한 날짜 말고 다른날짜 업데이트를 위해 사용
+                if self.isShowTomorrow {
+                    taskList.updateTasks()
+                    tmrTaskList.updateTasks()
+                }
             }
 
         }
