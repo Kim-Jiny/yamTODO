@@ -94,13 +94,13 @@ struct RepeatDetailPopupView: View {
           .padding()
           .background(colorScheme == .light ? Color.yamWhite: Color.yamBlack)
           .cornerRadius(10)
-          .frame(width: UIScreen.main.bounds.size.width - 70)
+          .frame(width: geometry.size.width - 70)
           .onTapGesture {
             
           }
           
         }
-        .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: .infinity, alignment: .center)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .background(Color.yamBlack.opacity(0.2))
         .onTapGesture {
           if self.isKeyboardVisible {

@@ -21,65 +21,57 @@ struct ColorSelectView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ZStack {
-                    TextField("Please write the name of the custom color", text: $colorTitle)
-                        .padding()
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
-                        .cornerRadius(40)
-                }
-                .frame(width: UIScreen.main.bounds.width - 70, height: 80)
-                .navigationTitle("Add a new color")
-                ScrollView {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            ColorSelectCell(color: mainColor)
-                            ColorPicker(String(localized:"Select the main color"), selection: $mainColor, supportsOpacity: true)
-                                .padding()
-                        }
-                        HStack {
-                            Spacer()
-                            ColorSelectCell(color: lightColor)
-//                            if UITraitCollection.current.userInterfaceStyle == .dark {
-//                                ColorPicker(String(localized:"Select the dark color"), selection: $lightColor, supportsOpacity: true)
-//                                    .padding()
-//                            }else {
+            GeometryReader { geometry in
+                VStack {
+                    ZStack {
+                        TextField("Please write the name of the custom color", text: $colorTitle)
+                            .padding()
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
+                            .cornerRadius(40)
+                    }
+                    .frame(width: geometry.size.width - 70, height: 80)
+                    .navigationTitle("Add a new color")
+                    ScrollView {
+                        VStack {
+                            HStack {
+                                Spacer()
+                                ColorSelectCell(color: mainColor)
+                                ColorPicker(String(localized:"Select the main color"), selection: $mainColor, supportsOpacity: true)
+                                    .padding()
+                            }
+                            HStack {
+                                Spacer()
+                                ColorSelectCell(color: lightColor)
                                 ColorPicker(String(localized:"Select the light color"), selection: $lightColor, supportsOpacity: true)
                                     .padding()
-//                            }
-                        }
-                        HStack {
-                            Spacer()
-                            ColorSelectCell(color: darkColor)
-//                            if UITraitCollection.current.userInterfaceStyle == .dark {
-//                                ColorPicker(String(localized:"Select the light color"), selection: $darkColor, supportsOpacity: true)
-//                                    .padding()
-//                            }else {
+                            }
+                            HStack {
+                                Spacer()
+                                ColorSelectCell(color: darkColor)
                                 ColorPicker(String(localized:"Select the dark color"), selection: $darkColor, supportsOpacity: true)
                                     .padding()
-//                            }
-                        }
-                        HStack {
-                            Spacer()
-                            ColorSelectCell(color: todayColor)
-                            ColorPicker(String(localized:"Select TodayColor"), selection: $todayColor, supportsOpacity: true)
-                                .padding()
+                            }
+                            HStack {
+                                Spacer()
+                                ColorSelectCell(color: todayColor)
+                                ColorPicker(String(localized:"Select TodayColor"), selection: $todayColor, supportsOpacity: true)
+                                    .padding()
+                            }
                         }
                     }
-                }
-                Button {
-                    saveColor()
-                } label: {
-                    Text("Add")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .foregroundStyle(colorScheme == .light ? Color.yamBlack : Color.yamWhite)
-                        .padding()
-                        .frame(width: 200, height: 60)
-                        .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
-                        .cornerRadius(40)
+                    Button {
+                        saveColor()
+                    } label: {
+                        Text("Add")
+                            .font(.system(size: 20))
+                            .fontWeight(.bold)
+                            .foregroundStyle(colorScheme == .light ? Color.yamBlack : Color.yamWhite)
+                            .padding()
+                            .frame(width: 200, height: 60)
+                            .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
+                            .cornerRadius(40)
+                    }
                 }
             }
         }

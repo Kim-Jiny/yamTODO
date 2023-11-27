@@ -116,13 +116,13 @@ struct DetailPopupView: View {
           .padding()
           .background(colorScheme == .light ? Color.realWhite : Color.realBlack)
           .cornerRadius(10)
-          .frame(width: UIScreen.main.bounds.size.width - 70)
+          .frame(width: geometry.size.width - 70)
           .onTapGesture {
             
           }
           
         }
-        .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: .infinity, alignment: .center)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.yamWhite.opacity(0.2))
         .onTapGesture {
           if self.isKeyboardVisible {
