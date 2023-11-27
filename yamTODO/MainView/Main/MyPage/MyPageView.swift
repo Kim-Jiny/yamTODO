@@ -13,7 +13,8 @@ import GoogleMobileAds
 struct MyPage: View {
     @ObservedObject var userColor: UserColorObject
 //    @StateObject var viewModel = ColorSettingViewModel()
-    @State private var latestVersion: String = String(localized: "Store version Loading...")
+//    @State private var latestVersion: String = String(localized: "Importing version from store...")
+    @State private var showAppVersionAlert: Bool = false
     @State private var isNewVersion: Bool = true
     @State private var isShowingMailView = false
     @State private var showFailedMailAlert = false
@@ -53,14 +54,38 @@ private extension MyPage {
       Section(header: Text("App settings").fontWeight(.medium)) {
           if isNewVersion {
               if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                  Text("App version v\(appVersion) 최신 버전 입니다.")
-                      .frame(height: 44)
+                  VStack(alignment: .leading, spacing: 3) {
+                      Text("App version v\(appVersion)")
+                          .font(.system(size: 16))
+                          .fontWeight(.bold)
+                      Text("This is the latest version.")
+                          .font(.system(size: 12))
+                  }
+                  .frame(height: 60)
               }
           }else {
               if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                  NavigationLink(destination: ColorSettingMainView(userColor: userColor)) {
-                      Text("App version v\(appVersion) 최신 버전이 아닙니다.")
-                          .frame(height: 44)
+                  Button(action: {
+                      // Alert을 먼저 띄워준다.
+                      showAppVersionAlert = true
+                  }) {
+                      VStack(alignment: .leading, spacing: 3) {
+                          Text("App version v\(appVersion)")
+                              .font(.system(size: 16))
+                              .fontWeight(.bold)
+                          Text("It's not the latest version")
+                              .font(.system(size: 12))
+                      }
+                      .frame(height: 60)
+                  }.alert(isPresented: $showAppVersionAlert) {
+                      Alert(
+                          title: Text(""),
+                          message: Text("Are you sure you want to go to the App Store to download the latest version of the app?"),
+                          primaryButton: .default(Text("OK"), action: {
+                              AppVersionCheck.appUpdate()
+                          }),
+                          secondaryButton: .cancel(Text("Cancel"), action: { })
+                      )
                   }
               }
           }
@@ -134,17 +159,7 @@ private extension MyPage {
     func checkForUpdate() {
         AppVersionCheck.isUpdateAvailable { version in
             if let version = version {
-                // 비동기로 가져온 최신 버전을 UI에 반영하기 위해 메인 스레드에서 업데이트
-                DispatchQueue.main.async {
-                    self.latestVersion = String(localized: "Store version v\(version)")
-                }
-                
                 isNewVersion = AppVersionCheck.isNewVersion(version)
-            } else {
-                // 최신 버전을 가져오는 데 실패한 경우, 에러 처리 또는 기본값 표시 등을 수행
-                DispatchQueue.main.async {
-                    self.latestVersion = "Failed to fetch version"
-                }
             }
         }
     }
@@ -178,10 +193,7 @@ extension Result {
 class AppVersionCheck {
     // 코드작성
     static func isUpdateAvailable(completion: @escaping (String?) -> Void) {
-        guard let info = Bundle.main.infoDictionary,
-            let currentVersion = info["CFBundleShortVersionString"] as? String,
-            let identifier = info["CFBundleIdentifier"] as? String,
-            let url = URL(string: "http://itunes.apple.com/kr/lookup?id=6472643559") else {
+        guard let url = URL(string: "http://itunes.apple.com/kr/lookup?id=6472643559") else {
                 completion(nil)
                 return
         }
@@ -215,12 +227,12 @@ class AppVersionCheck {
             return true
         }
         let currentVerFloat = NSString.init(string: currentVersion).floatValue
-        
-        return verFloat >= currentVerFloat
+        print("store \(verFloat)  currentV \(currentVersion)")
+        return verFloat <= currentVerFloat
     }
     
-    func appUpdate() {
-        let appleId = "6472643559"        // 앱 스토어에 일반 정보의 Apple ID 입력
+    static func appUpdate() {
+        let appleId = "6472643559" // 앱 스토어에 일반 정보의 Apple ID 입력
         // UIApplication 은 Main Thread 에서 처리
         DispatchQueue.main.async {
             if let url = URL(string: "itms-apps://itunes.apple.com/app/\(appleId)"), UIApplication.shared.canOpenURL(url) {

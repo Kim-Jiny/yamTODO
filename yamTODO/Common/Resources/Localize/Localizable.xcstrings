@@ -265,7 +265,6 @@
       }
     },
     "App version v%@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -316,12 +315,6 @@
           }
         }
       }
-    },
-    "App version v%@ 최신 버전 입니다." : {
-
-    },
-    "App version v%@ 최신 버전이 아닙니다." : {
-
     },
     "Are you sure you want to delete?" : {
       "localizations" : {
@@ -423,6 +416,58 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "確定要刪除嗎？ 刪除將刪除今天以後的重複事件。 請從日曆中刪除過去已安排的任務。"
+          }
+        }
+      }
+    },
+    "Are you sure you want to go to the App Store to download the latest version of the app?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sind Sie sicher, dass Sie in den App Store gehen wollen, um die neueste Version der Anwendung herunterzuladen?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Êtes-vous sûr de vouloir aller à l'App Store pour télécharger la dernière version de l'application ?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Storeにアクセスして、最新バージョンのアプリをダウンロードしてよろしいですか？"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱스토어로 이동하여 최신 버전의 앱을 다운로드하시겠습니까?"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está certo de querer ir à App Store para descarregar a última versão da aplicação?"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn có chắc chắn muốn vào App Store để tải xuống phiên bản mới nhất của ứng dụng không?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您真的想去App Store下载最新版本的应用程序吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您真的想去App Store下載最新版本的應用程序嗎？"
           }
         }
       }
@@ -944,6 +989,58 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "如果您以訪客身份使用應用程序，則數據將在本地存儲。 您可以稍後登錄。"
+          }
+        }
+      }
+    },
+    "It's not the latest version" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es ist nicht die neueste Version."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce n'est pas la dernière version."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新バージョンではありません"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최신 버전이 아닙니다"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é a última versão"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đó không phải là phiên bản mới nhất"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这不是最新版本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這不是最新版本"
           }
         }
       }
@@ -1884,11 +1981,57 @@
         }
       }
     },
-    "Store version Loading..." : {
-
-    },
-    "Store version v%@" : {
-
+    "This is the latest version." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die neueste Version."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la dernière version."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新版。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최신 버전입니다."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a última versão."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "phiên bản mới nhất."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新版本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新版本"
+          }
+        }
+      }
     },
     "TODO 👀" : {
       "localizations" : {
