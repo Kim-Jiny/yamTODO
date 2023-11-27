@@ -547,7 +547,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cancel"
+            "value" : "취소"
           }
         },
         "pt-PT" : {
@@ -1224,7 +1224,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "OK"
+            "value" : "확인"
           }
         },
         "pt-PT" : {
