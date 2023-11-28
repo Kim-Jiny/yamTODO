@@ -35,9 +35,9 @@ struct ColorSettingCell: View {
                 .frame(width: 24, height: 24)
                 .foregroundColor(isChecked ? userColor.userColorData.selectedColor.mainColor.toColor() : .gray)
                 .padding(.trailing, 10)
-//                .onTapGesture {
-//                    isChecked.toggle()
-//                }
+                .onTapGesture {
+                    userColor.selectColor(color: colorModel)
+                }
         }
     }
 }
