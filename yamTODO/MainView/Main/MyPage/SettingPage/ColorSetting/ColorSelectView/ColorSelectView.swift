@@ -77,10 +77,10 @@ struct ColorSelectView: View {
                     }
                 }
             }
-            .onTapGesture {
-                // 탭했을 때, 키보드가 열려있다면 닫습니다.
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            }
+//            .onTapGesture {
+//                // 탭했을 때, 키보드가 열려있다면 닫습니다.
+//                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//            }
         }
     }
 }
