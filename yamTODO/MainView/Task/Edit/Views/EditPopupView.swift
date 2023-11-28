@@ -15,90 +15,93 @@ struct EditPopupView: View {
     @State private var taskDescHeight: CGFloat = 50
     @StateObject var dayOfWeekManager = DayOfWeekManager()
     
+    @State private var contentHeight: CGFloat = .zero
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    Text("Register a task")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
-                        .multilineTextAlignment(.leading)
-                        .frame(height: 40)
-//                        .background(.white)
-//                        .cornerRadius(25)
-                    
-                    HStack(spacing: 0) {
-                        Spacer()
-                            .frame(width: 8)
-                        Image(systemName: "pencil.line")
-                            .resizable()
-                            .frame(width: 16, height: 15)
-//                            .aspectRatio(contentMode: .fill)
-                            .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
-                        TextField("Please create a task.", text: $taskTitle)
-                            .padding()
-                            .textFieldStyle(PlainTextFieldStyle())
-                    }
-                    
-                    DetailTextView(
-                        userColor: userColor,
-                        text: $taskDesc,
-                        height: $taskDescHeight,
-                        borderColor: userColor.userColorData.selectedColor.mainColor.toColor(),
-                        backgroundColor: colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor(),
-                        maxHeight: 200,
-                        textFont: .systemFont(ofSize: 13),
-                        cornerRadius: 8,
-                        borderWidth: 0,
-                        placeholder: String(localized:"You can enter a detailed description for the task.")
-                    )
-                    .lineLimit(10)
-                    .cornerRadius(8)
-                    .frame(height: 100)
-                    
-                    HStack(spacing: 0) {
-//                        Image(systemName: "repeat")
-//                            .resizable()
-//                            .frame(width: 15, height: 15)
-//                            .aspectRatio(contentMode: .fill)
-//                            .foregroundColor(.yamBlue)
-                        RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
-                    }
-                    
-                    if dayOfWeekManager.selectedDays.count > 0 {
-                        Text("Recurring tasks can only be registered from today onwards.")
-                            .font(.system(size: 10))
-                    }
-                    
-                    HStack {
-                        Button(action: {
-                            if !taskTitle.isEmpty {
-                                createTask()
-                            }
-                        }, label: {
-                            Text("Save")
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                    ScrollView {
+                        VStack(alignment: .center) {
+                            Text("Register a task")
+                                .font(.title2)
                                 .fontWeight(.bold)
-                                .padding()
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(userColor.userColorData.selectedColor.mainColor.toColor(), lineWidth: 2) // 테두리 추가
-                                )
-                        })
+                                .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                                .frame(height: 30)
+                            
+                            HStack(spacing: 0) {
+                                Spacer()
+                                    .frame(width: 8)
+                                Image(systemName: "pencil.line")
+                                    .resizable()
+                                    .frame(width: 16, height: 15)
+                                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                                TextField("Please create a task.", text: $taskTitle)
+                                    .padding()
+                                    .textFieldStyle(PlainTextFieldStyle())
+                            }
+                            
+                            DetailTextView(
+                                userColor: userColor,
+                                text: $taskDesc,
+                                height: $taskDescHeight,
+                                borderColor: userColor.userColorData.selectedColor.mainColor.toColor(),
+                                backgroundColor: colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor(),
+                                maxHeight: 200,
+                                textFont: .systemFont(ofSize: 13),
+                                cornerRadius: 8,
+                                borderWidth: 0,
+                                placeholder: String(localized:"You can enter a detailed description for the task.")
+                            )
+                            .lineLimit(10)
+                            .cornerRadius(8)
+                            .frame(height: 100)
+                            
+                            HStack(spacing: 0) {
+                                RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
+                            }
+                            
+                            if dayOfWeekManager.selectedDays.count > 0 {
+                                Text("Recurring tasks can only be registered from today onwards.")
+                                    .font(.system(size: 10))
+                            }
+                            
+                            Button(action: {
+                                if !taskTitle.isEmpty {
+                                    createTask()
+                                }
+                            }, label: {
+                                Text("Save")
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(userColor.userColorData.selectedColor.mainColor.toColor(), lineWidth: 2) // 테두리 추가
+                                    )
+                            })
+                                .frame(height: 50)
+                        }
+                        .padding(.top, 8)
+                        .padding()
+                        .background(
+                            GeometryReader { innerGeometry in
+                                Color.clear.onAppear {
+                                    contentHeight = innerGeometry.size.height // 내부 콘텐츠의 높이를 측정하여 저장
+                                }
+                            }
+                        )
                     }
-                    .frame(height: 50)
                 }
-                .padding(.top, 8)
-                .padding()
                 .background(colorScheme == .light ? Color.yamWhite: Color.yamBlack)
                 .cornerRadius(8)
                 .frame(width: geometry.size.width - 70)
+                .frame(height: contentHeight + 15 > geometry.size.height - 50 ? geometry.size.height - 50 : contentHeight + 15)
                 .onTapGesture {
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.yamWhite.opacity(0.2))
             .onTapGesture {
                 if self.isKeyboardVisible {
