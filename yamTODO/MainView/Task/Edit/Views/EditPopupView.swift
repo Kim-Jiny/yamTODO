@@ -9,6 +9,7 @@ struct EditPopupView: View {
     @State var selectedDate: Date
     @Binding var isPresented: Bool
     @State private var isKeyboardVisible = false
+    @State private var isShowEmptyAlert = false
     
     @State private var taskTitle = ""
     @State private var taskDesc = ""
@@ -69,6 +70,8 @@ struct EditPopupView: View {
                             Button(action: {
                                 if !taskTitle.isEmpty {
                                     createTask()
+                                }else {
+                                    isShowEmptyAlert = true
                                 }
                             }, label: {
                                 Text("Save")
@@ -81,7 +84,10 @@ struct EditPopupView: View {
                                             .stroke(userColor.userColorData.selectedColor.mainColor.toColor(), lineWidth: 2) // 테두리 추가
                                     )
                             })
-                                .frame(height: 50)
+                            .frame(height: 50)
+                            .alert(isPresented: $isShowEmptyAlert) {
+                                Alert(title: Text(""), message: Text("Please enter the title of the schedule."), dismissButton: .default(Text("OK")))
+                            }
                         }
                         .padding(.top, 8)
                         .padding()
