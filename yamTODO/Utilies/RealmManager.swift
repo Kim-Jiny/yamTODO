@@ -69,7 +69,7 @@ class RealmManager {
         })
         // 그날의 task에 RootId에 옵션과 중복되는 Task 가 있는지 확인하고 버림.
         let repeateArray = returnModel.tasks.filter({ task in
-            task.rootId != ""
+            task.rootId != "" && task.isDelay == 0
         }).compactMap { task in
             task.rootId
         }

@@ -40,25 +40,25 @@ struct ColorEditView: View {
                             HStack {
                                 Spacer()
                                 ColorSelectCell(color: $mainColor)
-                                ColorPicker(String(localized:"Select the main color"), selection: $mainColor, supportsOpacity: true)
+                                ColorPicker(String(localized:"Select the main color"), selection: $mainColor, supportsOpacity: false)
                                     .padding()
                             }
                             HStack {
                                 Spacer()
                                 ColorSelectCell(color: $lightColor)
-                                ColorPicker(String(localized:"Select the light color"), selection: $lightColor, supportsOpacity: true)
+                                ColorPicker(String(localized:"Select the light color"), selection: $lightColor, supportsOpacity: false)
                                     .padding()
                             }
                             HStack {
                                 Spacer()
                                 ColorSelectCell(color: $darkColor)
-                                ColorPicker(String(localized:"Select the dark color"), selection: $darkColor, supportsOpacity: true)
+                                ColorPicker(String(localized:"Select the dark color"), selection: $darkColor, supportsOpacity: false)
                                     .padding()
                             }
                             HStack {
                                 Spacer()
                                 ColorSelectCell(color: $todayColor)
-                                ColorPicker(String(localized:"Select TodayColor"), selection: $todayColor, supportsOpacity: true)
+                                ColorPicker(String(localized:"Select TodayColor"), selection: $todayColor, supportsOpacity: false)
                                     .padding()
                             }
                             Spacer()

@@ -60,6 +60,10 @@ final class UserColorObject: ObservableObject {
             userColor.id == color.id
         }) {
             userColorData.colors[selectedColorIndex] = color
+            
+            if userColorData.selectedColor.id == color.id {
+                userColorData.selectedColor = color
+            }
         }
     }
 }
