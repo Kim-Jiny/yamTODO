@@ -7,10 +7,18 @@
 
 import Foundation
 import SwiftUI
+import Combine
+
+class ColorSettingMainViewModel: ObservableObject {
+    @Published var editSelectedColor: ColorModel?
+    
+}
 
 struct ColorSettingMainView: View {
     @ObservedObject var userColor: UserColorObject
     @State var isShowColorAddedView: Bool = false
+    @State var isShowColorEditView: Bool = false
+    @ObservedObject var editSelectedColor = ColorSettingMainViewModel()
     
     @State var offset: CGSize = CGSize()
     
@@ -39,7 +47,9 @@ struct ColorSettingMainView: View {
                 ColorSettingCell(userColor: userColor, isChecked: userColor.userColorData.selectedColor.id == colorM.id, colorModel: colorM)
                     .frame(height: 50)
                     .onTapGesture {
-                        userColor.selectColor(color: colorM)
+                        editSelectedColor.editSelectedColor = colorM
+//                        isShowColorEditView = true
+//                        userColor.selectColor(color: colorM)
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                         if colorM.id != "defaultColorModel" {
@@ -53,6 +63,10 @@ struct ColorSettingMainView: View {
                     }
             }
         }
+        .sheet(isPresented: $isShowColorEditView) {
+            ColorEditView(isPresented: $isShowColorEditView, colorM: editSelectedColor)
+                .environmentObject(userColor)
+        }
         .listStyle(DefaultListStyle())
         .navigationBarTitle(Text("App Color Setting"))
         .onReceive(userColor.userColorData.objectWillChange) { data in
@@ -60,6 +74,11 @@ struct ColorSettingMainView: View {
         }
         .onReceive(userColor.userColorData.selectedChange) { data in
             self.userColor.id = ""
+        }
+        .onReceive(editSelectedColor.objectWillChange) { _ in
+            if let _ = editSelectedColor.editSelectedColor {
+                isShowColorEditView = true
+            }
         }
     }
 }

@@ -61,6 +61,7 @@
 		36B7C9A92ADFB07300F7A140 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9A82ADFB07300F7A140 /* Request.swift */; };
 		36B7C9AB2ADFB0AE00F7A140 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */; };
 		36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9AD2ADFB35200F7A140 /* Serializable.swift */; };
+		36CE88932B159BFE00DA2512 /* ColorEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE88922B159BFE00DA2512 /* ColorEditView.swift */; };
 		36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CFD9732B02EEDE0037E03D /* SelectTask.swift */; };
 		36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */; };
 		36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36EDCF3E2AEF6607004F2483 /* Alamofire */; };
@@ -142,6 +143,7 @@
 		36B7C9A82ADFB07300F7A140 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		36B7C9AA2ADFB0AE00F7A140 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		36B7C9AD2ADFB35200F7A140 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		36CE88922B159BFE00DA2512 /* ColorEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEditView.swift; sourceTree = "<group>"; };
 		36CFD9732B02EEDE0037E03D /* SelectTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTask.swift; sourceTree = "<group>"; };
 		36EDCF3B2AEB9E6F004F2483 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		36EDCF402AEF6A0F004F2483 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				364FC7BC2B0F0976009AF157 /* ColorSettingModel.swift */,
 				364FC7C12B0F2A0C009AF157 /* ColorSettingCell.swift */,
 				364FC7C02B0F2992009AF157 /* ColorSelectView */,
+				36CE88912B159BE700DA2512 /* ColorEditView */,
 			);
 			path = ColorSetting;
 			sourceTree = "<group>";
@@ -434,6 +437,14 @@
 				36B7C9742ADE18B800F7A140 /* CalendarView.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		36CE88912B159BE700DA2512 /* ColorEditView */ = {
+			isa = PBXGroup;
+			children = (
+				36CE88922B159BFE00DA2512 /* ColorEditView.swift */,
+			);
+			path = ColorEditView;
 			sourceTree = "<group>";
 		};
 		36EDCF3A2AEB9E60004F2483 /* Models */ = {
@@ -728,6 +739,7 @@
 				36B7C9572ADD19C200F7A140 /* Task.swift in Sources */,
 				36EDCF532AF089AA004F2483 /* Symbol.swift in Sources */,
 				364FC7BF2B0F1B8B009AF157 /* ColorSettingMainView.swift in Sources */,
+				36CE88932B159BFE00DA2512 /* ColorEditView.swift in Sources */,
 				36B7C9982ADF51DD00F7A140 /* TaskMainView.swift in Sources */,
 				36B7C9822ADE1A6F00F7A140 /* UserColorData.swift in Sources */,
 				36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */,

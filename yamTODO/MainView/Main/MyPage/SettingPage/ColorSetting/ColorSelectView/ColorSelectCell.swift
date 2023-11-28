@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ColorSelectCell: View {
-    var color: Color
+    @Binding var color: Color
 
     var body: some View {
         RoundedRectangle(cornerRadius: 10)

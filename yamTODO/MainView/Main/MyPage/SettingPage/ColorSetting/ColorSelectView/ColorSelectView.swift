@@ -36,25 +36,25 @@ struct ColorSelectView: View {
                         VStack {
                             HStack {
                                 Spacer()
-                                ColorSelectCell(color: mainColor)
+                                ColorSelectCell(color: $mainColor)
                                 ColorPicker(String(localized:"Select the main color"), selection: $mainColor, supportsOpacity: true)
                                     .padding()
                             }
                             HStack {
                                 Spacer()
-                                ColorSelectCell(color: lightColor)
+                                ColorSelectCell(color: $lightColor)
                                 ColorPicker(String(localized:"Select the light color"), selection: $lightColor, supportsOpacity: true)
                                     .padding()
                             }
                             HStack {
                                 Spacer()
-                                ColorSelectCell(color: darkColor)
+                                ColorSelectCell(color: $darkColor)
                                 ColorPicker(String(localized:"Select the dark color"), selection: $darkColor, supportsOpacity: true)
                                     .padding()
                             }
                             HStack {
                                 Spacer()
-                                ColorSelectCell(color: todayColor)
+                                ColorSelectCell(color: $todayColor)
                                 ColorPicker(String(localized:"Select TodayColor"), selection: $todayColor, supportsOpacity: true)
                                     .padding()
                             }

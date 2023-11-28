@@ -54,4 +54,12 @@ final class UserColorObject: ObservableObject {
     func removeColor(id: String) {
         userColorData.removeColor(id: id)
     }
+    
+    func updateColor(_ color: ColorModel) {
+        if let selectedColorIndex = userColorData.colors.firstIndex(where: { userColor in
+            userColor.id == color.id
+        }) {
+            userColorData.colors[selectedColorIndex] = color
+        }
+    }
 }
