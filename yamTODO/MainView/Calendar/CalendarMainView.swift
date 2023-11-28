@@ -15,11 +15,9 @@ class SelectedCalendar: ObservableObject {
 }
 
 struct CalendarMainView: View {
-//    // 가로모드인지 확인하는 코드
+    // 가로모드인지 확인하는 코드
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    // 가로 세로가 변경될때 뷰를 새로 그리도록 변수 추가
-    @State var id = UUID()
     // 커스컴 컬러를 위한 구독
     @ObservedObject var userColor: UserColorObject
     // 탭을 변경했을때 열린 페이지를 닫아주기 위함
