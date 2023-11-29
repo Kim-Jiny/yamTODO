@@ -47,6 +47,10 @@ class TaskObject: Object {
     @Persisted var createdBy: Date
     @Persisted var isRemove: Bool
     @Persisted var isDelay: Int
+    //v2
+    
+    @Persisted var isChanged: Bool
+    @Persisted var changedBy: Date?
 
     convenience init(title: String) {
         self.init()
@@ -61,8 +65,13 @@ class TaskObject: Object {
         self.createdBy = Date()
         self.isRemove = false
         self.isDelay = 0
+        
+        self.isChanged = false
+        self.changedBy = nil
     }
     
+    // 반복일정을 복사해서 넣어줄때,
+    // 태스크를 하루 미룰때 사용.
     func newTask(old: TaskObject) {
         self.id = UUID().uuidString
         self.title = old.title
@@ -75,6 +84,8 @@ class TaskObject: Object {
         self.createdBy = old.createdBy
         self.isRemove = old.isRemove
         self.isDelay = old.isDelay
+        self.isChanged = old.isChanged
+        self.changedBy = old.changedBy
     }
 }
 

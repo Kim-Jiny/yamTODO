@@ -12,10 +12,12 @@ struct RepeatView: View {
     @ObservedObject var userColor: UserColorObject
     let daysOfWeek = DayOfWeek.allCases
     @Binding var selectedDays: Set<DayOfWeek>
+    var isEditRepeatOption: Bool
     
-    init(userColor: UserColorObject, selectedDays: Binding<Set<DayOfWeek>>) {
+    init(userColor: UserColorObject, selectedDays: Binding<Set<DayOfWeek>>, isEditRepeatOption: Bool = false) {
         self.userColor = userColor
         _selectedDays = selectedDays
+        self.isEditRepeatOption = isEditRepeatOption
     }
     
     var body: some View {
@@ -27,10 +29,12 @@ struct RepeatView: View {
                 .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
             ForEach(daysOfWeek, id: \.self) { day in
                 Button(action: {
-                    if selectedDays.contains(day) {
-                        selectedDays.remove(day)
-                    } else {
-                        selectedDays.insert(day)
+                    if !isEditRepeatOption {
+                        if selectedDays.contains(day) {
+                            selectedDays.remove(day)
+                        } else {
+                            selectedDays.insert(day)
+                        }
                     }
                 }, label: {
                     day.displayText

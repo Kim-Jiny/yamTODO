@@ -54,4 +54,19 @@ extension Date {
     var monthKey: String {
       return Date.keyMonthFormatter.string(from: self)
     }
+    
+    /// 오늘 날짜의 처음 시작 시간
+    func getStartTime() -> Date {
+      // 현재 날짜의 연, 월, 일 구성 요소를 가져옵니다.
+      let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
+      // 디바이스의 시간대 설정
+      let deviceTimeZone = TimeZone.autoupdatingCurrent
+      // 해당 연, 월, 일로 시작 시간을 설정합니다.
+      if var startDate = Calendar.current.date(from: components) {
+          startDate = Calendar.current.startOfDay(for: startDate) // 이것이 오늘 날짜의 시작 시간입니다.
+          return startDate.addingTimeInterval(TimeInterval(deviceTimeZone.secondsFromGMT(for: startDate)))
+      }
+      
+      return self
+    }
 }

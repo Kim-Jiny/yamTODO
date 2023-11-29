@@ -228,21 +228,6 @@ private extension CalendarView {
     
     return Calendar.current.component(.weekday, from: firstDayOfMonth)
   }
-    
-    /// 오늘 날짜의 처음 시작 시간
-    func getStartTime(in date: Date) -> Date {
-        // 현재 날짜의 연, 월, 일 구성 요소를 가져옵니다.
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
-        // 디바이스의 시간대 설정
-        let deviceTimeZone = TimeZone.autoupdatingCurrent
-        // 해당 연, 월, 일로 시작 시간을 설정합니다.
-        if var startDate = Calendar.current.date(from: components) {
-            startDate = Calendar.current.startOfDay(for: startDate) // 이것이 오늘 날짜의 시작 시간입니다.
-            return startDate.addingTimeInterval(TimeInterval(deviceTimeZone.secondsFromGMT(for: startDate)))
-        }
-        
-        return date
-    }
   
   /// 이전 월 마지막 일자
   func previousMonth() -> Date {
@@ -260,12 +245,12 @@ private extension CalendarView {
       
       // 이번달로 변경시 오늘 날짜로 선택해줌.
       if isDateInCurrentMonth(dateToCheck: selectedDate) {
-          self.selectedDate = getStartTime(in: Date())
+          self.selectedDate =  Date().getStartTime()
       }else {
           let calendar = Calendar.current
           let components = calendar.dateComponents([.year, .month], from: selectedDate)
           let startOfMonth = calendar.date(from: components)!
-          self.selectedDate = getStartTime(in: startOfMonth)
+          self.selectedDate = startOfMonth.getStartTime()
       }
       self.selectedMonth = selectedDate
   }

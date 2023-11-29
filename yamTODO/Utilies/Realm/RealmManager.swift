@@ -21,15 +21,12 @@ class RealmManager {
         // 반복 옵션을 꺼냄
         var repeatTasks = realm.object(ofType: TasksByDateObject.self, forPrimaryKey: optionKey)
         
-        
+        // TODO: 반복옵션이 변경되었을때 changedBy날짜와 태스크의 날짜를 비교해서 유저가 변경한 isChanged가 아닐때 변경된것을 적용해줌. 변경된 날짜보다 같거나 이후에 등록된 일정만 변경됨.
+        // 반복옵션이 삭제되었을때 등록된 태스크에서 제거된 반복옵션부터 삭제
         if let repeatTasks = repeatTasks, let tasks = tasks {
             // 반봅옵션 id list
             let repeatIdArr = Array(repeatTasks.tasks.map({ $0.id }))
             // 기존의 테스크들중에 옵션키값이 존재하는 애들의 지워진 날짜 비교
-//            returnModel.tasks.filter { task in
-//                let isRepeat = task.optionType.count > 0
-//                repeatIdArr.contains(where: task.id)
-//            }
             tasks.tasks.forEach { task in
                 // 테스트가 옵션에서 가지고온거면
                 if task.optionType.count > 0 {
@@ -44,6 +41,17 @@ class RealmManager {
                                     deleteTaskObjectFromDate(task: task, force: true)
                                 }
                             }
+                            // 옵션리스트에서 변경된 날짜가 태스크의 날짜보다 이후이면 변경을 업데이트 해줘야함.
+                            // 옵션에서 changedBy가 존재할때, 태스크가 유저가 변경하지 않았을때
+                            if let changedBy = $0.changedBy, task.isChanged == false {
+                                // 반복 옵션의 변경된 날짜 <= 태스크의 날짜
+                                let isOverChangedDay = Calendar.current.startOfDay(for: changedBy) <= Calendar.current.startOfDay(for: date)
+                                
+                                if isOverChangedDay {
+                                    // task를 업데이트해줌.  - 여기서 지워주면 밑에서 채워줌.
+                                    deleteTaskObjectFromDate(task: task, force: true)
+                                }
+                            }
                         }
                     }
                 }
@@ -54,6 +62,7 @@ class RealmManager {
         let tasksArray = Array(reTasks?.tasks ?? List<TaskObject>())
         let returnModel = TasksListModel(key: date.dateKey, tasks: tasksArray)
         
+        // 반복 옵션이 등록되지 않았을때 realm에 추가 등록해줌.
         // 반복 옵션들에 해당요일이 존재하는지 확인함.
         let dayRepeatTasks = repeatTasks?.tasks.filter({ optionTask in
             // 옵션이 해당날짜에 해당되는지 확인
@@ -256,7 +265,7 @@ class RealmManager {
     }
     
   // 테스크를 업데이트
-    func updateTaskObject(task: TaskObject, taskTitle: String, taskDesc: String) {
+    func updateTaskObject(task: TaskObject, taskTitle: String, taskDesc: String, isRepeat: Bool) {
       do {
           guard let taskObject = task.realm?.object(ofType: TaskObject.self, forPrimaryKey: task.id) else {
               print("TaskObject not found")
@@ -266,6 +275,11 @@ class RealmManager {
               // 해당 taskObject의 속성 업데이트
               taskObject.title = taskTitle
               taskObject.desc = taskDesc
+              taskObject.changedBy = Date().getStartTime()
+              // 반복옵션의 루트 수정시
+              if !isRepeat {
+                  taskObject.isChanged = true
+              }
           }
       } catch {
           print("Error: \(error)")

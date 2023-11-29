@@ -18,9 +18,9 @@ class SelectedTask: ObservableObject {
     }
     
     
-    func updateText(_ title: String,_ desc: String) {
+    func updateText(_ title: String,_ desc: String,_ isRepeat: Bool = false) {
         guard let selectedTask = selectedTask else { return }
-        RealmManager.shared.updateTaskObject(task: selectedTask, taskTitle: title, taskDesc: desc)
+        RealmManager.shared.updateTaskObject(task: selectedTask, taskTitle: title, taskDesc: desc, isRepeat: isRepeat)
         objectWillChange.send(self)
     }
     

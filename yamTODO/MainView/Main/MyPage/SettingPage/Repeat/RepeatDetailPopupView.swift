@@ -16,7 +16,8 @@ struct RepeatDetailPopupView: View {
     @Binding var isPresented: Bool
     
     @State private var isKeyboardVisible = false
-    @State private var showDeleteAlert = false
+    @State private var isShowDeleteAlert = false
+    @State private var isShowChangedAlert = false
 
     @State private var taskTitle = ""
     @State private var taskTitleHeight: CGFloat = 50
@@ -56,17 +57,20 @@ struct RepeatDetailPopupView: View {
               .cornerRadius(8)
               .frame(height: taskDescHeight)
 //              HStack(spacing: 0) {
-                  RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays )
+              RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays, isEditRepeatOption: true)
+              Text("반복 요일은 변경하실 수 없습니다.")
+                  .font(.system(size: 10))
 //              }
             HStack {
                 Button(action: {
-                    showDeleteAlert.toggle()
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    isShowDeleteAlert.toggle()
                 }, label: {
                     Text("Delete")
                         .foregroundColor(colorScheme == .light ? userColor.userColorData.selectedColor.darkColor.toColor() : userColor.userColorData.selectedColor.lightColor.toColor())
                     .fontWeight(.bold)
                     .padding()
-                }).alert(isPresented: $showDeleteAlert) {
+                }).alert(isPresented: $isShowDeleteAlert) {
                     Alert(
                         title: Text(""),
                         message: Text("Are you sure you want to delete? Deleting will remove recurring events beyond today. Please remove tasks that have already been scheduled in the past from the calendar."),
@@ -78,15 +82,28 @@ struct RepeatDetailPopupView: View {
                     )
                 }
                 Button(action: {
-                  if !taskTitle.isEmpty {
-                    saveTask()
-                  }
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    if !taskTitle.isEmpty {
+                        isShowChangedAlert.toggle()
+                    }else {
+                        isShowDeleteAlert.toggle()
+                    }
                 }, label: {
                     Text("Edit")
                     .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                     .fontWeight(.bold)
                     .padding()
-                })
+                }).alert(isPresented: $isShowChangedAlert) {
+                    Alert(
+                        title: Text(""),
+                        message: Text("오늘 이후의 일정중에 사용자가 수정하지 않은 일정에 한해서 변경사항이 적용됩니다."),
+                        primaryButton: .destructive(Text("OK")) {
+                            // 삭제 버튼을 눌렀을 때 수행할 액션
+                            saveTask()
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
             }
             .frame(height: 50)
           }
@@ -128,7 +145,7 @@ struct RepeatDetailPopupView: View {
   }
   
     private func saveTask() {
-        selectedTask.updateText(self.taskTitle, self.taskDesc)
+        selectedTask.updateText(self.taskTitle, self.taskDesc, true)
         // 닫기
         self.isPresented = false
     }
