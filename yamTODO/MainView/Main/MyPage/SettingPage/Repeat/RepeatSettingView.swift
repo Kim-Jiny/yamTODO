@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RepeatSettingView: View {
+    // 커스텀 컬러를 위한 구독
     @ObservedObject var userColor: UserColorObject
     @StateObject var taskList = OptionTaskList()
     @State var isShowDetailPopup: Bool = false

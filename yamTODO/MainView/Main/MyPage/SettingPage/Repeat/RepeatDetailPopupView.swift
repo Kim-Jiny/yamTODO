@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct RepeatDetailPopupView: View {
+    // 가로모드인지 확인하는 코드
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    
     @ObservedObject var userColor: UserColorObject
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var taskList: TaskList
@@ -33,21 +37,21 @@ struct RepeatDetailPopupView: View {
               TitleTextView(
                 text: $taskTitle,
                 height: $taskTitleHeight,
-                maxHeight: 200,
+                maxHeight: supportLandscape(geometry),
                 textFont: .boldSystemFont(ofSize: 15),
                 cornerRadius: 0,
                 borderWidth: 0,
                 borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
-                placeholder: "공백으로 남기면 Task가 삭제됩니다."
+                placeholder: String(localized: "If left blank, the task will be deleted.")
               )
-                .frame(maxHeight: taskTitleHeight)
+                .frame(height: taskTitleHeight)
               DetailTextView(
                 userColor: userColor,
                       text: $taskDesc,
                       height: $taskDescHeight,
                 borderColor: userColor.userColorData.selectedColor.mainColor.toColor(),
                 backgroundColor: colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor(),
-                      maxHeight: 200,
+                      maxHeight: supportLandscape(geometry),
                       textFont: .systemFont(ofSize: 13),
                       cornerRadius: 8,
                       borderWidth: 2,
@@ -58,7 +62,7 @@ struct RepeatDetailPopupView: View {
               .frame(height: taskDescHeight)
 //              HStack(spacing: 0) {
               RepeatView(userColor: userColor, selectedDays: $dayOfWeekManager.selectedDays, isEditRepeatOption: true)
-              Text("반복 요일은 변경하실 수 없습니다.")
+              Text("You cannot change the day of the week setting for the recurring task.")
                   .font(.system(size: 10))
 //              }
             HStack {
@@ -96,7 +100,7 @@ struct RepeatDetailPopupView: View {
                 }).alert(isPresented: $isShowChangedAlert) {
                     Alert(
                         title: Text(""),
-                        message: Text("오늘 이후의 일정중에 사용자가 수정하지 않은 일정에 한해서 변경사항이 적용됩니다."),
+                        message: Text("Changes will be applied only to schedules that have not been modified by the user during the schedule after today."),
                         primaryButton: .destructive(Text("OK")) {
                             // 삭제 버튼을 눌렀을 때 수행할 액션
                             saveTask()
@@ -143,7 +147,17 @@ struct RepeatDetailPopupView: View {
       }
       
   }
-  
+    
+    private func supportLandscape(_ screenSize: GeometryProxy) -> CGFloat {
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+            //세로 일때
+            return 200
+        }else {
+            //가로일때
+            return (screenSize.size.height - 400 / 2)
+        }
+    }
+    
     private func saveTask() {
         selectedTask.updateText(self.taskTitle, self.taskDesc, true)
         // 닫기

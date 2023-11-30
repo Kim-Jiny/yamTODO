@@ -576,6 +576,58 @@
         }
       }
     },
+    "Changes will be applied only to schedules that have not been modified by the user during the schedule after today." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Änderungen werden nur auf Zeitpläne angewendet, die vom Benutzer während des Zeitplans nach heute nicht geändert wurden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les modifications ne seront appliquées qu'aux horaires qui n'ont pas été modifiés par l'utilisateur au cours de l'horaire après aujourd'hui."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更は、今日以降のスケジュール中にユーザーが変更していないスケジュールにのみ適用されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "변경 사항은 오늘 이후 일정 중 사용자가 수정하지 않은 일정에만 적용됩니다."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As alterações só serão aplicadas aos horários que não tenham sido modificados pelo utilizador durante o horário após hoje."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Các thay đổi sẽ chỉ áp dụng cho lịch biểu mà người dùng chưa sửa đổi trong lịch biểu sau ngày hôm nay."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改仅适用于今天以后的调度期间用户未修改的调度。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改僅適用於今天以後的調度期間用戶未修改的調度。"
+          }
+        }
+      }
+    },
     "Communication" : {
       "localizations" : {
         "de" : {
@@ -2345,6 +2397,58 @@
         }
       }
     },
+    "You cannot change the day of the week setting for the recurring task." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie können die Einstellung des Wochentages für die wiederkehrende Aufgabe nicht ändern."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous ne pouvez pas modifier le réglage du jour de la semaine pour la tâche récurrente."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You cannot change the day of the week setting for the recurring task。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "반복 작업에 대한 요일 설정은 변경할 수 없습니다."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não se pode alterar o dia da semana para a tarefa recorrente."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn không thể thay đổi cài đặt ngày trong tuần cho tác vụ định kỳ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法更改重复任务的星期几设置。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法更改重複任務的星期幾設置。"
+          }
+        }
+      }
+    },
     "You cannot send emails from this device." : {
       "localizations" : {
         "de" : {
@@ -2454,12 +2558,6 @@
           }
         }
       }
-    },
-    "반복 요일은 변경하실 수 없습니다." : {
-
-    },
-    "오늘 이후의 일정중에 사용자가 수정하지 않은 일정에 한해서 변경사항이 적용됩니다." : {
-
     }
   },
   "version" : "1.0"

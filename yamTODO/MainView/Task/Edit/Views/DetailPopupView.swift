@@ -24,7 +24,7 @@ struct DetailPopupView: View {
     @State private var taskTitle = ""
     @State private var taskTitleHeight: CGFloat = 50
     @State private var taskDesc = ""
-    @State private var taskDescHeight: CGFloat = 90
+    @State private var taskDescHeight: CGFloat = 50
 
     @StateObject var dayOfWeekManager = DayOfWeekManager()
   
@@ -42,7 +42,7 @@ struct DetailPopupView: View {
                         borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
                         placeholder: String(localized: "If left blank, the task will be deleted.")
                     )
-                    .frame(maxHeight: taskTitleHeight)
+                    .frame(height: taskTitleHeight)
                     DetailTextView(
                         userColor: userColor,
                         text: $taskDesc,
