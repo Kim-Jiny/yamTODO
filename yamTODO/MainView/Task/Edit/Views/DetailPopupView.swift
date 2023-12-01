@@ -122,7 +122,7 @@ struct DetailPopupView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.yamWhite.opacity(0.2))
+            .background(colorScheme == .light ? Color.realBlack.opacity(0.2) : Color.realWhite.opacity(0.2))
             .onTapGesture {
                 if self.isKeyboardVisible {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

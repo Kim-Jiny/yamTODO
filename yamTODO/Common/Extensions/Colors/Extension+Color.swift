@@ -57,8 +57,8 @@ extension Color {
     static let yamBlue = YamColor.yamBlue
     static let yamDarkBlue = YamColor.yamDarkBlue
     static let yamLightGray = YamColor.gray
-    static let yamWhite = YamColor.white
-    static let yamBlack = YamColor.black
+    static let yamWhite = YamColor.yamWhite
+    static let yamBlack = YamColor.yamBlack
     static let yamRealDarkPoint = YamColor.yamDarkBlue
     
     // 불변 컬러
@@ -68,7 +68,8 @@ extension Color {
     private struct YamColor {
         static let white = Color(hex: "#F7F7F7")
         static let black = Color(hex: "#181818")
-        static let gray = Color(hex: "#EDEBF1")
+        static let gray = Color("yamGray")
+//        static let gray = Color(hex: "#EDEBF1")
         
         static let yamPurple = Color(hex: "#9487AF")
         static let yamDarkPurple = Color(hex: "#352656")
@@ -79,6 +80,8 @@ extension Color {
         static let yamLightBlue = Color(hex: "#D8ECF3")
         
         static let yamGreen = Color(hex: "#3CC7A9")
+        static let yamWhite = Color("yamWhite")
+        static let yamBlack = Color("yamBlack")
     }
 }
 

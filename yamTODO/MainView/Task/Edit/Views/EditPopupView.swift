@@ -100,7 +100,7 @@ struct EditPopupView: View {
                         )
                     }
                 }
-                .background(colorScheme == .light ? Color.yamWhite: Color.yamBlack)
+                .background(colorScheme == .light ? Color.realWhite: Color.realBlack)
                 .cornerRadius(8)
                 .frame(width: geometry.size.width - 70)
                 .frame(height: contentHeight + 15 > geometry.size.height - 50 ? geometry.size.height - 50 : contentHeight + 15)
@@ -108,7 +108,7 @@ struct EditPopupView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.yamWhite.opacity(0.2))
+            .background(colorScheme == .light ? Color.realBlack.opacity(0.2) : Color.realWhite.opacity(0.2))
             .onTapGesture {
                 if self.isKeyboardVisible {
                     // 키보드가 열려있으면 닫아주기

@@ -14,7 +14,7 @@ struct TaskMainView: View {
     @Binding var selectedTab: Tabs
     
     @StateObject var taskList = TaskList(date: Date())
-    @State var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
+    @StateObject var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
@@ -30,7 +30,7 @@ struct TaskMainView: View {
     NavigationView {
       ZStack {
           VStack {
-              TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: $tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowTmrEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask, isShowTomorrow: true)
+              TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowTmrEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask, isShowTomorrow: true)
                 .frame(maxWidth: .infinity)
               .navigationBarTitle(Text("TODO 👀"))
               .navigationBarTitleDisplayMode(.inline)

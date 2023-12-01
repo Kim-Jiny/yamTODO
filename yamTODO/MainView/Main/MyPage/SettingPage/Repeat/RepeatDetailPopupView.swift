@@ -113,7 +113,7 @@ struct RepeatDetailPopupView: View {
           }
           .padding(.top, 8)
           .padding()
-          .background(colorScheme == .light ? Color.yamWhite: Color.yamBlack)
+          .background(colorScheme == .light ? Color.realWhite: Color.realBlack)
           .cornerRadius(10)
           .frame(width: geometry.size.width - 70)
           .onTapGesture {
@@ -122,7 +122,7 @@ struct RepeatDetailPopupView: View {
           
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .background(Color.yamBlack.opacity(0.2))
+        .background(colorScheme == .light ? Color.yamBlack.opacity(0.2) : Color.realWhite.opacity(0.2))
         .onTapGesture {
           if self.isKeyboardVisible {
             // 키보드가 열려있으면 닫아주기

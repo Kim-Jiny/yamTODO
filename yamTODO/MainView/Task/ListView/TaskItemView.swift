@@ -20,12 +20,12 @@ struct TaskItemView: View {
         if task.isDelay != 0 {
             ZStack {
                 Circle()
-                    .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                    .foregroundColor(getMarkerColor(self.task.isDone, self.task.isFixed))
                     .frame(width: 20, height: 20)
                 Text("+\(task.isDelay)")
-                    .foregroundColor(.yamWhite)
+                    .foregroundColor(.realBlack)
                     .font(.system(size: 10))
-                    .fontWeight(.bold)
+                    .fontWeight(.bold) 
             }
         }else {
             if task.rootId != "" {
@@ -35,7 +35,7 @@ struct TaskItemView: View {
                         .frame(maxWidth: 0)
                     Image(systemName: "repeat.circle.fill")
                         .resizable()
-                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                        .foregroundColor(getMarkerColor(self.task.isDone, self.task.isFixed))
                         .frame(width: 20, height: 20)
                 }
             }
@@ -43,12 +43,12 @@ struct TaskItemView: View {
         if task.isFixed {
             Text(self.task.title)
                 .strikethrough(self.task.isDone)
-                .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : colorScheme == .light ? .realBlack : .realWhite )
+                .foregroundColor(getTextColor(self.task.isDone, self.task.isFixed))
+                .bold()
         }else{
             Text(self.task.title)
                 .strikethrough(self.task.isDone)
-                .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : colorScheme == .light ? .realBlack : .realWhite )
-                .font(.bold(Font.system(size: 13))())
+                .foregroundColor(getTextColor(self.task.isDone, self.task.isFixed))
         }
         Spacer()
         if task.isDone {
@@ -70,6 +70,30 @@ struct TaskItemView: View {
 }
 
 extension TaskItemView {
+    
+    private func getMarkerColor(_ isDone: Bool, _ isFixed: Bool) -> Color {
+        if isDone {
+            return .yamLightGray
+        }else {
+            if isFixed {
+                return userColor.userColorData.selectedColor.mainColor.toColor()
+            }else {
+                return userColor.userColorData.selectedColor.mainColor.toColor()
+            }
+        }
+    }
+    
+    private func getTextColor(_ isDone: Bool, _ isFixed: Bool) -> Color {
+        if isDone {
+            return .yamLightGray
+        }else {
+            if isFixed {
+                return userColor.userColorData.selectedColor.mainColor.toColor()
+            }else {
+                return .yamBlack
+            }
+        }
+    }
     
     private func toggleDone() {
         self.taskList.updateIsDone(self.task.id)
