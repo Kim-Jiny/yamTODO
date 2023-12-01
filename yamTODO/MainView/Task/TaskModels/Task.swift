@@ -51,6 +51,7 @@ class TaskObject: Object {
     
     @Persisted var isChanged: Bool
     @Persisted var changedBy: Date?
+    @Persisted var isFixed: Bool
 
     convenience init(title: String) {
         self.init()
@@ -68,6 +69,7 @@ class TaskObject: Object {
         
         self.isChanged = false
         self.changedBy = nil
+        self.isFixed = false
     }
     
     // 반복일정을 복사해서 넣어줄때,
@@ -86,6 +88,7 @@ class TaskObject: Object {
         self.isDelay = old.isDelay
         self.isChanged = old.isChanged
         self.changedBy = old.changedBy
+        self.isFixed = old.isFixed
     }
 }
 

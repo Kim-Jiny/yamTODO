@@ -45,6 +45,7 @@ class RealmMigrationManager {
             //'changed' 속성 추가
             newObject?["isChanged"] = false
             newObject?["changedBy"] = oldObject?["createdBy"]
+            newObject?["isFixed"] = false
             
             // 만약 이전 객체의 데이터를 기반으로 새로운 속성을 설정해야 한다면, oldObject를 사용할 수 있습니다.
         }

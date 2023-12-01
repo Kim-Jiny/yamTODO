@@ -28,7 +28,6 @@ class SelectedTask: ObservableObject {
     func deleteSelectTask() {
         guard let selectedTask = selectedTask else { return }
         RealmManager.shared.deleteTaskObjectFromDate(task: selectedTask)
-//        self.selectedTask = nil
         objectWillChange.send(self)
     }
     
@@ -36,7 +35,6 @@ class SelectedTask: ObservableObject {
     func deleteSelectOptionTask() {
         guard let selectedTask = selectedTask else { return }
         RealmManager.shared.deleteOptionTaskObject(task: selectedTask)
-//        self.selectedTask = nil
         objectWillChange.send(self)
     }
     
@@ -44,7 +42,12 @@ class SelectedTask: ObservableObject {
     func delaySelectTask() {
         guard let selectedTask = selectedTask else { return }
         RealmManager.shared.delayTaskObjectFromDate(task: selectedTask)
-//        self.selectedTask = nil
+        objectWillChange.send(self)
+    }
+    
+    func fixSelectTask() {
+        guard let selectedTask = selectedTask else { return }
+        RealmManager.shared.updateTaskIsFixed(task: selectedTask)
         objectWillChange.send(self)
     }
 }

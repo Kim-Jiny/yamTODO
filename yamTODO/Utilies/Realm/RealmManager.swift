@@ -291,6 +291,18 @@ class RealmManager {
         do {
             try task.realm?.write {
                 task.isDone = !task.isDone
+                task.isChanged = true
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    // 테스크 Fix 업데이트
+    func updateTaskIsFixed(task: TaskObject) {
+        do {
+            try task.realm?.write {
+                task.isFixed = !task.isFixed
+                task.isChanged = true
             }
         } catch {
             print("Error: \(error)")
