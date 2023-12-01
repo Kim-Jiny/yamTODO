@@ -33,39 +33,32 @@ struct TaskListView: View {
                             .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
                     }
                     .frame(maxWidth: .infinity)
+                    
                     // 완료되지 않은 태스크 우선 표시
-                    ForEach(self.taskList.tasksObject.filter({ !$0.isDone })) { task in
+                    ForEach(self.taskList.tasksObject.filter({ !$0.isDone && $0.isFixed })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
-                            TaskItemView(userColor: userColor, taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
-                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                    Button {
-                                        // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
-                                        selectedTask.selectedTask = task
-                                        isDeleteActionVisible.toggle()
-                                    } label: {
-                                        Label("Delete", systemImage: "trash.circle")
-                                    }
-                                    .tint(userColor.userColorData.selectedColor.mainColor.toColor())
-                                }
+                            getItemView(task)
+                        }
+                    }
+                    ForEach(self.taskList.tasksObject.filter({ !$0.isDone && !$0.isFixed })) { task in
+                        // 지워지거나 수정되지 않은 옵션만 표시
+                        if !task.isRemove {
+                            getItemView(task)
                         }
                     }
                     // 이미 완료된 테스크 표시
-                    ForEach(self.taskList.tasksObject.filter({ $0.isDone })) { task in
+                    ForEach(self.taskList.tasksObject.filter({ $0.isDone && $0.isFixed })) { task in
                         // 지워지거나 수정되지 않은 옵션만 표시
                         if !task.isRemove {
-                            TaskItemView(userColor: userColor, taskList: taskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
-                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                    Button {
-                                        // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
-                                        selectedTask.selectedTask = task
-                                        isDeleteActionVisible.toggle()
-                                    } label: {
-                                        Label("Delete", systemImage: "trash.circle")
-                                    }
-                                    .tint(userColor.userColorData.selectedColor.mainColor.toColor())
-                                }
-                            
+                            getItemView(task)
+                        }
+                    }
+                    
+                    ForEach(self.taskList.tasksObject.filter({ $0.isDone && !$0.isFixed })) { task in
+                        // 지워지거나 수정되지 않은 옵션만 표시
+                        if !task.isRemove {
+                            getItemView(task)
                         }
                     }
                 }
@@ -82,36 +75,31 @@ struct TaskListView: View {
                             }
                         .frame(maxWidth: .infinity)
                         
-                        ForEach(self.tmrTaskList.tasksObject.filter({ !$0.isDone })) { task in
+                        // 완료되지 않은 태스크 우선 표시
+                        ForEach(self.tmrTaskList.tasksObject.filter({ !$0.isDone && $0.isFixed })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
-                                TaskItemView(userColor: userColor, taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
-                                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                        Button {
-                                            // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
-                                            selectedTask.selectedTask = task
-                                            isDeleteActionVisible.toggle()
-                                        } label: {
-                                            Label("Delete", systemImage: "trash.circle")
-                                        }
-                                        .tint(userColor.userColorData.selectedColor.mainColor.toColor())
-                                    }
+                                getItemView(task)
                             }
                         }
-                        ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone })) { task in
+                        ForEach(self.tmrTaskList.tasksObject.filter({ !$0.isDone && !$0.isFixed })) { task in
                             // 지워지거나 수정되지 않은 옵션만 표시
                             if !task.isRemove {
-                                TaskItemView(userColor: userColor, taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
-                                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                        Button {
-                                            // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
-                                            selectedTask.selectedTask = task
-                                            isDeleteActionVisible.toggle()
-                                        } label: {
-                                            Label("Delete", systemImage: "trash.circle")
-                                        }
-                                        .tint(userColor.userColorData.selectedColor.mainColor.toColor())
-                                    }
+                                getItemView(task)
+                            }
+                        }
+                        // 이미 완료된 테스크 표시
+                        ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone && $0.isFixed })) { task in
+                            // 지워지거나 수정되지 않은 옵션만 표시
+                            if !task.isRemove {
+                                getItemView(task)
+                            }
+                        }
+                        
+                        ForEach(self.tmrTaskList.tasksObject.filter({ $0.isDone && !$0.isFixed })) { task in
+                            // 지워지거나 수정되지 않은 옵션만 표시
+                            if !task.isRemove {
+                                getItemView(task)
                             }
                         }
                     }
@@ -147,9 +135,40 @@ struct TaskListView: View {
 
         }
     }
+    
+    private func getItemView(_ task: TaskObject) -> some View {
+        TaskItemView(userColor: userColor, taskList: tmrTaskList, task: task, isShowDetailPopup: self.$isShowDetailPopup, selectedTask: $selectedTask)
+            .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                Button {
+                    // 왼쪽으로 스와이프하여 삭제버튼을 볼 수 있다.
+                    selectedTask.selectedTask = task
+                    isDeleteActionVisible.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash.circle")
+                }
+                .tint(userColor.userColorData.selectedColor.mainColor.toColor())
+            }
+            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                Button {
+                    // 왼쪽으로 스와이프하여 고정버튼을 볼 수 있다.
+                    selectedTask.selectedTask = task
+                    setupFixTask()
+//                                        isDeleteActionVisible.toggle()
+                } label: {
+                    Label("FixTask", systemImage: "star.fill")
+                }
+                .tint(userColor.userColorData.selectedColor.todayColor.toColor())
+            }
+    }
+    
 }
 
 private extension TaskListView {
+    
+    private func setupFixTask() {
+        selectedTask.fixSelectTask()
+    }
+    
     var today: Date {
         let now = Date()
         let components = Calendar.current.dateComponents([.year, .month, .day], from: now)

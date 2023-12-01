@@ -40,10 +40,16 @@ struct TaskItemView: View {
                 }
             }
         }
-        Text(self.task.title)
-            .strikethrough(self.task.isDone)
-            .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : colorScheme == .light ? .realBlack : .realWhite )
-//            .fontWeight(self.task.isDone ? .medium : .bold)
+        if task.isFixed {
+            Text(self.task.title)
+                .strikethrough(self.task.isDone)
+                .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : colorScheme == .light ? .realBlack : .realWhite )
+        }else{
+            Text(self.task.title)
+                .strikethrough(self.task.isDone)
+                .foregroundColor(self.task.isDone ? userColor.userColorData.selectedColor.mainColor.toColor() : colorScheme == .light ? .realBlack : .realWhite )
+                .font(.bold(Font.system(size: 13))())
+        }
         Spacer()
         if task.isDone {
           Image(systemName: "checkmark").foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
@@ -60,13 +66,15 @@ struct TaskItemView: View {
     .onTapGesture {
       self.toggleDetail()
     }
-//    .background(self.task.isDone ? Color.lightGray : .white)
   }
+}
 
-  private func toggleDone() {
-      self.taskList.updateIsDone(self.task.id)
-  }
-  
+extension TaskItemView {
+    
+    private func toggleDone() {
+        self.taskList.updateIsDone(self.task.id)
+    }
+    
     private func toggleDetail() {
         guard !self.isShowDetailPopup else { return }
         guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
