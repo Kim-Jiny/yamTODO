@@ -14,8 +14,8 @@ struct MailComposeViewController: UIViewControllerRepresentable {
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.mailComposeDelegate = context.coordinator
         mailComposeVC.setToRecipients(["kjinyz@naver.com"]) // 개발자 이메일 주소 입력
-        mailComposeVC.setSubject("YamTodo 앱 관련 문의") // 이메일 제목 설정
-        mailComposeVC.setMessageBody("앱에 대한 문의 내용을 입력해주세요.", isHTML: false) // 이메일 내용 설정
+        mailComposeVC.setSubject(String(localized: "Send app-related inquiries")) // 이메일 제목 설정
+        mailComposeVC.setMessageBody(String(localized: "Please enter your inquiry about the app."), isHTML: false) // 이메일 내용 설정
 
         return mailComposeVC
     }
