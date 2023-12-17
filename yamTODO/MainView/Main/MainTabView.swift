@@ -5,9 +5,11 @@
 //  Created by Jiny on 2023/10/31.
 //
 import SwiftUI
+
 enum Tabs {
     case home, calendar, gallery, myPage
 }
+
 struct MainTabView: View {
     @ObservedObject var userColor = UserColorObject()
     @State private var selectedTab: Tabs = .home
