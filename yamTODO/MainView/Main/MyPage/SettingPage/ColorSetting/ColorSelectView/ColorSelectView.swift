@@ -66,7 +66,7 @@ struct ColorSelectView: View {
                                 Text("Add")
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
-                                    .foregroundStyle(colorScheme == .light ? Color.yamBlack : Color.yamWhite)
+                                    .foregroundStyle(colorScheme == .light ? Color.realBlack : Color.realWhite)
                                     .padding()
                                     .frame(width: 200, height: 60)
                                     .background(colorScheme == .light ? userColor.userColorData.selectedColor.lightColor.toColor() : userColor.userColorData.selectedColor.darkColor.toColor())
