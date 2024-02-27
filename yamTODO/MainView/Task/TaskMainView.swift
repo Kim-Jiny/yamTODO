@@ -54,8 +54,10 @@ struct TaskMainView: View {
     .navigationViewStyle(StackNavigationViewStyle())
     .onAppear {
         // 뷰가 나타날 때마다 호출됩니다.
-        taskList.date = Date()
-        tmrTaskList.date = tmrTaskList.date
+        if taskList.date != Date().getStartTime() {
+            taskList.date = Date().getStartTime()
+            tmrTaskList.date = Date().getStartTimeForTomorrow()
+        }
     }
     .onChange(of: selectedTab) { newSelectedTab in
         // selectedTab이 변경될 때마다 호출됩니다.

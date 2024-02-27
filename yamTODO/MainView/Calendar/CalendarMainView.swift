@@ -10,22 +10,26 @@ import Combine
 import SwiftUI
 
 class SelectedCalendar: ObservableObject {
-    @Published var selectedDate: Date = Date()
-    @Published var selectedMonth: Date = Date()
+    @Published var selectedDate: Date = Date().getStartTime()
+    @Published var selectedMonth: Date = Date().getStartTime()
 }
 
 struct CalendarMainView: View {
     // 가로모드인지 확인하는 코드
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
+    // scene의 생명주기를 확인하는 코드
+    @Environment(\.scenePhase) private var scenePhase
     // 커스컴 컬러를 위한 구독
     @ObservedObject var userColor: UserColorObject
     // 탭을 변경했을때 열린 페이지를 닫아주기 위함
     @Binding var selectedTab: Tabs
     
-    @ObservedObject var monthDataList = TasksByMonthListModel(date: Date())
-    @StateObject var taskList = TaskList(date: Date())
-    @StateObject var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
+    @StateObject var today = TaskList(date: Date().getStartTime())
+    
+    @ObservedObject var monthDataList = TasksByMonthListModel(date: Date().getStartTime())
+    @StateObject var taskList = TaskList(date: Date().getStartTime())
+    @StateObject var tmrTaskList = TaskList(date: Date().getStartTimeForTomorrow())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
@@ -46,7 +50,6 @@ struct CalendarMainView: View {
         .onAppear {
             // selectedDate가 변경될 때마다 taskList를 업데이트
             taskList.date = selectedCalendar.selectedDate
-            print(taskList.tasksObject)
         }
         .onChange(of: selectedTab) { newSelectedTab in
             // selectedTab이 변경될 때마다 호출됩니다.
@@ -54,6 +57,25 @@ struct CalendarMainView: View {
             if newSelectedTab != .home {
                 isShowEditPopup = false
                 isShowDetailPopup = false
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            switch newPhase {
+            case .active:
+                // 앱이 활성화될 때 수행할 작업
+                print("앱이 활성화되었습니다.")
+                if Date().getStartTime() != today.date {
+                    // 앱이 활성화 되었는데 오늘 날짜가 달라졌으면 캘린더를 새로 부르자
+                    
+                }
+            case .inactive:
+                // 앱이 비활성화될 때 수행할 작업
+                print("앱이 비활성화되었습니다.")
+            case .background:
+                // 앱이 백그라운드로 이동될 때 수행할 작업
+                print("앱이 백그라운드로 이동되었습니다.")
+            @unknown default:
+                break
             }
         }
     }

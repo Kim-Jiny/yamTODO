@@ -163,7 +163,7 @@ struct TaskListView: View {
                 } label: {
                     Label("FixTask", systemImage: "star.fill")
                 }
-                .tint(userColor.userColorData.selectedColor.todayColor.toColor())
+                .tint(task.isFixed ? .yamLightGray : userColor.userColorData.selectedColor.todayColor.toColor())
             }
     }
     

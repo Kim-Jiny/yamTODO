@@ -58,6 +58,8 @@ struct CalendarCellView: View {
                 return .red
             case 0:
                 return .clear
+            case 4:
+                return .blue
             default:
                 return .clear
             }

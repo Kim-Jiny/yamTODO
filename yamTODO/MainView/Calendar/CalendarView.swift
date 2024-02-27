@@ -22,7 +22,7 @@ struct CalendarView: View {
     VStack {
       headerView
       calendarGridView
-            .animation(nil)
+        .animation(nil)
     }
     .gesture(
       DragGesture()
@@ -125,12 +125,12 @@ struct CalendarView: View {
       ForEach(-firstWeekday ..< daysInMonth + visibleDaysOfNextMonth, id: \.self) { index in
         Group {
           if index > -1 && index < daysInMonth {
-            let date = getDate(for: index)
-            let day = Calendar.current.component(.day, from: date)
-            let clicked = selectedDate == date
+              let date = getDate(for: index).getStartTime()
+              let day = Calendar.current.component(.day, from: date)
+              let clicked = selectedDate == date
               let isToday = date.formattedCalendarDayDate == Date.today.formattedCalendarDayDate
               let overToday = date > Date.today
-        
+              
               if let tasksByDate = monthDataList.days.first(where: { $0.key == date.dateKey }) {
                   //지워진 태스크들을 제외하고
                   let taskList = Array(tasksByDate.tasks).filter {
@@ -257,7 +257,7 @@ private extension CalendarView {
   
   /// 이전 월로 이동 가능한지 확인
   func canMoveToPreviousMonth() -> Bool {
-    let currentDate = Date()
+    let currentDate = Date().getStartTime()
     let calendar = Calendar.current
     let targetDate = calendar.date(byAdding: .month, value: -3, to: currentDate) ?? currentDate
     
@@ -269,7 +269,7 @@ private extension CalendarView {
   
   /// 다음 월로 이동 가능한지 확인
   func canMoveToNextMonth() -> Bool {
-    let currentDate = Date()
+    let currentDate = Date().getStartTime()
     let calendar = Calendar.current
     let targetDate = calendar.date(byAdding: .month, value: 3, to: currentDate) ?? currentDate
     
@@ -289,7 +289,7 @@ private extension CalendarView {
     /// 해당 날짜가 포함된 달인지 확인
     func isDateInCurrentMonth(dateToCheck: Date) -> Bool {
         let calendar = Calendar.current
-        let currentDate = Date()
+        let currentDate = Date().getStartTime()
 
         let startOfMonthComponents = calendar.dateComponents([.year, .month], from: currentDate)
         guard let startOfMonth = calendar.date(from: startOfMonthComponents) else { return false }

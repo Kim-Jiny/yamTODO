@@ -184,6 +184,8 @@ class RealmManager {
         do {
             let realm = try Realm() // Realm 객체 생성
             // 이번달 달력 데이터 있으면
+            print(date)
+            print(date.monthKey)
             if let monthObject = getTasksByMonthObject(date: date) {
                 // 해당 날짜에 데이터 있으면
                 if let existingObject = getTasksByDateObject(date: date) {

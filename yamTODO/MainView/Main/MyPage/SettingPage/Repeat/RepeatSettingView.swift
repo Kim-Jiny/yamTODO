@@ -14,7 +14,7 @@ struct RepeatSettingView: View {
     @StateObject var taskList = OptionTaskList()
     @State var isShowDetailPopup: Bool = false
     @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
-    @State var selectedDate = Date()
+//    @State var selectedDate = Date()
     var body: some View {
         ZStack {
             List {

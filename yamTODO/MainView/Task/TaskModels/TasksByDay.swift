@@ -45,7 +45,7 @@ class TaskList: ObservableObject {
     }
     
     func createTask(new: TaskObject) {
-        RealmManager.shared.addTask(date: date, new: new)
+        RealmManager.shared.addTask(date: date.getStartTime(), new: new)
         updateTasks()
         objectWillChange.send(self)
     }
