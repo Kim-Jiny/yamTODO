@@ -18,8 +18,8 @@ struct TaskMainView: View {
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
-    
     @State var isShowTmrEditPopup: Bool = false
+    @State var isDeleteActionVisible: Bool = false
     @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
     
     // Admob 광고 배너
@@ -30,7 +30,7 @@ struct TaskMainView: View {
     NavigationView {
       ZStack {
           VStack {
-              TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowTmrEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask, isShowTomorrow: true)
+              TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowTmrEditPopup, isShowDetailPopup: $isShowDetailPopup, isDeleteActionVisible: $isDeleteActionVisible, selectedTask: $selectedTask, isShowTomorrow: true)
                 .frame(maxWidth: .infinity)
               .navigationBarTitle(Text("TODO 👀"))
               .navigationBarTitleDisplayMode(.inline)
@@ -52,6 +52,12 @@ struct TaskMainView: View {
       }
     }
     .navigationViewStyle(StackNavigationViewStyle())
+    .alert(isPresented: $isDeleteActionVisible) {
+      Alert(title: Text(""), message: Text("Are you sure you want to delete?"), primaryButton: .destructive(Text("Delete")) {
+          // "Delete" 버튼을 눌렀을 때의 동작
+          self.selectedTask.deleteSelectTask()
+      }, secondaryButton: .cancel())
+    }
     .onAppear {
         // 뷰가 나타날 때마다 호출됩니다.
         if taskList.date != Date().getStartTime() {

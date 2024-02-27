@@ -15,7 +15,7 @@ struct TaskListView: View {
     @Binding var isShowEditPopup: Bool
     @Binding var isShowTmrEditPopup: Bool
     @Binding var isShowDetailPopup: Bool
-    @State var isDeleteActionVisible: Bool = false
+    @Binding var isDeleteActionVisible: Bool
     @Binding var selectedTask: SelectedTask
     
     
@@ -104,12 +104,12 @@ struct TaskListView: View {
                         }
                     }
                     .padding(.bottom, 0)
-                    .alert(isPresented: $isDeleteActionVisible) {
-                        Alert(title: Text(""), message: Text("Are you sure you want to delete?"), primaryButton: .destructive(Text("Delete")) {
-                            // "Delete" 버튼을 눌렀을 때의 동작
-                            self.selectedTask.deleteSelectTask()
-                        }, secondaryButton: .cancel())
-                    }
+//                    .alert(isPresented: $isDeleteActionVisible) {
+//                        Alert(title: Text(""), message: Text("Are you sure you want to delete?"), primaryButton: .destructive(Text("Delete")) {
+//                            // "Delete" 버튼을 눌렀을 때의 동작
+//                            self.selectedTask.deleteSelectTask()
+//                        }, secondaryButton: .cancel())
+//                    }
                 }
             }
             .listStyle(SidebarListStyle())

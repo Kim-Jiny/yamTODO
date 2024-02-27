@@ -33,6 +33,7 @@ struct CalendarMainView: View {
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
     @State var isShowDetailPopup: Bool = false
+    @State var isDeleteActionVisible: Bool = false
     @State var selectedTask: SelectedTask = SelectedTask(selectedTask: nil)
 
     var body: some View {
@@ -87,11 +88,17 @@ struct CalendarMainView: View {
                 CalendarView(userColor: userColor, monthDataList: monthDataList, taskList: taskList, selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
                     .navigationBarTitleDisplayMode(.inline)
                 VStack {
-                    TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+                    TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, isDeleteActionVisible: $isDeleteActionVisible, selectedTask: $selectedTask)
                     .environmentObject(taskList)
                 }
             }
             .padding(.top, 30)
+            .alert(isPresented: $isDeleteActionVisible) {
+                Alert(title: Text(""), message: Text("Are you sure you want to delete?"), primaryButton: .destructive(Text("Delete")) {
+                    // "Delete" 버튼을 눌렀을 때의 동작
+                    self.selectedTask.deleteSelectTask()
+                }, secondaryButton: .cancel())
+            }
             
             if isShowEditPopup {
                 EditPopupView(userColor: userColor, selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup)
@@ -113,13 +120,18 @@ struct CalendarMainView: View {
                     CalendarView(userColor: userColor, monthDataList: monthDataList, taskList: taskList, selectedMonth: $selectedCalendar.selectedMonth, selectedDate: $selectedCalendar.selectedDate)
                 }
                 VStack {
-                    TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, selectedTask: $selectedTask)
+                    TaskListView(userColor: userColor, selectedCalendar: selectedCalendar, taskList: taskList, tmrTaskList: tmrTaskList, isShowEditPopup: $isShowEditPopup, isShowTmrEditPopup: $isShowEditPopup, isShowDetailPopup: $isShowDetailPopup, isDeleteActionVisible: $isDeleteActionVisible, selectedTask: $selectedTask)
                     .environmentObject(taskList)
                 }
             }
             .padding(.top, 30)
             .navigationBarTitleDisplayMode(.inline)
-            
+            .alert(isPresented: $isDeleteActionVisible) {
+                Alert(title: Text(""), message: Text("Are you sure you want to delete?"), primaryButton: .destructive(Text("Delete")) {
+                    // "Delete" 버튼을 눌렀을 때의 동작
+                    self.selectedTask.deleteSelectTask()
+                }, secondaryButton: .cancel())
+            }
             if isShowEditPopup {
                 EditPopupView(userColor: userColor, selectedDate: selectedCalendar.selectedDate, isPresented: $isShowEditPopup)
                     .environmentObject(taskList)
