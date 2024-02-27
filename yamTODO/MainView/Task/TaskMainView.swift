@@ -66,6 +66,9 @@ struct TaskMainView: View {
             isShowEditPopup = false
             isShowTmrEditPopup = false
             isShowDetailPopup = false
+        }else {
+            taskList.date = Date().getStartTime()
+            tmrTaskList.date = Date().getStartTimeForTomorrow()
         }
     }
   }
