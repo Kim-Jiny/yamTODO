@@ -42,7 +42,7 @@ struct RepeatDetailPopupView: View {
                 cornerRadius: 0,
                 borderWidth: 0,
                 borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
-                placeholder: String(localized: "If left blank, the task will be deleted.")
+                placeholder: String(localized: "Untitled")
               )
                 .frame(height: taskTitleHeight)
               DetailTextView(
@@ -87,7 +87,7 @@ struct RepeatDetailPopupView: View {
                 }
                 Button(action: {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    if !taskTitle.isEmpty {
+                    if !taskTitle.isEmpty || !taskDesc.isEmpty {
                         isShowChangedAlert.toggle()
                     }else {
                         isShowDeleteAlert.toggle()

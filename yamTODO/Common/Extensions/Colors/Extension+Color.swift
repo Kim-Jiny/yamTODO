@@ -57,6 +57,7 @@ extension Color {
     static let yamBlue = YamColor.yamBlue
     static let yamDarkBlue = YamColor.yamDarkBlue
     static let yamLightGray = YamColor.gray
+    static let yamDarkGray = YamColor.darkGray
     static let yamWhite = YamColor.yamWhite
     static let yamBlack = YamColor.yamBlack
     static let yamRealDarkPoint = YamColor.yamDarkBlue
@@ -69,6 +70,7 @@ extension Color {
         static let white = Color(hex: "#F7F7F7")
         static let black = Color(hex: "#181818")
         static let gray = Color("yamGray")
+        static let darkGray = Color("yamGrayR")
 //        static let gray = Color(hex: "#EDEBF1")
         
         static let yamPurple = Color(hex: "#9487AF")
@@ -91,6 +93,7 @@ extension UIColor {
     static let yamBlue = UIColor(named: "yamBlue")
     static let yamDarkBlue = UIColor(named: "yamDarkBlue")
     static let yamLightGray = UIColor(named: "yamGray")
+    static let yamDarkGray = UIColor(named: "yamGrayR")
     static let yamWhite = UIColor(named: "yamWhite")
     static let yamBlack = UIColor(named: "yamBlack")
     

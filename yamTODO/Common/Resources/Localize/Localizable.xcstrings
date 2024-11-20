@@ -944,58 +944,6 @@
         }
       }
     },
-    "If left blank, the task will be deleted." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wenn die Aufgabe leer bleibt, wird sie gelöscht."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "S'il est laissé en blanc, la tâche sera supprimée."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "空白のままにすると、タスクは削除されます。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "빈 값으로 두면 작업이 삭제됩니다."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se deixar em branco, a tarefa será suprimida."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nếu để trống, nhiệm vụ sẽ bị xóa."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "如果留空，则任务将被删除。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "如果留空，則任務將被刪除。"
-          }
-        }
-      }
-    },
     "If you use the app as a Guest, data will be stored locally. You can log in later." : {
       "localizations" : {
         "de" : {
@@ -1365,49 +1313,55 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bitte geben Sie den Titel des Zeitplans ein."
+            "value" : "Bitte geben Sie eine Aufgabe ein. "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter a task. "
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Veuillez entrer le titre de l'horaire."
+            "value" : "Veuillez entrer une tâche."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "スケジュールのタイトルを入力してください。"
+            "value" : "タスクの内容を入力してください。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "일정의 타이틀을 입력해주세요."
+            "value" : "태스크 내용을 입력하세요."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Por favor, insira o título da programação."
+            "value" : "Por favor, insira uma tarefa. "
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vui lòng nhập tiêu đề của lịch trình."
+            "value" : "Vui lòng nhập nội dung công việc. "
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请输入日程表的标题。"
+            "value" : "请输入任务内容。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請輸入日程表的標題。"
+            "value" : "請輸入任務內容。"
           }
         }
       }
@@ -2399,6 +2353,9 @@
           }
         }
       }
+    },
+    "Untitled" : {
+
     },
     "Would you like to postpone this task to tomorrow?" : {
       "localizations" : {

@@ -40,7 +40,7 @@ struct DetailPopupView: View {
                         cornerRadius: 0,
                         borderWidth: 0,
                         borderColor: UIColor(userColor.userColorData.selectedColor.mainColor.toColor()).cgColor,
-                        placeholder: String(localized: "If left blank, the task will be deleted.")
+                        placeholder: String(localized: "Untitled")
                     )
                     .frame(height: taskTitleHeight)
                     DetailTextView(
@@ -81,7 +81,7 @@ struct DetailPopupView: View {
                         Spacer()
                         
                         Button(action: {
-                            if !taskTitle.isEmpty {
+                            if !taskTitle.isEmpty || !taskDesc.isEmpty {
                                 saveTask()
                             } else {
                                 showDeleteAlert.toggle()

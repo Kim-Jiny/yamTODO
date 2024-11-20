@@ -248,13 +248,6 @@
 			path = Admob;
 			sourceTree = "<group>";
 		};
-		30E4AE992CEC920A00B6C503 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		364FC75C2B0C3B64009AF157 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +320,6 @@
 		36B7C9282ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXGroup;
 			children = (
-				30E4AE992CEC920A00B6C503 /* Frameworks */,
 				30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */,
 				304DC5C42B0E2A4E00E01656 /* Info.plist */,
 				36FBAA792B05A46700FC78AB /* MainView */,

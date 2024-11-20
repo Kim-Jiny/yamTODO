@@ -68,10 +68,10 @@ struct EditPopupView: View {
                             }
                             
                             Button(action: {
-                                if !taskTitle.isEmpty {
-                                    createTask()
-                                }else {
+                                if taskTitle.isEmpty, taskDesc.isEmpty {
                                     isShowEmptyAlert = true
+                                }else {
+                                    createTask()
                                 }
                             }, label: {
                                 Text("Save")
