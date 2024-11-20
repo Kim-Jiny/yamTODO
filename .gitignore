@@ -1,3 +1,6 @@
-*.plist
-Info.plist
-GoogleService-Info.plist
+# CocoaPods
+Pods/
+# CocoaPods 관련 파일
+*.xcworkspace
+!Podfile
+!Podfile.lock
