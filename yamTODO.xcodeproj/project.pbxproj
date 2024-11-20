@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9F5B8916589AF509D5E317 /* Pods_yamTODOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8C1960195E47F4439E9D43 /* Pods_yamTODOTests.framework */; };
 		300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65472B077E7A00DB3684 /* CalendarCellView.swift */; };
 		300E654A2B07A7EB00DB3684 /* TasksByMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65492B07A7EB00DB3684 /* TasksByMonth.swift */; };
 		300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65512B08C59800DB3684 /* TitleTextView.swift */; };
 		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
-		304DC5C12B0E280700E01656 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 304DC5C02B0E280700E01656 /* GoogleMobileAds */; };
 		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
 		304DC5CF2B10E05C00E01656 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */; };
 		30DEDE212B176EC200EC6B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */; };
+		30E4AE762CEC8C6700B6C503 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE752CEC8C6700B6C503 /* FirebaseAnalytics */; };
+		30E4AE782CEC8C6700B6C503 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE772CEC8C6700B6C503 /* FirebaseAppCheck */; };
+		30E4AE7A2CEC8C6700B6C503 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE792CEC8C6700B6C503 /* FirebaseAuth */; };
+		30E4AE7C2CEC8C6700B6C503 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE7B2CEC8C6700B6C503 /* FirebaseCore */; };
+		30E4AE7E2CEC8C6700B6C503 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE7D2CEC8C6700B6C503 /* FirebaseCrashlytics */; };
+		30E4AE802CEC8C6700B6C503 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE7F2CEC8C6700B6C503 /* FirebaseDatabase */; };
+		30E4AE822CEC8C6700B6C503 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE812CEC8C6700B6C503 /* FirebaseMessaging */; };
+		30E4AE842CEC8C6700B6C503 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE832CEC8C6700B6C503 /* FirebaseStorage */; };
+		30E4AE8A2CEC8D5000B6C503 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE892CEC8D5000B6C503 /* GoogleMobileAds */; };
+		34A0ACB39B1EDF09F4B26988 /* Pods_yamTODO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8820A7CA460A4C59DFEF42 /* Pods_yamTODO.framework */; };
 		364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
 		364FC7642B0D9A37009AF157 /* ColorSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7632B0D9A37009AF157 /* ColorSelectView.swift */; };
 		364FC7BB2B0F04A9009AF157 /* ColorSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FC7BA2B0F04A9009AF157 /* ColorSelectCell.swift */; };
@@ -28,7 +38,6 @@
 		369350862AFB05120040AF26 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350852AFB05120040AF26 /* RealmManager.swift */; };
 		369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369350872AFB170E0040AF26 /* DetailPopupView.swift */; };
 		36A909E52AFCB88F00848754 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A909E42AFCB88F00848754 /* Extension+Date.swift */; };
-		36A909E82AFDC4E700848754 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 36A909E72AFDC4E700848754 /* RealmSwift */; };
 		36B7C92A2ADCFCF700F7A140 /* yamTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9292ADCFCF700F7A140 /* yamTODOApp.swift */; };
 		36B7C92C2ADCFCF700F7A140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C92B2ADCFCF700F7A140 /* ContentView.swift */; };
 		36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B7C92D2ADCFCF800F7A140 /* Assets.xcassets */; };
@@ -37,16 +46,6 @@
 		36B7C9452ADCFCF800F7A140 /* yamTODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9442ADCFCF800F7A140 /* yamTODOUITests.swift */; };
 		36B7C9472ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9462ADCFCF800F7A140 /* yamTODOUITestsLaunchTests.swift */; };
 		36B7C9572ADD19C200F7A140 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9562ADD19C200F7A140 /* Task.swift */; };
-		36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */; };
-		36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95D2ADD214900F7A140 /* FirebaseAnalyticsSwift */; };
-		36B7C9602ADD214900F7A140 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C95F2ADD214900F7A140 /* FirebaseAppCheck */; };
-		36B7C9622ADD214900F7A140 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C9612ADD214900F7A140 /* FirebaseAuth */; };
-		36B7C9642ADD214900F7A140 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C9632ADD214900F7A140 /* FirebaseCrashlytics */; };
-		36B7C9662ADD214900F7A140 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C9652ADD214900F7A140 /* FirebaseDatabase */; };
-		36B7C9682ADD214900F7A140 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C9672ADD214900F7A140 /* FirebaseDynamicLinks */; };
-		36B7C96A2ADD214900F7A140 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C9692ADD214900F7A140 /* FirebaseFunctions */; };
-		36B7C96C2ADD214900F7A140 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C96B2ADD214900F7A140 /* FirebaseMessaging */; };
-		36B7C96E2ADD214900F7A140 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 36B7C96D2ADD214900F7A140 /* FirebaseStorage */; };
 		36B7C9702ADD233300F7A140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C96F2ADD233300F7A140 /* AppDelegate.swift */; };
 		36B7C9732ADD25EC00F7A140 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9722ADD25EC00F7A140 /* LoginView.swift */; };
 		36B7C9752ADE18B800F7A140 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9742ADE18B800F7A140 /* CalendarView.swift */; };
@@ -78,6 +77,7 @@
 		36FBAA872B06004000FC78AB /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA862B06004000FC78AB /* RepeatView.swift */; };
 		36FBAA8B2B0717E500FC78AB /* RepeatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */; };
 		36FBAA8D2B07527000FC78AB /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBAA8C2B07527000FC78AB /* MailView.swift */; };
+		E158B064B856D7558849D266 /* Pods_yamTODO_yamTODOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6818C9FD537D6A8BBFC9465E /* Pods_yamTODO_yamTODOUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AFFC2BF5127E5B03BF3510C /* Pods-yamTODO-yamTODOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO-yamTODOUITests.debug.xcconfig"; path = "Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BC391CE3225E47734F24974 /* Pods-yamTODOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODOTests.debug.xcconfig"; path = "Target Support Files/Pods-yamTODOTests/Pods-yamTODOTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F4157274F6ECDE5FEA370DE /* Pods-yamTODO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO.debug.xcconfig"; path = "Target Support Files/Pods-yamTODO/Pods-yamTODO.debug.xcconfig"; sourceTree = "<group>"; };
 		300E65472B077E7A00DB3684 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		300E65492B07A7EB00DB3684 /* TasksByMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByMonth.swift; sourceTree = "<group>"; };
 		300E65512B08C59800DB3684 /* TitleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextView.swift; sourceTree = "<group>"; };
@@ -160,6 +163,12 @@
 		36FBAA862B06004000FC78AB /* RepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
 		36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatItemView.swift; sourceTree = "<group>"; };
 		36FBAA8C2B07527000FC78AB /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		5E061409B812368EA3AD91A6 /* Pods-yamTODOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODOTests.release.xcconfig"; path = "Target Support Files/Pods-yamTODOTests/Pods-yamTODOTests.release.xcconfig"; sourceTree = "<group>"; };
+		6818C9FD537D6A8BBFC9465E /* Pods_yamTODO_yamTODOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODO_yamTODOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79E56F943FB1F8C53AEF032B /* Pods-yamTODO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO.release.xcconfig"; path = "Target Support Files/Pods-yamTODO/Pods-yamTODO.release.xcconfig"; sourceTree = "<group>"; };
+		9E8C1960195E47F4439E9D43 /* Pods_yamTODOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EF5A7602B644897C7AE005B /* Pods-yamTODO-yamTODOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO-yamTODOUITests.release.xcconfig"; path = "Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DA8820A7CA460A4C59DFEF42 /* Pods_yamTODO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,19 +176,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36A909E82AFDC4E700848754 /* RealmSwift in Frameworks */,
-				36B7C96C2ADD214900F7A140 /* FirebaseMessaging in Frameworks */,
-				36B7C9662ADD214900F7A140 /* FirebaseDatabase in Frameworks */,
-				36B7C95E2ADD214900F7A140 /* FirebaseAnalyticsSwift in Frameworks */,
-				36B7C96E2ADD214900F7A140 /* FirebaseStorage in Frameworks */,
-				304DC5C12B0E280700E01656 /* GoogleMobileAds in Frameworks */,
-				36B7C9602ADD214900F7A140 /* FirebaseAppCheck in Frameworks */,
+				30E4AE7A2CEC8C6700B6C503 /* FirebaseAuth in Frameworks */,
+				30E4AE822CEC8C6700B6C503 /* FirebaseMessaging in Frameworks */,
+				30E4AE762CEC8C6700B6C503 /* FirebaseAnalytics in Frameworks */,
+				30E4AE7C2CEC8C6700B6C503 /* FirebaseCore in Frameworks */,
+				30E4AE8A2CEC8D5000B6C503 /* GoogleMobileAds in Frameworks */,
+				30E4AE7E2CEC8C6700B6C503 /* FirebaseCrashlytics in Frameworks */,
+				30E4AE802CEC8C6700B6C503 /* FirebaseDatabase in Frameworks */,
+				30E4AE842CEC8C6700B6C503 /* FirebaseStorage in Frameworks */,
+				30E4AE782CEC8C6700B6C503 /* FirebaseAppCheck in Frameworks */,
 				36EDCF3F2AEF6607004F2483 /* Alamofire in Frameworks */,
-				36B7C96A2ADD214900F7A140 /* FirebaseFunctions in Frameworks */,
-				36B7C9642ADD214900F7A140 /* FirebaseCrashlytics in Frameworks */,
-				36B7C95C2ADD214900F7A140 /* FirebaseAnalytics in Frameworks */,
-				36B7C9682ADD214900F7A140 /* FirebaseDynamicLinks in Frameworks */,
-				36B7C9622ADD214900F7A140 /* FirebaseAuth in Frameworks */,
+				34A0ACB39B1EDF09F4B26988 /* Pods_yamTODO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9F5B8916589AF509D5E317 /* Pods_yamTODOTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,12 +202,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E158B064B856D7558849D266 /* Pods_yamTODO_yamTODOUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0541D78AE5F2520E333984D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F4157274F6ECDE5FEA370DE /* Pods-yamTODO.debug.xcconfig */,
+				79E56F943FB1F8C53AEF032B /* Pods-yamTODO.release.xcconfig */,
+				0AFFC2BF5127E5B03BF3510C /* Pods-yamTODO-yamTODOUITests.debug.xcconfig */,
+				9EF5A7602B644897C7AE005B /* Pods-yamTODO-yamTODOUITests.release.xcconfig */,
+				2BC391CE3225E47734F24974 /* Pods-yamTODOTests.debug.xcconfig */,
+				5E061409B812368EA3AD91A6 /* Pods-yamTODOTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		21C9F5F8B92A988E33DE3A98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA8820A7CA460A4C59DFEF42 /* Pods_yamTODO.framework */,
+				6818C9FD537D6A8BBFC9465E /* Pods_yamTODO_yamTODOUITests.framework */,
+				9E8C1960195E47F4439E9D43 /* Pods_yamTODOTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		300E65462B077E5D00DB3684 /* CalendarCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +246,13 @@
 				304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */,
 			);
 			path = Admob;
+			sourceTree = "<group>";
+		};
+		30E4AE992CEC920A00B6C503 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		364FC75C2B0C3B64009AF157 /* Resources */ = {
@@ -270,6 +309,8 @@
 				36B7C9392ADCFCF800F7A140 /* yamTODOTests */,
 				36B7C9432ADCFCF800F7A140 /* yamTODOUITests */,
 				36B7C9272ADCFCF700F7A140 /* Products */,
+				0541D78AE5F2520E333984D2 /* Pods */,
+				21C9F5F8B92A988E33DE3A98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,6 +327,7 @@
 		36B7C9282ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXGroup;
 			children = (
+				30E4AE992CEC920A00B6C503 /* Frameworks */,
 				30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */,
 				304DC5C42B0E2A4E00E01656 /* Info.plist */,
 				36FBAA792B05A46700FC78AB /* MainView */,
@@ -571,9 +613,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C94A2ADCFCF800F7A140 /* Build configuration list for PBXNativeTarget "yamTODO" */;
 			buildPhases = (
+				8B719D31244A677C5CDF3898 /* [CP] Check Pods Manifest.lock */,
 				36B7C9222ADCFCF700F7A140 /* Sources */,
 				36B7C9232ADCFCF700F7A140 /* Frameworks */,
 				36B7C9242ADCFCF700F7A140 /* Resources */,
+				4447456B0FCC99942F7E3940 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,19 +625,16 @@
 			);
 			name = yamTODO;
 			packageProductDependencies = (
-				36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */,
-				36B7C95D2ADD214900F7A140 /* FirebaseAnalyticsSwift */,
-				36B7C95F2ADD214900F7A140 /* FirebaseAppCheck */,
-				36B7C9612ADD214900F7A140 /* FirebaseAuth */,
-				36B7C9632ADD214900F7A140 /* FirebaseCrashlytics */,
-				36B7C9652ADD214900F7A140 /* FirebaseDatabase */,
-				36B7C9672ADD214900F7A140 /* FirebaseDynamicLinks */,
-				36B7C9692ADD214900F7A140 /* FirebaseFunctions */,
-				36B7C96B2ADD214900F7A140 /* FirebaseMessaging */,
-				36B7C96D2ADD214900F7A140 /* FirebaseStorage */,
 				36EDCF3E2AEF6607004F2483 /* Alamofire */,
-				36A909E72AFDC4E700848754 /* RealmSwift */,
-				304DC5C02B0E280700E01656 /* GoogleMobileAds */,
+				30E4AE752CEC8C6700B6C503 /* FirebaseAnalytics */,
+				30E4AE772CEC8C6700B6C503 /* FirebaseAppCheck */,
+				30E4AE792CEC8C6700B6C503 /* FirebaseAuth */,
+				30E4AE7B2CEC8C6700B6C503 /* FirebaseCore */,
+				30E4AE7D2CEC8C6700B6C503 /* FirebaseCrashlytics */,
+				30E4AE7F2CEC8C6700B6C503 /* FirebaseDatabase */,
+				30E4AE812CEC8C6700B6C503 /* FirebaseMessaging */,
+				30E4AE832CEC8C6700B6C503 /* FirebaseStorage */,
+				30E4AE892CEC8D5000B6C503 /* GoogleMobileAds */,
 			);
 			productName = yamTODO;
 			productReference = 36B7C9262ADCFCF700F7A140 /* yamTODO.app */;
@@ -603,6 +644,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C94D2ADCFCF800F7A140 /* Build configuration list for PBXNativeTarget "yamTODOTests" */;
 			buildPhases = (
+				28EE5E311F2BAE5CA0EF5216 /* [CP] Check Pods Manifest.lock */,
 				36B7C9322ADCFCF800F7A140 /* Sources */,
 				36B7C9332ADCFCF800F7A140 /* Frameworks */,
 				36B7C9342ADCFCF800F7A140 /* Resources */,
@@ -621,9 +663,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C9502ADCFCF800F7A140 /* Build configuration list for PBXNativeTarget "yamTODOUITests" */;
 			buildPhases = (
+				8B5EBB0834B441A621BE3068 /* [CP] Check Pods Manifest.lock */,
 				36B7C93C2ADCFCF800F7A140 /* Sources */,
 				36B7C93D2ADCFCF800F7A140 /* Frameworks */,
 				36B7C93E2ADCFCF800F7A140 /* Resources */,
+				87C85E1D4653FAEA21B6A22D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,10 +720,9 @@
 			);
 			mainGroup = 36B7C91D2ADCFCF700F7A140;
 			packageReferences = (
-				36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				304DC5BF2B0E280700E01656 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				30E4AE882CEC8D5000B6C503 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 36B7C9272ADCFCF700F7A140 /* Products */;
 			projectDirPath = "";
@@ -720,6 +763,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28EE5E311F2BAE5CA0EF5216 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yamTODOTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4447456B0FCC99942F7E3940 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yamTODO/Pods-yamTODO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yamTODO/Pods-yamTODO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-yamTODO/Pods-yamTODO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87C85E1D4653FAEA21B6A22D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B5EBB0834B441A621BE3068 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yamTODO-yamTODOUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B719D31244A677C5CDF3898 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yamTODO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36B7C9222ADCFCF700F7A140 /* Sources */ = {
@@ -928,6 +1074,7 @@
 		};
 		36B7C94B2ADCFCF800F7A140 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F4157274F6ECDE5FEA370DE /* Pods-yamTODO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -961,6 +1108,7 @@
 		};
 		36B7C94C2ADCFCF800F7A140 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E56F943FB1F8C53AEF032B /* Pods-yamTODO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -994,6 +1142,7 @@
 		};
 		36B7C94E2ADCFCF800F7A140 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC391CE3225E47734F24974 /* Pods-yamTODOTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1014,6 +1163,7 @@
 		};
 		36B7C94F2ADCFCF800F7A140 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E061409B812368EA3AD91A6 /* Pods-yamTODOTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1034,6 +1184,7 @@
 		};
 		36B7C9512ADCFCF800F7A140 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AFFC2BF5127E5B03BF3510C /* Pods-yamTODO-yamTODOUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1052,6 +1203,7 @@
 		};
 		36B7C9522ADCFCF800F7A140 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EF5A7602B644897C7AE005B /* Pods-yamTODO-yamTODOUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1110,100 +1262,77 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		304DC5BF2B0E280700E01656 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.13.0;
-			};
-		};
-		36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.44.0;
-			};
-		};
-		36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 11.5.0;
+			};
+		};
+		30E4AE882CEC8D5000B6C503 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
 			};
 		};
 		36EDCF3D2AEF6606004F2483 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		304DC5C02B0E280700E01656 /* GoogleMobileAds */ = {
+		30E4AE752CEC8C6700B6C503 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 304DC5BF2B0E280700E01656 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
-		36A909E72AFDC4E700848754 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36A909E62AFDC4E700848754 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		36B7C95B2ADD214900F7A140 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		36B7C95D2ADD214900F7A140 /* FirebaseAnalyticsSwift */ = {
+		30E4AE772CEC8C6700B6C503 /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		36B7C95F2ADD214900F7A140 /* FirebaseAppCheck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
 		};
-		36B7C9612ADD214900F7A140 /* FirebaseAuth */ = {
+		30E4AE792CEC8C6700B6C503 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		36B7C9632ADD214900F7A140 /* FirebaseCrashlytics */ = {
+		30E4AE7B2CEC8C6700B6C503 /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		30E4AE7D2CEC8C6700B6C503 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		36B7C9652ADD214900F7A140 /* FirebaseDatabase */ = {
+		30E4AE7F2CEC8C6700B6C503 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		36B7C9672ADD214900F7A140 /* FirebaseDynamicLinks */ = {
+		30E4AE812CEC8C6700B6C503 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDynamicLinks;
-		};
-		36B7C9692ADD214900F7A140 /* FirebaseFunctions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFunctions;
-		};
-		36B7C96B2ADD214900F7A140 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		36B7C96D2ADD214900F7A140 /* FirebaseStorage */ = {
+		30E4AE832CEC8C6700B6C503 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B7C95A2ADD214900F7A140 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 30E4AE742CEC8C6700B6C503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		30E4AE892CEC8D5000B6C503 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30E4AE882CEC8D5000B6C503 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 		36EDCF3E2AEF6607004F2483 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
