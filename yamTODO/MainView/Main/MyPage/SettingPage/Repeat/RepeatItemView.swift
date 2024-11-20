@@ -10,47 +10,58 @@ import SwiftUI
 
 struct RepeatItemView: View {
     @ObservedObject var userColor: UserColorObject
-  @EnvironmentObject var taskList: OptionTaskList
-
-  let task: TaskObject
-  @Binding var isShowDetailPopup: Bool
-  @Binding var selectedTask: SelectedTask
-
-  var body: some View {
-    return VStack {
-        HStack {
-            ForEach(task.optionType.sorted(), id: \.self) { repeatType in
-                ZStack {
-                    Circle()
-                        .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
-                        .frame(width: 30, height: 30)
-                    repeatType.getRepeatType().displayText
-                        .foregroundColor(.realWhite)
+    @EnvironmentObject var taskList: OptionTaskList
+    
+    let task: TaskObject
+    @Binding var isShowDetailPopup: Bool
+    @Binding var selectedTask: SelectedTask
+    
+    var body: some View {
+        return VStack {
+            HStack {
+                ForEach(task.optionType.sorted(), id: \.self) { repeatType in
+                    ZStack {
+                        Circle()
+                            .foregroundColor(userColor.userColorData.selectedColor.mainColor.toColor())
+                            .frame(width: 30, height: 30)
+                        repeatType.getRepeatType().displayText
+                            .foregroundColor(.realWhite)
+                    }
+                }
+                Spacer()
+            }
+            VStack {
+                HStack {
+                    Text(self.task.title)
+                        .fontWeight(.bold)
+                        .font(.headline)
+                    Spacer()
+                }
+                HStack {
+                    Text(self.task.desc)
+                        .foregroundColor(.yamDarkGray)
+                        .font(self.task.title.isEmpty ? .subheadline : .caption)
+                    Spacer()
                 }
             }
-            Spacer()
-        }
-        HStack {
-            Text(self.task.title)
-            Spacer()
-        }
-        .onTapGesture {
-          self.toggleDetail()
+            .onTapGesture {
+                self.toggleDetail()
+            }
         }
     }
-  }
-  
-  private func toggleDetail() {
-    guard !self.isShowDetailPopup else { return }
-    guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
-    self.selectedTask = SelectedTask(selectedTask: task)
-    self.isShowDetailPopup = true
-  }
-
-  private func delete() {
-    self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })
-    if self.taskList.tasksObject.isEmpty {
-      self.isShowDetailPopup = false
+    
+    private func toggleDetail() {
+        guard !self.isShowDetailPopup else { return }
+        guard let task = self.taskList.tasksObject.first(where: {$0.id == self.task.id }) else { return }
+        self.selectedTask = SelectedTask(selectedTask: task)
+        self.isShowDetailPopup = true
     }
-  }
+    
+    private func delete() {
+        self.taskList.tasksObject.removeAll(where: { $0.id == self.task.id })
+        if self.taskList.tasksObject.isEmpty {
+            self.isShowDetailPopup = false
+        }
+    }
+    
 }

@@ -17,7 +17,7 @@ struct TaskItemView: View {
 
     var body: some View {
         return HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 0) {
                 
                 if !self.task.title.isEmpty {
                     HStack (spacing: 0) {
@@ -31,6 +31,9 @@ struct TaskItemView: View {
                                     .font(.system(size: 10))
                                     .fontWeight(.bold)
                             }
+                            Rectangle()
+                                .fill(Color.clear)
+                                .frame(width: 5)
                         } else {
                             if task.rootId != "" {
                                 HStack (spacing: 0) {
@@ -40,6 +43,9 @@ struct TaskItemView: View {
                                         .resizable()
                                         .foregroundColor(getMarkerColor(self.task.isDone, self.task.isFixed))
                                         .frame(width: 20, height: 20)
+                                    Rectangle()
+                                        .fill(Color.clear)
+                                        .frame(width: 5)
                                 }
                             }
                         }
@@ -63,10 +69,62 @@ struct TaskItemView: View {
 //                }
                 // Description 표시
                 if !self.task.desc.isEmpty {
-                    Text(task.desc)
-                        .strikethrough(self.task.isDone)
-                        .foregroundColor(getDescTextColor(self.task.isDone))
-                        .font(self.task.title.isEmpty ? .subheadline : .caption)
+                    HStack (spacing: 0) {
+                        if self.task.title.isEmpty {
+                            if task.isDelay != 0 {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(getMarkerColor(self.task.isDone, self.task.isFixed))
+                                        .frame(width: 20, height: 20)
+                                    Text("+\(task.isDelay)")
+                                        .foregroundColor(.realBlack)
+                                        .font(.system(size: 10))
+                                        .fontWeight(.bold)
+                                }
+                                Rectangle()
+                                    .fill(Color.clear)
+                                    .frame(width: 5)
+                            } else {
+                                if task.rootId != "" {
+                                    HStack (spacing: 0) {
+                                        Text("")
+                                            .frame(maxWidth: 0)
+                                        Image(systemName: "repeat.circle.fill")
+                                            .resizable()
+                                            .foregroundColor(getMarkerColor(self.task.isDone, self.task.isFixed))
+                                            .frame(width: 20, height: 20)
+                                        Rectangle()
+                                            .fill(Color.clear)
+                                            .frame(width: 5)
+                                    }
+                                }
+                            }
+                            Text(task.desc)
+                                .strikethrough(self.task.isDone)
+                                .foregroundColor(getDescTextColor(self.task.isDone))
+                                .font(self.task.title.isEmpty ? .subheadline : .caption)
+                        }else {
+                            if task.rootId != "" || task.isDelay != 0 {
+                                HStack (spacing: 0) {
+                                    Text("")
+                                        .frame(maxWidth: 0)
+                                    Rectangle()
+                                        .fill(Color.clear)
+                                        .frame(width: 25)
+                                    
+                                    Text(task.desc)
+                                        .strikethrough(self.task.isDone)
+                                        .foregroundColor(getDescTextColor(self.task.isDone))
+                                        .font(self.task.title.isEmpty ? .subheadline : .caption)
+                                }
+                            }else {
+                                Text(task.desc)
+                                    .strikethrough(self.task.isDone)
+                                    .foregroundColor(getDescTextColor(self.task.isDone))
+                                    .font(self.task.title.isEmpty ? .subheadline : .caption)
+                            }
+                        }
+                    }
                 }
             }
             Spacer()
