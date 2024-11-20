@@ -12,8 +12,8 @@ import Combine
 class TasksByMonthObject: Object {
     @Persisted(primaryKey: true) var key: String
     @Persisted var days = List<TasksByDateObject>()
-  
-  convenience init(key: String, tasks: [TasksByDateObject]) {
+    
+    convenience init(key: String, tasks: [TasksByDateObject]) {
         self.init()
         self.key = key
         self.days.append(objectsIn: tasks)
@@ -29,7 +29,7 @@ class TasksByMonthListModel: ObservableObject {
         }
     }
     @Published var days: [TasksByDateObject] = []
-  
+    
     init(date: Date) {
         self.date = date
         updateTasks()
@@ -39,7 +39,7 @@ class TasksByMonthListModel: ObservableObject {
         self.date = date
         self.days = days
     }
-        
+    
     func updateTasks() {
         self.days = RealmManager.shared.getMonthData(date: date).days
     }

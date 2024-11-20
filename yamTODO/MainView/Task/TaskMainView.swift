@@ -12,8 +12,9 @@ import GoogleMobileAds
 struct TaskMainView: View {
     @ObservedObject var userColor: UserColorObject
     @Binding var selectedTab: Tabs
+    @ObservedObject var taskList: TaskList
     
-    @StateObject var taskList = TaskList(date: Date())
+//    @StateObject var taskList = TaskList(date: Date())
     @StateObject var tmrTaskList = TaskList(date:Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date())
     @StateObject var selectedCalendar = SelectedCalendar()
     @State var isShowEditPopup: Bool = false
@@ -65,6 +66,9 @@ struct TaskMainView: View {
             tmrTaskList.date = Date().getStartTimeForTomorrow()
         }
     }
+    .onChange(of: taskList.date) { _ in
+        refreshTaskLists()
+    }
     .onChange(of: selectedTab) { newSelectedTab in
         // selectedTab이 변경될 때마다 호출됩니다.
         // isShowEditPopup을 false로 설정합니다.
@@ -78,4 +82,8 @@ struct TaskMainView: View {
         }
     }
   }
+    
+    private func refreshTaskLists() {
+        tmrTaskList.date = Date().getStartTimeForTomorrow()
+    }
 }
