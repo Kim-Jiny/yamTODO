@@ -17,4 +17,7 @@ pod 'RealmSwift'
     # Pods for testing
   end
 
+  target 'YamWidgetExtension' do
+    # Pods for testing
+  end
 end

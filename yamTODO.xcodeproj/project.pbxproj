@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B5C7A398186645D1C748DC /* Pods_yamTODO_YamWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3161EF3E5E03E53167B7CB /* Pods_yamTODO_YamWidgetExtension.framework */; };
 		0D9F5B8916589AF509D5E317 /* Pods_yamTODOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8C1960195E47F4439E9D43 /* Pods_yamTODOTests.framework */; };
+		30001A562CEEFD8100B3C2A4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30001A552CEEFD8100B3C2A4 /* WidgetKit.framework */; };
+		30001A582CEEFD8100B3C2A4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30001A572CEEFD8100B3C2A4 /* SwiftUI.framework */; };
+		30001A5B2CEEFD8100B3C2A4 /* YamWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30001A5A2CEEFD8100B3C2A4 /* YamWidgetBundle.swift */; };
+		30001A5D2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30001A5C2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift */; };
+		30001A5F2CEEFD8100B3C2A4 /* YamWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30001A5E2CEEFD8100B3C2A4 /* YamWidget.swift */; };
+		30001A612CEEFD8100B3C2A4 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30001A602CEEFD8100B3C2A4 /* AppIntent.swift */; };
+		30001A632CEEFD8200B3C2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30001A622CEEFD8200B3C2A4 /* Assets.xcassets */; };
+		30001A672CEEFD8200B3C2A4 /* YamWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 30001A542CEEFD8100B3C2A4 /* YamWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65472B077E7A00DB3684 /* CalendarCellView.swift */; };
 		300E654A2B07A7EB00DB3684 /* TasksByMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65492B07A7EB00DB3684 /* TasksByMonth.swift */; };
 		300E65522B08C59800DB3684 /* TitleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65512B08C59800DB3684 /* TitleTextView.swift */; };
@@ -15,6 +24,10 @@
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
 		304DC5CF2B10E05C00E01656 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */; };
+		30A52DF72CEF285800724934 /* RealmManagerForWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */; };
+		30A52DF92CEF28D400724934 /* TasksByDateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF82CEF28D400724934 /* TasksByDateObject.swift */; };
+		30A52DFA2CEF28E200724934 /* TasksByDateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF82CEF28D400724934 /* TasksByDateObject.swift */; };
+		30A52DFB2CEF293200724934 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A909E42AFCB88F00848754 /* Extension+Date.swift */; };
 		30DEDE212B176EC200EC6B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */; };
 		30E4AE762CEC8C6700B6C503 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE752CEC8C6700B6C503 /* FirebaseAnalytics */; };
 		30E4AE782CEC8C6700B6C503 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE772CEC8C6700B6C503 /* FirebaseAppCheck */; };
@@ -81,6 +94,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		30001A652CEEFD8200B3C2A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36B7C91E2ADCFCF700F7A140 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30001A532CEEFD8100B3C2A4;
+			remoteInfo = YamWidgetExtension;
+		};
 		36B7C9372ADCFCF800F7A140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36B7C91E2ADCFCF700F7A140 /* Project object */;
@@ -97,10 +117,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		30001A6B2CEEFD8200B3C2A4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				30001A672CEEFD8200B3C2A4 /* YamWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0AFFC2BF5127E5B03BF3510C /* Pods-yamTODO-yamTODOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO-yamTODOUITests.debug.xcconfig"; path = "Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BC391CE3225E47734F24974 /* Pods-yamTODOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODOTests.debug.xcconfig"; path = "Target Support Files/Pods-yamTODOTests/Pods-yamTODOTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F4157274F6ECDE5FEA370DE /* Pods-yamTODO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO.debug.xcconfig"; path = "Target Support Files/Pods-yamTODO/Pods-yamTODO.debug.xcconfig"; sourceTree = "<group>"; };
+		30001A4F2CEEFCA600B3C2A4 /* yamTODO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = yamTODO.entitlements; sourceTree = "<group>"; };
+		30001A542CEEFD8100B3C2A4 /* YamWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YamWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		30001A552CEEFD8100B3C2A4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		30001A572CEEFD8100B3C2A4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		30001A5A2CEEFD8100B3C2A4 /* YamWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamWidgetBundle.swift; sourceTree = "<group>"; };
+		30001A5C2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		30001A5E2CEEFD8100B3C2A4 /* YamWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamWidget.swift; sourceTree = "<group>"; };
+		30001A602CEEFD8100B3C2A4 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		30001A622CEEFD8200B3C2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30001A642CEEFD8200B3C2A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30001A6C2CEEFD9B00B3C2A4 /* YamWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YamWidgetExtension.entitlements; sourceTree = "<group>"; };
 		300E65472B077E7A00DB3684 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		300E65492B07A7EB00DB3684 /* TasksByMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByMonth.swift; sourceTree = "<group>"; };
 		300E65512B08C59800DB3684 /* TitleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextView.swift; sourceTree = "<group>"; };
@@ -109,6 +154,8 @@
 		304DC5C42B0E2A4E00E01656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerForWidget.swift; sourceTree = "<group>"; };
+		30A52DF82CEF28D400724934 /* TasksByDateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateObject.swift; sourceTree = "<group>"; };
 		30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		364FC7632B0D9A37009AF157 /* ColorSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectView.swift; sourceTree = "<group>"; };
@@ -163,15 +210,28 @@
 		36FBAA862B06004000FC78AB /* RepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
 		36FBAA8A2B0717E500FC78AB /* RepeatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatItemView.swift; sourceTree = "<group>"; };
 		36FBAA8C2B07527000FC78AB /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		49B6CA3C42B3ACEF52B30D01 /* Pods-yamTODO-YamWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO-YamWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-yamTODO-YamWidgetExtension/Pods-yamTODO-YamWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		5E061409B812368EA3AD91A6 /* Pods-yamTODOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODOTests.release.xcconfig"; path = "Target Support Files/Pods-yamTODOTests/Pods-yamTODOTests.release.xcconfig"; sourceTree = "<group>"; };
 		6818C9FD537D6A8BBFC9465E /* Pods_yamTODO_yamTODOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODO_yamTODOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E56F943FB1F8C53AEF032B /* Pods-yamTODO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO.release.xcconfig"; path = "Target Support Files/Pods-yamTODO/Pods-yamTODO.release.xcconfig"; sourceTree = "<group>"; };
+		9D3161EF3E5E03E53167B7CB /* Pods_yamTODO_YamWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODO_YamWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8C1960195E47F4439E9D43 /* Pods_yamTODOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF5A7602B644897C7AE005B /* Pods-yamTODO-yamTODOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO-yamTODOUITests.release.xcconfig"; path = "Target Support Files/Pods-yamTODO-yamTODOUITests/Pods-yamTODO-yamTODOUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA8820A7CA460A4C59DFEF42 /* Pods_yamTODO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yamTODO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA059A365998D40C3C82E49D /* Pods-yamTODO-YamWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yamTODO-YamWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-yamTODO-YamWidgetExtension/Pods-yamTODO-YamWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		30001A512CEEFD8100B3C2A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30001A582CEEFD8100B3C2A4 /* SwiftUI.framework in Frameworks */,
+				30001A562CEEFD8100B3C2A4 /* WidgetKit.framework in Frameworks */,
+				01B5C7A398186645D1C748DC /* Pods_yamTODO_YamWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36B7C9232ADCFCF700F7A140 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +278,8 @@
 				9EF5A7602B644897C7AE005B /* Pods-yamTODO-yamTODOUITests.release.xcconfig */,
 				2BC391CE3225E47734F24974 /* Pods-yamTODOTests.debug.xcconfig */,
 				5E061409B812368EA3AD91A6 /* Pods-yamTODOTests.release.xcconfig */,
+				EA059A365998D40C3C82E49D /* Pods-yamTODO-YamWidgetExtension.debug.xcconfig */,
+				49B6CA3C42B3ACEF52B30D01 /* Pods-yamTODO-YamWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -228,8 +290,25 @@
 				DA8820A7CA460A4C59DFEF42 /* Pods_yamTODO.framework */,
 				6818C9FD537D6A8BBFC9465E /* Pods_yamTODO_yamTODOUITests.framework */,
 				9E8C1960195E47F4439E9D43 /* Pods_yamTODOTests.framework */,
+				30001A552CEEFD8100B3C2A4 /* WidgetKit.framework */,
+				30001A572CEEFD8100B3C2A4 /* SwiftUI.framework */,
+				9D3161EF3E5E03E53167B7CB /* Pods_yamTODO_YamWidgetExtension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30001A592CEEFD8100B3C2A4 /* YamWidget */ = {
+			isa = PBXGroup;
+			children = (
+				30001A5A2CEEFD8100B3C2A4 /* YamWidgetBundle.swift */,
+				30001A5C2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift */,
+				30001A5E2CEEFD8100B3C2A4 /* YamWidget.swift */,
+				30001A602CEEFD8100B3C2A4 /* AppIntent.swift */,
+				30001A622CEEFD8200B3C2A4 /* Assets.xcassets */,
+				30001A642CEEFD8200B3C2A4 /* Info.plist */,
+				30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */,
+			);
+			path = YamWidget;
 			sourceTree = "<group>";
 		};
 		300E65462B077E5D00DB3684 /* CalendarCell */ = {
@@ -298,9 +377,11 @@
 		36B7C91D2ADCFCF700F7A140 = {
 			isa = PBXGroup;
 			children = (
+				30001A6C2CEEFD9B00B3C2A4 /* YamWidgetExtension.entitlements */,
 				36B7C9282ADCFCF700F7A140 /* yamTODO */,
 				36B7C9392ADCFCF800F7A140 /* yamTODOTests */,
 				36B7C9432ADCFCF800F7A140 /* yamTODOUITests */,
+				30001A592CEEFD8100B3C2A4 /* YamWidget */,
 				36B7C9272ADCFCF700F7A140 /* Products */,
 				0541D78AE5F2520E333984D2 /* Pods */,
 				21C9F5F8B92A988E33DE3A98 /* Frameworks */,
@@ -313,6 +394,7 @@
 				36B7C9262ADCFCF700F7A140 /* yamTODO.app */,
 				36B7C9362ADCFCF800F7A140 /* yamTODOTests.xctest */,
 				36B7C9402ADCFCF800F7A140 /* yamTODOUITests.xctest */,
+				30001A542CEEFD8100B3C2A4 /* YamWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +402,7 @@
 		36B7C9282ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXGroup;
 			children = (
+				30001A4F2CEEFCA600B3C2A4 /* yamTODO.entitlements */,
 				30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */,
 				304DC5C42B0E2A4E00E01656 /* Info.plist */,
 				36FBAA792B05A46700FC78AB /* MainView */,
@@ -516,6 +599,7 @@
 				36B7C9562ADD19C200F7A140 /* Task.swift */,
 				3693507E2AF8B6500040AF26 /* TasksByDay.swift */,
 				300E65492B07A7EB00DB3684 /* TasksByMonth.swift */,
+				30A52DF82CEF28D400724934 /* TasksByDateObject.swift */,
 			);
 			path = TaskModels;
 			sourceTree = "<group>";
@@ -601,6 +685,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		30001A532CEEFD8100B3C2A4 /* YamWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30001A682CEEFD8200B3C2A4 /* Build configuration list for PBXNativeTarget "YamWidgetExtension" */;
+			buildPhases = (
+				750FE9BB625F2F9F0F2A5E14 /* [CP] Check Pods Manifest.lock */,
+				30001A502CEEFD8100B3C2A4 /* Sources */,
+				30001A512CEEFD8100B3C2A4 /* Frameworks */,
+				30001A522CEEFD8100B3C2A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YamWidgetExtension;
+			productName = YamWidgetExtension;
+			productReference = 30001A542CEEFD8100B3C2A4 /* YamWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		36B7C9252ADCFCF700F7A140 /* yamTODO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B7C94A2ADCFCF800F7A140 /* Build configuration list for PBXNativeTarget "yamTODO" */;
@@ -610,10 +712,12 @@
 				36B7C9232ADCFCF700F7A140 /* Frameworks */,
 				36B7C9242ADCFCF700F7A140 /* Resources */,
 				4447456B0FCC99942F7E3940 /* [CP] Embed Pods Frameworks */,
+				30001A6B2CEEFD8200B3C2A4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				30001A662CEEFD8200B3C2A4 /* PBXTargetDependency */,
 			);
 			name = yamTODO;
 			packageProductDependencies = (
@@ -678,9 +782,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					30001A532CEEFD8100B3C2A4 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					36B7C9252ADCFCF700F7A140 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -723,11 +830,20 @@
 				36B7C9252ADCFCF700F7A140 /* yamTODO */,
 				36B7C9352ADCFCF800F7A140 /* yamTODOTests */,
 				36B7C93F2ADCFCF800F7A140 /* yamTODOUITests */,
+				30001A532CEEFD8100B3C2A4 /* YamWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		30001A522CEEFD8100B3C2A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30001A632CEEFD8200B3C2A4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36B7C9242ADCFCF700F7A140 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -796,6 +912,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-yamTODO/Pods-yamTODO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		750FE9BB625F2F9F0F2A5E14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-yamTODO-YamWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		87C85E1D4653FAEA21B6A22D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -860,6 +998,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		30001A502CEEFD8100B3C2A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30A52DF72CEF285800724934 /* RealmManagerForWidget.swift in Sources */,
+				30001A5F2CEEFD8100B3C2A4 /* YamWidget.swift in Sources */,
+				30A52DFB2CEF293200724934 /* Extension+Date.swift in Sources */,
+				30001A612CEEFD8100B3C2A4 /* AppIntent.swift in Sources */,
+				30001A5D2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift in Sources */,
+				30A52DFA2CEF28E200724934 /* TasksByDateObject.swift in Sources */,
+				30001A5B2CEEFD8100B3C2A4 /* YamWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36B7C9222ADCFCF700F7A140 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -913,6 +1065,7 @@
 				36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */,
 				300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */,
 				364FC7C42B0F2C77009AF157 /* TriangleView.swift in Sources */,
+				30A52DF92CEF28D400724934 /* TasksByDateObject.swift in Sources */,
 				36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -937,6 +1090,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		30001A662CEEFD8200B3C2A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30001A532CEEFD8100B3C2A4 /* YamWidgetExtension */;
+			targetProxy = 30001A652CEEFD8200B3C2A4 /* PBXContainerItemProxy */;
+		};
 		36B7C9382ADCFCF800F7A140 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 36B7C9252ADCFCF700F7A140 /* yamTODO */;
@@ -950,6 +1108,75 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		30001A692CEEFD8200B3C2A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA059A365998D40C3C82E49D /* Pods-yamTODO-YamWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = YamWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HW9XJ9J5M2;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YamWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YamWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2.YamWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30001A6A2CEEFD8200B3C2A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B6CA3C42B3ACEF52B30D01 /* Pods-yamTODO-YamWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = YamWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HW9XJ9J5M2;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YamWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YamWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swift.vs.swiftUI.yamTODO2.YamWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		36B7C9482ADCFCF800F7A140 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1068,8 +1295,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F4157274F6ECDE5FEA370DE /* Pods-yamTODO.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = yamTODO/yamTODO.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
@@ -1102,8 +1331,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79E56F943FB1F8C53AEF032B /* Pods-yamTODO.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = yamTODO/yamTODO.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"yamTODO/Preview Content\"";
@@ -1215,6 +1446,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		30001A682CEEFD8200B3C2A4 /* Build configuration list for PBXNativeTarget "YamWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30001A692CEEFD8200B3C2A4 /* Debug */,
+				30001A6A2CEEFD8200B3C2A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		36B7C9212ADCFCF700F7A140 /* Build configuration list for PBXProject "yamTODO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

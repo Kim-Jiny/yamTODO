@@ -9,17 +9,6 @@ import Foundation
 import RealmSwift
 import Combine
 
-class TasksByDateObject: Object {
-    @Persisted(primaryKey: true) var key: String
-    @Persisted var tasks = List<TaskObject>()
-  
-  convenience init(key: String, tasks: [TaskObject]) {
-        self.init()
-        self.key = key
-        self.tasks.append(objectsIn: tasks)
-    }
-}
-
 class TaskList: ObservableObject {
     let objectWillChange = PassthroughSubject<TaskList, Never>()
     @Published var tasksObject: [TaskObject] = []
@@ -79,18 +68,3 @@ class OptionTaskList: ObservableObject {
     
 }
 
-
-class TasksListModel {
-    var key: String
-    var tasks: [TaskObject]
-  
-   init(key: String, tasks: [TaskObject]) {
-        self.key = key
-        self.tasks = tasks
-    }
-    
-    func getTasksListModel(_ object: TasksByDateObject) {
-        self.key = object.key
-        self.tasks = Array(object.tasks)
-    }
-}
