@@ -47,30 +47,20 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct YamWidgetEntryView : View {
+    @Environment(\.widgetFamily) var widgetFamily // 위젯 크기를 확인하는 환경 변수
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            HStack {
-                // 앱 로고
-                Image("YamIcon")  // 앱 로고 이미지를 넣으세요.
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                Text("TODO List")
-                    .font(.subheadline)
-            }
-            .padding(.top, 5)
+        switch widgetFamily {
+        case .systemSmall:
+            SmallWidgetView(entry: entry)
+        case .systemMedium:
+            MediumWidgetView(entry: entry)
+        case .systemLarge:
+            LargeWidgetView(entry: entry)
             
-//            Text("Time:")
-//            Text(entry.date, style: .time)
-            
-            // Tasks 리스트 표시 (List 대신 ForEach 사용)
-            VStack {
-                ForEach(entry.tasksListModel.tasks, id: \.id) { task in
-                    Text(task.title) // `task.title`을 사용하여 작업 표시
-                }
-            }
+        default:
+            MediumWidgetView(entry: entry)
         }
     }
 }
