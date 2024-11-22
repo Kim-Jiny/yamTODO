@@ -61,7 +61,7 @@ class RealmManagerForWidget {
                     let combinedTasks = (tasks?.tasks.map { $0 } ?? []) + filteredTasks
                     
                     // 제거되지 않은 최종 태스크
-                    let returnTasks = combinedTasks.filter { !$0.isRemove }
+                    let returnTasks = combinedTasks.filter { !$0.isRemove && !$0.isDone }
                     
                     // 모델 생성
                     let tasksListModel = TasksListModel(key: date.dateKey, tasks: returnTasks)

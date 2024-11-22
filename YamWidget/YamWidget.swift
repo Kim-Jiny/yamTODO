@@ -62,8 +62,8 @@ struct YamWidgetEntryView : View {
             }
             .padding(.top, 5)
             
-            Text("Time:")
-            Text(entry.date, style: .time)
+//            Text("Time:")
+//            Text(entry.date, style: .time)
             
             // Tasks 리스트 표시 (List 대신 ForEach 사용)
             VStack {
