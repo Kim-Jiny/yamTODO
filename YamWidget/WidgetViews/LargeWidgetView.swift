@@ -22,25 +22,28 @@ struct LargeWidgetView: View {
                     // 월, 연도 (작은 글씨)
                     Text(getMonthYearText(for: entry.date))
                         .font(.caption)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.primaryText)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     // 날짜 (큰 글씨)
                     Text(getDateText(for: entry.date))
                         .font(.system(size: 36, weight: .bold))
+                        .foregroundColor(.softWhite) // 큰 글씨는 흰색
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Spacer()  // 여백을 추가하여 날짜를 상단에 배치
+                        .background(Color.clear)
                 }
                 .frame(maxHeight: .infinity) // 날짜 영역 상단 정렬
                 .frame(width: 80, alignment: .top)
+                .background(Color.clear)
                 
                 // 우측: 오늘 할 일
                 VStack(alignment: .leading, spacing: 2) {
                     if todayTasksToDisplay.isEmpty {
                         Text("No tasks today!")
                             .font(.caption2)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.softBackground)
                     } else {
                         ForEach(todayTasksToDisplay, id: \.id) { task in
                             HStack {
@@ -52,11 +55,12 @@ struct LargeWidgetView: View {
                                     .font(.caption2)
                                     .lineLimit(1)
                                     .truncationMode(.tail)
+                                    .foregroundColor(.softWhite) // 텍스트 색상 흰색
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                         }
                     }
-                    Spacer()  // 여백을 추가하여 할일를 상단에 배치
+                    Spacer()  // 여백을 추가하여 할일을 상단에 배치
                 }
                 .frame(maxWidth: .infinity, alignment: .top) // 할 일 목록을 상단 정렬
             }
@@ -69,12 +73,13 @@ struct LargeWidgetView: View {
                         // 월, 연도 (작은 글씨)
                         Text(getMonthYearText(for: Calendar.current.date(byAdding: .day, value: 1, to: entry.date)!))
                             .font(.caption)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.primaryText)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         // 날짜 (큰 글씨)
                         Text(getDateText(for: Calendar.current.date(byAdding: .day, value: 1, to: entry.date)!))
                             .font(.system(size: 36, weight: .bold))
+                            .foregroundColor(.softWhite) // 큰 글씨는 흰색
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Spacer()  // 여백을 추가하여 날짜를 상단에 배치
@@ -86,7 +91,7 @@ struct LargeWidgetView: View {
                         if tomorrowTasksToDisplay.isEmpty {
                             Text("No tasks tomorrow!")
                                 .font(.caption2)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.primaryText)
                         } else {
                             ForEach(tomorrowTasksToDisplay, id: \.id) { task in
                                 HStack {
@@ -98,11 +103,12 @@ struct LargeWidgetView: View {
                                         .font(.caption2)
                                         .lineLimit(1)
                                         .truncationMode(.tail)
+                                        .foregroundColor(.softWhite) // 텍스트 색상 흰색
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                 }
                             }
                         }
-                        Spacer()  // 여백을 추가하여 할일를 상단에 배치
+                        Spacer()  // 여백을 추가하여 할일을 상단에 배치
                     }
                     .frame(maxWidth: .infinity, alignment: .top) // 내일 할 일 목록도 상단 정렬
                 }

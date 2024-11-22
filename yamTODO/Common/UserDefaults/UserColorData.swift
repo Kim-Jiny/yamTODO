@@ -67,3 +67,55 @@ final class UserColorObject: ObservableObject {
         }
     }
 }
+
+
+extension Color {
+    // 다크모드 지원 컬러
+    static let yamLightGreen = YamColor.yamGreen
+    static let yamSky = YamColor.yamLightBlue
+    static let yamBlue = YamColor.yamBlue
+    static let yamDarkBlue = YamColor.yamDarkBlue
+    static let yamLightGray = YamColor.gray
+    static let yamDarkGray = YamColor.darkGray
+    static let yamWhite = YamColor.yamWhite
+    static let yamBlack = YamColor.yamBlack
+    static let yamRealDarkPoint = YamColor.yamDarkBlue
+    
+    // 불변 컬러
+    static let realWhite = YamColor.white
+    static let realBlack = YamColor.black
+    
+    private struct YamColor {
+        static let white = Color(hex: "#F7F7F7")
+        static let black = Color(hex: "#181818")
+        static let gray = Color("yamGray")
+        static let darkGray = Color("yamGrayR")
+//        static let gray = Color(hex: "#EDEBF1")
+        
+        static let yamPurple = Color(hex: "#9487AF")
+        static let yamDarkPurple = Color(hex: "#352656")
+        static let yamLightPurple = Color(hex: "#B7AFCA")
+        
+        static let yamBlue = Color(hex: "#3CA0C7")
+        static let yamDarkBlue = Color(hex: "#246077")
+        static let yamLightBlue = Color(hex: "#D8ECF3")
+        
+        static let yamGreen = Color(hex: "#3CC7A9")
+        static let yamWhite = Color("yamWhite")
+        static let yamBlack = Color("yamBlack")
+    }
+}
+
+extension UIColor {
+    static let yamLightGreen = UIColor(named: "yamLightGreen")
+    static let yamSky = UIColor(named: "yamSky")
+    static let yamBlue = UIColor(named: "yamBlue")
+    static let yamDarkBlue = UIColor(named: "yamDarkBlue")
+    static let yamLightGray = UIColor(named: "yamGray")
+    static let yamDarkGray = UIColor(named: "yamGrayR")
+    static let yamWhite = UIColor(named: "yamWhite")
+    static let yamBlack = UIColor(named: "yamBlack")
+    
+    static let yamRealDarkPoint = UIColor(named: "yamRealDarkPoint")
+    static let realWhite = UIColor(named: "realWhite")
+}

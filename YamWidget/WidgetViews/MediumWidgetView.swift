@@ -13,6 +13,7 @@ struct MediumWidgetView: View {
                         .scaledToFit()
                         .frame(width: 16, height: 16)
                     Text("Today's To-Do")
+                        .foregroundColor(.softWhite) // 텍스트 색상 흰색
                         .font(.footnote)
                         .bold()
                         .lineLimit(1)
@@ -26,7 +27,7 @@ struct MediumWidgetView: View {
                 if sortedTasks.isEmpty {
                     Text("No tasks today!")
                         .font(.caption2)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.softWhite) // 텍스트 색상 흰색
                 } else {
                     ForEach(sortedTasks.prefix(5), id: \.id) { task in
                         HStack {
@@ -41,6 +42,7 @@ struct MediumWidgetView: View {
                                     .fontWeight(.bold) // 볼드체 적용
                                     .lineLimit(1)
                                     .truncationMode(.tail)
+                                    .foregroundColor(.softWhite) // 텍스트 색상 흰색
 //                                    .frame(maxHeight: .none) // 추가: 세로 중앙 정렬
 //                                    .frame(maxWidth: .infinity, alignment: .leading) // 추가: 수평 정렬
                             } else {
@@ -48,6 +50,7 @@ struct MediumWidgetView: View {
                                     .font(.caption2)
                                     .lineLimit(1)
                                     .truncationMode(.tail)
+                                    .foregroundColor(.softWhite) // 텍스트 색상 흰색
 //                                    .frame(maxWidth: .infinity, alignment: .leading) // 추가: 수평 정렬
                             }
                         }
@@ -62,6 +65,7 @@ struct MediumWidgetView: View {
                     .font(.footnote)
                     .bold()
                     .frame(maxWidth: .infinity)
+                    .foregroundColor(.softWhite) // 텍스트 색상 흰색
                 
                 CalendarView(currentDate: entry.date)
             }
@@ -89,7 +93,7 @@ struct CalendarView: View {
                 ForEach(calendar.veryShortWeekdaySymbols.indices, id: \.self) { index in
                     Text(calendar.veryShortWeekdaySymbols[index])
                         .font(.caption2)
-                        .foregroundColor(index == 0 ? .red : (index == 6 ? .blue : .primary)) // 일요일은 빨간색, 토요일은 파란색으로 표시
+                        .foregroundColor(index == 0 ? .red : (index == 6 ? .blue : Color.softWhite)) // 일요일은 빨간색, 토요일은 파란색으로 표시
                         .frame(maxWidth: .infinity)
                 }
             }
@@ -105,7 +109,7 @@ struct CalendarView: View {
                             let day = row[index]
                             Text(day == 0 ? "" : "\(day)")
                                 .font(.system(size: 11))
-                                .foregroundColor((index == 0 && day != calendar.component(.day, from: currentDate)) ? .red : (index == 6 && day != calendar.component(.day, from: currentDate) ? .blue : .primary)) // 일요일은 빨간색, 토요일은 파란색으로 표시
+                                .foregroundColor((index == 0 && day != calendar.component(.day, from: currentDate)) ? .red : (index == 6 && day != calendar.component(.day, from: currentDate) ? .blue : Color.softWhite)) // 일요일은 빨간색, 토요일은 파란색으로 표시
                                 .frame(maxWidth: .infinity, maxHeight: 18)
                                 .padding(2)
                                 .background(day == calendar.component(.day, from: currentDate) ? ( index == 0 ? Color.red.opacity(0.4) : index == 6 ? Color.blue.opacity(0.4) : Color.green.opacity(0.4)) : Color.clear)

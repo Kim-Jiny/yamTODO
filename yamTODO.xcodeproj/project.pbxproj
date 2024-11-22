@@ -31,6 +31,8 @@
 		30A52E032CF02A7C00724934 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DFF2CF02A1400724934 /* MediumWidgetView.swift */; };
 		30A52E042CF02A8000724934 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DFD2CF02A0A00724934 /* SmallWidgetView.swift */; };
 		30A52E052CF02A8300724934 /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E012CF02A1D00724934 /* LargeWidgetView.swift */; };
+		30A52E0B2CF05D0600724934 /* Extension+Color+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E092CF05D0300724934 /* Extension+Color+Widget.swift */; };
+		30A52E0C2CF05ED300724934 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9852ADE26C000F7A140 /* Extension+Color.swift */; };
 		30DEDE212B176EC200EC6B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */; };
 		30E4AE762CEC8C6700B6C503 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE752CEC8C6700B6C503 /* FirebaseAnalytics */; };
 		30E4AE782CEC8C6700B6C503 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE772CEC8C6700B6C503 /* FirebaseAppCheck */; };
@@ -162,6 +164,7 @@
 		30A52DFD2CF02A0A00724934 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		30A52DFF2CF02A1400724934 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 		30A52E012CF02A1D00724934 /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
+		30A52E092CF05D0300724934 /* Extension+Color+Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color+Widget.swift"; sourceTree = "<group>"; };
 		30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		364FC7602B0C3C63009AF157 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		364FC7632B0D9A37009AF157 /* ColorSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectView.swift; sourceTree = "<group>"; };
@@ -306,6 +309,7 @@
 		30001A592CEEFD8100B3C2A4 /* YamWidget */ = {
 			isa = PBXGroup;
 			children = (
+				30A52E082CF05CD800724934 /* Extensions */,
 				30A52DFC2CF029F200724934 /* WidgetViews */,
 				30001A5A2CEEFD8100B3C2A4 /* YamWidgetBundle.swift */,
 				30001A5C2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift */,
@@ -342,6 +346,14 @@
 				30A52E012CF02A1D00724934 /* LargeWidgetView.swift */,
 			);
 			path = WidgetViews;
+			sourceTree = "<group>";
+		};
+		30A52E082CF05CD800724934 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30A52E092CF05D0300724934 /* Extension+Color+Widget.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		364FC75C2B0C3B64009AF157 /* Resources */ = {
@@ -1023,8 +1035,10 @@
 				30A52E042CF02A8000724934 /* SmallWidgetView.swift in Sources */,
 				30A52E032CF02A7C00724934 /* MediumWidgetView.swift in Sources */,
 				30001A5F2CEEFD8100B3C2A4 /* YamWidget.swift in Sources */,
+				30A52E0B2CF05D0600724934 /* Extension+Color+Widget.swift in Sources */,
 				30A52E052CF02A8300724934 /* LargeWidgetView.swift in Sources */,
 				30A52DFB2CEF293200724934 /* Extension+Date.swift in Sources */,
+				30A52E0C2CF05ED300724934 /* Extension+Color.swift in Sources */,
 				30001A612CEEFD8100B3C2A4 /* AppIntent.swift in Sources */,
 				30001A5D2CEEFD8100B3C2A4 /* YamWidgetLiveActivity.swift in Sources */,
 				30A52DFA2CEF28E200724934 /* TasksByDateObject.swift in Sources */,

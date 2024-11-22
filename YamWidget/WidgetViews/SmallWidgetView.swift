@@ -19,6 +19,7 @@ struct SmallWidgetView: View {
                     .scaledToFit()
                     .frame(width: 16, height: 16)
                 Text("Today's To-Do")
+                    .foregroundColor(.softWhite) // 텍스트 색상 흰색
                     .font(.footnote)
                     .bold()
                     .lineLimit(1)
@@ -32,7 +33,7 @@ struct SmallWidgetView: View {
             if sortedTasks.isEmpty {
                 Text("No tasks today!")
                     .font(.caption2)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.softWhite) // 텍스트 색상 흰색
             } else {
                 ForEach(sortedTasks.prefix(5), id: \.id) { task in
                     HStack {
@@ -47,11 +48,13 @@ struct SmallWidgetView: View {
                                 .fontWeight(.bold) // 볼드체 적용
                                 .lineLimit(1)
                                 .truncationMode(.tail)
+                                .foregroundColor(.softWhite) // 텍스트 색상 흰색
                         } else {
                             Text(task.title.isEmpty ? task.desc : task.title)
                                 .font(.caption2)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
+                                .foregroundColor(.softWhite) // 텍스트 색상 흰색
                         }
                     }
                 }

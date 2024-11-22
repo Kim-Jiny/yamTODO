@@ -51,15 +51,22 @@ struct YamWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        switch widgetFamily {
-        case .systemSmall:
-            SmallWidgetView(entry: entry)
-        case .systemMedium:
-            MediumWidgetView(entry: entry)
-        case .systemLarge:
-            LargeWidgetView(entry: entry)
-        default:
-            MediumWidgetView(entry: entry)
+        ZStack {
+            Color(Color.softBlack)
+            switch widgetFamily {
+            case .systemSmall:
+                SmallWidgetView(entry: entry)
+                    .padding(16)
+            case .systemMedium:
+                MediumWidgetView(entry: entry)
+                    .padding(16)
+            case .systemLarge:
+                LargeWidgetView(entry: entry)
+                    .padding(16)
+            default:
+                MediumWidgetView(entry: entry)
+                    .padding(16)
+            }
         }
     }
 }
@@ -72,5 +79,7 @@ struct YamWidget: Widget {
             YamWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .contentMarginsDisabled()
+        .containerBackgroundRemovable(false)
     }
 }
