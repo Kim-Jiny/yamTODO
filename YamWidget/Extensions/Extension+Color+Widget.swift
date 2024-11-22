@@ -7,6 +7,7 @@
 import SwiftUI
 
 extension Color {
+    static let soBlack = Color(hex: "#222222")
     // 부드러운 검정색
     static let softBlack = Color(hex: "#333333")
     
@@ -17,7 +18,10 @@ extension Color {
     static let softBackground = Color(hex: "#FAFAFA")
     
     // 텍스트 색상 (부드러운 회색)
-    static let primaryText = Color(hex: "#555555")
+    static let backgroundGray = Color(hex: "#444444")
+    
+    // 텍스트 색상 (부드러운 회색)
+    static let primaryText = Color(hex: "#777777")
     
     // 버튼 색상 (부드러운 파란색)
     static let primaryButton = Color(hex: "5A9BFC")

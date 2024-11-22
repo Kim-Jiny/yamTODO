@@ -43,15 +43,12 @@ struct MediumWidgetView: View {
                                     .lineLimit(1)
                                     .truncationMode(.tail)
                                     .foregroundColor(.softWhite) // 텍스트 색상 흰색
-//                                    .frame(maxHeight: .none) // 추가: 세로 중앙 정렬
-//                                    .frame(maxWidth: .infinity, alignment: .leading) // 추가: 수평 정렬
                             } else {
                                 Text(task.title.isEmpty ? task.desc : task.title)
                                     .font(.caption2)
                                     .lineLimit(1)
                                     .truncationMode(.tail)
                                     .foregroundColor(.softWhite) // 텍스트 색상 흰색
-//                                    .frame(maxWidth: .infinity, alignment: .leading) // 추가: 수평 정렬
                             }
                         }
                     }
@@ -77,7 +74,7 @@ struct MediumWidgetView: View {
 
     private func getMonthYearText(for date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
+        formatter.dateFormat = "MM yyyy"
         return formatter.string(from: date)
     }
 }
@@ -93,6 +90,7 @@ struct CalendarView: View {
                 ForEach(calendar.veryShortWeekdaySymbols.indices, id: \.self) { index in
                     Text(calendar.veryShortWeekdaySymbols[index])
                         .font(.caption2)
+                        .fontWeight(.bold)
                         .foregroundColor(index == 0 ? .red : (index == 6 ? .blue : Color.softWhite)) // 일요일은 빨간색, 토요일은 파란색으로 표시
                         .frame(maxWidth: .infinity)
                 }
@@ -119,8 +117,13 @@ struct CalendarView: View {
                 }
             }
         }
-        .background(Color.gray.opacity(0.05))
-        .cornerRadius(4)
+        .background(Color.soBlack)
+        .cornerRadius(10)
+//        .border(Color.backgroundGray, width: 2)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.backgroundGray, lineWidth: 2) // 테두리 스타일
+        )
     }
     
     private func generateDaysInMonth(for date: Date) -> [Int] {
