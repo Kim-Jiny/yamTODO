@@ -57,6 +57,10 @@ struct CalendarMainView: View {
                 isShowDetailPopup = false
             }
         }
+        .onChange(of: today.date) { newValue in
+            selectedCalendar.selectedDate = today.date.getStartTime()
+            selectedCalendar.selectedMonth = today.date.getStartTime()
+        }
         
     }
     

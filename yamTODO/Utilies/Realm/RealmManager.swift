@@ -372,7 +372,7 @@ class RealmManager {
             return TasksByMonthListModel(date: date, days: [])
         }
         do {
-            let realm = try Realm()
+            let realm = try Realm(configuration: config)
             // 그달의 task를 꺼냄
             let monthData = realm.object(ofType: TasksByMonthObject.self, forPrimaryKey: date.monthKey)
             

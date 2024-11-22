@@ -130,7 +130,7 @@ struct CalendarView: View {
                         let day = Calendar.current.component(.day, from: date)
                         let clicked = selectedDate == date
                         let isToday = date.formattedCalendarDayDate == today.date.formattedCalendarDayDate
-                        let overToday = date > Date.today
+                        let overToday = date > today.date
                         
                         if let tasksByDate = monthDataList.days.first(where: { $0.key == date.dateKey }) {
                             //지워진 태스크들을 제외하고

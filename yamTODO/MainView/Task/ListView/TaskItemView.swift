@@ -101,7 +101,7 @@ struct TaskItemView: View {
                             }
                             Text(task.desc)
                                 .strikethrough(self.task.isDone)
-                                .foregroundColor(getDescTextColor(self.task.isDone))
+                                .foregroundColor(getDescTextColor(isDone: self.task.isDone, isFixed: self.task.isFixed, titleEmpty: task.title.isEmpty))
                                 .font(self.task.title.isEmpty ? .subheadline : .caption)
                         }else {
                             if task.rootId != "" || task.isDelay != 0 {
@@ -114,13 +114,13 @@ struct TaskItemView: View {
                                     
                                     Text(task.desc)
                                         .strikethrough(self.task.isDone)
-                                        .foregroundColor(getDescTextColor(self.task.isDone))
+                                        .foregroundColor(getDescTextColor(isDone: self.task.isDone, isFixed: self.task.isFixed, titleEmpty: task.title.isEmpty))
                                         .font(self.task.title.isEmpty ? .subheadline : .caption)
                                 }
                             }else {
                                 Text(task.desc)
                                     .strikethrough(self.task.isDone)
-                                    .foregroundColor(getDescTextColor(self.task.isDone))
+                                    .foregroundColor(getDescTextColor(isDone: self.task.isDone, isFixed: self.task.isFixed, titleEmpty: task.title.isEmpty))
                                     .font(self.task.title.isEmpty ? .subheadline : .caption)
                             }
                         }
@@ -172,11 +172,15 @@ extension TaskItemView {
         }
     }
     
-    private func getDescTextColor(_ isDone: Bool) -> Color {
+    private func getDescTextColor(isDone: Bool, isFixed: Bool, titleEmpty: Bool) -> Color {
         if isDone {
             return .yamLightGray
         } else {
-            return .yamDarkGray
+            if titleEmpty, isFixed {
+                return userColor.userColorData.selectedColor.mainColor.toColor()
+            }else {
+                return .yamDarkGray
+            }
         }
     }
 
