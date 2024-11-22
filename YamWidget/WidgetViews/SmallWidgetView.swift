@@ -9,15 +9,57 @@ import SwiftUI
 
 struct SmallWidgetView: View {
     let entry: SimpleEntry
-
+    
     var body: some View {
-        VStack {
-            Text("Small Widget")
-                .font(.headline)
-            Text(entry.date, style: .time)
+        // 좌측: To-Do 리스트
+        VStack(alignment: .leading, spacing: 2) {
+            HStack {
+                Image("YamIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 16, height: 16)
+                Text("Today's To-Do")
+                    .font(.footnote)
+                    .bold()
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+            }
+            .padding(.bottom, 2)
+            
+            // `isFixed`가 true인 항목을 우선 표시
+            let sortedTasks = entry.tasksListModel.tasks.sorted { $0.isFixed && !$1.isFixed }
+            
+            if sortedTasks.isEmpty {
+                Text("No tasks today!")
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+            } else {
+                ForEach(sortedTasks.prefix(5), id: \.id) { task in
+                    HStack {
+                        Image("YamIcon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 8, height: 8)
+                        if task.isFixed {
+                            // `isFixed`가 true일 때 볼드체 적용
+                            Text(task.title.isEmpty ? task.desc : task.title)
+                                .font(.caption2)
+                                .fontWeight(.bold) // 볼드체 적용
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        } else {
+                            Text(task.title.isEmpty ? task.desc : task.title)
+                                .font(.caption2)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
+                    }
+                }
+            }
         }
-        .padding()
-        .background(Color.blue)
-        .cornerRadius(10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.leading, 4)
+        
     }
+    
 }

@@ -6,13 +6,13 @@ struct MediumWidgetView: View {
     var body: some View {
         HStack(spacing: 8) {
             // 좌측: To-Do 리스트
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 2) {
                 HStack {
                     Image("YamIcon")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 16, height: 16)
-                    Text("TODO List")
+                    Text("Today's To-Do")
                         .font(.footnote)
                         .bold()
                         .lineLimit(1)
@@ -29,24 +29,32 @@ struct MediumWidgetView: View {
                         .foregroundColor(.gray)
                 } else {
                     ForEach(sortedTasks.prefix(5), id: \.id) { task in
-                        if task.isFixed {
-                            // `isFixed`가 true일 때 볼드체 적용
-                            Text(task.title.isEmpty ? task.desc : task.title)
-                                .font(.caption2)
-                                .fontWeight(.bold) // 볼드체 적용
-                                .lineLimit(1)
-                                .truncationMode(.tail)
-                        } else {
-                            Text(task.title.isEmpty ? task.desc : task.title)
-                                .font(.caption2)
-                                .lineLimit(1)
-                                .truncationMode(.tail)
+                        HStack {
+                            Image("YamIcon")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 8, height: 8)
+                            if task.isFixed {
+                                // `isFixed`가 true일 때 볼드체 적용
+                                Text(task.title.isEmpty ? task.desc : task.title)
+                                    .font(.caption2)
+                                    .fontWeight(.bold) // 볼드체 적용
+                                    .lineLimit(1)
+                                    .truncationMode(.tail)
+//                                    .frame(maxHeight: .none) // 추가: 세로 중앙 정렬
+//                                    .frame(maxWidth: .infinity, alignment: .leading) // 추가: 수평 정렬
+                            } else {
+                                Text(task.title.isEmpty ? task.desc : task.title)
+                                    .font(.caption2)
+                                    .lineLimit(1)
+                                    .truncationMode(.tail)
+//                                    .frame(maxWidth: .infinity, alignment: .leading) // 추가: 수평 정렬
+                            }
                         }
                     }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 4)
             
             // 우측: 달력
             VStack {
