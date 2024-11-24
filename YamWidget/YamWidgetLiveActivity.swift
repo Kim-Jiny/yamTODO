@@ -24,7 +24,7 @@ struct YamWidgetLiveActivity: Widget {
         ActivityConfiguration(for: YamWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello \(context.state.emoji)")
+//                Text("Hello \(context.state.emoji)")
             }
             .activityBackgroundTint(Color.cyan)
             .activitySystemActionForegroundColor(Color.black)
@@ -34,23 +34,23 @@ struct YamWidgetLiveActivity: Widget {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+//                    Text("Leading")
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+//                    Text("Trailing")
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
+//                    Text("Bottom \(context.state.emoji)")
                     // more content
                 }
             } compactLeading: {
-                Text("L")
+//                Text("L")
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+//                Text("T \(context.state.emoji)")
             } minimal: {
-                Text(context.state.emoji)
+//                Text(context.state.emoji)
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
+//            .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
         }
     }

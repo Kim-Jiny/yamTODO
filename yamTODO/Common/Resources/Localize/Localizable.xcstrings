@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%lld" : {
+
+    },
     "+%lld" : {
       "localizations" : {
         "de" : {
@@ -944,6 +947,9 @@
         }
       }
     },
+    "I am YamTODO." : {
+
+    },
     "If you use the app as a Guest, data will be stored locally. You can log in later." : {
       "localizations" : {
         "de" : {
@@ -1148,6 +1154,110 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "我的頁面"
+          }
+        }
+      }
+    },
+    "No tasks today!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Aufgaben für heute!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas de tâches aujourd'hui !"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日のタスクはありません！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오늘 할 일이 없습니다!"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem tarefas para hoje!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có công việc nào hôm nay!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有今天的任务！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有今天的任務！"
+          }
+        }
+      }
+    },
+    "No tasks tomorrow!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Aufgaben für morgen!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas de tâches demain !"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "明日のタスクはありません！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내일 할 일이 없습니다!"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem tarefas para amanhã!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có công việc nào ngày mai!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有明天的任务！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有明天的任務！"
           }
         }
       }
@@ -2250,6 +2360,52 @@
         }
       }
     },
+    "Today's To-Do" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heutige Aufgaben"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tâches du jour"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日のやることリスト"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오늘의 할 일"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarefas de hoje"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天的待办事项"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天的待辦事項"
+          }
+        }
+      }
+    },
     "TODO 👀" : {
       "localizations" : {
         "de" : {
@@ -2357,6 +2513,9 @@
     "Untitled" : {
 
     },
+    "Welcome to Yamtodo" : {
+
+    },
     "Would you like to postpone this task to tomorrow?" : {
       "localizations" : {
         "de" : {
@@ -2408,6 +2567,9 @@
           }
         }
       }
+    },
+    "YamTODO" : {
+
     },
     "You can enter a detailed description for the task." : {
       "localizations" : {

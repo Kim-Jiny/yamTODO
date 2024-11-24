@@ -11,7 +11,7 @@ struct LargeWidgetView: View {
         
         // 내일 할 일은 남은 할 일만 표시
         let remainingTasksCount = maxTodayTasks - todayTasksToDisplay.count
-        let tomorrowTasks = entry.tasksListModel.tasks.sorted { $0.isFixed && !$1.isFixed }
+        let tomorrowTasks = entry.tmrTasksListModel.tasks.sorted { $0.isFixed && !$1.isFixed }
         let tomorrowTasksToDisplay = remainingTasksCount > 0 ? tomorrowTasks.prefix(remainingTasksCount) : [] // 오늘 할 일이 14개면 내일 할 일은 안 표시
         
         return VStack(spacing: 0) {
@@ -46,7 +46,7 @@ struct LargeWidgetView: View {
                 // 우측: 오늘 할 일
                 VStack(alignment: .leading, spacing: 2) {
                     if todayTasksToDisplay.isEmpty {
-                        Text("No tasks today!")
+                        Text(String(localized: "No tasks today!"))
                             .font(.headline)
                             .foregroundColor(.primaryText)
                     } else {
@@ -60,7 +60,7 @@ struct LargeWidgetView: View {
                                 if task.isFixed {
                                     // `isFixed`가 true일 때 볼드체 적용
                                     Text(task.title.isEmpty ? task.desc : task.title)
-                                        .font(.caption)
+                                        .font(.system(size: 18))
                                         .fontWeight(.bold) // 볼드체 적용
                                         .lineLimit(1)
                                         .truncationMode(.tail)
@@ -69,7 +69,7 @@ struct LargeWidgetView: View {
 
                                 } else {
                                     Text(task.title.isEmpty ? task.desc : task.title)
-                                        .font(.caption)
+                                        .font(.system(size: 18))
                                         .lineLimit(1)
                                         .truncationMode(.tail)
                                         .foregroundColor(.softWhite) // 텍스트 색상 흰색
@@ -115,7 +115,7 @@ struct LargeWidgetView: View {
                     // 우측: 내일 할 일
                     VStack(alignment: .leading, spacing: 2) {
                         if tomorrowTasksToDisplay.isEmpty {
-                            Text("No tasks tomorrow!")
+                            Text(String(localized: "No tasks tomorrow!"))
                                 .font(.headline)
                                 .foregroundColor(.primaryText)
                         } else {
@@ -129,7 +129,7 @@ struct LargeWidgetView: View {
                                     if task.isFixed {
                                         // `isFixed`가 true일 때 볼드체 적용
                                         Text(task.title.isEmpty ? task.desc : task.title)
-                                            .font(.caption)
+                                            .font(.system(size: 18))
                                             .fontWeight(.bold) // 볼드체 적용
                                             .lineLimit(1)
                                             .truncationMode(.tail)
@@ -138,7 +138,7 @@ struct LargeWidgetView: View {
 
                                     } else {
                                         Text(task.title.isEmpty ? task.desc : task.title)
-                                            .font(.caption)
+                                            .font(.system(size: 18))
                                             .lineLimit(1)
                                             .truncationMode(.tail)
                                             .foregroundColor(.softWhite) // 텍스트 색상 흰색

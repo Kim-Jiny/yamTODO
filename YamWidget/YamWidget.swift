@@ -11,12 +11,14 @@ import SwiftUI
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         let tasksListModel = TasksListModel(key: "Placeholder", tasks: [])
-        return SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), tasksListModel: tasksListModel)
+        let tmrTasksListModel = TasksListModel(key: "Placeholder", tasks: [])
+        return SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), tasksListModel: tasksListModel, tmrTasksListModel: tmrTasksListModel)
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
         let tasksListModel = TasksListModel(key: "Snapshot", tasks: [])
-        return SimpleEntry(date: Date(), configuration: configuration, tasksListModel: tasksListModel)
+        let tmrTasksListModel = TasksListModel(key: "Snapshot", tasks: [])
+        return SimpleEntry(date: Date(), configuration: configuration, tasksListModel: tasksListModel, tmrTasksListModel: tmrTasksListModel)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
@@ -24,17 +26,21 @@ struct Provider: AppIntentTimelineProvider {
 
         // 현재 시간 기준으로 데이터 가져오기
         let currentDate = Date().getStartTime() // 시작 시간 계산
-        let tasksListModel = await RealmManagerForWidget.shared.getTasksByDateListAsync(date: Date().getStartTime())
+        let tmrDate = Date().getStartTimeForTomorrow()
+        
+        let tasksListModel = await RealmManagerForWidget.shared.getTasksByDateListAsync(date: currentDate)
+        
+        let tmrTasksListModel = await RealmManagerForWidget.shared.getTasksByDateListAsync(date: tmrDate)
 
         print(tasksListModel.tasks.count)
         // 생성된 Timeline 항목 추가
         for minuteOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: Date())!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, tasksListModel: tasksListModel)
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, tasksListModel: tasksListModel, tmrTasksListModel: tmrTasksListModel)
             entries.append(entry)
         }
 
-        let nextUpdateDate = currentDate.addingTimeInterval(300)
+        let nextUpdateDate = currentDate.addingTimeInterval(150)
         return Timeline(entries: entries, policy: .after(nextUpdateDate))
     }
 }
@@ -43,6 +49,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationAppIntent
     let tasksListModel: TasksListModel
+    let tmrTasksListModel: TasksListModel
 }
 
 struct YamWidgetEntryView : View {

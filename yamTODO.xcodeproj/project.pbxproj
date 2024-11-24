@@ -33,6 +33,7 @@
 		30A52E052CF02A8300724934 /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E012CF02A1D00724934 /* LargeWidgetView.swift */; };
 		30A52E0B2CF05D0600724934 /* Extension+Color+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52E092CF05D0300724934 /* Extension+Color+Widget.swift */; };
 		30A52E0C2CF05ED300724934 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7C9852ADE26C000F7A140 /* Extension+Color.swift */; };
+		30C44DFD2CF32BCF004EEA79 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 364FC7602B0C3C63009AF157 /* Localizable.xcstrings */; };
 		30DEDE212B176EC200EC6B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30DEDE202B176EC100EC6B3F /* GoogleService-Info.plist */; };
 		30E4AE762CEC8C6700B6C503 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE752CEC8C6700B6C503 /* FirebaseAnalytics */; };
 		30E4AE782CEC8C6700B6C503 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 30E4AE772CEC8C6700B6C503 /* FirebaseAppCheck */; };
@@ -869,6 +870,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C44DFD2CF32BCF004EEA79 /* Localizable.xcstrings in Resources */,
 				30001A632CEEFD8200B3C2A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

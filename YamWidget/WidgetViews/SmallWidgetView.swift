@@ -18,7 +18,7 @@ struct SmallWidgetView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 16, height: 16)
-                Text("Today's To-Do")
+                Text(String(localized: "Today's To-Do"))
                     .foregroundColor(.softWhite) // 텍스트 색상 흰색
                     .font(.footnote)
                     .bold()
@@ -31,7 +31,7 @@ struct SmallWidgetView: View {
             let sortedTasks = entry.tasksListModel.tasks.sorted { $0.isFixed && !$1.isFixed }
             
             if sortedTasks.isEmpty {
-                Text("No tasks today!")
+                Text(String(localized: "No tasks today!"))
                     .font(.caption2)
                     .foregroundColor(.softWhite) // 텍스트 색상 흰색
             } else {
