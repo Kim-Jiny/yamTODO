@@ -34,8 +34,7 @@ struct Provider: AppIntentTimelineProvider {
             entries.append(entry)
         }
 
-        // 타임라인 업데이트 주기를 1시간 후로 설정
-        let nextUpdateDate = currentDate.addingTimeInterval(30) // 1시간 후
+        let nextUpdateDate = currentDate.addingTimeInterval(300)
         return Timeline(entries: entries, policy: .after(nextUpdateDate))
     }
 }

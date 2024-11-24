@@ -12,7 +12,7 @@ enum Tabs {
 
 struct MainTabView: View {
     @ObservedObject var userColor = UserColorObject()
-    @State private var selectedTab: Tabs = .home
+    @Binding var selectedTab: Tabs // 외부에서 상태를 전달받음
     // scene의 생명주기를 확인하는 코드
     @Environment(\.scenePhase) private var scenePhase
     @StateObject var today = TaskList(date: Date().getStartTime())

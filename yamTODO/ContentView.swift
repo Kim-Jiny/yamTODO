@@ -8,25 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var selectedTab: Tabs
+    
     var body: some View {
-      MainTabView()
-//      TaskMainView()
-//      NavigationView {
-//        TaskListView().environmentObject(UserData())
-//        VStack {
-//
-//          //MARK: - For Test
-//          TaskListView().environmentObject(UserData())
-//          LoginView()
-//        }
-//        .padding()
-//          .navigationBarHidden(true)
-//      }
+        MainTabView(selectedTab: $selectedTab)
     }
 }
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
