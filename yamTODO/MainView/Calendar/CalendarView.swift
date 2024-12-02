@@ -45,6 +45,7 @@ struct CalendarView: View {
         .padding(.leading, 30)
         .padding(.trailing, 30)
         .onReceive(taskList.objectWillChange, perform: { _ in
+            print("ddd?")
             monthDataList.date = monthDataList.date
         })
     }

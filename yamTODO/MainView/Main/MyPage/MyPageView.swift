@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 import MessageUI
 import GoogleMobileAds
+import FirebaseFirestore
 
 struct MyPage: View {
     @ObservedObject var userColor: UserColorObject
@@ -108,10 +109,12 @@ private extension MyPage {
     var adSection: some View {
         Section(header: Text("광고").fontWeight(.medium)) {
             admob()
-
+            RewardAdView()
+                .frame(height: 44)
         //      productHeightPicker
         }
     }
+    
     var forDeveloper: some View {
       Section(header: Text("Communication").fontWeight(.medium)) {
           
@@ -133,6 +136,7 @@ private extension MyPage {
         
       }
     }
+    
     
     func scheduleNotification() {
         let content = UNMutableNotificationContent()

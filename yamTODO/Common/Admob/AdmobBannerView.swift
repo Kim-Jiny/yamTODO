@@ -10,7 +10,7 @@ import SwiftUI
 import GoogleMobileAds
 
 enum AdType {
-    case mainBN, subBN, fullSC, test
+    case mainBN, subBN, fullSC, reward, rewardTest, test
     
     var key: String {
         switch self {
@@ -20,6 +20,10 @@ enum AdType {
             return "ca-app-pub-2707874353926722/7553071866"
         case .fullSC:
             return "ca-app-pub-2707874353926722/9615148482"
+        case .reward:
+            return "ca-app-pub-2707874353926722/1983452541"
+        case .rewardTest:
+            return "ca-app-pub-3940256099942544/1712485313"
         case .test:
             return "ca-app-pub-3940256099942544/2934735716"
         }
@@ -38,9 +42,6 @@ struct AdmobBannerView: UIViewControllerRepresentable {
         let view = GADBannerView(adSize: GADAdSizeBanner)
         let viewController = UIViewController()
         view.adUnitID = adType.key
-        // "ca-app-pub-2707874353926722/9147943308" // test Key
-        // 내 키 ca-app-pub-2707874353926722/7553071866
-        // Test Key ca-app-pub-3940256099942544/2934735716
         view.rootViewController = viewController
         viewController.view.addSubview(view)
         viewController.view.frame = CGRect(origin: .zero, size: GADAdSizeBanner.size)

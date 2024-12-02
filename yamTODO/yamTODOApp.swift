@@ -1,6 +1,7 @@
 import SwiftUI
 import GoogleMobileAds
 import AppTrackingTransparency
+import Firebase
 
 @main
 struct yamTODOApp: App {
@@ -10,6 +11,9 @@ struct yamTODOApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(selectedTab: $selectedTab)
+                .onAppear {
+                    generateAndStoreUUID()
+                }
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
                     ATTrackingManager.requestTrackingAuthorization { _ in }
                 }
@@ -39,6 +43,19 @@ struct yamTODOApp: App {
                     selectedTab = .home // 캘린더 탭으로 변경
                 }
             }
+        }
+    }
+    
+    private func generateAndStoreUUID() {
+        let userDefaults = UserDefaults.standard
+        let uuidKey = "userUUID"
+        
+        if userDefaults.string(forKey: uuidKey) == nil {
+            let newUUID = UUID().uuidString
+            userDefaults.set(newUUID, forKey: uuidKey)
+            print("Generated new UUID: \(newUUID)")
+        } else if let storedUUID = userDefaults.string(forKey: uuidKey) {
+            print("Existing UUID: \(storedUUID)")
         }
     }
     
