@@ -125,12 +125,18 @@ private extension MyPage {
                   self.showFailedMailAlert = true
               }
           } label: {
-              Text("Send feedback to the developer (Inquiry)")
+              Text("개발자에게 메일 보내기")
           }
           .sheet(isPresented: $isShowingMailView) {
               MailComposeViewController(isShowing: self.$isShowingMailView)
           }.alert(isPresented: $showFailedMailAlert) {
               Alert(title: Text("Unable to send email"), message: Text("You cannot send emails from this device."), dismissButton: .default(Text("OK")))
+          }
+          .frame(height: 44)
+          
+          
+          NavigationLink(destination: InquiryMainView()) { // InquiryMainView로 이동
+              Text("Send feedback to the developer (Inquiry)")
           }
           .frame(height: 44)
         

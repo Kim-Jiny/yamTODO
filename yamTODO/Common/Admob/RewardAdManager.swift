@@ -35,17 +35,17 @@ final class RewardAdManager: NSObject, ObservableObject {
             print("User earned reward of \(reward.amount) \(reward.type).")
             self?.isRewardGiven = true
             
-            self?.ensureUserExistsAndReward(userId: self?.getUUID() ?? "unknown", by: 1) { error in
+            self?.ensureUserExistsAndReward(userId: self?.getUserId() ?? "unknown", by: 1) { error in
                 if let error = error {
                     print("Error updating coins: \(error.localizedDescription)")
                 } else {
-                    print("User \(self?.getUUID()) rewarded with \(1) coin(s).")
+                    print("User \(self?.getUserId()) rewarded with \(1) coin(s).")
                 }
             }
         }
     }
     
-    private func getUUID() -> String {
+    private func getUserId() -> String {
         let userDefaults = UserDefaults.standard
         let uuidKey = "userUUID"
         

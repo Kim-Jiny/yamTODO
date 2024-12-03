@@ -28,6 +28,7 @@
 		30596AA82CFD8A20005A6701 /* RewardAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AA72CFD8A20005A6701 /* RewardAdView.swift */; };
 		30596AAA2CFD8E5D005A6701 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 30596AA92CFD8E5D005A6701 /* FirebaseFirestore */; };
 		30596AAC2CFD92BD005A6701 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30596AAB2CFD92BD005A6701 /* GoogleService-Info.plist */; };
+		30596AAF2CFDA90B005A6701 /* InquiryMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AAE2CFDA90B005A6701 /* InquiryMainView.swift */; };
 		30A52DF72CEF285800724934 /* RealmManagerForWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */; };
 		30A52DF92CEF28D400724934 /* TasksByDateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF82CEF28D400724934 /* TasksByDateObject.swift */; };
 		30A52DFA2CEF28E200724934 /* TasksByDateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF82CEF28D400724934 /* TasksByDateObject.swift */; };
@@ -166,6 +167,7 @@
 		30596AA52CFD8A0A005A6701 /* RewardAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardAdManager.swift; sourceTree = "<group>"; };
 		30596AA72CFD8A20005A6701 /* RewardAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardAdView.swift; sourceTree = "<group>"; };
 		30596AAB2CFD92BD005A6701 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30596AAE2CFDA90B005A6701 /* InquiryMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryMainView.swift; sourceTree = "<group>"; };
 		30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerForWidget.swift; sourceTree = "<group>"; };
 		30A52DF82CEF28D400724934 /* TasksByDateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateObject.swift; sourceTree = "<group>"; };
 		30A52DFD2CF02A0A00724934 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,14 @@
 				30596AA72CFD8A20005A6701 /* RewardAdView.swift */,
 			);
 			path = Admob;
+			sourceTree = "<group>";
+		};
+		30596AAD2CFDA8F6005A6701 /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+				30596AAE2CFDA90B005A6701 /* InquiryMainView.swift */,
+			);
+			path = Inquiry;
 			sourceTree = "<group>";
 		};
 		30A52DFC2CF029F200724934 /* WidgetViews */ = {
@@ -694,6 +704,7 @@
 		36FBAA7D2B05EFFC00FC78AB /* SettingPage */ = {
 			isa = PBXGroup;
 			children = (
+				30596AAD2CFDA8F6005A6701 /* Inquiry */,
 				364FC7622B0D9A1D009AF157 /* ColorSetting */,
 				36FBAA892B0717CD00FC78AB /* Repeat */,
 			);
@@ -1098,6 +1109,7 @@
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
 				369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */,
 				301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */,
+				30596AAF2CFDA90B005A6701 /* InquiryMainView.swift in Sources */,
 				300E654A2B07A7EB00DB3684 /* TasksByMonth.swift in Sources */,
 				36EDCF412AEF6A0F004F2483 /* NetworkMonitor.swift in Sources */,
 				364FC7BB2B0F04A9009AF157 /* ColorSelectCell.swift in Sources */,

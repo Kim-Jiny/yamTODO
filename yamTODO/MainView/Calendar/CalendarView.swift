@@ -243,7 +243,7 @@ private extension CalendarView {
     /// 월 변경
     func changeMonth(by value: Int) {
         let selectedDate = adjustedMonth(by: value)
-        self.monthDataList.date = selectedDate
+        self.monthDataList.date = selectedDate.getStartTime()
         
         // 이번달로 변경시 오늘 날짜로 선택해줌.
         if isDateInCurrentMonth(dateToCheck: selectedDate) {
