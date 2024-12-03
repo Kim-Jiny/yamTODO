@@ -272,6 +272,17 @@ fileprivate func getAPNSToken() -> String {
         return pushKey
     }
     
+    return getFCMToken()
+}
+
+
+fileprivate func getFCMToken() -> String {
+    let userDefaults = UserDefaults.standard
+    let tokenKey = "fcmToken"
+    if let pushKey = userDefaults.string(forKey: tokenKey) {
+        return pushKey
+    }
+    
     return "unknown"
 }
 
