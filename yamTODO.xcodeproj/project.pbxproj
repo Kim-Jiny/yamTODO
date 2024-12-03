@@ -23,12 +23,12 @@
 		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
-		304DC5CF2B10E05C00E01656 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */; };
 		30596AA62CFD8A0A005A6701 /* RewardAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AA52CFD8A0A005A6701 /* RewardAdManager.swift */; };
 		30596AA82CFD8A20005A6701 /* RewardAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AA72CFD8A20005A6701 /* RewardAdView.swift */; };
 		30596AAA2CFD8E5D005A6701 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 30596AA92CFD8E5D005A6701 /* FirebaseFirestore */; };
 		30596AAC2CFD92BD005A6701 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30596AAB2CFD92BD005A6701 /* GoogleService-Info.plist */; };
 		30596AAF2CFDA90B005A6701 /* InquiryMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AAE2CFDA90B005A6701 /* InquiryMainView.swift */; };
+		30596AB22CFEF616005A6701 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30596AB02CFEF616005A6701 /* InfoPlist.strings */; };
 		30A52DF72CEF285800724934 /* RealmManagerForWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */; };
 		30A52DF92CEF28D400724934 /* TasksByDateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF82CEF28D400724934 /* TasksByDateObject.swift */; };
 		30A52DFA2CEF28E200724934 /* TasksByDateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A52DF82CEF28D400724934 /* TasksByDateObject.swift */; };
@@ -163,11 +163,19 @@
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		304DC5C42B0E2A4E00E01656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
-		304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		30596AA52CFD8A0A005A6701 /* RewardAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardAdManager.swift; sourceTree = "<group>"; };
 		30596AA72CFD8A20005A6701 /* RewardAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardAdView.swift; sourceTree = "<group>"; };
 		30596AAB2CFD92BD005A6701 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30596AAE2CFDA90B005A6701 /* InquiryMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryMainView.swift; sourceTree = "<group>"; };
+		30596AB12CFEF616005A6701 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30596AB32CFEF652005A6701 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		30596AB42CFEF652005A6701 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		30596AB52CFEF652005A6701 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30596AB62CFEF653005A6701 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30596AB72CFEF653005A6701 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30596AB82CFEF653005A6701 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30596AB92CFEF654005A6701 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		30596ABA2CFEF654005A6701 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30A52DF52CEF23C600724934 /* RealmManagerForWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerForWidget.swift; sourceTree = "<group>"; };
 		30A52DF82CEF28D400724934 /* TasksByDateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksByDateObject.swift; sourceTree = "<group>"; };
 		30A52DFD2CF02A0A00724934 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
@@ -388,7 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				364FC7602B0C3C63009AF157 /* Localizable.xcstrings */,
-				304DC5CE2B10E05C00E01656 /* InfoPlist.xcstrings */,
+				30596AB02CFEF616005A6701 /* InfoPlist.strings */,
 			);
 			path = Localize;
 			sourceTree = "<group>";
@@ -900,7 +908,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B7C9312ADCFCF800F7A140 /* Preview Assets.xcassets in Resources */,
-				304DC5CF2B10E05C00E01656 /* InfoPlist.xcstrings in Resources */,
+				30596AB22CFEF616005A6701 /* InfoPlist.strings in Resources */,
 				36B7C92E2ADCFCF800F7A140 /* Assets.xcassets in Resources */,
 				30596AAC2CFD92BD005A6701 /* GoogleService-Info.plist in Resources */,
 				364FC7612B0C3C63009AF157 /* Localizable.xcstrings in Resources */,
@@ -1166,6 +1174,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		30596AB02CFEF616005A6701 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30596AB12CFEF616005A6701 /* en */,
+				30596AB32CFEF652005A6701 /* zh-Hans */,
+				30596AB42CFEF652005A6701 /* zh-Hant */,
+				30596AB52CFEF652005A6701 /* fr */,
+				30596AB62CFEF653005A6701 /* de */,
+				30596AB72CFEF653005A6701 /* ja */,
+				30596AB82CFEF653005A6701 /* ko */,
+				30596AB92CFEF654005A6701 /* pt-PT */,
+				30596ABA2CFEF654005A6701 /* vi */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		30001A692CEEFD8200B3C2A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1365,7 +1392,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yamTODO/Info.plist;
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Collect information about your advertising activities to provide personalized advertising.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "${NSUserTrackingUsageDescription}";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1401,7 +1428,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yamTODO/Info.plist;
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Collect information about your advertising activities to provide personalized advertising.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "${NSUserTrackingUsageDescription}";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  yamTODO
+
+  Created by 김미진 on 12/3/24.
+  
+*/
+"CFBundleName" = "yamTODO";
+"NSUserTrackingUsageDescription" = "個人に最適化された広告を提供するために、ユーザーの広告活動情報を収集します。";
+"UNUserNotificationCenter" = "アプリから重要な通知を受け取るために、許可をお願いします。";

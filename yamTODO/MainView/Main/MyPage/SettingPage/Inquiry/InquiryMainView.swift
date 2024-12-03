@@ -89,7 +89,8 @@ struct NewInquiryView: View {
             "inquiryText": inquiryText,
             "comment": "",  // 초기 값은 빈 값
             "timestamp": Timestamp(),  // 문의 제출 시간 저장
-            "isRemove": false
+            "isRemove": false,
+            "userPushToken": getAPNSToken()
         ]
         let db = Firestore.firestore()
         
@@ -264,6 +265,16 @@ fileprivate func getUserId() -> String {
     return "unknown"
 }
 
+fileprivate func getAPNSToken() -> String {
+    let userDefaults = UserDefaults.standard
+    let tokenKey = "apnsToken"
+    if let pushKey = userDefaults.string(forKey: tokenKey) {
+        return pushKey
+    }
+    
+    return "unknown"
+}
+
 // Inquiry 모델 정의
 struct Inquiry: Identifiable, Codable {
     @DocumentID var id: String?  // Firestore 문서 ID
@@ -281,3 +292,5 @@ fileprivate let dateFormatter: DateFormatter = {
     formatter.timeStyle = .short
     return formatter
 }()
+
+
