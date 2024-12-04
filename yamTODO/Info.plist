@@ -25,7 +25,7 @@
 		<true/>
 	</dict>
 	<key>NSUserNotificationsUsageDescription</key>
-	<string>${UNUserNotificationCenter}</string>
+	<string>To receive important notifications from the app, we request your permission.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
