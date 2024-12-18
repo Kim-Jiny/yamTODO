@@ -111,6 +111,10 @@ private extension MyPage {
             admob()
             RewardAdView()
                 .frame(height: 44)
+            NavigationLink(destination: DrawPageView()) {
+                Text("얌코인으로 응모하기")
+                    .frame(height: 44)
+            }
         //      productHeightPicker
         }
     }

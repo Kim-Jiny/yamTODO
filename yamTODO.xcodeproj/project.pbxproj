@@ -23,6 +23,9 @@
 		300E65542B08FD5D00DB3684 /* RepeatDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E65532B08FD5C00DB3684 /* RepeatDetailPopupView.swift */; };
 		301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301C90372AF69326008BEB80 /* DetailTextView.swift */; };
 		304DC5C72B0E2C5300E01656 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */; };
+		3052B1832D12721C00145BC3 /* DrawPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052B1822D12721C00145BC3 /* DrawPageView.swift */; };
+		3052B1852D12997C00145BC3 /* RewardProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052B1842D12997C00145BC3 /* RewardProductView.swift */; };
+		3052B1872D12AD3200145BC3 /* RewardPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052B1862D12AD3200145BC3 /* RewardPopupView.swift */; };
 		30596AA62CFD8A0A005A6701 /* RewardAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AA52CFD8A0A005A6701 /* RewardAdManager.swift */; };
 		30596AA82CFD8A20005A6701 /* RewardAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30596AA72CFD8A20005A6701 /* RewardAdView.swift */; };
 		30596AAA2CFD8E5D005A6701 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 30596AA92CFD8E5D005A6701 /* FirebaseFirestore */; };
@@ -163,6 +166,9 @@
 		301C90372AF69326008BEB80 /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		304DC5C42B0E2A4E00E01656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		304DC5C62B0E2C5300E01656 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
+		3052B1822D12721C00145BC3 /* DrawPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawPageView.swift; sourceTree = "<group>"; };
+		3052B1842D12997C00145BC3 /* RewardProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardProductView.swift; sourceTree = "<group>"; };
+		3052B1862D12AD3200145BC3 /* RewardPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPopupView.swift; sourceTree = "<group>"; };
 		30596AA52CFD8A0A005A6701 /* RewardAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardAdManager.swift; sourceTree = "<group>"; };
 		30596AA72CFD8A20005A6701 /* RewardAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardAdView.swift; sourceTree = "<group>"; };
 		30596AAB2CFD92BD005A6701 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -355,6 +361,16 @@
 				30596AA72CFD8A20005A6701 /* RewardAdView.swift */,
 			);
 			path = Admob;
+			sourceTree = "<group>";
+		};
+		3052B1812D12721000145BC3 /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				3052B1822D12721C00145BC3 /* DrawPageView.swift */,
+				3052B1842D12997C00145BC3 /* RewardProductView.swift */,
+				3052B1862D12AD3200145BC3 /* RewardPopupView.swift */,
+			);
+			path = Draw;
 			sourceTree = "<group>";
 		};
 		30596AAD2CFDA8F6005A6701 /* Inquiry */ = {
@@ -681,6 +697,7 @@
 		36EDCF4E2AF087AF004F2483 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				3052B1812D12721000145BC3 /* Draw */,
 				36FBAA7D2B05EFFC00FC78AB /* SettingPage */,
 				36EDCF4F2AF087C6004F2483 /* MyPageView.swift */,
 			);
@@ -1086,6 +1103,7 @@
 				3678A7042AF2304F00D7745F /* DayOfWeekManager.swift in Sources */,
 				36B7C9792ADE19EC00F7A140 /* TaskItemView.swift in Sources */,
 				369350862AFB05120040AF26 /* RealmManager.swift in Sources */,
+				3052B1832D12721C00145BC3 /* DrawPageView.swift in Sources */,
 				36FBAA872B06004000FC78AB /* RepeatView.swift in Sources */,
 				36EDCF3C2AEB9E6F004F2483 /* LoginModel.swift in Sources */,
 				36EDCF4A2AEF9583004F2483 /* Repeats.swift in Sources */,
@@ -1114,6 +1132,7 @@
 				3693507F2AF8B6500040AF26 /* TasksByDay.swift in Sources */,
 				36FBAA8D2B07527000FC78AB /* MailView.swift in Sources */,
 				36B7C9802ADE1A3F00F7A140 /* UserDefaultValue.swift in Sources */,
+				3052B1852D12997C00145BC3 /* RewardProductView.swift in Sources */,
 				36B7C9AE2ADFB35200F7A140 /* Serializable.swift in Sources */,
 				369350882AFB170E0040AF26 /* DetailPopupView.swift in Sources */,
 				301C90382AF69326008BEB80 /* DetailTextView.swift in Sources */,
@@ -1131,6 +1150,7 @@
 				36B7C9862ADE26C000F7A140 /* Extension+Color.swift in Sources */,
 				36FBAA7F2B05F01000FC78AB /* RepeatSettingView.swift in Sources */,
 				300E65482B077E7A00DB3684 /* CalendarCellView.swift in Sources */,
+				3052B1872D12AD3200145BC3 /* RewardPopupView.swift in Sources */,
 				364FC7C42B0F2C77009AF157 /* TriangleView.swift in Sources */,
 				30A52DF92CEF28D400724934 /* TasksByDateObject.swift in Sources */,
 				36CFD9742B02EEDE0037E03D /* SelectTask.swift in Sources */,
