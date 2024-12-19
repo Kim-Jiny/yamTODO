@@ -109,12 +109,12 @@ private extension MyPage {
     var adSection: some View {
         Section(header: Text("광고").fontWeight(.medium)) {
             admob()
-            RewardAdView()
-                .frame(height: 44)
-            NavigationLink(destination: DrawPageView()) {
-                Text("얌코인으로 응모하기")
-                    .frame(height: 44)
-            }
+//            RewardAdView()
+//                .frame(height: 44)
+//            NavigationLink(destination: DrawPageView()) {
+//                Text("얌코인으로 응모하기")
+//                    .frame(height: 44)
+//            }
         //      productHeightPicker
         }
     }
